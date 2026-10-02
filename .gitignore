@@ -9,3 +9,6 @@ package-lock.json
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Catatan pribadi — JANGAN diunggah (berisi kata sandi)
+catat/

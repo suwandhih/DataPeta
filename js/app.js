@@ -20,6 +20,7 @@
   const lapisKota = document.getElementById("lapisKota");
   const lapisPulau = document.getElementById("lapisPulau");
   const lapisPenanda = document.getElementById("lapisPenanda");
+  const lapisNamaKota = document.getElementById("lapisNamaKota");
   const labelPeta = document.getElementById("labelPeta");
   const zoomMasuk = document.getElementById("zoomMasuk");
   const zoomKeluar = document.getElementById("zoomKeluar");
@@ -154,62 +155,121 @@
 
   // ---------- Nama pulau (tampil permanen) ----------
   // Satu nama per pulau. Tempatnya dipilih otomatis supaya tidak
-  // menutupi nama kota maupun nama gunung, dan tidak terpotong tepi peta.
+  // menutupi nama kota, nama gunung, penanda, maupun nama pulau lain.
 
-  // Perkiraan kotak tulisan pada koordinat peta (ukuran huruf tetap,
-  // karena tiap lapisan dikompensasi 1/zk).
-  // w = jumlah huruf × (lebar huruf + jarak antar huruf).
-  // Nama pulau memakai huruf besar + jarak antar huruf, jadi lebih lebar.
-  function kotakHuruf(x, y, nama, ukuran, spasi) {
-    const perHuruf = ukuran * 0.68 + (spasi || 0);
-    return { x: x, y: y, w: nama.length * perHuruf + 4, h: ukuran + 5 };
+  // Ukuran huruf (px, sama dengan css/style.css). Karena tiap lapisan
+  // dikompensasi 1/zk, ukuran huruf di LAYAR selalu tetap sebesar ini.
+  const HURUF = { pulauBesar: 12, pulau: 10, kotaBesar: 12, kota: 9, gunung: 8 };
+  const SPASI = { pulauBesar: 1.8, pulau: 1.2 };
+
+  // Perkiraan lebar & tinggi tulisan DI LAYAR (satuan px layar).
+  function ukuranTeks(nama, ukuran, spasi) {
+    return { w: nama.length * (ukuran * 0.6 + (spasi || 0)) + 2, h: ukuran * 1.15 };
   }
 
-  function tumpang(a, b) {
-    return !(
-      a.x + a.w / 2 < b.x - b.w / 2 ||
-      a.x - a.w / 2 > b.x + b.w / 2 ||
-      a.y + a.h / 2 < b.y - b.h / 2 ||
-      a.y - a.h / 2 > b.y + b.h / 2
-    );
+  // Peta → layar
+  function keLayar(p) {
+    return { x: p.x * zk + tx, y: p.y * zk + ty };
   }
 
-  // Kumpulkan kotak semua tulisan yang sudah pasti tampil (kota + gunung).
-  // Dipakai sebagai rintangan supaya nama pulau tidak menutupinya.
+  // Kotak tulisan di LAYAR untuk sebuah sisi penempatan.
+  // (sx, sy) = titik di layar. Tulisan digambar dengan
+  // dominant-baseline="middle", jadi y = titik tengah tegak.
+  // jarak = jarak tepi tulisan dari titik (menyesuaikan besar penanda).
+  function kotakSisi(sisi, w, h, sx, sy, jarak) {
+    const j = jarak || 14;
+    const jj = j + 18;   // untuk pilihan "jauh"
+    if (sisi === "atas") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy - j - h / 2, bawah: sy - j + h / 2 };
+    if (sisi === "bawah") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy + j - h / 2, bawah: sy + j + h / 2 };
+    if (sisi === "kiri") return { kiri: sx - j - w, kanan: sx - j, atas: sy - h / 2, bawah: sy + h / 2 };
+    if (sisi === "kanan") return { kiri: sx + j, kanan: sx + j + w, atas: sy - h / 2, bawah: sy + h / 2 };
+    if (sisi === "kanan-atas") return { kiri: sx + j, kanan: sx + j + w, atas: sy - j - h / 2, bawah: sy - j + h / 2 };
+    if (sisi === "kanan-bawah") return { kiri: sx + j, kanan: sx + j + w, atas: sy + j - h / 2, bawah: sy + j + h / 2 };
+    // Pilihan jauh — dipakai kalau penanda lokasi tepat berada di kota
+    if (sisi === "atas-jauh") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy - jj - h / 2, bawah: sy - jj + h / 2 };
+    if (sisi === "bawah-jauh") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy + jj - h / 2, bawah: sy + jj + h / 2 };
+    if (sisi === "kiri-jauh") return { kiri: sx - jj - w, kanan: sx - jj, atas: sy - h / 2, bawah: sy + h / 2 };
+    return { kiri: sx + jj, kanan: sx + jj + w, atas: sy - h / 2, bawah: sy + h / 2 };
+  }
+
+  function bentrok(a, b) {
+    return !(a.kanan < b.kiri || a.kiri > b.kanan || a.bawah < b.atas || a.atas > b.bawah);
+  }
+
+  // Pilih sisi penempatan yang paling sedikit bertabrakan.
+  // Kalau ada sisi yang bebas (0 tabrakan), itu yang dipilih.
+  function pilihSisi(sx, sy, w, h, daftarSisi, rintangan, jarak) {
+    let terbaik = daftarSisi[0];
+    let luasTerbaik = Infinity;
+
+    for (const sisi of daftarSisi) {
+      const kotak = kotakSisi(sisi, w, h, sx, sy, jarak);
+      let luas = 0;
+      for (const k of rintangan) {
+        const dx = Math.min(kotak.kanan, k.kanan) - Math.max(kotak.kiri, k.kiri);
+        const dy = Math.min(kotak.bawah, k.bawah) - Math.max(kotak.atas, k.atas);
+        if (dx > 0 && dy > 0) luas += dx * dy;
+      }
+      if (luas < luasTerbaik) {
+        luasTerbaik = luas;
+        terbaik = sisi;
+        if (luas === 0) break;
+      }
+    }
+    return terbaik;
+  }
+
+  const SEMUA_SISI = [
+    "kanan", "kiri", "atas", "bawah", "kanan-atas", "kanan-bawah",
+    "kanan-jauh", "kiri-jauh", "atas-jauh", "bawah-jauh"
+  ];
+
+  // Sisi yang dipakai lebih dulu (yang dekat) — supaya nama tetap rapat ke kotanya
+  const SISI_DEKAT = ["kanan", "kiri", "atas", "bawah", "kanan-atas", "kanan-bawah"];
+
+  // Kumpulkan kotak semua tulisan yang sudah pasti tampil (kota + gunung + penanda).
   function kotakRintangan() {
     const kotak = [];
 
-    daftarKotaTampil().forEach((k) => kotak.push(k.kotak));
+    daftarKotaTampil().forEach((k) => kotak.push(k.rect));
 
+    // Nama gunung hanya tampil saat zoom ≥ 2 — jadi baru jadi penghalang saat itu
     if (zk >= 2 && typeof GUNUNG !== "undefined") {
       GUNUNG.forEach((g) => {
         const p = proyek(g.lon, g.lat);
-        if (p.x < -20 || p.x > VB_W + 20 || p.y < -20 || p.y > VB_H + 20) return;
+        const s = keLayar(p);
+        if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
         const nama = (g.n || "Puncak") + " " + (g.e ? g.e + " m" : "");
-        const ukuran = 8;
-        const w = nama.length * ukuran * 0.55;
-        kotak.push({ x: p.x + 6 + w / 2, y: p.y + 2, w: w, h: ukuran + 4 });
+        const u = ukuranTeks(nama, HURUF.gunung, 0);
+        kotak.push({ kiri: s.x + 6, kanan: s.x + 6 + u.w, atas: s.y - u.h / 2, bawah: s.y + u.h / 2 });
       });
     }
+
+    // Penanda lokasi milik Bapak — juga jangan ditutupi.
+    // Penanda membesar saat zoom (radius 10 × zoom), jadi ikut dihitung.
+    const rPenanda = 10 * zk + 3;
+    daftarLokasi.filter(cocok).forEach((lokasi) => {
+      const s = keLayar(proyek(lokasi.lon, lokasi.lat));
+      if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
+      kotak.push({ kiri: s.x - rPenanda, kanan: s.x + rPenanda, atas: s.y - rPenanda, bawah: s.y + rPenanda });
+    });
 
     return kotak;
   }
 
-  // Pilih titik penempatan nama pulau: sedapat mungkin jauh dari kota,
-  // gunung, dan nama pulau lain — supaya tidak saling menutupi.
   function gambarPulau() {
     if (typeof PULAU === "undefined" || !proyeksi) return;
     lapisPulau.innerHTML = "";
 
     const rintangan = kotakRintangan();
 
-    // Titik calon SEMUA pulau — supaya nama pulau saling menjauh.
+    // Titik calon SEMUA pulau (di layar) — supaya nama pulau saling menjauh.
     const titikPulau = [];
     PULAU.forEach((pulau) => {
       pulau.k.forEach((t) => {
-        const p = proyek(t[0], t[1]);
-        if (p.x >= -20 && p.x <= VB_W + 20 && p.y >= -20 && p.y <= VB_H + 20) {
-          titikPulau.push({ x: p.x, y: p.y, n: pulau.n });
+        const s = keLayar(proyek(t[0], t[1]));
+        if (s.x >= -60 && s.x <= VB_W + 60 && s.y >= -60 && s.y <= VB_H + 60) {
+          titikPulau.push({ x: s.x, y: s.y, n: pulau.n });
         }
       });
     });
@@ -218,50 +278,43 @@
 
     PULAU.forEach((pulau) => {
       const besarPulau = pulau.r <= 3;
-      const ukuran = besarPulau ? 12 : 10;
-      const spasi = besarPulau ? 1.8 : 1.2;
-      const kotakNama = kotakHuruf(0, 0, pulau.n, ukuran, spasi);
+      const ukuran = besarPulau ? HURUF.pulauBesar : HURUF.pulau;
+      const spasi = besarPulau ? SPASI.pulauBesar : SPASI.pulau;
+      const u = ukuranTeks(pulau.n, ukuran, spasi);
 
-      // Titik calon sudah urut: yang pertama paling dekat pusat pulau,
-      // sisanya menyebar ke pinggir.
+      // Titik calon sudah urut: pertama paling dekat pusat pulau.
       const calon = pulau.k
-        .map((t) => proyek(t[0], t[1]))
-        .filter((p) => p.x >= -20 && p.x <= VB_W + 20 && p.y >= -20 && p.y <= VB_H + 20);
+        .map((t) => keLayar(proyek(t[0], t[1])))
+        .filter((s) => s.x >= -60 && s.x <= VB_W + 60 && s.y >= -60 && s.y <= VB_H + 60);
       if (!calon.length) return;
 
-      // Pilih tempat yang TIDAK menutupi nama kota/gunung maupun nama pulau lain.
-      // Kalau tidak ada tempat seperti itu, nama pulau tidak ditampilkan
-      // (nama kota lebih penting — permintaan Bapak).
+      // Pilih tempat yang TIDAK menutupi apa pun. Kalau tidak ada,
+      // nama pulau tidak ditampilkan (nama kota lebih penting).
       let terpilih = null;
       let skorTerbaik = -1;
 
-      calon.forEach((t) => {
-        const kotak = { x: t.x, y: t.y, w: kotakNama.w, h: kotakNama.h };
+      calon.forEach((s) => {
+        const kotak = { kiri: s.x - u.w / 2, kanan: s.x + u.w / 2, atas: s.y - u.h / 2, bawah: s.y + u.h / 2 };
 
-        // Terlalu dekat tepi peta → huruf bisa terpotong, lewati
-        if (kotak.x - kotak.w / 2 < 4 || kotak.x + kotak.w / 2 > VB_W - 4) return;
-        if (kotak.y - kotak.h / 2 < 4 || kotak.y + kotak.h / 2 > VB_H - 4) return;
+        // Terlalu dekat tepi layar → huruf bisa terpotong
+        if (kotak.kiri < 4 || kotak.kanan > VB_W - 4) return;
+        if (kotak.atas < 4 || kotak.bawah > VB_H - 4) return;
 
-        // Jangan menutupi nama kota / gunung
         for (const k of rintangan) {
-          if (tumpang(kotak, { x: k.x, y: k.y, w: k.w + 12, h: k.h + 8 })) return;
+          if (bentrok({ kiri: kotak.kiri - 6, kanan: kotak.kanan + 6, atas: kotak.atas - 4, bawah: kotak.bawah + 4 }, k)) return;
         }
-
-        // Jangan menutupi nama pulau lain
         for (const k of terpakai) {
-          if (tumpang(kotak, { x: k.x, y: k.y, w: k.w + 16, h: k.h + 12 })) return;
+          if (bentrok({ kiri: kotak.kiri - 10, kanan: kotak.kanan + 10, atas: kotak.atas - 7, bawah: kotak.bawah + 7 }, k)) return;
         }
 
-        // Pilih yang paling tengah: makin dekat pusat pulau, makin baik.
-        // (titik pertama = paling dekat pusat, jadi skornya paling tinggi)
-        const skor = calon.length - calon.indexOf(t);
+        // Skor: makin tengah (dekat pusat pulau) & makin jauh dari pulau lain, makin baik
+        const skor = calon.length - calon.indexOf(s);
 
-        // Tambahan: hindari pulau tetangga supaya tidak menempel
         let dekatPulau = Infinity;
         titikPulau.forEach((k) => {
           if (k.n === pulau.n) return;
-          const dx = t.x - k.x;
-          const dy = t.y - k.y;
+          const dx = s.x - k.x;
+          const dy = s.y - k.y;
           const d = Math.sqrt(dx * dx + dy * dy);
           if (d < dekatPulau) dekatPulau = d;
         });
@@ -269,18 +322,22 @@
         const nilai = skor + Math.min(dekatPulau, 60) / 10;
         if (nilai > skorTerbaik) {
           skorTerbaik = nilai;
-          terpilih = t;
+          terpilih = s;
         }
       });
 
-      if (!terpilih) return;   // tidak ada tempat yang aman
-      terpakai.push({ x: terpilih.x, y: terpilih.y, w: kotakNama.w, h: kotakNama.h });
+      if (!terpilih) return;
+      terpakai.push({ kiri: terpilih.x - u.w / 2, kanan: terpilih.x + u.w / 2, atas: terpilih.y - u.h / 2, bawah: terpilih.y + u.h / 2 });
+
+      // Kembali ke koordinat peta untuk digambar
+      const px = (terpilih.x - tx) / zk;
+      const py = (terpilih.y - ty) / zk;
 
       const g = document.createElementNS(NS, "g");
       const kecilan = 1 / zk;  // ukuran huruf tetap (tidak ikut membesar saat zoom)
       g.setAttribute(
         "transform",
-        "translate(" + terpilih.x.toFixed(1) + "," + terpilih.y.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
+        "translate(" + px.toFixed(1) + "," + py.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
       );
       g.setAttribute("class", "pulau" + (besarPulau ? " pulau-besar" : ""));
 
@@ -315,37 +372,81 @@
     const hasil = [];
     if (typeof KOTA_INDONESIA === "undefined" || !proyeksi) return hasil;
     const ambang = ambangUntukZoom(zk);
+    const terpakai = [];
+
+    // Rintangan untuk nama kota = nama kota yang sudah ditaruh,
+    // nama gunung, dan penanda lokasi milik Bapak.
+    const rintangan = [];
+
+    // Penanda membesar saat zoom (radius 10 × zoom), jadi ikut dihitung.
+    const rPenanda = 10 * zk + 3;
+    daftarLokasi.filter(cocok).forEach((lokasi) => {
+      const s = keLayar(proyek(lokasi.lon, lokasi.lat));
+      if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
+      rintangan.push({ kiri: s.x - rPenanda, kanan: s.x + rPenanda, atas: s.y - rPenanda, bawah: s.y + rPenanda });
+    });
+
+    if (zk >= 2 && typeof GUNUNG !== "undefined") {
+      GUNUNG.forEach((g) => {
+        const s = keLayar(proyek(g.lon, g.lat));
+        if (s.x < -60 || s.x > VB_W + 60 || s.y < -60 || s.y > VB_H + 60) return;
+        const nama = (g.n || "Puncak") + " " + (g.e ? g.e + " m" : "");
+        const u = ukuranTeks(nama, HURUF.gunung, 0);
+        rintangan.push({ kiri: s.x + 6, kanan: s.x + 6 + u.w, atas: s.y - u.h / 2, bawah: s.y + u.h / 2 });
+      });
+    }
 
     KOTA_INDONESIA.forEach((kota) => {
       if (kota.r > ambang) return;
-      const p = proyek(kota.lon, kota.lat);
-      if (p.x < -20 || p.x > VB_W + 20 || p.y < -20 || p.y > VB_H + 20) return;
+      const s = keLayar(proyek(kota.lon, kota.lat));
+      if (s.x < -60 || s.x > VB_W + 60 || s.y < -60 || s.y > VB_H + 60) return;
 
       const besar = kota.r <= 3;
-      const ukuran = besar ? 12 : 9;
-      const w = kotakHuruf(0, 0, kota.n, ukuran, 0).w;
-      let kotak;
+      const ukuran = besar ? HURUF.kotaBesar : HURUF.kota;
+      const teksnya = ukuranTeks(kota.n, ukuran, 0);
 
-      if (besar) {
-        // Kota besar: nama di atas titik, rata tengah
-        kotak = { x: p.x, y: p.y - 9, w: w, h: 16 };
-      } else if (zk < 2.6 && kota.lon < 0) {
-        // Zoom kecil, Indonesia barat: nama dibalik ke kiri titik
-        kotak = { x: p.x - 6 - w / 2, y: p.y + 3, w: w, h: 13 };
-      } else {
-        kotak = { x: p.x + 6 + w / 2, y: p.y + 3, w: w, h: 13 };
+      // Cari sisi yang paling sedikit bertabrakan dengan yang sudah ada.
+      // Coba dulu sisi dekat; kalau semuanya bertabrakan, pakai sisi jauh.
+      // Jarak label menyesuaikan besar penanda (penanda membesar saat zoom).
+      const jarak = 10 * zk + 6;
+      const semua = [...rintangan, ...terpakai];
+      let sisi = pilihSisi(s.x, s.y, teksnya.w, teksnya.h, SISI_DEKAT, semua, jarak);
+      let rect = kotakSisi(sisi, teksnya.w, teksnya.h, s.x, s.y, jarak);
+
+      let adaBentrok = semua.some((k) => bentrok(rect, k));
+      if (adaBentrok) {
+        sisi = pilihSisi(s.x, s.y, teksnya.w, teksnya.h, SEMUA_SISI, semua, jarak);
+        rect = kotakSisi(sisi, teksnya.w, teksnya.h, s.x, s.y, jarak);
       }
 
-      hasil.push({ kota, p, besar, kotak });
+      terpakai.push({ kiri: rect.kiri - 3, kanan: rect.kanan + 3, atas: rect.atas - 2, bawah: rect.bawah + 2 });
+      hasil.push({ kota, p: proyek(kota.lon, kota.lat), besar, sisi, rect, jarak });
     });
 
     return hasil;
   }
 
+  // Arah nama menurut sisi yang dipilih (untuk digambar)
+  function letakTeks(sisi, jarak) {
+    const j = jarak || 14;
+    const jj = j + 18;
+    if (sisi === "atas") return { x: "0", y: String(-j), anchor: "middle" };
+    if (sisi === "bawah") return { x: "0", y: String(j), anchor: "middle" };
+    if (sisi === "kiri") return { x: String(-j), y: "0", anchor: "end" };
+    if (sisi === "kanan") return { x: String(j), y: "0", anchor: "start" };
+    if (sisi === "kanan-atas") return { x: String(j), y: String(-j), anchor: "start" };
+    if (sisi === "kanan-bawah") return { x: String(j), y: String(j), anchor: "start" };
+    if (sisi === "atas-jauh") return { x: "0", y: String(-jj), anchor: "middle" };
+    if (sisi === "bawah-jauh") return { x: "0", y: String(jj), anchor: "middle" };
+    if (sisi === "kiri-jauh") return { x: String(-jj), y: "0", anchor: "end" };
+    return { x: String(jj), y: "0", anchor: "start" };
+  }
+
   function gambarKota() {
     lapisKota.innerHTML = "";
+    lapisNamaKota.innerHTML = "";
 
-    daftarKotaTampil().forEach(({ kota, p, besar }) => {
+    daftarKotaTampil().forEach(({ kota, p, besar, sisi, jarak }) => {
       const g = document.createElementNS(NS, "g");
       const kecilan = 1 / zk;
       g.setAttribute(
@@ -359,26 +460,22 @@
 
       const teks = document.createElementNS(NS, "text");
       teks.setAttribute("class", "kota-nama" + (besar ? " kota-besar" : ""));
-      if (besar) {
-        // Kota besar: nama di ATAS titik, rata tengah (agar tidak tertutup penanda)
-        teks.setAttribute("x", "0");
-        teks.setAttribute("y", "-7");
-        teks.setAttribute("text-anchor", "middle");
-      } else {
-        teks.setAttribute("x", "6");
-        teks.setAttribute("y", "4");
-      }
-
-      // Saat zoom kecil, nama dibalik agar tidak saling menumpuk
-      if (!besar && zk < 2.6 && kota.lon < 0) {
-        teks.setAttribute("x", "-6");
-        teks.setAttribute("text-anchor", "end");
-      }
+      teks.setAttribute("dominant-baseline", "middle");
+      const letak = letakTeks(sisi, jarak);
+      teks.setAttribute("x", letak.x);
+      teks.setAttribute("y", letak.y);
+      teks.setAttribute("text-anchor", letak.anchor);
       teks.textContent = kota.n;
 
+      // Titik kota tetap di lapisnya sendiri; NAMA kota dipisah ke lapisan
+      // paling atas supaya tidak tertutup penanda lokasi.
       g.appendChild(titik);
-      g.appendChild(teks);
       lapisKota.appendChild(g);
+
+      const gNama = document.createElementNS(NS, "g");
+      gNama.setAttribute("transform", g.getAttribute("transform"));
+      gNama.appendChild(teks);
+      lapisNamaKota.appendChild(gNama);
     });
   }
 
@@ -888,6 +985,7 @@
     return Penyimpanan.ambilSemua().then((data) => {
       daftarLokasi = data;
       gambarPenanda();
+      gambarKota();   // nama kota dihitung ulang setelah penanda diketahui
     });
   }
 
@@ -935,5 +1033,6 @@
       console.error("Gagal memuat data:", e);
       daftarLokasi = typeof CONTOH_LOKASI !== "undefined" ? CONTOH_LOKASI : [];
       gambarPenanda();
+      gambarKota();
     });
 })();

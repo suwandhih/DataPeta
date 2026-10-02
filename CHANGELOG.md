@@ -4,6 +4,41 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — 🐛 **PERBAIKAN: nama kota tertutup penanda**
+
+**Masalah Bapak:** *"nama jakarta masuk di area pulau sedang area tidak terlalu besar"* —
+nama kota tertutup lingkaran penanda, jadi terbaca "Jakrta", "Banding", "Sur-baya".
+
+**Penyebab (ditemukan AI):**
+1. Nama kota digambar **sebelum** penanda lokasi → tertutup lingkaran penanda.
+2. Penanda lokasi **membesar saat zoom** (radius 10 × zoom), tapi perhitungan
+   penghindaran memakai ukuran tetap → tidak terdeteksi.
+
+**Perbaikan:**
+- Nama kota dipindah ke **lapisan paling atas** (di atas penanda) → tidak bisa tertutup.
+- Nama kota kini **memilih sendiri tempatnya** dari 10 pilihan (kanan/kiri/atas/bawah,
+  dekat & jauh) — dipilih yang paling sedikit bertabrakan.
+- Jarak nama dari titik **menyesuaikan besar penanda** saat zoom.
+- Nama kota dihitung ulang setelah data lokasi selesai dimuat.
+- Hasil: **0 tabrakan** nama kota dengan penanda/gunung/pulau di semua tingkat zoom. ✅
+
+---
+
+## 2 Oktober 2026 — 🏝️ **PULAU SERIBU — penjelasan**
+
+**Pertanyaan Bapak:** *"pulau seribu tidak tampak.. apakah terlalu kecil?"*
+
+**Jawaban:** bukan karena terlalu kecil — **datanya memang tidak ada**.
+- Data batas provinsi DKI Jakarta yang dipakai **hanya memuat daratan**
+  (106,69–106,97 BT). Kepulauan Seribu (±106,5 BT ke utara) **tidak termasuk**.
+- Data pulau Natural Earth juga **tidak memuat** Kepulauan Seribu.
+- Jadi walau di-zoom berapa pun, Pulau Seribu tidak akan muncul.
+
+**Perlu keputusan Bapak:** apakah Kepulauan Seribu perlu ditambahkan
+(perlu sumber data lain, mis. batas wilayah dari BIG).
+
+---
+
 ## 2 Oktober 2026 — 🏝️ NAMA PULAU DI PETA
 
 **Nama pulau kini tampil permanen, tidak mengganggu nama kota.**
