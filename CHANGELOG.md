@@ -21,20 +21,28 @@
 
 ---
 
-## 2 Oktober 2026 — �🐛 **PERBAIKAN: pulau kecil Kepulauan Seribu tidak terlihat**
+## 2 Oktober 2026 — 🏝️ **PULAU KEPULAUAN SERIBU: BENTUK ASLI, BUKAN TITIK**
 
-**Masalah Bapak:** *"belum terlihat pulau 1000"*
+**Masalah Bapak:** *"belum terlihat pulau 1000"* → lalu *"tolong bulat2 hijau
+dihilangkan .. tidak bisa liat pulaunya .. tujuan bulat2 hijau itu apa ?"*
 
-**Penyebab (ditemukan AI):** bentuk pulau-pulaunya **terlalu kecil**.
+**Penyebab:** bentuk pulau-pulaunya **terlalu kecil**.
 - Kepulauan Seribu berisi **72 pulau**, masing-masing hanya **0,1–3,7 km**.
 - Di peta, 1 km hanya ±0,9 piksel → pulau terkecil **kurang dari 1 piksel**.
-- Jadi walau di-zoom maksimal, bentuknya **tidak mungkin terlihat**.
+- Percobaan pertama memakai **titik hijau** sebagai penanda — tapi titik itu
+  justru **menutupi** pulau, jadi Bapak tidak bisa melihat bentuk pulaunya.
 
-**Perbaikan:**
-- Tiap pulau diberi **tanda titik hijau** (ukuran tetap di layar) supaya terlihat.
-- Tanda ditaruh di **lapisan paling atas** supaya tidak tertutup penanda lokasi.
-- Nama **"KEPULAUAN SERIBU"** tetap tampil di atas gugusan.
-- Hasil: 72 titik hijau terlihat membentuk gugusan di utara Jakarta. ✅
+**Perbaikan (final):**
+- Titik hijau **dihapus seluruhnya**.
+- Yang digambar adalah **bentuk asli pulau** (garis batas dari data BPS).
+- Supaya tetap terlihat, **tebal garis tepinya dibuat tetap** di layar
+  (tidak ikut mengecil saat peta di-zoom) — jadi yang tampak tetap
+  **bentuk pulau yang sebenarnya**, bukan titik palsu.
+- Pulau bisa **diklik** seperti wilayah lain.
+- Nama **"KEPULAUAN SERIBU"** tetap tampil permanen di atas gugusan.
+
+**Hasil uji:** 0 titik hijau · bentuk pulau terlihat (9×17 px di zoom 1,
+164×297 px di zoom 11,4) · bisa diklik · tanpa error ✅
 
 ---
 ## 2 Oktober 2026 — 🏝️ **KEPULAUAN SERIBU DITAMBAHKAN**
@@ -55,7 +63,7 @@
 - Wilayah bisa **diklik** seperti provinsi lain.
 - Alat pembuat: `alat/buat-seribu.js`.
 
-**Hasil uji:** Kepulauan Seribu tergambar (72 titik) · nama tampil di semua tingkat
+**Hasil uji:** Kepulauan Seribu tergambar (72 pulau) · nama tampil di semua tingkat
 zoom · tidak menutupi nama kota. ✅
 
 ---

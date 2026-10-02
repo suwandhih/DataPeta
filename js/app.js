@@ -693,46 +693,31 @@
     gambarPulau();
   }
 
-  // ---------- Tanda pulau-pulau kecil ----------
+  // ---------- Pulau-pulau kecil ----------
   // Pulau di Kepulauan Seribu hanya 0,1–3,7 km — di peta kurang dari 1 piksel,
-  // jadi bentuknya tidak mungkin terlihat. Diberi tanda titik supaya tampak.
+  // jadi bentuknya tidak terlihat. Solusinya: gambar BENTUK ASLINYA, tapi
+  // garis tepinya dibuat tetap tebal di layar (tidak ikut mengecil saat zoom).
+  // Jadi yang terlihat tetap bentuk pulau yang sebenarnya — bukan titik palsu.
   function gambarPulauKecil() {
     lapisPulauKecil.innerHTML = "";
     if (typeof KEPULAUAN_SERIBU === "undefined" || !proyeksi) return;
 
+    // Tebal garis di layar (px). Dibagi zk supaya tetap sama walau di-zoom.
+    const tebal = (1.6 / zk).toFixed(4);
+
     KEPULAUAN_SERIBU.forEach((w) => {
-      const polys = w.g.type === "Polygon" ? [w.g.coordinates] : w.g.coordinates;
-      polys.forEach((poly) => {
-        const c = poly[0];
-        let mnx = Infinity, mxx = -Infinity, mny = Infinity, mxy = -Infinity;
-        c.forEach((x) => {
-          if (x[0] < mnx) mnx = x[0];
-          if (x[0] > mxx) mxx = x[0];
-          if (x[1] < mny) mny = x[1];
-          if (x[1] > mxy) mxy = x[1];
-        });
-        const p = proyek((mnx + mxx) / 2, (mny + mxy) / 2);
-        if (p.x < -20 || p.x > VB_W + 20 || p.y < -20 || p.y > VB_H + 20) return;
+      const path = document.createElementNS(NS, "path");
+      path.setAttribute("d", geometriKePath(w.g));
+      path.setAttribute("class", "pulau-kecil-bentuk");
+      path.setAttribute("stroke-width", tebal);
+      path.dataset.nama = w.n;
+      path.addEventListener("click", () => bukaPanelProvinsi(w.n));
 
-        const g = document.createElementNS(NS, "g");
-        const kecilan = 1 / zk;   // ukuran tetap di layar
-        g.setAttribute(
-          "transform",
-          "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
-        );
-        g.setAttribute("class", "pulau-kecil");
+      const judul = document.createElementNS(NS, "title");
+      judul.textContent = w.n;
+      path.appendChild(judul);
 
-        const titik = document.createElementNS(NS, "circle");
-        titik.setAttribute("r", "3");
-        titik.setAttribute("class", "pulau-kecil-titik");
-
-        const judul = document.createElementNS(NS, "title");
-        judul.textContent = w.n;
-
-        g.appendChild(titik);
-        g.appendChild(judul);
-        lapisPulauKecil.appendChild(g);
-      });
+      lapisPulauKecil.appendChild(path);
     });
   }
   // ---------- Gambar penanda ----------
