@@ -11,10 +11,15 @@
 
   // ---------- Ambil elemen ----------
   const svg = document.getElementById("petaSvg");
+  const viewportLapis = document.getElementById("viewport");
   const lapisNegara = document.getElementById("lapisNegara");
   const lapisProvinsi = document.getElementById("lapisProvinsi");
+  const lapisKota = document.getElementById("lapisKota");
   const lapisPenanda = document.getElementById("lapisPenanda");
   const labelPeta = document.getElementById("labelPeta");
+  const zoomMasuk = document.getElementById("zoomMasuk");
+  const zoomKeluar = document.getElementById("zoomKeluar");
+  const zoomReset = document.getElementById("zoomReset");
   const kotakCari = document.getElementById("kotakCari");
   const hapusCari = document.getElementById("hapusCari");
   const kategoriBar = document.getElementById("kategori");
@@ -104,6 +109,92 @@
     };
   }
 
+  // ---------- Zoom & geser ----------
+  let zk = 1;          // tingkat zoom (1 = seluruh Indonesia)
+  let tx = 0;          // geser horizontal
+  let ty = 0;          // geser vertikal
+  const ZK_MIN = 1;
+  const ZK_MAKS = 12;
+
+  function terapkanTampilan() {
+    viewportLapis.setAttribute(
+      "transform",
+      "translate(" + tx.toFixed(1) + "," + ty.toFixed(1) + ") scale(" + zk.toFixed(3) + ")"
+    );
+    gambarKota();
+    gambarPenanda();
+  }
+
+  function zoomKe(nilai, pusatX, pusatY) {
+    const baru = Math.max(ZK_MIN, Math.min(ZK_MAKS, nilai));
+    if (baru === zk) return;
+    const px = pusatX === undefined ? VB_W / 2 : pusatX;
+    const py = pusatY === undefined ? VB_H / 2 : pusatY;
+    // Jaga titik di bawah kursor tetap di tempatnya
+    tx = px - (px - tx) * (baru / zk);
+    ty = py - (py - ty) * (baru / zk);
+    zk = baru;
+    terapkanTampilan();
+  }
+
+  function batasiGeser() {
+    const minX = VB_W * (1 - zk);
+    const minY = VB_H * (1 - zk);
+    if (tx > 0) tx = 0;
+    if (ty > 0) ty = 0;
+    if (tx < minX) tx = minX;
+    if (ty < minY) ty = minY;
+  }
+
+  // ---------- Nama kota sesuai tingkat zoom ----------
+  // zoom out → hanya kota besar ; zoom in → kota kecil mulai muncul
+  function ambangUntukZoom(z) {
+    if (z < 1.8) return 2;    // hanya kota terbesar
+    if (z < 2.6) return 4;
+    if (z < 3.6) return 6;
+    if (z < 5.0) return 7;
+    return 99;                 // semua kota
+  }
+
+  function gambarKota() {
+    if (typeof KOTA_INDONESIA === "undefined" || !proyeksi) return;
+    const ambang = ambangUntukZoom(zk);
+    lapisKota.innerHTML = "";
+
+    KOTA_INDONESIA.forEach((kota) => {
+      if (kota.r > ambang) return;
+      const p = proyek(kota.lon, kota.lat);
+      if (p.x < -20 || p.x > VB_W + 20 || p.y < -20 || p.y > VB_H + 20) return;
+
+      const g = document.createElementNS(NS, "g");
+      const kecilan = 1 / zk;
+      g.setAttribute(
+        "transform",
+        "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
+      );
+
+      const titik = document.createElementNS(NS, "circle");
+      titik.setAttribute("r", kota.r <= 3 ? 3 : 2);
+      titik.setAttribute("class", "kota-titik");
+
+      const teks = document.createElementNS(NS, "text");
+      teks.setAttribute("class", "kota-nama" + (kota.r <= 3 ? " kota-besar" : ""));
+      teks.setAttribute("x", "6");
+      teks.setAttribute("y", "4");
+
+      // Saat zoom kecil, nama dibalik agar tidak saling menumpuk
+      if (zk < 2.6 && kota.lon < 0) {
+        teks.setAttribute("x", "-4");
+        teks.setAttribute("text-anchor", "end");
+      }
+      teks.textContent = kota.n;
+
+      g.appendChild(titik);
+      g.appendChild(teks);
+      lapisKota.appendChild(g);
+    });
+  }
+
   // ---------- Geometri → jalur SVG ----------
   function cincinKePath(cincin) {
     return (
@@ -173,7 +264,11 @@
 
       const g = document.createElementNS(NS, "g");
       g.setAttribute("class", "penanda" + (lokasi.id === idTerpilih ? " aktif" : ""));
-      g.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+      const kecilan = 1 / zk;
+      g.setAttribute(
+        "transform",
+        "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
+      );
 
       const bulat = document.createElementNS(NS, "circle");
       bulat.setAttribute("r", "10");
@@ -412,6 +507,119 @@
     }
   });
 
+  // ---------- Kendali zoom ----------
+  function titikKeKanvas(e) {
+    const kotak = svg.getBoundingClientRect();
+    const rasio = VB_W / VB_H;
+    let w = kotak.width;
+    let h = kotak.height;
+    // Sesuaikan dengan preserveAspectRatio (xMidYMid meet)
+    if (w / h > rasio) w = h * rasio;
+    else h = w / rasio;
+    const kiri = kotak.left + (kotak.width - w) / 2;
+    const atas = kotak.top + (kotak.height - h) / 2;
+    return {
+      x: ((e.clientX - kiri) / w) * VB_W,
+      y: ((e.clientY - atas) / h) * VB_H
+    };
+  }
+
+  svg.addEventListener(
+    "wheel",
+    (e) => {
+      e.preventDefault();
+      const t = titikKeKanvas(e);
+      const faktor = e.deltaY < 0 ? 1.18 : 1 / 1.18;
+      zoomKe(zk * faktor, t.x, t.y);
+    },
+    { passive: false }
+  );
+
+  // Geser (tahan & tarik) + cubit dua jari (HP)
+  let geserAktif = false;
+  let geserX = 0;
+  let geserY = 0;
+  const jari = {};       // pointer aktif (untuk cubit)
+  let jarakCubit = 0;
+
+  function daftarJari() {
+    return Object.keys(jari).map((k) => jari[k]);
+  }
+
+  function jarakDuaJari() {
+    const d = daftarJari();
+    if (d.length < 2) return 0;
+    const dx = d[0].x - d[1].x;
+    const dy = d[0].y - d[1].y;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  svg.addEventListener("pointerdown", (e) => {
+    jari[e.pointerId] = { x: e.clientX, y: e.clientY };
+    if (daftarJari().length === 2) {
+      jarakCubit = jarakDuaJari();
+      geserAktif = false;
+      return;
+    }
+    if (zk <= 1) return;
+    geserAktif = true;
+    geserX = e.clientX;
+    geserY = e.clientY;
+    svg.setPointerCapture(e.pointerId);
+  });
+
+  svg.addEventListener("pointermove", (e) => {
+    if (jari[e.pointerId]) {
+      jari[e.pointerId].x = e.clientX;
+      jari[e.pointerId].y = e.clientY;
+    }
+
+    // Cubit dua jari
+    if (daftarJari().length === 2) {
+      e.preventDefault();
+      const baru = jarakDuaJari();
+      if (jarakCubit > 0 && baru > 0) {
+        const t = titikKeKanvas(e);
+        zoomKe(zk * (baru / jarakCubit), t.x, t.y);
+      }
+      jarakCubit = baru;
+      return;
+    }
+
+    if (!geserAktif) return;
+    const kotak = svg.getBoundingClientRect();
+    const skalaKanvas = VB_W / Math.max(kotak.width, 1);
+    tx += (e.clientX - geserX) * skalaKanvas;
+    ty += (e.clientY - geserY) * skalaKanvas;
+    geserX = e.clientX;
+    geserY = e.clientY;
+    batasiGeser();
+    // Saat menggeser: cukup pindahkan tampilan (tanpa gambar ulang → lebih lancar)
+    viewportLapis.setAttribute(
+      "transform",
+      "translate(" + tx.toFixed(1) + "," + ty.toFixed(1) + ") scale(" + zk.toFixed(3) + ")"
+    );
+  });
+
+  function lepasJari(e) {
+    delete jari[e.pointerId];
+    geserAktif = false;
+    jarakCubit = 0;
+  }
+
+  svg.addEventListener("pointerup", lepasJari);
+  svg.addEventListener("pointercancel", lepasJari);
+  svg.addEventListener("pointerleave", lepasJari);
+
+  zoomMasuk.addEventListener("click", () => zoomKe(zk * 1.5));
+  zoomKeluar.addEventListener("click", () => zoomKe(zk / 1.5));
+  zoomReset.addEventListener("click", () => {
+    zk = 1;
+    tx = 0;
+    ty = 0;
+    terapkanTampilan();
+  });
+
   // ---------- Muat ulang data ----------
   function muatUlang() {
     return Penyimpanan.ambilSemua().then((data) => {
@@ -457,6 +665,7 @@
   gambarPeta();
   gambarKategori();
   isiPilihanKategori();
+  terapkanTampilan();
   Penyimpanan.isiAwalJikaKosong()
     .then(() => muatUlang())
     .catch((e) => {

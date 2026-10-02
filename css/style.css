@@ -63,6 +63,58 @@ html, body {
 
 .provinsi:hover { fill: #aab3bf; }
 
+/* Kota */
+.kota-titik {
+  fill: #6b7280;
+  opacity: 0.85;
+}
+
+.kota-nama {
+  font-family: var(--font);
+  font-size: 9px;
+  fill: #4b5563;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.kota-besar {
+  font-size: 12px;
+  font-weight: 700;
+  fill: #1f2937;
+}
+
+/* ================= KENDALI ZOOM ================= */
+.zoom-kendali {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 20;
+}
+
+.zoom-kendali button {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-kecil);
+  border: none;
+  background: var(--putih);
+  color: var(--hitam);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--bayang-kecil);
+  font-family: var(--font);
+  line-height: 1;
+}
+
+.zoom-kendali button:hover { background: var(--abu-latar); }
+
 .label-sementara {
   position: absolute;
   left: 50%;

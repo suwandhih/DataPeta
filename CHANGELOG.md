@@ -4,6 +4,20 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — 🔍 ZOOM + NAMA KOTA
+
+**Peta kini bisa di-zoom & digeser; nama kota muncul sesuai tingkat zoom.**
+
+- **Zoom:** roda mouse (PC) · cubit dua jari (HP) · tombol **+ / − / ⟲** (kanan).
+- **Geser:** tahan & tarik peta.
+- **Nama kota sesuai zoom** (data Natural Earth, 105 kota Indonesia):
+  - Zoom keluar → hanya **kota besar** (Jakarta, Surabaya, Bandung, Medan …)
+  - Zoom masuk → **kota kecil** ikut muncul bertahap
+- Penanda lokasi & nama kota **tidak ikut membesar** saat zoom (tetap enak dibaca).
+- Uji: zoom keluar = 4 kota · zoom masuk = 23 → 105 kota · tombol reset kembali ke awal ✅
+
+---
+
 ## 2 Oktober 2026 — ☁️ DATA CLOUD (Layerbase + Cloudflare) — SELESAI
 
 **Data kini bisa dipindah PC ↔ HP lewat awan. Kunci API aman.**

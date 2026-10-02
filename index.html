@@ -14,10 +14,19 @@
          Semua offline — tanpa internet. -->
     <svg id="petaSvg" class="peta-svg" viewBox="0 0 1000 400"
          preserveAspectRatio="xMidYMid meet" aria-label="Peta Indonesia">
-      <g id="lapisNegara"></g>
-      <g id="lapisProvinsi"></g>
-      <g id="lapisPenanda"></g>
+      <g id="viewport">
+        <g id="lapisNegara"></g>
+        <g id="lapisProvinsi"></g>
+        <g id="lapisKota"></g>
+        <g id="lapisPenanda"></g>
+      </g>
     </svg>
+
+    <div class="zoom-kendali">
+      <button id="zoomMasuk" aria-label="Perbesar">+</button>
+      <button id="zoomKeluar" aria-label="Perkecil">−</button>
+      <button id="zoomReset" aria-label="Kembalikan">⟲</button>
+    </div>
 
     <div class="label-sementara" id="labelPeta">Memuat peta…</div>
   </main>
@@ -114,6 +123,7 @@
 
   <script src="data/negara-dunia.js"></script>
   <script src="data/peta-indonesia.js"></script>
+  <script src="data/kota-indonesia.js"></script>
   <script src="data/contoh-lokasi.js"></script>
   <script src="js/penyimpanan.js"></script>
   <script src="js/awan.js"></script>

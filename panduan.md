@@ -39,6 +39,8 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 | 🔍 **Kotak pencarian** (kiri atas) | Ketik nama lokasi → penanda menyaring |
 | 📍 **Penanda bulat** di peta | Klik → muncul rincian di panel kanan |
 | 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi |
+| 🔍 **Zoom** (kanan) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
+| ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (bawah) | Klik kategori → hanya kategori itu tampil |
 | ➕ **Tambah Lokasi** (kanan atas) | Isi data lokasi baru |
 | ✏️ **Ubah data** (di panel) | Ubah / hapus data lokasi |
@@ -60,6 +62,18 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 
 ⚠️ **Penting:** data tersimpan **di perangkat ini saja**. Data di PC dan di HP **terpisah**.
 Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
+
+### 🏙️ Nama kota di peta
+
+Nama kota **muncul sendiri** sesuai tingkat zoom:
+
+| Kondisi | Yang tampil |
+|---------|-------------|
+| **Zoom keluar** (seluruh Indonesia) | Hanya **kota besar** — Jakarta, Surabaya, Bandung, Medan |
+| **Zoom masuk** | **Kota kecil** mulai muncul (Denpasar, Pontianak, Ambon, …) |
+| **Zoom paling dekat** | **Semua 105 kota** tampil |
+
+💡 **Tip:** kalau nama kota terasa terlalu ramai, cukup **perkecil** (klik **−**).
 
 ### ☁️ Cara pindah data PC ↔ HP
 
