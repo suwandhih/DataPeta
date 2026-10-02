@@ -1,6 +1,10 @@
 # Folder cadangan — tidak perlu diunggah ke GitHub
 backups/
 
+# Modul Node (sampah besar — tidak perlu diunggah)
+node_modules/
+package-lock.json
+
 # Berkas sistem
 Thumbs.db
 desktop.ini
