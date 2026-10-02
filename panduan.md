@@ -40,8 +40,26 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 | 📍 **Penanda bulat** di peta | Klik → muncul rincian di panel kanan |
 | 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi |
 | 🏷️ **Bar kategori** (bawah) | Klik kategori → hanya kategori itu tampil |
+| ➕ **Tambah Lokasi** (kanan atas) | Isi data lokasi baru |
+| ✏️ **Ubah data** (di panel) | Ubah / hapus data lokasi |
 | ☰ **Tombol menu** (kanan atas) | Buka menu samping |
 | ✕ **Tombol tutup** | Tutup panel / menu (bisa juga tekan `Esc`) |
+
+### 📝 Cara mengisi data lokasi
+
+1. Klik tombol **"+ Tambah Lokasi"** (kanan atas).
+2. Isi: **nama**, **wilayah**, **kategori**, **bujur & lintang**, **inisial**, **keterangan**.
+3. Klik **Simpan** → penanda muncul di peta.
+
+> **Keterangan** ditulis satu per baris, format: `Nama = Isi`
+> Contoh:
+> ```
+> Berdiri = 2015
+> Bidang = Pendidikan anak
+> ```
+
+⚠️ **Penting:** data tersimpan **di perangkat ini saja**. Data di PC dan di HP **terpisah**.
+Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
 
 ⚠️ **Catatan:** data yang tampil sekarang **data contoh** (untuk uji tampilan),
 bukan data asli. Data asli akan diisi Bapak sendiri nanti.

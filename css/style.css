@@ -383,6 +383,158 @@ html, body {
 
 .tirai.tampil { opacity: 1; visibility: visible; }
 
+/* ================= TOMBOL TAMBAH LOKASI ================= */
+.tombol-tambah {
+  position: fixed;
+  top: 20px;
+  right: 78px;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: var(--radius);
+  background: var(--hitam);
+  color: var(--putih);
+  border: none;
+  box-shadow: var(--bayang);
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 20;
+}
+
+.tombol-tambah:hover { background: #333; }
+.tombol-tambah-ikon { font-size: 18px; line-height: 1; }
+
+/* ================= PANEL AKSI ================= */
+.panel-aksi { margin-top: 20px; }
+
+.tombol-aksi {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-kecil);
+  border: 1px solid var(--abu-garis);
+  background: var(--putih);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--hitam);
+}
+
+.tombol-aksi:hover { background: var(--abu-latar); }
+
+/* ================= FORM ISIAN ================= */
+.form-lokasi {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 60;
+}
+
+.form-lokasi.terbuka { opacity: 1; visibility: visible; }
+
+.form-kotak {
+  position: relative;
+  width: 460px;
+  max-width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--putih);
+  border-radius: var(--radius);
+  box-shadow: var(--bayang);
+  padding: 28px 24px;
+}
+
+.form-tutup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--abu-latar);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.form-judul { font-size: 19px; margin: 0 0 20px; }
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  margin: 14px 0 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--hitam);
+  background: var(--putih);
+  outline: none;
+}
+
+.form-input:focus { border-color: var(--hitam); }
+
+.form-area { resize: vertical; line-height: 1.5; }
+
+.form-baris2 { display: flex; gap: 12px; }
+.form-baris2 > div { flex: 1; }
+
+.form-tombol-kecil {
+  margin-top: 8px;
+  border: none;
+  background: none;
+  color: var(--abu-teks);
+  font-family: var(--font);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.form-tombol-kecil:hover { color: var(--hitam); }
+
+.form-aksi {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.form-tombol {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--radius-kecil);
+  border: none;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-tombol-hapus { background: #fee2e2; color: #b91c1c; display: none; }
+.form-tombol-hapus:hover { background: #fecaca; }
+.form-tombol-batal { background: var(--abu-latar); color: var(--hitam); }
+.form-tombol-batal:hover { background: #e5e7eb; }
+.form-tombol-simpan { background: var(--hitam); color: var(--putih); }
+.form-tombol-simpan:hover { background: #333; }
+
 /* ================= HP ================= */
 @media (max-width: 640px) {
   .pencarian { width: calc(100vw - 90px); top: 14px; left: 14px; }

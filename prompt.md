@@ -76,12 +76,14 @@ Peta Indonesia
 
 ```
 DataPeta/
-├── index.html                 → halaman utama (peta + panel)
+├── index.html                 → halaman utama (peta + panel + form)
 ├── css/style.css              → gaya tampilan
 ├── js/app.js                  → logika antarmuka
+├── js/penyimpanan.js          → penyimpanan IndexedDB (data lokal)
 ├── data/peta-indonesia.js     → batas 38 provinsi (GeoJSON, offline)
 ├── data/negara-dunia.js       → batas negara dunia (latar tetangga)
-├── data/contoh-lokasi.js      → data contoh (sementara)
+├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
+├── data/contoh-lokasi.js      → data contoh (isi awal)
 └── (5 dokumen .md)
 ```
 

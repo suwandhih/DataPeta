@@ -37,8 +37,13 @@
 | K03 | b. ⚠️ **Ubah cara buka di HP** — tidak bisa lagi dari My Files (`file://`) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | f. **Hosting GitHub Pages** — aplikasi online di `suwandhih.github.io/DataPeta` | ✅ | ✅ | 2 Okt 2026 |
 | K03 | c. Buat database SQLite di Layerbase (paket Free, 5 GB) | ⬜ | ⬜ | — |
-| K03 | d. Sambungkan aplikasi ke database cloud | ⬜ | ⬜ | — |
-| K03 | e. Uji di PC & HP | ⬜ | ⬜ | — |
+| K03 | d. ⚠️ **Masalah keamanan:** kunci API Layerbase akan terlihat di halaman publik GitHub Pages → data bisa dicuri/dihapus orang. **Perlu perantara (proxy)** atau ganti cara. | ⚠️ | ⚠️ | 2 Okt 2026 |
+| K03 | g. **Ide Bapak: IndexedDB utama + Layerbase titipan (semi-online)** — ✅ **DIPERBOLEHKAN** (pemakaian database biasa, bukan proxy/reselling). Batas Free: 10 GB/24j, 5 GB simpan, harus tidur ≥25% — semua cukup. | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h. **Perantara Cloudflare Worker** (sembunyikan kunci API) — perlu akun gratis | ⬜ | ⬜ | — |
+| K03 | i. **IndexedDB** — penyimpanan data lokal (dikerjakan dulu, keputusan Bapak) | ✅ | ✅ | 2 Okt 2026 |
+| K03 | j. Form isian data client (tambah/ubah/hapus lokasi) — K02 g | ✅ | ✅ | 2 Okt 2026 |
+| K03 | e. Sambungkan aplikasi ke database cloud (cara aman) | ⬜ | ⬜ | — |
+| K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_

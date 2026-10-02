@@ -37,6 +37,11 @@
     <span></span><span></span><span></span>
   </button>
 
+  <!-- ================= TOMBOL TAMBAH LOKASI ================= -->
+  <button class="tombol-tambah" id="tombolTambah" aria-label="Tambah lokasi">
+    <span class="tombol-tambah-ikon">+</span> Tambah Lokasi
+  </button>
+
   <!-- ================= BAR KATEGORI (bawah) ================= -->
   <nav class="kategori" id="kategori" aria-label="Kategori lokasi"></nav>
 
@@ -60,9 +65,51 @@
 
   <div class="tirai" id="tirai"></div>
 
+  <!-- ================= FORM ISIAN DATA ================= -->
+  <div class="form-lokasi" id="formLokasi" aria-hidden="true">
+    <div class="form-kotak">
+      <button class="form-tutup" id="formTutup" aria-label="Tutup form">×</button>
+      <h2 class="form-judul" id="formJudul">Tambah Lokasi Baru</h2>
+
+      <label class="form-label">Nama lokasi</label>
+      <input class="form-input" id="fNama" type="text" placeholder="Contoh: Yayasan Cahaya Nusantara" />
+
+      <label class="form-label">Wilayah (provinsi / kabupaten / kota)</label>
+      <input class="form-input" id="fWilayah" type="text" placeholder="Contoh: Jakarta Pusat, DKI Jakarta" />
+
+      <label class="form-label">Kategori</label>
+      <select class="form-input" id="fKategori"></select>
+
+      <div class="form-baris2">
+        <div>
+          <label class="form-label">Bujur (lon)</label>
+          <input class="form-input" id="fLon" type="number" step="0.0001" placeholder="106.83" />
+        </div>
+        <div>
+          <label class="form-label">Lintang (lat)</label>
+          <input class="form-input" id="fLat" type="number" step="0.0001" placeholder="-6.18" />
+        </div>
+      </div>
+
+      <label class="form-label">Inisial penanda (2 huruf)</label>
+      <input class="form-input" id="fInisial" type="text" maxlength="3" placeholder="CN" />
+
+      <label class="form-label">Keterangan (satu per baris, format: Nama = Isi)</label>
+      <textarea class="form-input form-area" id="fRincian" rows="5" placeholder="Berdiri = 2015&#10;Bidang = Pendidikan anak"></textarea>
+      <button class="form-tombol-kecil" id="tombolRincian" type="button">+ Tambah baris keterangan</button>
+
+      <div class="form-aksi">
+        <button class="form-tombol form-tombol-hapus" id="formHapus" type="button">Hapus</button>
+        <button class="form-tombol form-tombol-batal" id="formBatal" type="button">Batal</button>
+        <button class="form-tombol form-tombol-simpan" id="formSimpan" type="button">Simpan</button>
+      </div>
+    </div>
+  </div>
+
   <script src="data/negara-dunia.js"></script>
   <script src="data/peta-indonesia.js"></script>
   <script src="data/contoh-lokasi.js"></script>
+  <script src="js/penyimpanan.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

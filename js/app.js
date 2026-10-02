@@ -1,6 +1,7 @@
 /* ============================================================
-   PETA INDONESIA — Logika antarmuka (Tahap 1)
-   Tanpa server, tanpa internet. Semua berjalan di peramban.
+   PETA INDONESIA — Logika antarmuka
+   Data lokasi disimpan di IndexedDB (tidak hilang saat ditutup).
+   Peta digambar dari data batas provinsi asli (data/peta-indonesia.js).
    ============================================================ */
 
 (function () {
@@ -24,6 +25,21 @@
   const laci = document.getElementById("laci");
   const laciTutup = document.getElementById("laciTutup");
   const tirai = document.getElementById("tirai");
+  const tombolTambah = document.getElementById("tombolTambah");
+  const formLokasi = document.getElementById("formLokasi");
+  const formJudul = document.getElementById("formJudul");
+  const formTutup = document.getElementById("formTutup");
+  const formBatal = document.getElementById("formBatal");
+  const formSimpan = document.getElementById("formSimpan");
+  const formHapus = document.getElementById("formHapus");
+  const fNama = document.getElementById("fNama");
+  const fWilayah = document.getElementById("fWilayah");
+  const fKategori = document.getElementById("fKategori");
+  const fLon = document.getElementById("fLon");
+  const fLat = document.getElementById("fLat");
+  const fInisial = document.getElementById("fInisial");
+  const fRincian = document.getElementById("fRincian");
+  const tombolRincian = document.getElementById("tombolRincian");
 
   // ---------- Ukuran kanvas peta ----------
   const VB_W = 1000;
@@ -34,6 +50,8 @@
   let cariTeks = "";
   let idTerpilih = null;
   let proyeksi = null;
+  let daftarLokasi = [];
+  let idSedangDiubah = null;
 
   // ---------- Bantu ----------
   function inisialDari(nama) {
@@ -150,7 +168,7 @@
   // ---------- Gambar penanda ----------
   function gambarPenanda() {
     lapisPenanda.innerHTML = "";
-    CONTOH_LOKASI.filter(cocok).forEach((lokasi) => {
+    daftarLokasi.filter(cocok).forEach((lokasi) => {
       const p = proyek(lokasi.lon, lokasi.lat);
 
       const g = document.createElementNS(NS, "g");
@@ -198,7 +216,7 @@
 
   // ---------- Panel rincian ----------
   function bukaPanel(id) {
-    const lokasi = CONTOH_LOKASI.find((l) => l.id === id);
+    const lokasi = daftarLokasi.find((l) => l.id === id);
     if (!lokasi) return;
     idTerpilih = id;
 
@@ -219,7 +237,13 @@
       <h2 class="panel-nama">${lokasi.nama}</h2>
       <p class="panel-wilayah">${lokasi.wilayah}</p>
       ${baris}
+      <div class="panel-aksi">
+        <button class="tombol-aksi" id="aksiUbah">Ubah data</button>
+      </div>
     `;
+
+    const aksiUbah = document.getElementById("aksiUbah");
+    if (aksiUbah) aksiUbah.addEventListener("click", () => bukaForm(id));
 
     panel.classList.add("terbuka");
     panel.setAttribute("aria-hidden", "false");
@@ -260,6 +284,97 @@
     tirai.classList.remove("tampil");
   }
 
+  // ---------- Form isian data ----------
+  function isiPilihanKategori() {
+    fKategori.innerHTML = "";
+    KATEGORI.filter((k) => k !== "Semua").forEach((k) => {
+      const opt = document.createElement("option");
+      opt.value = k;
+      opt.textContent = k;
+      fKategori.appendChild(opt);
+    });
+  }
+
+  function bukaForm(id) {
+    idSedangDiubah = id || null;
+    const lokasi = id ? daftarLokasi.find((l) => l.id === id) : null;
+
+    formJudul.textContent = lokasi ? "Ubah Data Lokasi" : "Tambah Lokasi Baru";
+    fNama.value = lokasi ? lokasi.nama : "";
+    fWilayah.value = lokasi ? lokasi.wilayah : "";
+    fKategori.value = lokasi ? lokasi.kategori : KATEGORI[1];
+    fLon.value = lokasi ? lokasi.lon : "";
+    fLat.value = lokasi ? lokasi.lat : "";
+    fInisial.value = lokasi ? (lokasi.inisial || "") : "";
+    fRincian.value = lokasi && lokasi.rincian
+      ? lokasi.rincian.map((r) => r.label + " = " + r.nilai).join("\n")
+      : "";
+    formHapus.style.display = lokasi ? "block" : "none";
+
+    formLokasi.classList.add("terbuka");
+    formLokasi.setAttribute("aria-hidden", "false");
+    fNama.focus();
+  }
+
+  function tutupForm() {
+    formLokasi.classList.remove("terbuka");
+    formLokasi.setAttribute("aria-hidden", "true");
+    idSedangDiubah = null;
+  }
+
+  function bacaRincian(teks) {
+    return teks
+      .split("\n")
+      .map((b) => b.trim())
+      .filter((b) => b.includes("="))
+      .map((b) => {
+        const i = b.indexOf("=");
+        return { label: b.slice(0, i).trim(), nilai: b.slice(i + 1).trim() };
+      });
+  }
+
+  function simpanForm() {
+    const nama = fNama.value.trim();
+    if (!nama) {
+      alert("Nama lokasi belum diisi.");
+      fNama.focus();
+      return;
+    }
+    const lon = parseFloat(fLon.value);
+    const lat = parseFloat(fLat.value);
+    if (isNaN(lon) || isNaN(lat)) {
+      alert("Koordinat (bujur & lintang) belum benar. Contoh: 106.83 dan -6.18");
+      return;
+    }
+
+    const data = {
+      id: idSedangDiubah || Penyimpanan.idBaru(),
+      nama: nama,
+      wilayah: fWilayah.value.trim(),
+      kategori: fKategori.value,
+      lon: lon,
+      lat: lat,
+      inisial: fInisial.value.trim(),
+      gambar: "",
+      rincian: bacaRincian(fRincian.value)
+    };
+
+    Penyimpanan.simpan(data).then(() => {
+      tutupForm();
+      muatUlang();
+    });
+  }
+
+  function hapusLokasi() {
+    if (!idSedangDiubah) return;
+    if (!confirm("Hapus lokasi ini? Data akan hilang.")) return;
+    Penyimpanan.hapus(idSedangDiubah).then(() => {
+      tutupForm();
+      tutupPanel();
+      muatUlang();
+    });
+  }
+
   // ---------- Pencarian ----------
   kotakCari.addEventListener("input", (e) => {
     cariTeks = e.target.value;
@@ -279,16 +394,41 @@
   tombolMenu.addEventListener("click", bukaLaci);
   laciTutup.addEventListener("click", tutupLaci);
   tirai.addEventListener("click", tutupLaci);
+  tombolTambah.addEventListener("click", () => bukaForm(null));
+  formTutup.addEventListener("click", tutupForm);
+  formBatal.addEventListener("click", tutupForm);
+  formSimpan.addEventListener("click", simpanForm);
+  formHapus.addEventListener("click", hapusLokasi);
+  tombolRincian.addEventListener("click", () => {
+    fRincian.value += (fRincian.value ? "\n" : "") + "Keterangan = Isi di sini";
+    fRincian.focus();
+  });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       tutupPanel();
       tutupLaci();
+      tutupForm();
     }
   });
+
+  // ---------- Muat ulang data ----------
+  function muatUlang() {
+    return Penyimpanan.ambilSemua().then((data) => {
+      daftarLokasi = data;
+      gambarPenanda();
+    });
+  }
 
   // ---------- Mulai ----------
   gambarPeta();
   gambarKategori();
-  gambarPenanda();
+  isiPilihanKategori();
+  Penyimpanan.isiAwalJikaKosong()
+    .then(() => muatUlang())
+    .catch((e) => {
+      console.error("Gagal memuat data:", e);
+      daftarLokasi = typeof CONTOH_LOKASI !== "undefined" ? CONTOH_LOKASI : [];
+      gambarPenanda();
+    });
 })();

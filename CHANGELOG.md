@@ -4,7 +4,20 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — 💾 PENYIMPANAN DATA (IndexedDB) + FORM ISIAN
 
+**Bapak kini bisa mengisi data sendiri — dan data tidak hilang.**
+
+- Dibuat `js/penyimpanan.js` — penyimpanan **IndexedDB** (data di peramban, tidak hilang saat ditutup).
+- Dibuat **form isian data**: tombol **"+ Tambah Lokasi"** (kanan atas).
+- Form bisa: **tambah** lokasi baru · **ubah** data (tombol "Ubah data" di panel) · **hapus**.
+- Isian: nama · wilayah · kategori · bujur/lintang · inisial · keterangan (format `Nama = Isi`).
+- Data contoh (8 lokasi) otomatis dimasukkan saat pertama kali dibuka.
+- Uji: tambah lokasi → 9 penanda · **muat ulang halaman → data tetap ada** · ubah · hapus · batal — semua bekerja.
+- ⚠️ **Catatan:** data tersimpan **per perangkat** (PC & HP terpisah). Pindah data antar
+  perangkat menunggu **Layerbase** (K03 e).
+
+---
 ## 2 Oktober 2026 — � APLIKASI ONLINE (GitHub Pages)
 
 **Aplikasi kini bisa dibuka lewat internet — dari PC maupun HP.**
