@@ -16,9 +16,21 @@ Peta sudah memakai **bentuk Indonesia asli** — **38 provinsi lengkap** (termas
 
 ## 0b. 🖥️ Cara membuka aplikasi
 
+### 🌐 Di PC dan HP — lewat internet (cara utama)
+
+Buka alamat ini di peramban (Chrome/Edge):
+
+> **https://suwandhih.github.io/DataPeta/**
+
+Bisa dibuka dari **PC maupun HP**, di mana saja, asal ada internet.
+
+### 💻 Di PC — dari berkas (tanpa internet)
+
 1. Buka folder `C:\data\DataPeta`.
 2. Klik dua kali berkas **`index.html`**.
-3. Aplikasi terbuka di peramban (Chrome/Edge). **Tidak perlu internet.**
+
+⚠️ **Catatan:** cara dari berkas ini **hanya untuk melihat peta**. Nanti saat data
+sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas).
 
 ### Yang bisa dicoba sekarang
 

@@ -5,7 +5,23 @@
 
 ---
 
-## 2 Oktober 2026 — 🌏 38 PROVINSI + NEGARA TETANGGA
+## 2 Oktober 2026 — � APLIKASI ONLINE (GitHub Pages)
+
+**Aplikasi kini bisa dibuka lewat internet — dari PC maupun HP.**
+
+- Dibuat repositori GitHub: `github.com/suwandhih/DataPeta` (Public).
+- Berkas diunggah ke GitHub (git).
+- **GitHub Pages diaktifkan** (branch `main`, folder root).
+- 🌐 **Alamat aplikasi:** **https://suwandhih.github.io/DataPeta/**
+- **Aturan F3 diubah** (keputusan Bapak): aplikasi kini **butuh internet** karena
+  akan memakai database cloud (Layerbase). Dibuka lewat **alamat web**, bukan dari berkas.
+- Ditambah aturan **F3b**: cara buka di HP = lewat alamat web (bukan My Files).
+- Uji: aplikasi terbuka di alamat web, peta 38 provinsi tampil, penanda & panel normal.
+- ⚠️ **Belum:** database Layerbase belum dibuat & belum disambungkan (K03 c, d).
+
+---
+
+## 2 Oktober 2026 — �🌏 38 PROVINSI + NEGARA TETANGGA
 
 **Peta dilengkapi: 38 provinsi (data baru) + negara tetangga sebagai latar.**
 

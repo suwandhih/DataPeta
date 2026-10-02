@@ -66,8 +66,11 @@ Peta Indonesia
 ### 3.1 Keputusan (2 Okt 2026)
 
 - **Peta dasar = OFFLINE** (keputusan Bapak). Tidak pakai Google Maps.
-- **Teknologi = HTML + CSS + JavaScript murni** — tanpa server, tanpa internet.
+- **Teknologi = HTML + CSS + JavaScript murni** — tanpa server.
 - **Gaya UI** = bersih & minimalis, terinspirasi acuan `chngmkr.com/map`.
+- **Penyimpanan data = Layerbase cloud** (keputusan Bapak) ⇒ aplikasi **butuh internet**.
+- **Hosting = GitHub Pages** ⇒ **https://suwandhih.github.io/DataPeta/**
+- **Peta & data peta tetap lokal** (offline); hanya **data isian** yang di cloud.
 
 ### 3.2 Struktur berkas aplikasi
 
