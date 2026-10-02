@@ -3,6 +3,27 @@
 > Rekam **semua kejadian** di aplikasi: apa yang berubah, kapan, dan kenapa.
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
+---## 2 Oktober 2026 — 🏝️ **KEPULAUAN SERIBU DITAMBAHKAN**
+
+**Order Bapak:** *"iya pulau 1000 perlu ditambahkan coba cari sumber yg lain"*
+
+**Sumber data baru:** **geoBoundaries** (gbOpen IDN ADM2)
+- Data asli: **Badan Pusat Statistik (BPS)** + WFP + OCHA ROAP
+- Lisensi: CC BY 3.0 IGO
+- Berkas: `data/kepulauan-seribu.js` (7,5 KB)
+
+**Yang dikerjakan:**
+- Batas wilayah **Kepulauan Seribu** (106,39–106,85 BT · 5,20–6,04 LS) digambar di peta.
+- Nama **"Kepulauan Seribu"** tampil permanen, ditaruh di bagian **utara** gugusan
+  supaya tidak menutupi nama kota Jakarta.
+- Nama ini **wajib tampil** — kalau tidak ada tempat bebas, dipakai tempat yang
+  paling sedikit bertabrakan.
+- Wilayah bisa **diklik** seperti provinsi lain.
+- Alat pembuat: `alat/buat-seribu.js`.
+
+**Hasil uji:** Kepulauan Seribu tergambar (72 titik) · nama tampil di semua tingkat
+zoom · tidak menutupi nama kota. ✅
+
 ---
 ## 2 Oktober 2026 — � **PENTING: berkas rahasia terunggah ke GitHub**
 

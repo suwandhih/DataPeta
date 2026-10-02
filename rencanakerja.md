@@ -67,7 +67,8 @@
 | K04 | d. Unduh **data wilayah asli** (BPS/BIG) — bertahap | ⬜ | ⬜ | — |
 | **K07** | **Kepulauan Seribu tidak tampak** (temuan Bapak, 2 Okt 2026) | | | |
 | K07 | a. Periksa sebab — **dinilai**: data batas DKI Jakarta hanya daratan; Natural Earth tidak memuat Kepulauan Seribu | ✅ | ✅ | 2 Okt 2026 |
-| K07 | b. ⚪ **Keputusan Bapak**: perlu ditambahkan? (perlu sumber data lain, mis. BIG) | ⚪ | ⚪ | — |
+| K07 | b. Cari sumber data lain → **geoBoundaries** (data asli BPS) | ✅ | ✅ | 2 Okt 2026 |
+| K07 | c. Gambar batas Kepulauan Seribu di peta + nama permanen | ✅ | ✅ | 2 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_

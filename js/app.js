@@ -274,9 +274,21 @@
       });
     });
 
+    // Kepulauan Seribu — nama ditampilkan di atas gugusannya.
+    // (Tidak masuk daftar PULAU karena datanya dari sumber lain.)
+    // Nama ini WAJIB tampil (permintaan Bapak), jadi kalau tidak ada tempat
+    // yang benar-benar bebas, dipakai tempat yang paling sedikit bertabrakan.
+    const seribu = [];
+    if (typeof KEPULAUAN_SERIBU !== "undefined") {
+      KEPULAUAN_SERIBU.forEach((w) => {
+        const titik = titikCalonGeometri(w.g);
+        if (titik.length) seribu.push({ n: w.n, k: titik, wajib: true });
+      });
+    }
+
     const terpakai = [];
 
-    PULAU.forEach((pulau) => {
+    [...PULAU, ...seribu].forEach((pulau) => {
       const besarPulau = pulau.r <= 3;
       const ukuran = besarPulau ? HURUF.pulauBesar : HURUF.pulau;
       const spasi = besarPulau ? SPASI.pulauBesar : SPASI.pulau;
@@ -289,9 +301,12 @@
       if (!calon.length) return;
 
       // Pilih tempat yang TIDAK menutupi apa pun. Kalau tidak ada,
-      // nama pulau tidak ditampilkan (nama kota lebih penting).
+      // nama pulau tidak ditampilkan (nama kota lebih penting) —
+      // kecuali nama yang ditandai "wajib".
       let terpilih = null;
       let skorTerbaik = -1;
+      let cadangan = null;
+      let skorCadangan = -1;
 
       calon.forEach((s) => {
         const kotak = { kiri: s.x - u.w / 2, kanan: s.x + u.w / 2, atas: s.y - u.h / 2, bawah: s.y + u.h / 2 };
@@ -300,32 +315,40 @@
         if (kotak.kiri < 4 || kotak.kanan > VB_W - 4) return;
         if (kotak.atas < 4 || kotak.bawah > VB_H - 4) return;
 
-        for (const k of rintangan) {
-          if (bentrok({ kiri: kotak.kiri - 6, kanan: kotak.kanan + 6, atas: kotak.atas - 4, bawah: kotak.bawah + 4 }, k)) return;
-        }
-        for (const k of terpakai) {
-          if (bentrok({ kiri: kotak.kiri - 10, kanan: kotak.kanan + 10, atas: kotak.atas - 7, bawah: kotak.bawah + 7 }, k)) return;
-        }
+        // Hitung luas tabrakan (untuk cadangan kalau nama wajib tampil)
+        let luas = 0;
+        const hitung = (k) => {
+          const dx = Math.min(kotak.kanan, k.kanan) - Math.max(kotak.kiri, k.kiri);
+          const dy = Math.min(kotak.bawah, k.bawah) - Math.max(kotak.atas, k.atas);
+          if (dx > 0 && dy > 0) luas += dx * dy;
+        };
+        rintangan.forEach(hitung);
+        terpakai.forEach(hitung);
 
-        // Skor: makin tengah (dekat pusat pulau) & makin jauh dari pulau lain, makin baik
-        const skor = calon.length - calon.indexOf(s);
-
-        let dekatPulau = Infinity;
-        titikPulau.forEach((k) => {
-          if (k.n === pulau.n) return;
-          const dx = s.x - k.x;
-          const dy = s.y - k.y;
-          const d = Math.sqrt(dx * dx + dy * dy);
-          if (d < dekatPulau) dekatPulau = d;
-        });
-
-        const nilai = skor + Math.min(dekatPulau, 60) / 10;
-        if (nilai > skorTerbaik) {
-          skorTerbaik = nilai;
-          terpilih = s;
+        if (luas === 0) {
+          // Tempat bebas — pilih yang paling tengah
+          const skor = calon.length - calon.indexOf(s);
+          let dekatPulau = Infinity;
+          titikPulau.forEach((k) => {
+            if (k.n === pulau.n) return;
+            const dx = s.x - k.x;
+            const dy = s.y - k.y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < dekatPulau) dekatPulau = d;
+          });
+          const nilai = skor + Math.min(dekatPulau, 60) / 10;
+          if (nilai > skorTerbaik) {
+            skorTerbaik = nilai;
+            terpilih = s;
+          }
+        } else if (luas < skorCadangan || skorCadangan < 0) {
+          // Tempat paling sedikit bertabrakan (cadangan)
+          skorCadangan = luas;
+          cadangan = s;
         }
       });
 
+      if (!terpilih && pulau.wajib) terpilih = cadangan;
       if (!terpilih) return;
       terpakai.push({ kiri: terpilih.x - u.w / 2, kanan: terpilih.x + u.w / 2, atas: terpilih.y - u.h / 2, bawah: terpilih.y + u.h / 2 });
 
@@ -503,6 +526,43 @@
     return "";
   }
 
+  // Beberapa titik calon penempatan nama dari sebuah geometri.
+  // Dipakai Kepulauan Seribu — datanya berupa batas wilayah, bukan titik.
+  // Diberi beberapa pilihan (tengah, utara, selatan, barat, timur) supaya
+  // nama bisa dihindarkan dari nama kota di sekitarnya.
+  function titikCalonGeometri(geom) {
+    let mnx = Infinity, mxx = -Infinity, mny = Infinity, mxy = -Infinity;
+    const telusuri = (c) => {
+      if (typeof c[0] === "number") {
+        if (c[0] < mnx) mnx = c[0];
+        if (c[0] > mxx) mxx = c[0];
+        if (c[1] < mny) mny = c[1];
+        if (c[1] > mxy) mxy = c[1];
+        return;
+      }
+      c.forEach(telusuri);
+    };
+    telusuri(geom.coordinates);
+    if (mnx === Infinity) return [];
+
+    const cx = (mnx + mxx) / 2;
+    const cy = (mny + mxy) / 2;
+    const dx = (mxx - mnx) / 2;
+    const dy = (mxy - mny) / 2;
+
+    // Urutan: bagian UTARA dulu (jauh dari kota Jakarta di selatan),
+    // lalu menjauh ke tengah & selatan.
+    return [
+      [cx, mxy - dy * 0.15],          // utara
+      [cx, mxy - dy * 0.35],          // agak ke utara
+      [mxx - dx * 0.2, mxy - dy * 0.15],  // utara-timur
+      [mnx + dx * 0.2, mxy - dy * 0.15],  // utara-barat
+      [cx, cy],                       // tengah
+      [cx, mny + dy * 0.25],          // selatan
+      [cx, mny]                       // paling selatan
+    ];
+  }
+
   // ---------- Gambar sungai, danau, gunung (kelengkapan peta) ----------
   function gambarSungai() {
     if (typeof SUNGAI === "undefined") return;
@@ -611,6 +671,19 @@
       path.addEventListener("click", () => bukaPanelProvinsi(nama));
       lapisProvinsi.appendChild(path);
     });
+
+    // Kepulauan Seribu — diambil dari sumber lain (BPS), karena data batas
+    // 38 provinsi hanya memuat daratan DKI Jakarta.
+    if (typeof KEPULAUAN_SERIBU !== "undefined") {
+      KEPULAUAN_SERIBU.forEach((w) => {
+        const path = document.createElementNS(NS, "path");
+        path.setAttribute("d", geometriKePath(w.g));
+        path.setAttribute("class", "provinsi");
+        path.dataset.nama = w.n;
+        path.addEventListener("click", () => bukaPanelProvinsi(w.n));
+        lapisProvinsi.appendChild(path);
+      });
+    }
 
     labelPeta.textContent =
       PETA_INDONESIA.features.length + " provinsi · data batas asli";
