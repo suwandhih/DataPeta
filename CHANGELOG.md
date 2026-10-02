@@ -4,7 +4,50 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 2 Oktober 2026 — 🗺️ **DAFTAR WILAYAH: 38 PROVINSI SAMPAI DESA**
+## 2 Oktober 2026 — � **PENANDA LOKASI & KATEGORI (K09)**
+
+**Order Bapak:** *"penambahan fitur dot lokasi"* — 4 butir + 1 perbaikan tampilan.
+
+**a. Titik & nama lokasi dari daftar wilayah**
+- Pilih wilayah di daftar → **titik + nama lokasi langsung muncul di peta** (titik sementara,
+  garis putus-putus, nama miring).
+- Nama mengikuti yang Bapak tulis di kolom "Nama lokasi" — berubah otomatis saat diketik.
+- Tekan **Batal** → titik sementara **hilang**. Tekan **Simpan** → titik jadi tetap.
+
+**b. Kategori bisa ditambah / diubah**
+- Di menu ☰ ada bagian **"Pengaturan — Kategori"**.
+- **Tambah** kategori baru lewat kotak isian + tombol Tambah.
+- **Klik nama kategori** → ubah namanya. Lokasi yang memakai kategori itu **ikut berubah**.
+- **Tanda ×** → hapus kategori. Kalau masih dipakai lokasi → **ditolak** dengan pesan
+  ("masih dipakai 2 lokasi"), sesuai permintaan Bapak.
+- Daftar kategori disimpan di peramban → tidak hilang saat ditutup.
+
+**c. Tombol [Member]**
+- Tombol baru di baris atas, di sebelah **[+ Tambah Lokasi]** dan **[☰]**.
+- Isinya **daftar semua lokasi yang sudah disimpan**, diurutkan menurut nama.
+- Tiap baris menampilkan warna kategori, nama lokasi, dan wilayahnya.
+
+**d. Klik lokasi di daftar member**
+- Peta **pindah + perbesar** ke lokasi itu.
+- Titiknya **berkedip merah** ±4 detik → mudah terlihat mana lokasi tersimpan.
+
+**e. Lingkaran penanda diperkecil**
+- Sebelumnya radius 10 (terlalu besar) → sekarang **radius 5** (setengahnya).
+- Huruf di dalamnya ikut menyesuaikan (4,5 px).
+
+**Tambahan:**
+- **Tiap kategori punya warna sendiri** (biru, hijau, merah, oranye, ungu, …) — titik di peta
+  dan tombol kategori memakai warna yang sama.
+- **Nama lokasi tampil di samping titik** supaya jelas titik itu lokasi apa.
+- Nama kota **menghindar** dari nama lokasi — tidak saling menimpa.
+
+**Hasil uji:** titik radius 5 · 8 nama lokasi tampil · 0 tumpang tindih dengan nama kota ·
+pratinjau muncul saat pilih wilayah & hilang saat Batal · member 8 baris · klik member →
+peta pindah (3,2× → 6×) + kedip merah (animasi `kedipMerah` 0,5 s) · tambah kategori jadi 6 ·
+hapus kategori terpakai ditolak · tanpa error ✅
+
+---
+## 2 Oktober 2026 — �🗺️ **DAFTAR WILAYAH: 38 PROVINSI SAMPAI DESA**
 
 **Order Bapak:** *"daftar lokasi2 ketika di klik di fokuskan pada provinsi atau kota
 atau desa tergantung daftar yg dipilih.. setiap wilayah di pilih mengerakkan otomatis
