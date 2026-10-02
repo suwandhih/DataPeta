@@ -21,7 +21,26 @@
 
 ---
 
-## 2 Oktober 2026 — 🏝️ **PULAU KEPULAUAN SERIBU: BENTUK ASLI, BUKAN TITIK**
+## 2 Oktober 2026 — � **WARNA PULAU KEPULAUAN SERIBU DISAMAKAN**
+
+**Masalah Bapak:** *"biar pulau seperti awal saja.. diberi warna hijau .. sangat tidak
+seimbang dengan pulau2 lainnya.. jadi jelek"*
+
+**Penyebab:** garis tepi pulau diberi **warna hijau** supaya kelihatan — tapi jadi
+**mencolok** dan tidak seimbang dengan wilayah lain yang abu-abu.
+
+**Perbaikan:**
+- Garis hijau **dihapus**.
+- Warna pulau kini **sama persis** dengan provinsi lain: isi abu-abu `#c9d0d9`,
+  garis tepi putih tipis `0.6`.
+- Bentuk asli pulau tetap digambar (tidak kembali jadi titik).
+
+**Hasil uji:** warna pulau kecil = warna provinsi (abu-abu + garis putih 0,6) ·
+0 titik hijau · tanpa error ✅
+
+---
+
+## 2 Oktober 2026 — �🏝️ **PULAU KEPULAUAN SERIBU: BENTUK ASLI, BUKAN TITIK**
 
 **Masalah Bapak:** *"belum terlihat pulau 1000"* → lalu *"tolong bulat2 hijau
 dihilangkan .. tidak bisa liat pulaunya .. tujuan bulat2 hijau itu apa ?"*

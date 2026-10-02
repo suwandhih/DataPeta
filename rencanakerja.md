@@ -70,7 +70,8 @@
 | K07 | b. Cari sumber data lain → **geoBoundaries** (data asli BPS) | ✅ | ✅ | 2 Okt 2026 |
 | K07 | c. Gambar batas Kepulauan Seribu di peta + nama permanen | ✅ | ✅ | 2 Okt 2026 |
 | K07 | d. 🐛 Bapak: *"belum terlihat pulau 1000"* → **dinilai**: 72 pulau hanya 0,1–3,7 km (< 1 piksel) | ✅ | ✅ | 2 Okt 2026 |
-| K07 | e. 🐛 Bapak: *"bulat2 hijau dihilangkan .. tidak bisa liat pulaunya"* → titik hijau **dihapus**, diganti **bentuk asli pulau** dengan tebal garis tetap di layar | ✅ | ✅ | 2 Okt 2026 |
+| K07 | e. 🐛 Bapak: *"bulat2 hijau dihilangkan .. tidak bisa liat pulaunya"* → titik hijau **dihapus**, diganti **bentuk asli pulau** | ✅ | ✅ | 2 Okt 2026 |
+| K07 | f. 🎨 Bapak: *"diberi warna hijau .. sangat tidak seimbang .. jadi jelek"* → garis hijau **dihapus**, warna disamakan dengan provinsi lain | ✅ | ✅ | 2 Okt 2026 |
 | **K08** | **Daftar wilayah + form panel samping** (order Bapak, 2 Okt 2026) | | | |
 | K08 | a. Pelajari proyek acuan `Peta-Indonesia-1berkas.html` | ✅ | ✅ | 2 Okt 2026 |
 | K08 | b. **Form [+ Tambah Lokasi] jadi panel samping** (seperti menu ☰) — peta tetap terlihat | ✅ | ✅ | 2 Okt 2026 |
