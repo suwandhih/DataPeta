@@ -4,7 +4,39 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 2 Oktober 2026 — � **FORM TAMBAH LOKASI JADI PANEL SAMPING**
+## 2 Oktober 2026 — 🗺️ **DAFTAR WILAYAH: 38 PROVINSI SAMPAI DESA**
+
+**Order Bapak:** *"daftar lokasi2 ketika di klik di fokuskan pada provinsi atau kota
+atau desa tergantung daftar yg dipilih.. setiap wilayah di pilih mengerakkan otomatis
+pointer ke lokasi otomatis tinggal di isi"*
+
+**Data wilayah lengkap (baru):**
+- Sumber: **emsifa/api-wilayah-indonesia** (lisensi MIT)
+  - Kode & nama: **Kepmendagri No. 300.2.2-2430 Tahun 2025**
+  - Koordinat: **Badan Informasi Geospasial (BIG)**
+  - Kode pos: cahyadsn/wilayah_kodepos
+- Jumlah: **38 provinsi · 514 kabupaten/kota · 7.285 kecamatan · 83.762 desa/kelurahan**
+- Disimpan di `data/wilayah/` — dimuat **bertahap** supaya aplikasi tetap ringan:
+  - `provinsi.js` + `kabkota.js` (26 KB) → ikut saat halaman dibuka
+  - `kecamatan/{provinsi}.js` (313 KB, 38 berkas) → dimuat saat provinsi dibuka
+  - `desa/{kabupaten}.js` (4,7 MB, 514 berkas) → dimuat saat kabupaten dibuka
+- Alat pembuat: `alat/buat-wilayah.js`
+
+**Yang dikerjakan:**
+- Menu ☰ kini punya bagian **"Daftar Wilayah"**:
+  - **Klik nama wilayah** → peta **geser + perbesar** ke wilayah itu, lalu **form isian
+    terbuka** dengan kolom Wilayah, Bujur, dan Lintang **sudah terisi otomatis**.
+  - **Klik tanda ›** → masuk ke wilayah di bawahnya (provinsi → kab/kota → kecamatan → desa).
+  - **Jejak tingkatan** di atas (Indonesia › Jawa Barat › Kota Bandung) bisa diklik untuk kembali.
+  - **Kotak cari wilayah** untuk menyaring nama.
+- Perbesaran menyesuaikan tingkatan: provinsi 3,2× · kab/kota 5,5× · kecamatan 8× · desa 11×.
+
+**Hasil uji:** 38 provinsi tampil · Jawa Barat → 27 kab/kota · Kota Bandung → 30 kecamatan ·
+Sukasari → 4 desa · klik wilayah menggeser peta + mengisi form otomatis · cari "papua"
+menemukan 6 provinsi · tanpa error ✅
+
+---
+## 2 Oktober 2026 — 🧩 **FORM TAMBAH LOKASI JADI PANEL SAMPING**
 
 **Order Bapak:** *"[+ tambah lokasi] dibuat form seperti [☰]. jangan tengah seperti sekarang..
  supaya peta pasti terlihat"*
@@ -21,7 +53,7 @@
 
 ---
 
-## 2 Oktober 2026 — � **WARNA PULAU KEPULAUAN SERIBU DISAMAKAN**
+## 2 Oktober 2026 — 🎨 **WARNA PULAU KEPULAUAN SERIBU DISAMAKAN**
 
 **Masalah Bapak:** *"biar pulau seperti awal saja.. diberi warna hijau .. sangat tidak
 seimbang dengan pulau2 lainnya.. jadi jelek"*

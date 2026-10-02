@@ -62,9 +62,9 @@
 
 | **K04** | **Nama kota utama + daftar wilayah** (order Bapak, 2 Okt 2026) | | | |
 | K04 | a. **38 ibu kota provinsi** tampil permanen di peta | ⬜ | ⬜ | — |
-| K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) | ⬜ | ⬜ | — |
-| K04 | c. Klik wilayah di daftar → **form isian data** | ⬜ | ⬜ | — |
-| K04 | d. Unduh **data wilayah asli** (BPS/BIG) — bertahap | ⬜ | ⬜ | — |
+| K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) — **dikerjakan sebagai K08 c** | ✅ | ✅ | 2 Okt 2026 |
+| K04 | c. Klik wilayah di daftar → **form isian data** — **dikerjakan sebagai K08 d** | ✅ | ✅ | 2 Okt 2026 |
+| K04 | d. Unduh **data wilayah asli** (BPS/BIG) — **dikerjakan sebagai K08 e** | ✅ | ✅ | 2 Okt 2026 |
 | **K07** | **Kepulauan Seribu tidak tampak** (temuan Bapak, 2 Okt 2026) | | | |
 | K07 | a. Periksa sebab — **dinilai**: data batas DKI Jakarta hanya daratan; Natural Earth tidak memuat Kepulauan Seribu | ✅ | ✅ | 2 Okt 2026 |
 | K07 | b. Cari sumber data lain → **geoBoundaries** (data asli BPS) | ✅ | ✅ | 2 Okt 2026 |
@@ -75,9 +75,9 @@
 | **K08** | **Daftar wilayah + form panel samping** (order Bapak, 2 Okt 2026) | | | |
 | K08 | a. Pelajari proyek acuan `Peta-Indonesia-1berkas.html` | ✅ | ✅ | 2 Okt 2026 |
 | K08 | b. **Form [+ Tambah Lokasi] jadi panel samping** (seperti menu ☰) — peta tetap terlihat | ✅ | ✅ | 2 Okt 2026 |
-| K08 | c. **Daftar wilayah** (provinsi → kab/kota → kecamatan → desa) di menu ☰ | ⬜ | ⬜ | — |
-| K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu | ⬜ | ⬜ | — |
-| K08 | e. Unduh **data wilayah lengkap sampai desa** | ⬜ | ⬜ | — |
+| K08 | c. **Daftar wilayah** (provinsi → kab/kota → kecamatan → desa) di menu ☰ | ✅ | ✅ | 2 Okt 2026 |
+| K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu + form terbuka | ✅ | ✅ | 2 Okt 2026 |
+| K08 | e. Unduh **data wilayah lengkap sampai desa** — 38 prov · 514 kab/kota · 7.285 kec · 83.762 desa (sumber Kepmendagri 2025 + BIG) | ✅ | ✅ | 2 Okt 2026 |
 | K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
 
 ### B. ANTREAN KERJA
