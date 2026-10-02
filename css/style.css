@@ -1,0 +1,393 @@
+/* ============================================================
+   PETA INDONESIA — Gaya antarmuka (Tahap 1)
+   Gaya bersih & minimalis, terinspirasi acuan CHNGMKR.
+   Tanpa internet — semua aset lokal.
+   ============================================================ */
+
+:root {
+  --putih: #ffffff;
+  --hitam: #111111;
+  --abu-teks: #6b7280;
+  --abu-garis: #e5e7eb;
+  --abu-latar: #f4f5f7;
+  --bayang: 0 4px 20px rgba(0, 0, 0, 0.10);
+  --bayang-kecil: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 14px;
+  --radius-kecil: 10px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font);
+  color: var(--hitam);
+  background: var(--abu-latar);
+}
+
+/* ================= PETA ================= */
+.peta {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(160deg, #eef1f5 0%, #e3e8ee 100%);
+  overflow: hidden;
+}
+
+.peta-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Negara tetangga (latar) — tanpa kota, hanya bentuk daratan */
+.negara {
+  fill: #eef0f3;
+  stroke: #e2e5e9;
+  stroke-width: 0.4;
+  pointer-events: none;
+}
+
+/* Provinsi */
+.provinsi {
+  fill: #c9d0d9;
+  stroke: #ffffff;
+  stroke-width: 0.6;
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.provinsi:hover { fill: #aab3bf; }
+
+.label-sementara {
+  position: absolute;
+  left: 50%;
+  bottom: 92px;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: var(--abu-teks);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ================= PENANDA (SVG) ================= */
+.penanda { cursor: pointer; }
+
+.penanda-bulat {
+  fill: var(--putih);
+  stroke: var(--putih);
+  stroke-width: 2;
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.25));
+  transition: r 0.15s ease;
+}
+
+.penanda:hover .penanda-bulat { r: 12; }
+
+.penanda.aktif .penanda-bulat {
+  stroke: var(--hitam);
+  stroke-width: 2.5;
+}
+
+.penanda-huruf {
+  font-family: var(--font);
+  font-size: 9px;
+  font-weight: 700;
+  fill: var(--hitam);
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ================= PENCARIAN ================= */
+.pencarian {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 320px;
+  max-width: calc(100vw - 100px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--putih);
+  border-radius: var(--radius);
+  box-shadow: var(--bayang);
+  padding: 10px 14px;
+  z-index: 20;
+}
+
+.pencarian-ikon { width: 18px; height: 18px; color: var(--abu-teks); flex-shrink: 0; }
+
+.pencarian input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--font);
+  color: var(--hitam);
+  background: transparent;
+}
+
+.pencarian input::placeholder { color: var(--abu-teks); }
+
+.pencarian-hapus {
+  border: none;
+  background: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--abu-teks);
+  cursor: pointer;
+  display: none;
+  padding: 0 2px;
+}
+
+.pencarian-hapus.tampil { display: block; }
+
+/* ================= TOMBOL MENU ================= */
+.tombol-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius);
+  background: var(--putih);
+  border: none;
+  box-shadow: var(--bayang);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 20;
+}
+
+.tombol-menu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--hitam);
+  border-radius: 2px;
+}
+
+/* ================= KATEGORI ================= */
+.kategori {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 8px;
+  padding: 14px 20px 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  z-index: 20;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+}
+
+.kategori::-webkit-scrollbar { display: none; }
+
+.kategori-tombol {
+  flex-shrink: 0;
+  border: none;
+  background: var(--putih);
+  color: var(--hitam);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 16px;
+  border-radius: 20px;
+  box-shadow: var(--bayang-kecil);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.kategori-tombol:hover { background: #f0f1f3; }
+
+.kategori-tombol.aktif {
+  background: var(--hitam);
+  color: var(--putih);
+}
+
+/* ================= PANEL RINCIAN ================= */
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  max-width: 90vw;
+  height: 100%;
+  background: var(--putih);
+  box-shadow: -6px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(105%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel.terbuka { transform: translateX(0); }
+
+.panel-tutup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--abu-latar);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--hitam);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.panel-isi { padding: 28px 24px; overflow-y: auto; }
+
+.panel-gambar {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #dfe3e8, #c3c9d1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--putih);
+  margin-bottom: 18px;
+}
+
+.panel-kategori {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--abu-teks);
+  margin-bottom: 6px;
+}
+
+.panel-nama {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.panel-wilayah {
+  font-size: 13px;
+  color: var(--abu-teks);
+  margin: 0 0 18px;
+}
+
+.panel-baris {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--abu-garis);
+  font-size: 14px;
+}
+
+.panel-baris .label { color: var(--abu-teks); }
+.panel-baris .nilai { font-weight: 600; text-align: right; }
+
+.panel-kosong {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--abu-teks);
+  font-size: 14px;
+}
+
+/* ================= LACI MENU ================= */
+.laci {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100%;
+  background: var(--putih);
+  box-shadow: -6px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(105%);
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+  padding: 28px 24px;
+}
+
+.laci.terbuka { transform: translateX(0); }
+
+.laci-tutup {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: var(--abu-latar);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.laci-judul { font-size: 18px; margin: 0 0 20px; }
+
+.laci-daftar { list-style: none; padding: 0; margin: 0; }
+
+.laci-daftar button {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font-family: var(--font);
+  font-size: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--abu-garis);
+  cursor: pointer;
+  color: var(--hitam);
+}
+
+.laci-daftar button:hover { color: var(--abu-teks); }
+
+.laci-catatan {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  font-size: 12px;
+  color: var(--abu-teks);
+}
+
+/* ================= TIRAI ================= */
+.tirai {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+  z-index: 30;
+}
+
+.tirai.tampil { opacity: 1; visibility: visible; }
+
+/* ================= HP ================= */
+@media (max-width: 640px) {
+  .pencarian { width: calc(100vw - 90px); top: 14px; left: 14px; }
+  .tombol-menu { top: 14px; right: 14px; width: 42px; height: 42px; }
+  .kategori { padding: 12px 14px 16px; }
+  .panel { width: 100%; max-width: 100%; }
+  .label-sementara { bottom: 78px; font-size: 10px; }
+}

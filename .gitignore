@@ -1,0 +1,7 @@
+# Folder cadangan — tidak perlu diunggah ke GitHub
+backups/
+
+# Berkas sistem
+Thumbs.db
+desktop.ini
+.DS_Store

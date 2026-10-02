@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peta Indonesia</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= PETA (layar penuh) ================= -->
+  <main class="peta" id="peta">
+    <!-- Peta digambar dari data batas provinsi asli (data/peta-indonesia.js).
+         Semua offline — tanpa internet. -->
+    <svg id="petaSvg" class="peta-svg" viewBox="0 0 1000 400"
+         preserveAspectRatio="xMidYMid meet" aria-label="Peta Indonesia">
+      <g id="lapisNegara"></g>
+      <g id="lapisProvinsi"></g>
+      <g id="lapisPenanda"></g>
+    </svg>
+
+    <div class="label-sementara" id="labelPeta">Memuat peta…</div>
+  </main>
+
+  <!-- ================= KOTAK PENCARIAN (kiri atas) ================= -->
+  <div class="pencarian">
+    <svg class="pencarian-ikon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+      <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    <input type="text" id="kotakCari" placeholder="Cari lokasi di peta…" autocomplete="off" />
+    <button class="pencarian-hapus" id="hapusCari" title="Hapus" aria-label="Hapus pencarian">×</button>
+  </div>
+
+  <!-- ================= TOMBOL MENU (kanan atas) ================= -->
+  <button class="tombol-menu" id="tombolMenu" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ================= BAR KATEGORI (bawah) ================= -->
+  <nav class="kategori" id="kategori" aria-label="Kategori lokasi"></nav>
+
+  <!-- ================= PANEL RINCIAN (kanan) ================= -->
+  <aside class="panel" id="panel" aria-hidden="true">
+    <button class="panel-tutup" id="panelTutup" aria-label="Tutup panel">×</button>
+    <div class="panel-isi" id="panelIsi"></div>
+  </aside>
+
+  <!-- ================= MENU LACI (kanan) ================= -->
+  <aside class="laci" id="laci" aria-hidden="true">
+    <button class="laci-tutup" id="laciTutup" aria-label="Tutup menu">×</button>
+    <h2 class="laci-judul">Peta Indonesia</h2>
+    <ul class="laci-daftar">
+      <li><button data-aksi="tentang">Tentang aplikasi</button></li>
+      <li><button data-aksi="bantuan">Bantuan</button></li>
+      <li><button data-aksi="data">Data lokasi</button></li>
+    </ul>
+    <p class="laci-catatan">Versi kerangka UI · Tahap 1</p>
+  </aside>
+
+  <div class="tirai" id="tirai"></div>
+
+  <script src="data/negara-dunia.js"></script>
+  <script src="data/peta-indonesia.js"></script>
+  <script src="data/contoh-lokasi.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
