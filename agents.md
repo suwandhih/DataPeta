@@ -7,13 +7,14 @@
 
 ---
 
-## 🔴 4 ATURAN PALING PENTING (ingat ini dulu, selalu)
+## 🔴 5 ATURAN PALING PENTING (ingat ini dulu, selalu)
 
 > ⚡ **1. JANGAN mulai apa pun tanpa aba-aba dari Bapak.**
 > ⚡ **2. BACA ULANG seluruh berkas ini SETIAP SESI** — bukan asumsi, bukan "@ mungkin".
 > ⚡ **3. JANGAN sentuh proyek ANodes.** Proyek ini **beda** — beda tujuan, beda peruntukan.
 > **Aturan ANodes hanya dipinjam sebagai Standar disiplin**, ❌ bukan isi proyek.
 > ⚡ **4. JANGAN tinggalkan sampah di script.** → lihat bagian **H**.
+> ⚡ **5. IDE dari AI → SAMPAIKAN dulu, ❌ JANGAN diproses langsung.** → lihat **B12**.
 
 ---
 
@@ -64,6 +65,7 @@
 | **B9** | Kalau ragu understanding permintaan → **TANYA dulu**, jangan menebak. |
 | **B10** | "Rapikan / harusnya sama seperti…" = **perbaiki TINGKAT SETARA**, ❌ bukan menghapus. Permintaan sama ke-2× → **berhenti menambal**, baca ulang. |
 | **B11** | **Tiap selesai satu butir → lapor ke Bapak** sebelum lanjut butir berikutnya. |
+| **B12** | 🔴 **IDE dari AI → SAMPAIKAN dulu ke Bapak, ❌ JANGAN diproses langsung.** Ide disetujui → baru dikerjakan. (Bapak, 2 Okt 2026) |
 
 ---
 
