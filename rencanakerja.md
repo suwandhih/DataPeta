@@ -79,6 +79,12 @@
 | K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu + form terbuka | ✅ | ✅ | 2 Okt 2026 |
 | K08 | e. Unduh **data wilayah lengkap sampai desa** — 38 prov · 514 kab/kota · 7.285 kec · 83.762 desa (sumber Kepmendagri 2025 + BIG) | ✅ | ✅ | 2 Okt 2026 |
 | K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
+| **K09** | **Penanda lokasi & kategori** (order Bapak, 2 Okt 2026) | | | |
+| K09 | a. Pilih wilayah di daftar → **dot + nama lokasi muncul di peta** (pratinjau); Batal = hilang, Simpan = tetap | ⬜ | ⬜ | — |
+| K09 | b. **Kategori bisa ditambah / diubah** — di menu ☰ bagian Pengaturan; kategori yang masih dipakai tidak boleh dihapus | ⬜ | ⬜ | — |
+| K09 | c. Tombol **[member]** di baris atas (sebelah [+ Tambah Lokasi] & [☰]) — daftar lokasi yang sudah disimpan | ⬜ | ⬜ | — |
+| K09 | d. Klik lokasi di daftar member → **peta pindah + dot berkedip merah** beberapa detik | ⬜ | ⬜ | — |
+| K09 | e. 🎨 Lingkaran penanda 2 abjad **terlalu besar** → diperkecil jadi setengah | ⬜ | ⬜ | — |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_

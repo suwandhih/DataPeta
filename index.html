@@ -31,6 +31,8 @@
         <g id="lapisPulauKecil"></g>
         <!-- Nama kota paling atas: supaya tidak tertutup penanda -->
         <g id="lapisNamaKota"></g>
+        <!-- Nama lokasi milik Bapak — paling atas sekali -->
+        <g id="lapisNamaLokasi"></g>
       </g>
     </svg>
 
@@ -63,6 +65,11 @@
     <span class="tombol-tambah-ikon">+</span> Tambah Lokasi
   </button>
 
+  <!-- ================= TOMBOL MEMBER (daftar lokasi tersimpan) ================= -->
+  <button class="tombol-member" id="tombolMember" aria-label="Daftar lokasi tersimpan">
+    <span class="tombol-member-ikon">☰</span> Member
+  </button>
+
   <!-- ================= BAR KATEGORI (bawah) ================= -->
   <nav class="kategori" id="kategori" aria-label="Kategori lokasi"></nav>
 
@@ -93,6 +100,18 @@
       <div class="wilayah-daftar" id="wilayahDaftar"></div>
     </div>
 
+    <!-- Pengaturan: daftar kategori bisa ditambah / diubah Bapak -->
+    <div class="pengaturan">
+      <p class="wilayah-judul">Pengaturan — Kategori</p>
+      <div class="kategori-atur" id="kategoriAtur"></div>
+      <div class="kategori-tambah">
+        <input class="wilayah-cari" id="kategoriBaru" type="text"
+               placeholder="Nama kategori baru…" autocomplete="off" />
+        <button class="kategori-tombol-kecil" id="kategoriTambah">Tambah</button>
+      </div>
+      <p class="kategori-pesan" id="kategoriPesan"></p>
+    </div>
+
     <div class="laci-awan">
       <p class="laci-awan-judul">Data Awan (pindah PC ↔ HP)</p>
       <button class="laci-awan-tombol" id="tombolKirim">↑ Kirim ke Awan</button>
@@ -100,6 +119,14 @@
       <p class="laci-awan-status" id="awanStatus"></p>
     </div>
     <p class="laci-catatan">Versi kerangka UI · Tahap 1</p>
+  </aside>
+
+  <!-- ================= PANEL MEMBER (daftar lokasi tersimpan) ================= -->
+  <aside class="member" id="member" aria-hidden="true">
+    <button class="member-tutup" id="memberTutup" aria-label="Tutup daftar member">×</button>
+    <h2 class="member-judul">Member</h2>
+    <p class="member-catatan">Daftar lokasi yang sudah disimpan. Klik satu → peta pindah & titiknya berkedip merah.</p>
+    <div class="member-daftar" id="memberDaftar"></div>
   </aside>
 
   <div class="tirai" id="tirai"></div>

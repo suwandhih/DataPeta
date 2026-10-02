@@ -5,15 +5,17 @@
    halaman ditutup. Tanpa internet.
    ------------------------------------------------------------
    Nama database : peta-indonesia
-   Tabel (store) : lokasi  (kunci: id)
+   Tabel (store) : lokasi      (kunci: id)   — data lokasi
+                   pengaturan  (kunci: nama) — daftar kategori
    ============================================================ */
 
 const Penyimpanan = (function () {
   "use strict";
 
   const NAMA_DB = "peta-indonesia";
-  const VERSI = 1;
+  const VERSI = 2;
   const STORE = "lokasi";
+  const STORE_ATUR = "pengaturan";
   let db = null;
 
   // ---------- Buka database ----------
@@ -26,6 +28,9 @@ const Penyimpanan = (function () {
         const d = e.target.result;
         if (!d.objectStoreNames.contains(STORE)) {
           d.createObjectStore(STORE, { keyPath: "id" });
+        }
+        if (!d.objectStoreNames.contains(STORE_ATUR)) {
+          d.createObjectStore(STORE_ATUR, { keyPath: "nama" });
         }
       };
 
@@ -99,6 +104,31 @@ const Penyimpanan = (function () {
     });
   }
 
+  // ---------- Pengaturan (daftar kategori) ----------
+  function ambilPengaturan(nama) {
+    return buka().then(
+      (d) =>
+        new Promise((selesai, gagal) => {
+          const tx = d.transaction(STORE_ATUR, "readonly");
+          const req = tx.objectStore(STORE_ATUR).get(nama);
+          req.onsuccess = () => selesai(req.result ? req.result.nilai : null);
+          req.onerror = () => gagal(req.error);
+        })
+    );
+  }
+
+  function simpanPengaturan(nama, nilai) {
+    return buka().then(
+      (d) =>
+        new Promise((selesai, gagal) => {
+          const tx = d.transaction(STORE_ATUR, "readwrite");
+          const req = tx.objectStore(STORE_ATUR).put({ nama: nama, nilai: nilai });
+          req.onsuccess = () => selesai(nilai);
+          req.onerror = () => gagal(req.error);
+        })
+    );
+  }
+
   // ---------- Buat id baru ----------
   function idBaru() {
     return "L" + Date.now().toString(36) + Math.floor(Math.random() * 1000);
@@ -111,6 +141,8 @@ const Penyimpanan = (function () {
     hapus,
     hitung,
     isiAwalJikaKosong,
+    ambilPengaturan,
+    simpanPengaturan,
     idBaru
   };
 })();

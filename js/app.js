@@ -22,6 +22,7 @@
   const lapisPulau = document.getElementById("lapisPulau");
   const lapisPenanda = document.getElementById("lapisPenanda");
   const lapisNamaKota = document.getElementById("lapisNamaKota");
+  const lapisNamaLokasi = document.getElementById("lapisNamaLokasi");
   const labelPeta = document.getElementById("labelPeta");
   const zoomMasuk = document.getElementById("zoomMasuk");
   const zoomKeluar = document.getElementById("zoomKeluar");
@@ -54,6 +55,14 @@
   const wilayahJalan = document.getElementById("wilayahJalan");
   const wilayahCari = document.getElementById("wilayahCari");
   const wilayahDaftar = document.getElementById("wilayahDaftar");
+  const tombolMember = document.getElementById("tombolMember");
+  const member = document.getElementById("member");
+  const memberTutup = document.getElementById("memberTutup");
+  const memberDaftar = document.getElementById("memberDaftar");
+  const kategoriAtur = document.getElementById("kategoriAtur");
+  const kategoriBaru = document.getElementById("kategoriBaru");
+  const kategoriTambah = document.getElementById("kategoriTambah");
+  const kategoriPesan = document.getElementById("kategoriPesan");
 
   // ---------- Ukuran kanvas peta ----------
   const VB_W = 1000;
@@ -71,6 +80,13 @@
   let wilayahJejak = [];
   let wilayahCariTeks = "";
 
+  // Kategori: bisa ditambah / diubah Bapak (disimpan di IndexedDB)
+  let daftarKategori = KATEGORI.slice();
+
+  // Pratinjau: titik sementara dari daftar wilayah, belum disimpan
+  let pratinjau = null;      // { nama, lon, lat, kategori }
+  let idBerkedip = null;     // lokasi yang sedang berkedip merah
+
   // ---------- Bantu ----------
   function inisialDari(nama) {
     return nama
@@ -79,6 +95,17 @@
       .slice(0, 2)
       .map((k) => k[0].toUpperCase())
       .join("");
+  }
+
+  // Warna titik menurut kategori — supaya mudah dibedakan di peta
+  const WARNA_KATEGORI = [
+    "#2563eb", "#16a34a", "#dc2626", "#d97706",
+    "#7c3aed", "#0891b2", "#be185d", "#4d7c0f"
+  ];
+
+  function warnaKategori(nama) {
+    const i = daftarKategori.filter((k) => k !== "Semua").indexOf(nama);
+    return WARNA_KATEGORI[(i < 0 ? 0 : i) % WARNA_KATEGORI.length];
   }
 
   function cocok(lokasi) {
@@ -254,12 +281,16 @@
     }
 
     // Penanda lokasi milik Bapak — juga jangan ditutupi.
-    // Penanda membesar saat zoom (radius 10 × zoom), jadi ikut dihitung.
-    const rPenanda = 10 * zk + 3;
+    // Penanda membesar saat zoom (radius 5 × zoom), jadi ikut dihitung.
+    const rPenanda = 5 * zk + 3;
     daftarLokasi.filter(cocok).forEach((lokasi) => {
       const s = keLayar(proyek(lokasi.lon, lokasi.lat));
       if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
       kotak.push({ kiri: s.x - rPenanda, kanan: s.x + rPenanda, atas: s.y - rPenanda, bawah: s.y + rPenanda });
+
+      // Nama lokasi juga dihindari nama kota — supaya tidak saling menimpa
+      const u = ukuranTeks(lokasi.nama, 9, 0);
+      kotak.push({ kiri: s.x + 8, kanan: s.x + 8 + u.w, atas: s.y - u.h / 2, bawah: s.y + u.h / 2 });
     });
 
     return kotak;
@@ -409,8 +440,8 @@
     // nama gunung, dan penanda lokasi milik Bapak.
     const rintangan = [];
 
-    // Penanda membesar saat zoom (radius 10 × zoom), jadi ikut dihitung.
-    const rPenanda = 10 * zk + 3;
+    // Penanda membesar saat zoom (radius 5 × zoom), jadi ikut dihitung.
+    const rPenanda = 5 * zk + 3;
     daftarLokasi.filter(cocok).forEach((lokasi) => {
       const s = keLayar(proyek(lokasi.lon, lokasi.lat));
       if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
@@ -724,11 +755,49 @@
   // ---------- Gambar penanda ----------
   function gambarPenanda() {
     lapisPenanda.innerHTML = "";
+    lapisNamaLokasi.innerHTML = "";
+
+    // Titik sementara dari daftar wilayah (belum disimpan) — garis putus-putus
+    if (pratinjau && proyeksi) {
+      const p = proyek(pratinjau.lon, pratinjau.lat);
+      const g = document.createElementNS(NS, "g");
+      g.setAttribute("class", "penanda penanda-pratinjau");
+      g.setAttribute(
+        "transform",
+        "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + (1 / zk).toFixed(4) + ")"
+      );
+
+      const bulat = document.createElementNS(NS, "circle");
+      bulat.setAttribute("r", "5");
+      bulat.setAttribute("class", "penanda-bulat");
+      bulat.setAttribute("fill", warnaKategori(pratinjau.kategori));
+
+      const huruf = document.createElementNS(NS, "text");
+      huruf.setAttribute("class", "penanda-huruf");
+      huruf.setAttribute("y", "1.7");
+      huruf.textContent = inisialDari(pratinjau.nama);
+
+      const judul = document.createElementNS(NS, "title");
+      judul.textContent = pratinjau.nama + " (belum disimpan)";
+
+      g.appendChild(bulat);
+      g.appendChild(huruf);
+      g.appendChild(judul);
+      lapisPenanda.appendChild(g);
+
+      gambarNamaLokasi(pratinjau.nama, p, "pratinjau");
+    }
+
     daftarLokasi.filter(cocok).forEach((lokasi) => {
       const p = proyek(lokasi.lon, lokasi.lat);
 
       const g = document.createElementNS(NS, "g");
-      g.setAttribute("class", "penanda" + (lokasi.id === idTerpilih ? " aktif" : ""));
+      g.setAttribute(
+        "class",
+        "penanda" +
+          (lokasi.id === idTerpilih ? " aktif" : "") +
+          (lokasi.id === idBerkedip ? " kedip" : "")
+      );
       const kecilan = 1 / zk;
       g.setAttribute(
         "transform",
@@ -736,12 +805,13 @@
       );
 
       const bulat = document.createElementNS(NS, "circle");
-      bulat.setAttribute("r", "10");
+      bulat.setAttribute("r", "5");
       bulat.setAttribute("class", "penanda-bulat");
+      bulat.setAttribute("fill", warnaKategori(lokasi.kategori));
 
       const huruf = document.createElementNS(NS, "text");
       huruf.setAttribute("class", "penanda-huruf");
-      huruf.setAttribute("y", "3.5");
+      huruf.setAttribute("y", "1.7");
       huruf.textContent = lokasi.inisial || inisialDari(lokasi.nama);
 
       const judul = document.createElementNS(NS, "title");
@@ -755,16 +825,35 @@
         bukaPanel(lokasi.id);
       });
       lapisPenanda.appendChild(g);
+
+      gambarNamaLokasi(lokasi.nama, p, lokasi.id === idBerkedip ? "kedip" : "");
     });
+  }
+
+  // Nama lokasi di samping titik — supaya Bapak tahu titik itu lokasi apa
+  function gambarNamaLokasi(nama, p, kelas) {
+    const s = keLayar(p);
+    const t = document.createElementNS(NS, "text");
+    t.setAttribute("class", "lokasi-nama" + (kelas ? " " + kelas : ""));
+    t.setAttribute("x", (s.x + 8).toFixed(1));
+    t.setAttribute("y", (s.y + 3).toFixed(1));
+    t.textContent = nama;
+    lapisNamaLokasi.appendChild(t);
   }
 
   // ---------- Gambar bar kategori ----------
   function gambarKategori() {
     kategoriBar.innerHTML = "";
-    KATEGORI.forEach((kat) => {
+    daftarKategori.forEach((kat) => {
       const btn = document.createElement("button");
       btn.className = "kategori-tombol" + (kat === kategoriAktif ? " aktif" : "");
       btn.textContent = kat;
+      if (kat !== "Semua") {
+        const titik = document.createElement("span");
+        titik.className = "kategori-warna";
+        titik.style.background = warnaKategori(kat);
+        btn.prepend(titik);
+      }
       btn.addEventListener("click", () => {
         kategoriAktif = kat;
         gambarKategori();
@@ -1005,12 +1094,26 @@
     fWilayah.value = namaWilayahLengkap(kode, nama);
     fLon.value = typeof lng === "number" ? lng : "";
     fLat.value = typeof lat === "number" ? lat : "";
+
+    // Titik sementara di peta — supaya Bapak lihat dulu sebelum disimpan.
+    // Kalau ditekan Batal, titik ini hilang.
+    if (typeof lat === "number" && typeof lng === "number") {
+      pratinjau = {
+        nama: nama,
+        lon: lng,
+        lat: lat,
+        kategori: fKategori.value
+      };
+      gambarPenanda();
+    }
+
     fNama.focus();
   }
 
   // ---------- Laci menu ----------
   function bukaLaci() {
     tutupForm();   // form & menu sama-sama di kanan — jangan bertumpuk
+    tutupMember();
     laci.classList.add("terbuka");
     laci.setAttribute("aria-hidden", "false");
     tirai.classList.add("tampil");
@@ -1021,10 +1124,184 @@
     tirai.classList.remove("tampil");
   }
 
+  // ---------- Panel member (daftar lokasi tersimpan) ----------
+  function bukaMember() {
+    tutupForm();
+    tutupLaci();
+    gambarMember();
+    member.classList.add("terbuka");
+    member.setAttribute("aria-hidden", "false");
+  }
+
+  function tutupMember() {
+    member.classList.remove("terbuka");
+    member.setAttribute("aria-hidden", "true");
+  }
+
+  function gambarMember() {
+    memberDaftar.innerHTML = "";
+
+    if (!daftarLokasi.length) {
+      memberDaftar.innerHTML = '<p class="member-kosong">Belum ada lokasi tersimpan.</p>';
+      return;
+    }
+
+    const urut = daftarLokasi.slice().sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+    urut.forEach((lokasi) => {
+      const baris = document.createElement("div");
+      baris.className = "member-baris";
+      baris.title = "Pindah peta ke " + lokasi.nama;
+
+      const warna = document.createElement("span");
+      warna.className = "member-warna";
+      warna.style.background = warnaKategori(lokasi.kategori);
+
+      const isi = document.createElement("div");
+      isi.className = "member-isi";
+      isi.innerHTML =
+        '<div class="member-nama"></div><div class="member-wilayah"></div>';
+      isi.querySelector(".member-nama").textContent = lokasi.nama;
+      isi.querySelector(".member-wilayah").textContent =
+        lokasi.wilayah || lokasi.kategori;
+
+      baris.appendChild(warna);
+      baris.appendChild(isi);
+      baris.addEventListener("click", () => sorotLokasi(lokasi.id));
+      memberDaftar.appendChild(baris);
+    });
+  }
+
+  // Klik lokasi di daftar member → peta pindah + titik berkedip merah
+  function sorotLokasi(id) {
+    const lokasi = daftarLokasi.find((l) => l.id === id);
+    if (!lokasi || !proyeksi) return;
+
+    const p = proyek(lokasi.lon, lokasi.lat);
+    zk = Math.max(zk, 6);
+    tx = VB_W / 2 - p.x * zk;
+    ty = VB_H / 2 - p.y * zk;
+    batasiGeser();
+    terapkanTampilan();
+
+    tutupMember();
+    idTerpilih = id;
+    idBerkedip = id;
+    gambarPenanda();
+
+    // Kedip berhenti sendiri setelah beberapa detik
+    setTimeout(() => {
+      if (idBerkedip === id) {
+        idBerkedip = null;
+        gambarPenanda();
+      }
+    }, 4000);
+  }
+
+  // ---------- Pengaturan kategori ----------
+  function gambarKategoriAtur() {
+    kategoriAtur.innerHTML = "";
+    daftarKategori.filter((k) => k !== "Semua").forEach((kat) => {
+      const baris = document.createElement("div");
+      baris.className = "kategori-atur-baris";
+
+      const warna = document.createElement("span");
+      warna.className = "kategori-atur-warna";
+      warna.style.background = warnaKategori(kat);
+
+      const nama = document.createElement("button");
+      nama.className = "kategori-atur-nama";
+      nama.textContent = kat;
+      nama.title = "Klik untuk mengubah nama";
+      nama.addEventListener("click", () => ubahKategori(kat));
+
+      const hapus = document.createElement("button");
+      hapus.className = "kategori-atur-hapus";
+      hapus.textContent = "×";
+      hapus.title = "Hapus kategori";
+      hapus.addEventListener("click", () => hapusKategori(kat));
+
+      baris.appendChild(warna);
+      baris.appendChild(nama);
+      baris.appendChild(hapus);
+      kategoriAtur.appendChild(baris);
+    });
+  }
+
+  function pesanKategori(teks) {
+    kategoriPesan.textContent = teks || "";
+  }
+
+  function simpanDaftarKategori() {
+    return Penyimpanan.simpanPengaturan("kategori", daftarKategori);
+  }
+
+  function tambahKategori() {
+    const nama = kategoriBaru.value.trim();
+    if (!nama) return;
+    if (daftarKategori.some((k) => k.toLowerCase() === nama.toLowerCase())) {
+      pesanKategori("Kategori itu sudah ada.");
+      return;
+    }
+    daftarKategori.push(nama);
+    kategoriBaru.value = "";
+    pesanKategori("");
+    simpanDaftarKategori().then(() => {
+      gambarKategoriAtur();
+      gambarKategori();
+      isiPilihanKategori();
+    });
+  }
+
+  function ubahKategori(lama) {
+    const baru = prompt("Ubah nama kategori:", lama);
+    if (baru === null) return;
+    const nama = baru.trim();
+    if (!nama || nama === lama) return;
+    if (daftarKategori.some((k) => k.toLowerCase() === nama.toLowerCase())) {
+      pesanKategori("Kategori itu sudah ada.");
+      return;
+    }
+
+    daftarKategori = daftarKategori.map((k) => (k === lama ? nama : k));
+    if (kategoriAktif === lama) kategoriAktif = nama;
+
+    // Lokasi yang memakai kategori lama ikut berubah
+    const terpakai = daftarLokasi.filter((l) => l.kategori === lama);
+    pesanKategori("");
+    Promise.all(terpakai.map((l) => Penyimpanan.simpan(Object.assign({}, l, { kategori: nama }))))
+      .then(simpanDaftarKategori)
+      .then(() => {
+        gambarKategoriAtur();
+        gambarKategori();
+        isiPilihanKategori();
+        return muatUlang();
+      });
+  }
+
+  function hapusKategori(kat) {
+    const terpakai = daftarLokasi.filter((l) => l.kategori === kat).length;
+    if (terpakai > 0) {
+      pesanKategori(
+        "Tidak bisa dihapus — masih dipakai " + terpakai + " lokasi. Pindahkan dulu lokasinya."
+      );
+      return;
+    }
+    if (!confirm('Hapus kategori "' + kat + '"?')) return;
+
+    daftarKategori = daftarKategori.filter((k) => k !== kat);
+    if (kategoriAktif === kat) kategoriAktif = "Semua";
+    pesanKategori("");
+    simpanDaftarKategori().then(() => {
+      gambarKategoriAtur();
+      gambarKategori();
+      isiPilihanKategori();
+    });
+  }
+
   // ---------- Form isian data ----------
   function isiPilihanKategori() {
     fKategori.innerHTML = "";
-    KATEGORI.filter((k) => k !== "Semua").forEach((k) => {
+    daftarKategori.filter((k) => k !== "Semua").forEach((k) => {
       const opt = document.createElement("option");
       opt.value = k;
       opt.textContent = k;
@@ -1039,7 +1316,7 @@
     formJudul.textContent = lokasi ? "Ubah Data Lokasi" : "Tambah Lokasi Baru";
     fNama.value = lokasi ? lokasi.nama : "";
     fWilayah.value = lokasi ? lokasi.wilayah : "";
-    fKategori.value = lokasi ? lokasi.kategori : KATEGORI[1];
+    fKategori.value = lokasi ? lokasi.kategori : daftarKategori[1];
     fLon.value = lokasi ? lokasi.lon : "";
     fLat.value = lokasi ? lokasi.lat : "";
     fInisial.value = lokasi ? (lokasi.inisial || "") : "";
@@ -1059,6 +1336,24 @@
     formLokasi.classList.remove("terbuka");
     formLokasi.setAttribute("aria-hidden", "true");
     idSedangDiubah = null;
+    // Titik sementara ikut hilang kalau form ditutup tanpa disimpan
+    if (pratinjau) {
+      pratinjau = null;
+      gambarPenanda();
+    }
+  }
+
+  // Titik sementara mengikuti isian form — supaya Bapak lihat hasilnya dulu
+  function perbaruiPratinjau() {
+    if (!pratinjau) return;
+    const lon = parseFloat(fLon.value);
+    const lat = parseFloat(fLat.value);
+    if (isNaN(lon) || isNaN(lat)) return;
+    pratinjau.nama = fNama.value.trim() || "Lokasi baru";
+    pratinjau.lon = lon;
+    pratinjau.lat = lat;
+    pratinjau.kategori = fKategori.value;
+    gambarPenanda();
   }
 
   function bacaRincian(teks) {
@@ -1098,6 +1393,7 @@
       rincian: bacaRincian(fRincian.value)
     };
 
+    pratinjau = null;   // sudah disimpan — titik sementara tidak dipakai lagi
     Penyimpanan.simpan(data).then(() => {
       tutupForm();
       muatUlang();
@@ -1139,10 +1435,20 @@
   tombolMenu.addEventListener("click", bukaLaci);
   laciTutup.addEventListener("click", tutupLaci);
   tirai.addEventListener("click", tutupLaci);
+  tombolMember.addEventListener("click", bukaMember);
+  memberTutup.addEventListener("click", tutupMember);
+  kategoriTambah.addEventListener("click", tambahKategori);
+  kategoriBaru.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") tambahKategori();
+  });
   tombolTambah.addEventListener("click", () => {
     tutupLaci();   // form & menu sama-sama di kanan — jangan bertumpuk
     bukaForm(null);
   });
+
+  // Titik sementara mengikuti isian form
+  [fNama, fLon, fLat].forEach((el) => el.addEventListener("input", perbaruiPratinjau));
+  fKategori.addEventListener("change", perbaruiPratinjau);
   formTutup.addEventListener("click", tutupForm);
   formBatal.addEventListener("click", tutupForm);
   formSimpan.addEventListener("click", simpanForm);
@@ -1156,6 +1462,7 @@
     if (e.key === "Escape") {
       tutupPanel();
       tutupLaci();
+      tutupMember();
       tutupForm();
     }
   });
@@ -1279,6 +1586,7 @@
       daftarLokasi = data;
       gambarPenanda();
       gambarKota();   // nama kota dihitung ulang setelah penanda diketahui
+      if (member.classList.contains("terbuka")) gambarMember();
     });
   }
 
@@ -1321,6 +1629,17 @@
   isiPilihanKategori();
   gambarWilayah();
   terapkanTampilan();
+
+  // Kategori yang pernah diubah Bapak disimpan di peramban
+  Penyimpanan.ambilPengaturan("kategori")
+    .then((simpan) => {
+      if (Array.isArray(simpan) && simpan.length) daftarKategori = simpan;
+      gambarKategoriAtur();
+      gambarKategori();
+      isiPilihanKategori();
+    })
+    .catch(() => gambarKategoriAtur());
+
   Penyimpanan.isiAwalJikaKosong()
     .then(() => muatUlang())
     .catch((e) => {
