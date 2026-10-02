@@ -3,7 +3,24 @@
 > Rekam **semua kejadian** di aplikasi: apa yang berubah, kapan, dan kenapa.
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
----## 2 Oktober 2026 — 🏝️ **KEPULAUAN SERIBU DITAMBAHKAN**
+---
+## 2 Oktober 2026 — 🐛 **PERBAIKAN: pulau kecil Kepulauan Seribu tidak terlihat**
+
+**Masalah Bapak:** *"belum terlihat pulau 1000"*
+
+**Penyebab (ditemukan AI):** bentuk pulau-pulaunya **terlalu kecil**.
+- Kepulauan Seribu berisi **72 pulau**, masing-masing hanya **0,1–3,7 km**.
+- Di peta, 1 km hanya ±0,9 piksel → pulau terkecil **kurang dari 1 piksel**.
+- Jadi walau di-zoom maksimal, bentuknya **tidak mungkin terlihat**.
+
+**Perbaikan:**
+- Tiap pulau diberi **tanda titik hijau** (ukuran tetap di layar) supaya terlihat.
+- Tanda ditaruh di **lapisan paling atas** supaya tidak tertutup penanda lokasi.
+- Nama **"KEPULAUAN SERIBU"** tetap tampil di atas gugusan.
+- Hasil: 72 titik hijau terlihat membentuk gugusan di utara Jakarta. ✅
+
+---
+## 2 Oktober 2026 — 🏝️ **KEPULAUAN SERIBU DITAMBAHKAN**
 
 **Order Bapak:** *"iya pulau 1000 perlu ditambahkan coba cari sumber yg lain"*
 
