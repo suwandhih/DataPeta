@@ -69,6 +69,14 @@
 | K07 | a. Periksa sebab — **dinilai**: data batas DKI Jakarta hanya daratan; Natural Earth tidak memuat Kepulauan Seribu | ✅ | ✅ | 2 Okt 2026 |
 | K07 | b. Cari sumber data lain → **geoBoundaries** (data asli BPS) | ✅ | ✅ | 2 Okt 2026 |
 | K07 | c. Gambar batas Kepulauan Seribu di peta + nama permanen | ✅ | ✅ | 2 Okt 2026 |
+| K07 | d. 🐛 Bapak: *"belum terlihat pulau 1000"* → **dinilai**: 72 pulau hanya 0,1–3,7 km (< 1 piksel) → diberi tanda titik hijau | ✅ | ✅ | 2 Okt 2026 |
+| **K08** | **Daftar wilayah + form panel samping** (order Bapak, 2 Okt 2026) | | | |
+| K08 | a. Pelajari proyek acuan `Peta-Indonesia-1berkas.html` | ✅ | ✅ | 2 Okt 2026 |
+| K08 | b. **Form [+ Tambah Lokasi] jadi panel samping** (seperti menu ☰) — peta tetap terlihat | ✅ | ✅ | 2 Okt 2026 |
+| K08 | c. **Daftar wilayah** (provinsi → kab/kota → kecamatan → desa) di menu ☰ | ⬜ | ⬜ | — |
+| K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu | ⬜ | ⬜ | — |
+| K08 | e. Unduh **data wilayah lengkap sampai desa** | ⬜ | ⬜ | — |
+| K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_

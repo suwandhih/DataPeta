@@ -847,6 +847,7 @@
 
   // ---------- Laci menu ----------
   function bukaLaci() {
+    tutupForm();   // form & menu sama-sama di kanan — jangan bertumpuk
     laci.classList.add("terbuka");
     laci.setAttribute("aria-hidden", "false");
     tirai.classList.add("tampil");
@@ -885,6 +886,8 @@
       : "";
     formHapus.style.display = lokasi ? "block" : "none";
 
+    // Panel samping — peta tetap terlihat. Tirai TIDAK dipakai supaya
+    // Bapak masih bisa melihat & menggeser peta sambil mengisi.
     formLokasi.classList.add("terbuka");
     formLokasi.setAttribute("aria-hidden", "false");
     fNama.focus();
@@ -968,7 +971,10 @@
   tombolMenu.addEventListener("click", bukaLaci);
   laciTutup.addEventListener("click", tutupLaci);
   tirai.addEventListener("click", tutupLaci);
-  tombolTambah.addEventListener("click", () => bukaForm(null));
+  tombolTambah.addEventListener("click", () => {
+    tutupLaci();   // form & menu sama-sama di kanan — jangan bertumpuk
+    bukaForm(null);
+  });
   formTutup.addEventListener("click", tutupForm);
   formBatal.addEventListener("click", tutupForm);
   formSimpan.addEventListener("click", simpanForm);

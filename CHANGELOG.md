@@ -4,7 +4,24 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 2 Oktober 2026 — 🐛 **PERBAIKAN: pulau kecil Kepulauan Seribu tidak terlihat**
+## 2 Oktober 2026 — � **FORM TAMBAH LOKASI JADI PANEL SAMPING**
+
+**Order Bapak:** *"[+ tambah lokasi] dibuat form seperti [☰]. jangan tengah seperti sekarang..
+ supaya peta pasti terlihat"*
+
+**Sebelum:** form muncul sebagai **kotak di tengah layar** + latar gelap → peta tertutup.
+
+**Sesudah:** form muncul sebagai **panel dari kanan** (seperti menu ☰):
+- Peta **tetap terlihat** di sebelah kiri saat mengisi data.
+- **Tanpa latar gelap** → Bapak masih bisa melihat & menggeser peta.
+- Di HP: panel 88% lebar layar, sisa 12% tetap memperlihatkan peta.
+- Form & menu ☰ **tidak bisa terbuka bersamaan** (sama-sama di kanan).
+
+**Uji:** panel muncul di kanan (380 px) · peta tetap terlihat · tanpa error ✅
+
+---
+
+## 2 Oktober 2026 — �🐛 **PERBAIKAN: pulau kecil Kepulauan Seribu tidak terlihat**
 
 **Masalah Bapak:** *"belum terlihat pulau 1000"*
 
