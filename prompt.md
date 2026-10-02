@@ -85,6 +85,9 @@ DataPeta/
 ├── cloudflare/wrangler.toml   → konfigurasi Worker
 ├── data/peta-indonesia.js     → batas 38 provinsi (GeoJSON, offline)
 ├── data/negara-dunia.js       → batas negara dunia (latar tetangga)
+├── data/sungai.js             → sungai Indonesia
+├── data/danau.js              → danau Indonesia
+├── data/gunung.js             → gunung Indonesia (nama + tinggi)
 ├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
 └── (5 dokumen .md)

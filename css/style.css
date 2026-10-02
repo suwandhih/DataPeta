@@ -63,6 +63,48 @@ html, body {
 
 .provinsi:hover { fill: #aab3bf; }
 
+/* Sungai */
+.sungai {
+  fill: none;
+  stroke: #8fb8de;
+  stroke-width: 0.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* Danau */
+.danau {
+  fill: #a8cdea;
+  stroke: #7fb2dd;
+  stroke-width: 0.5;
+  pointer-events: none;
+}
+
+/* Gunung */
+.gunung { pointer-events: none; }
+
+.gunung-tanda {
+  fill: #9c6b3f;
+  stroke: #6b4423;
+  stroke-width: 0.6;
+}
+
+.gunung-nama {
+  font-family: var(--font);
+  font-size: 8px;
+  fill: #6b4423;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 2px;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Nama gunung muncul saat di-zoom */
+.gunung-besar .gunung-nama { opacity: 1; }
+
 /* Kota */
 .kota-titik {
   fill: #6b7280;

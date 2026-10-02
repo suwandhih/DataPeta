@@ -63,7 +63,20 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 ⚠️ **Penting:** data tersimpan **di perangkat ini saja**. Data di PC dan di HP **terpisah**.
 Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
 
-### 🏙️ Nama kota di peta
+### �️ Bentang alam di peta
+
+Peta sudah dilengkapi **bentang alam** supaya mudah dibaca:
+
+| Tanda | Artinya |
+|-------|---------|
+| 🟫 **Segitiga coklat** | Gunung / puncak (nama & tinggi muncul saat di-zoom) |
+| 〰️ **Garis biru** | Sungai |
+| 💧 **Bidang biru muda** | Danau |
+| ⬜ **Kotak abu-abu** | Provinsi (bisa diklik) |
+| ⚪ **Bulatan putih berisi huruf** | Data lokasi Bapak (bisa diklik) |
+| 🌫️ **Pucat di pinggir** | Negara tetangga |
+
+### �🏙️ Nama kota di peta
 
 Nama kota **muncul sendiri** sesuai tingkat zoom:
 

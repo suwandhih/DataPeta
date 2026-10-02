@@ -13,7 +13,10 @@
   const svg = document.getElementById("petaSvg");
   const viewportLapis = document.getElementById("viewport");
   const lapisNegara = document.getElementById("lapisNegara");
+  const lapisDanau = document.getElementById("lapisDanau");
+  const lapisSungai = document.getElementById("lapisSungai");
   const lapisProvinsi = document.getElementById("lapisProvinsi");
+  const lapisGunung = document.getElementById("lapisGunung");
   const lapisKota = document.getElementById("lapisKota");
   const lapisPenanda = document.getElementById("lapisPenanda");
   const labelPeta = document.getElementById("labelPeta");
@@ -122,6 +125,7 @@
       "translate(" + tx.toFixed(1) + "," + ty.toFixed(1) + ") scale(" + zk.toFixed(3) + ")"
     );
     gambarKota();
+    gambarGunung();
     gambarPenanda();
   }
 
@@ -178,13 +182,21 @@
       titik.setAttribute("class", "kota-titik");
 
       const teks = document.createElementNS(NS, "text");
-      teks.setAttribute("class", "kota-nama" + (kota.r <= 3 ? " kota-besar" : ""));
-      teks.setAttribute("x", "6");
-      teks.setAttribute("y", "4");
+      const besar = kota.r <= 3;
+      teks.setAttribute("class", "kota-nama" + (besar ? " kota-besar" : ""));
+      if (besar) {
+        // Kota besar: nama di ATAS titik, rata tengah (agar tidak tertutup penanda)
+        teks.setAttribute("x", "0");
+        teks.setAttribute("y", "-7");
+        teks.setAttribute("text-anchor", "middle");
+      } else {
+        teks.setAttribute("x", "6");
+        teks.setAttribute("y", "4");
+      }
 
       // Saat zoom kecil, nama dibalik agar tidak saling menumpuk
-      if (zk < 2.6 && kota.lon < 0) {
-        teks.setAttribute("x", "-4");
+      if (!besar && zk < 2.6 && kota.lon < 0) {
+        teks.setAttribute("x", "-6");
         teks.setAttribute("text-anchor", "end");
       }
       teks.textContent = kota.n;
@@ -219,6 +231,80 @@
     return "";
   }
 
+  // ---------- Gambar sungai, danau, gunung (kelengkapan peta) ----------
+  function gambarSungai() {
+    if (typeof SUNGAI === "undefined") return;
+    lapisSungai.innerHTML = "";
+    SUNGAI.forEach((s) => {
+      const d = s.t
+        .map((c, i) => {
+          const p = proyek(c[0], c[1]);
+          return (i === 0 ? "M" : "L") + p.x.toFixed(1) + "," + p.y.toFixed(1);
+        })
+        .join(" ");
+      const path = document.createElementNS(NS, "path");
+      path.setAttribute("d", d);
+      path.setAttribute("class", "sungai");
+      lapisSungai.appendChild(path);
+    });
+  }
+
+  function gambarDanau() {
+    if (typeof DANAU === "undefined") return;
+    lapisDanau.innerHTML = "";
+    DANAU.forEach((s) => {
+      const d = s.t
+        .map((c, i) => {
+          const p = proyek(c[0], c[1]);
+          return (i === 0 ? "M" : "L") + p.x.toFixed(1) + "," + p.y.toFixed(1);
+        })
+        .join(" ") + " Z";
+      const path = document.createElementNS(NS, "path");
+      path.setAttribute("d", d);
+      path.setAttribute("class", "danau");
+      const judul = document.createElementNS(NS, "title");
+      judul.textContent = s.n || "Danau";
+      path.appendChild(judul);
+      lapisDanau.appendChild(path);
+    });
+  }
+
+  function gambarGunung() {
+    if (typeof GUNUNG === "undefined") return;
+    lapisGunung.innerHTML = "";
+    GUNUNG.forEach((g) => {
+      const p = proyek(g.lon, g.lat);
+      const el = document.createElementNS(NS, "g");
+      const kecilan = 1 / zk;
+      el.setAttribute(
+        "transform",
+        "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + kecilan.toFixed(4) + ")"
+      );
+      el.setAttribute("class", "gunung");
+
+      const segitiga = document.createElementNS(NS, "path");
+      segitiga.setAttribute("d", "M0,-5 L4.5,3 L-4.5,3 Z");
+      segitiga.setAttribute("class", "gunung-tanda");
+
+      // Nama gunung hanya muncul saat di-zoom cukup dekat
+      if (zk >= 2) el.classList.add("gunung-besar");
+
+      const teks = document.createElementNS(NS, "text");
+      teks.setAttribute("class", "gunung-nama");
+      teks.setAttribute("x", "6");
+      teks.setAttribute("y", "3");
+      teks.textContent = (g.n || "Puncak") + " " + (g.e ? g.e + " m" : "");
+
+      const judul = document.createElementNS(NS, "title");
+      judul.textContent = (g.n || "Puncak") + (g.e ? " — " + g.e + " m" : "");
+
+      el.appendChild(segitiga);
+      el.appendChild(teks);
+      el.appendChild(judul);
+      lapisGunung.appendChild(el);
+    });
+  }
+
   // ---------- Gambar negara tetangga (latar) ----------
   function gambarNegara() {
     if (typeof NEGARA_DUNIA === "undefined") return;
@@ -239,6 +325,8 @@
     }
     siapkanProyeksi(PETA_INDONESIA);
     gambarNegara();
+    gambarDanau();
+    gambarSungai();
     lapisProvinsi.innerHTML = "";
 
     PETA_INDONESIA.features.forEach((f) => {
@@ -255,7 +343,6 @@
     labelPeta.textContent =
       PETA_INDONESIA.features.length + " provinsi · data batas asli";
   }
-
   // ---------- Gambar penanda ----------
   function gambarPenanda() {
     lapisPenanda.innerHTML = "";

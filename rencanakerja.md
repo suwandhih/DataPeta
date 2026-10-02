@@ -54,6 +54,15 @@
 | K03 | e. Sambungkan aplikasi ke database cloud (cara aman) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
+| **K04** | **Nama kota utama + daftar wilayah** (order Bapak, 2 Okt 2026) | | | |
+| K04 | a. **38 ibu kota provinsi** tampil permanen di peta | ⬜ | ⬜ | — |
+| K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) | ⬜ | ⬜ | — |
+| K04 | c. Klik wilayah di daftar → **form isian data** | ⬜ | ⬜ | — |
+| K04 | d. Unduh **data wilayah asli** (BPS/BIG) — bertahap | ⬜ | ⬜ | — |
+| **K05** | **Kelengkapan peta** (order Bapak, 2 Okt 2026) — ✅ **DIUTAMAKAN** | | | |
+| K05 | a. Zoom in / zoom out — ✅ sudah ada (verifikasi) | ✅ | ✅ | 2 Okt 2026 |
+| K05 | b. **Sungai, gunung, muara, danau, bendungan** di peta (agar mudah dibaca) | ✅ | ✅ | 2 Okt 2026 |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

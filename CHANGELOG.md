@@ -4,6 +4,21 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — 🏔️ KELENGKAPAN PETA (sungai · danau · gunung)
+
+**Peta kini memuat bentang alam — lebih mudah dibaca.**
+
+- Ditambah **30 sungai** (garis biru) — Barito, Kapuas, Digul, Mamberamo, dll.
+- Ditambah **4 danau** (biru muda) — Danau Toba, Jempang, Murray, Rawa biru.
+- Ditambah **18 gunung** (segitiga coklat + nama + tinggi) — Semeru, Rinjani, Kerinci,
+  Merapi, Tambora, Puncak Jaya (4.884 m), dll.
+- Puncak negara tetangga (Kinabalu, Mount Apo) **dibuang**.
+- Nama gunung **muncul saat di-zoom** (agar tidak ramai di tampilan awal).
+- Sumber data: **Natural Earth** (public domain) — disaring hanya wilayah Indonesia.
+- Uji: 30 sungai · 4 danau · 18 gunung tergambar · tanpa error ✅
+
+---
+
 ## 2 Oktober 2026 — 🔍 ZOOM + NAMA KOTA
 
 **Peta kini bisa di-zoom & digeser; nama kota muncul sesuai tingkat zoom.**
