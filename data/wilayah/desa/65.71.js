@@ -1,0 +1,7 @@
+/* DAFTAR DESA & KELURAHAN — KAB/KOTA 65.71
+   Sumber: emsifa/api-wilayah-indonesia (MIT)
+     Kode & nama: Kepmendagri No. 300.2.2-2430 Tahun 2025
+     Koordinat  : Badan Informasi Geospasial (BIG)
+   Format: [kode, nama, lat, lng] — induk dibaca dari kode (dipisah titik)
+   Dibuat otomatis oleh alat/buat-wilayah.js — jangan diubah manual. */
+window.WILAYAH_DESA = [["65.71.01.1001","Karang Anyar",3.3255,117.5846,"77111"],["65.71.01.1002","Karang Rejo",3.3042,117.5797,"77112"],["65.71.01.1003","Karang Anyar Pantai",3.3231,117.5648,"77111"],["65.71.01.1004","Karang Balik",3.3075,117.5884,"77112"],["65.71.01.1005","Karang Harapan",3.3491,117.554,"77111"],["65.71.02.1001","Kampung I Skip",3.3609,117.6181,"77113"],["65.71.02.1002","Pamusian",3.3067,117.6038,"77113"],["65.71.02.1003","Sebengkok",3.2986,117.5927,"77114"],["65.71.02.1004","Selumit",3.3013,117.5884,"77113"],["65.71.02.1005","Selumit Pantai",3.2982,117.5835,"77113"],["65.71.03.1001","Lingkas Ujung",3.2846,117.6,"77126"],["65.71.03.1002","Gunung Lingkas",3.2922,117.6017,"77115"],["65.71.03.1003","Kampung Empat",3.3003,117.6253,"77124"],["65.71.03.1004","Kampung Enam",3.3282,117.6322,"77123"],["65.71.03.1005","Mamburungan",3.2664,117.63,"77125"],["65.71.03.1006","Pantai Amal",3.319,117.6505,"77115"],["65.71.03.1007","Mamburungan Timur",3.2704,117.6345,"77115"],["65.71.04.1001","Juata Laut",3.4128,117.592,"77116"],["65.71.04.1002","Juata Permai",3.3768,117.5323,"77116"],["65.71.04.1003","Juata Kerikil",3.37,117.5693,"77116"]];

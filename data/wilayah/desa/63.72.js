@@ -1,0 +1,7 @@
+/* DAFTAR DESA & KELURAHAN — KAB/KOTA 63.72
+   Sumber: emsifa/api-wilayah-indonesia (MIT)
+     Kode & nama: Kepmendagri No. 300.2.2-2430 Tahun 2025
+     Koordinat  : Badan Informasi Geospasial (BIG)
+   Format: [kode, nama, lat, lng] — induk dibaca dari kode (dipisah titik)
+   Dibuat otomatis oleh alat/buat-wilayah.js — jangan diubah manual. */
+window.WILAYAH_DESA = [["63.72.02.1003","Landasan Ulin Timur",-3.4702,114.7415,"70724"],["63.72.02.1004","Guntung Payung",-3.4364,114.7813,"70721"],["63.72.02.1005","Guntung Manggis",-3.4756,114.7744,"70724"],["63.72.02.1006","Syamsudin Noor",-3.4211,114.7564,"70724"],["63.72.03.1001","Palam",-3.4981,114.7858,"70731"],["63.72.03.1002","Bangkal",-3.516,114.81,"70732"],["63.72.03.1003","Sungai Tiung",-3.5215,114.8473,"70734"],["63.72.03.1004","Cempaka",-3.5061,114.8734,"70733"],["63.72.04.1001","Loktabat Utara",-3.4329,114.8032,"70714"],["63.72.04.1002","Mentaos",-3.4336,114.8349,"70714"],["63.72.04.1003","Komet",-3.4408,114.8374,"70714"],["63.72.04.1004","Sungai Ulin",-3.4558,114.8782,"70714"],["63.72.05.1001","Sungai Besar",-3.4565,114.8469,"70714"],["63.72.05.1002","Loktabat Selatan",-3.4581,114.8174,"70714"],["63.72.05.1003","Kemuning",-3.4599,114.8272,"70714"],["63.72.05.1004","Guntung Paikat",-3.4535,114.8356,"70713"],["63.72.06.1001","Landasan Ulin Barat",-3.4333,114.7003,"70722"],["63.72.06.1002","Landasan Ulin Tengah",-3.4645,114.7239,"70723"],["63.72.06.1003","Landasan Ulin Utara",-3.4121,114.727,"70724"],["63.72.06.1004","Landasan Ulin Selatan",-3.4835,114.6962,"70724"]];

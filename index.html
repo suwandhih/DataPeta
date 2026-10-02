@@ -81,6 +81,18 @@
       <li><button data-aksi="bantuan">Bantuan</button></li>
       <li><button data-aksi="data">Data lokasi</button></li>
     </ul>
+
+    <!-- Daftar wilayah: provinsi → kab/kota → kecamatan → desa.
+         Klik nama wilayah = peta pindah ke sana + form isian terbuka.
+         Klik tanda › = masuk ke wilayah di bawahnya. -->
+    <div class="wilayah">
+      <p class="wilayah-judul">Daftar Wilayah</p>
+      <div class="wilayah-jalan" id="wilayahJalan"></div>
+      <input class="wilayah-cari" id="wilayahCari" type="text"
+             placeholder="Cari wilayah…" autocomplete="off" />
+      <div class="wilayah-daftar" id="wilayahDaftar"></div>
+    </div>
+
     <div class="laci-awan">
       <p class="laci-awan-judul">Data Awan (pindah PC ↔ HP)</p>
       <button class="laci-awan-tombol" id="tombolKirim">↑ Kirim ke Awan</button>
@@ -135,6 +147,8 @@
 
   <script src="data/negara-dunia.js"></script>
   <script src="data/peta-indonesia.js"></script>
+  <script src="data/wilayah/provinsi.js"></script>
+  <script src="data/wilayah/kabkota.js"></script>
   <script src="data/kepulauan-seribu.js"></script>
   <script src="data/sungai.js"></script>
   <script src="data/danau.js"></script>

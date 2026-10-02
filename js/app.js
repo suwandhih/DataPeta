@@ -51,6 +51,9 @@
   const fInisial = document.getElementById("fInisial");
   const fRincian = document.getElementById("fRincian");
   const tombolRincian = document.getElementById("tombolRincian");
+  const wilayahJalan = document.getElementById("wilayahJalan");
+  const wilayahCari = document.getElementById("wilayahCari");
+  const wilayahDaftar = document.getElementById("wilayahDaftar");
 
   // ---------- Ukuran kanvas peta ----------
   const VB_W = 1000;
@@ -63,6 +66,10 @@
   let proyeksi = null;
   let daftarLokasi = [];
   let idSedangDiubah = null;
+
+  // Daftar wilayah: jejak tingkatan yang sedang dibuka (kosong = provinsi)
+  let wilayahJejak = [];
+  let wilayahCariTeks = "";
 
   // ---------- Bantu ----------
   function inisialDari(nama) {
@@ -824,6 +831,183 @@
     gambarPenanda();
   }
 
+  // ---------- Daftar wilayah ----------
+  // Tingkatan: 0 = provinsi, 1 = kab/kota, 2 = kecamatan, 3 = desa/kelurahan.
+  // Provinsi & kab/kota sudah dimuat bersama halaman. Kecamatan & desa
+  // dimuat saat dibuka saja — supaya aplikasi tetap ringan.
+  const wilayahDimuat = {};
+
+  function wilayahProvinsi() {
+    return typeof WILAYAH_PROVINSI !== "undefined" ? WILAYAH_PROVINSI : [];
+  }
+
+  function wilayahKabKota() {
+    return typeof WILAYAH_KABKOTA !== "undefined" ? WILAYAH_KABKOTA : [];
+  }
+
+  function muatBerkasWilayah(berkas, namaVar) {
+    if (wilayahDimuat[berkas]) return wilayahDimuat[berkas];
+    wilayahDimuat[berkas] = new Promise((selesai, gagal) => {
+      const s = document.createElement("script");
+      s.src = berkas;
+      s.onload = () => selesai(window[namaVar] || []);
+      s.onerror = () => gagal(new Error("Gagal memuat " + berkas));
+      document.head.appendChild(s);
+    });
+    return wilayahDimuat[berkas];
+  }
+
+  // Daftar wilayah pada tingkatan yang sedang dibuka
+  function wilayahSaatIni() {
+    const jejak = wilayahJejak;
+    if (!jejak.length) return Promise.resolve(wilayahProvinsi());
+
+    if (jejak.length === 1) {
+      const prov = jejak[0].kode;
+      return Promise.resolve(wilayahKabKota().filter((k) => k[0].split(".")[0] === prov));
+    }
+
+    if (jejak.length === 2) {
+      const prov = jejak[0].kode;
+      const kab = jejak[1].kode;
+      return muatBerkasWilayah("data/wilayah/kecamatan/" + prov + ".js", "WILAYAH_KECAMATAN")
+        .then((d) => d.filter((k) => k[0].split(".").slice(0, 2).join(".") === kab));
+    }
+
+    const kab = jejak[1].kode;
+    const kec = jejak[2].kode;
+    return muatBerkasWilayah("data/wilayah/desa/" + kab + ".js", "WILAYAH_DESA")
+      .then((d) => d.filter((k) => k[0].split(".").slice(0, 3).join(".") === kec));
+  }
+
+  // Nama induk wilayah, dibaca dari kode (dipisah titik)
+  function namaWilayahLengkap(kode, nama) {
+    const bagian = kode.split(".");
+    if (bagian.length === 1) return nama;   // provinsi — tidak punya induk
+
+    const prov = wilayahProvinsi().find((x) => x[0] === bagian[0]);
+    const kab = wilayahKabKota().find((x) => x[0] === bagian.slice(0, 2).join("."));
+
+    const potongan = [nama];
+    // Kab/kota sendiri tidak perlu diulang — hanya kecamatan & desa
+    if (bagian.length >= 3 && kab) potongan.push(kab[1]);
+    if (prov) potongan.push(prov[1]);
+    return potongan.join(", ");
+  }
+
+  function gambarWilayahJalan() {
+    wilayahJalan.innerHTML = "";
+
+    const akar = document.createElement("button");
+    akar.textContent = "Indonesia";
+    akar.addEventListener("click", () => {
+      wilayahJejak = [];
+      wilayahCariTeks = "";
+      wilayahCari.value = "";
+      gambarWilayah();
+    });
+    wilayahJalan.appendChild(akar);
+
+    wilayahJejak.forEach((w, i) => {
+      const pisah = document.createElement("span");
+      pisah.textContent = "›";
+      wilayahJalan.appendChild(pisah);
+
+      const b = document.createElement("button");
+      b.textContent = w.nama;
+      b.addEventListener("click", () => {
+        wilayahJejak = wilayahJejak.slice(0, i + 1);
+        wilayahCariTeks = "";
+        wilayahCari.value = "";
+        gambarWilayah();
+      });
+      wilayahJalan.appendChild(b);
+    });
+  }
+
+  function gambarWilayah() {
+    gambarWilayahJalan();
+    wilayahDaftar.innerHTML = '<p class="wilayah-kosong">Memuat…</p>';
+
+    wilayahSaatIni()
+      .then((daftar) => {
+        const cari = wilayahCariTeks.trim().toLowerCase();
+        const tampil = cari
+          ? daftar.filter((w) => w[1].toLowerCase().includes(cari))
+          : daftar;
+
+        wilayahDaftar.innerHTML = "";
+        if (!tampil.length) {
+          wilayahDaftar.innerHTML = '<p class="wilayah-kosong">Tidak ada wilayah yang cocok.</p>';
+          return;
+        }
+
+        const bisaMasuk = wilayahJejak.length < 3;
+        const potong = document.createDocumentFragment();
+
+        tampil.forEach((w) => {
+          const baris = document.createElement("div");
+          baris.className = "wilayah-baris";
+
+          const nama = document.createElement("button");
+          nama.className = "wilayah-nama";
+          nama.textContent = w[1];
+          nama.title = "Pindah peta ke " + w[1] + " & isi data";
+          nama.addEventListener("click", () => pilihWilayah(w));
+          baris.appendChild(nama);
+
+          if (bisaMasuk) {
+            const masuk = document.createElement("button");
+            masuk.className = "wilayah-masuk";
+            masuk.textContent = "›";
+            masuk.title = "Lihat wilayah di dalam " + w[1];
+            masuk.addEventListener("click", () => {
+              wilayahJejak = wilayahJejak.concat([{ kode: w[0], nama: w[1] }]);
+              wilayahCariTeks = "";
+              wilayahCari.value = "";
+              gambarWilayah();
+            });
+            baris.appendChild(masuk);
+          }
+
+          potong.appendChild(baris);
+        });
+
+        wilayahDaftar.appendChild(potong);
+      })
+      .catch((e) => {
+        wilayahDaftar.innerHTML = '<p class="wilayah-kosong">Gagal memuat data wilayah.</p>';
+        console.error(e);
+      });
+  }
+
+  // Klik nama wilayah → peta geser + perbesar ke wilayah itu, lalu form terbuka
+  function pilihWilayah(w) {
+    const kode = w[0];
+    const nama = w[1];
+    const lat = w[2];
+    const lng = w[3];
+
+    if (typeof lat === "number" && typeof lng === "number" && proyeksi) {
+      const p = proyek(lng, lat);
+      // Makin dalam tingkatnya, makin dekat perbesarannya
+      const tingkat = kode.split(".").length;
+      const perbesaran = [3.2, 5.5, 8, 11][tingkat - 1] || 3.2;
+      zk = Math.max(ZK_MIN, Math.min(ZK_MAKS, perbesaran));
+      tx = VB_W / 2 - p.x * zk;
+      ty = VB_H / 2 - p.y * zk;
+      batasiGeser();
+      terapkanTampilan();
+    }
+
+    tutupLaci();
+    bukaForm(null);
+    fWilayah.value = namaWilayahLengkap(kode, nama);
+    fLon.value = typeof lng === "number" ? lng : "";
+    fLat.value = typeof lat === "number" ? lat : "";
+    fNama.focus();
+  }
+
   // ---------- Laci menu ----------
   function bukaLaci() {
     tutupForm();   // form & menu sama-sama di kanan — jangan bertumpuk
@@ -831,7 +1015,6 @@
     laci.setAttribute("aria-hidden", "false");
     tirai.classList.add("tampil");
   }
-
   function tutupLaci() {
     laci.classList.remove("terbuka");
     laci.setAttribute("aria-hidden", "true");
@@ -943,6 +1126,12 @@
     kotakCari.value = "";
     hapusCari.classList.remove("tampil");
     gambarPenanda();
+  });
+
+  // ---------- Pencarian wilayah ----------
+  wilayahCari.addEventListener("input", (e) => {
+    wilayahCariTeks = e.target.value;
+    gambarWilayah();
   });
 
   // ---------- Pasang kejadian ----------
@@ -1130,6 +1319,7 @@
   gambarPeta();
   gambarKategori();
   isiPilihanKategori();
+  gambarWilayah();
   terapkanTampilan();
   Penyimpanan.isiAwalJikaKosong()
     .then(() => muatUlang())

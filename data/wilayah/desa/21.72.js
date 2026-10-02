@@ -1,0 +1,7 @@
+/* DAFTAR DESA & KELURAHAN — KAB/KOTA 21.72
+   Sumber: emsifa/api-wilayah-indonesia (MIT)
+     Kode & nama: Kepmendagri No. 300.2.2-2430 Tahun 2025
+     Koordinat  : Badan Informasi Geospasial (BIG)
+   Format: [kode, nama, lat, lng] — induk dibaca dari kode (dipisah titik)
+   Dibuat otomatis oleh alat/buat-wilayah.js — jangan diubah manual. */
+window.WILAYAH_DESA = [["21.72.01.1001","Tanjung Pinang Barat",0.9159,104.4422,"29113"],["21.72.01.1002","Kemboja",0.9264,104.4502,"29112"],["21.72.01.1003","Kampung Baru",0.9082,104.4495,"29113"],["21.72.01.1004","Bukit Cermin",0.9212,104.4483,"29111"],["21.72.02.1001","Melayu Kota Piring",0.9174,104.4853,"29123"],["21.72.02.1002","Kampung Bulang",0.9195,104.4718,"29122"],["21.72.02.1003","Air Raja",0.9518,104.5017,"29122"],["21.72.02.1004","Batu IX",0.901,104.512,"29125"],["21.72.02.1005","Pinang Kencana",0.9301,104.5304,"29122"],["21.72.03.1001","Tanjung Pinang Kota",0.9293,104.4416,"29111"],["21.72.03.1003","Senggarang",0.9644,104.4325,"29111"],["21.72.03.1004","Penyengat",0.9281,104.4177,"29114"],["21.72.03.1005","Kampung Bugis",0.9574,104.4722,"29115"],["21.72.04.1001","Tanjung Pinang Timur",0.9153,104.4583,"29122"],["21.72.04.1002","Dompak",0.8697,104.4919,"29124"],["21.72.04.1003","Tanjung Ayun Sakti",0.903,104.4612,"29124"],["21.72.04.1004","Sei Jang",0.8997,104.475,"29124"],["21.72.04.1005","Tanjung Unggat",0.9243,104.4623,"29122"]];

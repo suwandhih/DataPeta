@@ -454,7 +454,9 @@ html, body {
   transform: translateX(105%);
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 50;
-  padding: 28px 24px;
+  padding: 28px 24px 32px;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .laci.terbuka { transform: translateX(0); }
@@ -493,11 +495,107 @@ html, body {
 .laci-daftar button:hover { color: var(--abu-teks); }
 
 .laci-catatan {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
+  margin: 20px 0 0;
   font-size: 12px;
   color: var(--abu-teks);
+}
+
+/* ---------- Daftar wilayah ---------- */
+.wilayah {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--abu-garis);
+}
+
+.wilayah-judul {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  margin: 0 0 10px;
+}
+
+/* Jejak tingkatan: Indonesia › Jawa Barat › Kota Bandung */
+.wilayah-jalan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  min-height: 18px;
+}
+
+.wilayah-jalan button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 12px;
+  color: #2563eb;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.wilayah-jalan span { color: var(--abu-teks); }
+
+.wilayah-cari {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 11px;
+  margin-bottom: 8px;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  font-family: var(--font);
+  font-size: 13px;
+}
+
+.wilayah-daftar {
+  max-height: 45vh;
+  overflow-y: auto;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+}
+
+.wilayah-baris {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--abu-garis);
+}
+
+.wilayah-baris:last-child { border-bottom: none; }
+
+/* Nama wilayah — klik = peta pindah ke sana */
+.wilayah-nama {
+  flex: 1;
+  text-align: left;
+  border: none;
+  background: none;
+  font-family: var(--font);
+  font-size: 13px;
+  padding: 9px 10px;
+  cursor: pointer;
+  color: var(--hitam);
+}
+
+.wilayah-nama:hover { background: var(--abu-latar); }
+
+/* Tanda › — klik = masuk ke wilayah di bawahnya */
+.wilayah-masuk {
+  width: 34px;
+  border: none;
+  border-left: 1px solid var(--abu-garis);
+  background: none;
+  font-size: 15px;
+  color: var(--abu-teks);
+  cursor: pointer;
+}
+
+.wilayah-masuk:hover { background: var(--abu-latar); color: var(--hitam); }
+
+.wilayah-kosong {
+  padding: 12px 10px;
+  font-size: 12px;
+  color: var(--abu-teks);
+  margin: 0;
 }
 
 /* ---------- Sinkron awan ---------- */
