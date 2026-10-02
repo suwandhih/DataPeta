@@ -39,10 +39,19 @@
 | K03 | c. Buat database SQLite di Layerbase (paket Free, 5 GB) | ⬜ | ⬜ | — |
 | K03 | d. ⚠️ **Masalah keamanan:** kunci API Layerbase akan terlihat di halaman publik GitHub Pages → data bisa dicuri/dihapus orang. **Perlu perantara (proxy)** atau ganti cara. | ⚠️ | ⚠️ | 2 Okt 2026 |
 | K03 | g. **Ide Bapak: IndexedDB utama + Layerbase titipan (semi-online)** — ✅ **DIPERBOLEHKAN** (pemakaian database biasa, bukan proxy/reselling). Batas Free: 10 GB/24j, 5 GB simpan, harus tidur ≥25% — semua cukup. | ✅ | ✅ | 2 Okt 2026 |
-| K03 | h. **Perantara Cloudflare Worker** (sembunyikan kunci API) — perlu akun gratis | ⬜ | ⬜ | — |
+| K03 | h. **Perantara Cloudflare Worker** (sembunyikan kunci API) — pakai akun Bapak | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h1. Buat database SQLite Layerbase `peta-indonesia` (Free) | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h1b. API host `sage.cloud.layerbase.dev` · DB ID `156a6d1e-...` · API key dibuat | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h1c. Tabel `lokasi` dibuat di database | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h1d. ⚠️ **Uji CORS: peramban DIBLOKIR** memanggil Layerbase langsung → **Cloudflare Worker WAJIB** | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h2. Akun Cloudflare (Bapak sudah punya) | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h3. AI buat Cloudflare Worker `peta-api` (perantara) | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h4. Sambungkan aplikasi ke Worker (tombol Kirim/Ambil) | ✅ | ✅ | 2 Okt 2026 |
+| K03 | h5. Uji: kirim 8/8 · hapus lokal → tarik 8 kembali · **tanpa duplikat** | ✅ | ✅ | 2 Okt 2026 |
+| K03 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 | K03 | i. **IndexedDB** — penyimpanan data lokal (dikerjakan dulu, keputusan Bapak) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | j. Form isian data client (tambah/ubah/hapus lokasi) — K02 g | ✅ | ✅ | 2 Okt 2026 |
-| K03 | e. Sambungkan aplikasi ke database cloud (cara aman) | ⬜ | ⬜ | — |
+| K03 | e. Sambungkan aplikasi ke database cloud (cara aman) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
 ### B. ANTREAN KERJA

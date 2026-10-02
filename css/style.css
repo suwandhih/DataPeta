@@ -370,6 +370,43 @@ html, body {
   color: var(--abu-teks);
 }
 
+/* ---------- Sinkron awan ---------- */
+.laci-awan {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--abu-garis);
+}
+
+.laci-awan-judul {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  margin: 0 0 10px;
+}
+
+.laci-awan-tombol {
+  width: 100%;
+  padding: 11px;
+  margin-bottom: 8px;
+  border-radius: var(--radius-kecil);
+  border: 1px solid var(--abu-garis);
+  background: var(--putih);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--hitam);
+}
+
+.laci-awan-tombol:hover { background: var(--abu-latar); }
+
+.laci-awan-status {
+  font-size: 12px;
+  color: var(--abu-teks);
+  margin: 6px 0 0;
+  min-height: 16px;
+}
+
 /* ================= TIRAI ================= */
 .tirai {
   position: fixed;

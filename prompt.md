@@ -80,12 +80,21 @@ DataPeta/
 ├── css/style.css              → gaya tampilan
 ├── js/app.js                  → logika antarmuka
 ├── js/penyimpanan.js          → penyimpanan IndexedDB (data lokal)
+├── js/awan.js                 → sambungan awan (Cloudflare Worker)
+├── cloudflare/worker.js       → kode Worker (perantara aman)
+├── cloudflare/wrangler.toml   → konfigurasi Worker
 ├── data/peta-indonesia.js     → batas 38 provinsi (GeoJSON, offline)
 ├── data/negara-dunia.js       → batas negara dunia (latar tetangga)
 ├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
 └── (5 dokumen .md)
 ```
+
+**Alur data:** `IndexedDB (utama)` → `Cloudflare Worker (penjaga kunci)` → `Layerbase (titipan)`
+
+- **Cloudflare Worker:** `https://peta-api.suwandhih.workers.dev`
+- **Rahasia Worker:** `LAYERBASE_KEY` (secret), `LAYERBASE_HOST`, `DB_ID`
+- **Deploy Worker:** `cd cloudflare; npx wrangler deploy`
 
 **Sumber peta:**
 - 38 provinsi → **BIG** via `github.com/ardian28/GeoJson-Indonesia-38-Provinsi`

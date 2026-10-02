@@ -1,0 +1,7 @@
+name = "peta-api"
+main = "worker.js"
+compatibility_date = "2026-10-02"
+
+[vars]
+LAYERBASE_HOST = "https://sage.cloud.layerbase.dev"
+DB_ID = "156a6d1e-df46-48a7-b62a-b540a1310241"

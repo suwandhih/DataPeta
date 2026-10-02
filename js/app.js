@@ -420,6 +420,39 @@
     });
   }
 
+  // ---------- Sinkron awan ----------
+  const tombolKirim = document.getElementById("tombolKirim");
+  const tombolTarik = document.getElementById("tombolTarik");
+  const awanStatus = document.getElementById("awanStatus");
+
+  function laporAwan(teks, warna) {
+    awanStatus.textContent = teks;
+    awanStatus.style.color = warna || "var(--abu-teks)";
+  }
+
+  tombolKirim.addEventListener("click", () => {
+    laporAwan("Mengirim…");
+    Penyimpanan.ambilSemua()
+      .then((data) => Awan.kirimSemua(data))
+      .then((h) =>
+        laporAwan("Terkirim " + h.sukses + " dari " + h.total + (h.gagal ? " (" + h.gagal + " gagal)" : ""), h.gagal ? "#b91c1c" : "#166534")
+      )
+      .catch((e) => laporAwan("Gagal: " + e.message, "#b91c1c"));
+  });
+
+  tombolTarik.addEventListener("click", () => {
+    laporAwan("Mengambil…");
+    Awan.tarikDanGabung()
+      .then((h) => {
+        laporAwan(
+          "Selesai — " + h.baru + " baru, " + h.diperbarui + " diperbarui (dari " + h.total + ")",
+          "#166534"
+        );
+        return muatUlang();
+      })
+      .catch((e) => laporAwan("Gagal: " + e.message, "#b91c1c"));
+  });
+
   // ---------- Mulai ----------
   gambarPeta();
   gambarKategori();

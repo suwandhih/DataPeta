@@ -61,6 +61,21 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 ⚠️ **Penting:** data tersimpan **di perangkat ini saja**. Data di PC dan di HP **terpisah**.
 Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
 
+### ☁️ Cara pindah data PC ↔ HP
+
+Buka **menu** (☰ kanan atas), lalu:
+
+1. **↑ Kirim ke Awan** — mengirim data perangkat ini ke awan.
+2. **↓ Ambil dari Awan** — mengambil data dari awan ke perangkat ini.
+
+**Contoh:**
+- Di **PC**: klik **Kirim ke Awan**
+- Di **HP**: klik **Ambil dari Awan** → data dari PC masuk ke HP
+
+✅ **Aman:** data yang sudah ada **tidak dobel** — hanya yang baru / lebih baru yang masuk.
+
+⚠️ **Butuh internet** untuk kedua tombol ini. Tanpa internet, aplikasi tetap bisa dipakai (data lokal).
+
 ⚠️ **Catatan:** data yang tampil sekarang **data contoh** (untuk uji tampilan),
 bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 

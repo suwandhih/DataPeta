@@ -4,6 +4,22 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — ☁️ DATA CLOUD (Layerbase + Cloudflare) — SELESAI
+
+**Data kini bisa dipindah PC ↔ HP lewat awan. Kunci API aman.**
+
+- Dibuat database **SQLite di Layerbase** (`peta-indonesia`, paket Free 5 GB) + tabel `lokasi`.
+- ⚠️ **Uji CORS:** peramban **diblokir** memanggil Layerbase langsung → **Cloudflare Worker wajib**.
+- Dibuat **Cloudflare Worker** `peta-api` (`peta-api.suwandhih.workers.dev`) sebagai perantara:
+  menyembunyikan **kunci API** (disimpan sebagai *secret* di Cloudflare, ❌ tidak terlihat di halaman publik).
+- Ditambah `js/awan.js` + tombol di menu: **"↑ Kirim ke Awan"** dan **"↓ Ambil dari Awan"**.
+- Cara kerja: **IndexedDB = data utama** · **Layerbase = titipan** untuk pindah antar perangkat.
+- **Anti-duplikat:** saat "Ambil dari Awan", data yang sudah ada tidak ditimpa kecuali lebih baru.
+- Uji: kirim **8 dari 8** ✅ · hapus lokal → tarik **8 data kembali** ✅ · tarik 2× → **tanpa duplikat** ✅.
+- ⚠️ **Catatan:** Layerbase **tidur** saat tidak dipakai (bangun ±1–5 detik). Ini normal & sesuai aturan Free.
+
+---
+
 ## 2 Oktober 2026 — 💾 PENYIMPANAN DATA (IndexedDB) + FORM ISIAN
 
 **Bapak kini bisa mengisi data sendiri — dan data tidak hilang.**
