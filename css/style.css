@@ -128,6 +128,28 @@ html, body {
   fill: #1f2937;
 }
 
+/* ================= NAMA PULAU (permanen) ================= */
+.pulau { pointer-events: none; }
+
+.pulau-nama {
+  font-family: var(--font);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  fill: #8a7457;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.75);
+  stroke-width: 2.4px;
+  user-select: none;
+}
+
+.pulau-besar .pulau-nama {
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  fill: #7a6446;
+}
+
 /* ================= KENDALI ZOOM ================= */
 .zoom-kendali {
   position: fixed;

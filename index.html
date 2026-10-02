@@ -17,13 +17,15 @@
       <g id="viewport">
         <!-- Urutan lapisan = urutan tampil (bawah ke atas).
              Provinsi dulu, baru danau/sungai, supaya air tidak tertutup
-             warna provinsi. -->
+             warna provinsi. Nama pulau paling atas supaya tetap terbaca,
+             tapi diletakkan jauh dari nama kota (diatur di js/app.js). -->
         <g id="lapisNegara"></g>
         <g id="lapisProvinsi"></g>
         <g id="lapisDanau"></g>
         <g id="lapisSungai"></g>
         <g id="lapisGunung"></g>
         <g id="lapisKota"></g>
+        <g id="lapisPulau"></g>
         <g id="lapisPenanda"></g>
       </g>
     </svg>
@@ -133,6 +135,7 @@
   <script src="data/danau.js"></script>
   <script src="data/gunung.js"></script>
   <script src="data/kota-indonesia.js"></script>
+  <script src="data/pulau.js"></script>
   <script src="data/contoh-lokasi.js"></script>
   <script src="js/penyimpanan.js"></script>
   <script src="js/awan.js"></script>

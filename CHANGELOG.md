@@ -4,6 +4,47 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 2 Oktober 2026 — 🏝️ NAMA PULAU DI PETA
+
+**Nama pulau kini tampil permanen, tidak mengganggu nama kota.**
+
+- Ditambah **29 pulau**: Kalimantan · Papua · Sumatra · Jawa · Sulawesi · Timor ·
+  Bali · Madura · Lombok · Sumbawa · Flores · Sumba · Alor · Wetar · Seram · Buru ·
+  Halmahera · Morotai · Taliabu · Biak · Kolepom · Bangka · Belitung · Bunguran ·
+  Nias · Siberut · Pagai Selatan · Enggano · Simeulue.
+- **Tampil permanen** — tidak hilang saat zoom keluar/masuk.
+- **Penempatan otomatis:** nama pulau dicari tempat yang **tidak menutupi nama kota**,
+  tidak menutupi nama gunung, tidak menutupi nama pulau lain, dan tidak terpotong
+  tepi peta. Kalau tidak ada tempat aman → nama pulau tidak ditampilkan
+  (nama kota lebih dipentingkan, sesuai permintaan Bapak).
+- **Sumber data:** Natural Earth (public domain) — nama resmi Indonesia (`NAME_ID`).
+- Pulau di luar Indonesia (Nikobar, Mindanao, Palawan, Phuket, Flores di Azores)
+  **disaring/dibuang**.
+- Titik penempatan **dipastikan berada di dalam wilayah Indonesia** — dicek terhadap
+  batas 38 provinsi, jadi nama tidak akan jatuh di Malaysia atau Papua Nugini.
+- Berkas: `data/pulau.js` (29 pulau) · alat pembuat: `alat/buat-pulau.js`.
+- Uji: 8 uji · 0 gagal — saat zoom 1× muncul 24 nama pulau · zoom naik jadi 13 nama
+  (hanya yang tampak) · **0 tabrakan** dengan nama kota/gunung. ✅
+
+---
+
+## 2 Oktober 2026 — 🐛 **PERBAIKAN: sungai & danau tidak terlihat**
+
+**Masalah Bapak:** *"5b. tidak ada atau tidak tampil"* — sungai, danau, gunung tidak tampak.
+
+**Penyebab (ditemukan AI):** urutan lapisan peta salah. Sungai & danau digambar
+**sebelum** provinsi, jadi **tertutup** oleh warna provinsi yang pekat. Gunung
+kebetulan digambar setelah provinsi → itu sebabnya gunung terlihat, sungai/danau tidak.
+
+**Perbaikan:**
+- Urutan lapisan diubah: **provinsi dulu → baru danau → sungai → gunung**.
+- Warna diperjelas: sungai `#4a90d9` (garis 1,4) · danau `#7fb8e8` · gunung `#a0522d`.
+- Hasil: 30 sungai · 4 danau · 18 gunung **terlihat jelas** di layar. ✅
+
+**Catatan uji:** 30 sungai · 4 danau · 18 gunung tergambar · 105 kota saat zoom masuk · tanpa error ✅
+
+---
+
 ## 2 Oktober 2026 — 🏔️ KELENGKAPAN PETA (sungai · danau · gunung)
 
 **Peta kini memuat bentang alam — lebih mudah dibaca.**

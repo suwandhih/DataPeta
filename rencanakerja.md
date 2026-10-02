@@ -11,6 +11,12 @@
 
 | Kode | Kasus | Butir | Status | Tgl |
 |------|-------|-------|--------|-----|
+| **K05** | **Kelengkapan peta** (order Bapak, 2 Okt 2026) — ✅ **DIUTAMAKAN** | | | |
+| K05 | a. Zoom in / zoom out — ✅ sudah ada (verifikasi) | ✅ | ✅ | 2 Okt 2026 |
+| K05 | b. **Sungai, danau, gunung** di peta (agar mudah dibaca) | ✅ | ✅ | 2 Okt 2026 |
+| K05 | b1. 🐛 Bapak: *"5b tidak tampil"* → **dinilai**: lapisan air tertutup warna provinsi → urutan lapisan diperbaiki | ✅ | ✅ | 2 Okt 2026 |
+| K05 | c. **Muara** (kuala) di peta | ⬜ | ⬜ | — |
+| K05 | d. **Bendungan / waduk** di peta | ⬜ | ⬜ | — |
 | **K01** | **Data wilayah Indonesia lengkap** | | | |
 | K01 | a. Cari sumber data lengkap & tepercaya (38 prov → 514 kab/kota → 7.285 kec → 83.762 desa/kelurahan) | ⬜ | ⬜ | — |
 | K01 | b. Ambil & verifikasi data **38 provinsi** | ⬜ | ⬜ | — |
@@ -59,9 +65,6 @@
 | K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) | ⬜ | ⬜ | — |
 | K04 | c. Klik wilayah di daftar → **form isian data** | ⬜ | ⬜ | — |
 | K04 | d. Unduh **data wilayah asli** (BPS/BIG) — bertahap | ⬜ | ⬜ | — |
-| **K05** | **Kelengkapan peta** (order Bapak, 2 Okt 2026) — ✅ **DIUTAMAKAN** | | | |
-| K05 | a. Zoom in / zoom out — ✅ sudah ada (verifikasi) | ✅ | ✅ | 2 Okt 2026 |
-| K05 | b. **Sungai, gunung, muara, danau, bendungan** di peta (agar mudah dibaca) | ✅ | ✅ | 2 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
@@ -79,6 +82,8 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K06** | **Nama pulau tampil permanen** — 29 pulau, penempatan otomatis tidak menutupi nama kota (a–d ✅) | 2 Okt 2026 |
+| **K05** | **Kelengkapan peta** — zoom ✅ · sungai/danau/gunung ✅ (perbaikan urutan lapisan) · sisa: muara & bendungan (belum) | 2 Okt 2026 |
 | — | Inisialisasi proyek: backup 5 dokumen salinan ANodes, kosongkan, buat `agents.md` | 30 Sep 2026 |
 
 ---
