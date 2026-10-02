@@ -104,6 +104,7 @@
 | **E2** | **TIDAK PERNAH** menghapus data secara destructive. Perlu hapus → bertahap + backup. |
 | **E3** | **Data yang diisi Bapak sendiri = inti aplikasi** → tidak boleh hilang saat ada perubahan. |
 | **E4** | **TIDAK PERNAH** cascade delete. Selalu `UPDATE ... WHERE`. |
+| **E5** | 🔴 **Berkas berisi sandi / kunci API TIDAK BOLEH masuk repo GitHub.** Simpan di folder `catat/` (sudah masuk `.gitignore`). Sebelum `git add`, periksa dulu berkas baru. Kalau sudah terlanjur terunggah → hapus + bersihkan riwayat + **beri tahu Bapak untuk ganti kunci**. |
 
 ---
 

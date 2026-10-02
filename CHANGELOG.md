@@ -4,7 +4,31 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 2 Oktober 2026 — 🐛 **PERBAIKAN: nama kota tertutup penanda**
+## 2 Oktober 2026 — � **PENTING: berkas rahasia terunggah ke GitHub**
+
+**Masalah:** saat mengunggah, ternyata ada berkas catatan pribadi yang ikut terunggah
+ke GitHub (halaman publik):
+- `catat/GitHub.txt` — berisi **kata sandi**
+- `catat/layerbase.txt` — berisi **kunci API Layerbase**
+
+**Tindakan yang sudah dilakukan:**
+1. Kedua berkas **dihapus** dari repo.
+2. Folder `catat/` dimasukkan ke `.gitignore` → **tidak akan terunggah lagi**.
+3. **Riwayat Git dibersihkan** (filter-branch + gc) → kunci & sandi **hilang dari riwayat**.
+4. Repo diunggah ulang (paksa) → GitHub kini bersih.
+
+**⚠️ PERLU TINDAKAN BAPAK:** karena kunci & sandi sempat terbuka di internet,
+sebaiknya **ganti (reset)**:
+- **Kunci API Layerbase** → buat kunci baru di Layerbase, lalu perbarui rahasia
+  `LAYERBASE_KEY` di Cloudflare Worker.
+- **Kata sandi** yang tertulis di `catat/GitHub.txt` (kalau masih dipakai).
+
+**Aturan baru:** berkas berisi sandi/kunci **TIDAK BOLEH** masuk repo. Simpan di
+folder `catat/` (sudah diabaikan Git).
+
+---
+
+## 2 Oktober 2026 — �🐛 **PERBAIKAN: nama kota tertutup penanda**
 
 **Masalah Bapak:** *"nama jakarta masuk di area pulau sedang area tidak terlalu besar"* —
 nama kota tertutup lingkaran penanda, jadi terbaca "Jakrta", "Banding", "Sur-baya".
