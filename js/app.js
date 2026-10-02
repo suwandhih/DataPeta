@@ -694,22 +694,16 @@
   }
 
   // ---------- Pulau-pulau kecil ----------
-  // Pulau di Kepulauan Seribu hanya 0,1–3,7 km — di peta kurang dari 1 piksel,
-  // jadi bentuknya tidak terlihat. Solusinya: gambar BENTUK ASLINYA, tapi
-  // garis tepinya dibuat tetap tebal di layar (tidak ikut mengecil saat zoom).
-  // Jadi yang terlihat tetap bentuk pulau yang sebenarnya — bukan titik palsu.
+  // Pulau di Kepulauan Seribu hanya 0,1–3,7 km — di peta kurang dari 1 piksel.
+  // Bentuk aslinya digambar apa adanya, warnanya sama seperti provinsi lain.
   function gambarPulauKecil() {
     lapisPulauKecil.innerHTML = "";
     if (typeof KEPULAUAN_SERIBU === "undefined" || !proyeksi) return;
-
-    // Tebal garis di layar (px). Dibagi zk supaya tetap sama walau di-zoom.
-    const tebal = (1.6 / zk).toFixed(4);
 
     KEPULAUAN_SERIBU.forEach((w) => {
       const path = document.createElementNS(NS, "path");
       path.setAttribute("d", geometriKePath(w.g));
       path.setAttribute("class", "pulau-kecil-bentuk");
-      path.setAttribute("stroke-width", tebal);
       path.dataset.nama = w.n;
       path.addEventListener("click", () => bukaPanelProvinsi(w.n));
 
