@@ -15,10 +15,13 @@
     <svg id="petaSvg" class="peta-svg" viewBox="0 0 1000 400"
          preserveAspectRatio="xMidYMid meet" aria-label="Peta Indonesia">
       <g id="viewport">
+        <!-- Urutan lapisan = urutan tampil (bawah ke atas).
+             Provinsi dulu, baru danau/sungai, supaya air tidak tertutup
+             warna provinsi. -->
         <g id="lapisNegara"></g>
+        <g id="lapisProvinsi"></g>
         <g id="lapisDanau"></g>
         <g id="lapisSungai"></g>
-        <g id="lapisProvinsi"></g>
         <g id="lapisGunung"></g>
         <g id="lapisKota"></g>
         <g id="lapisPenanda"></g>
