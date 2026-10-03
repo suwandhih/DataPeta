@@ -1019,8 +1019,8 @@ html, body {
 .member-label-tombol:not(.aktif) .member-label-keadaan { background: #9ca3af; }
 .member-label-tombol:not(.aktif) .member-label-ikon { opacity: 0.45; }
 
-/* Judul kota di daftar Member — bisa disembunyikan */
-.member-grup.ringkas .member-grup-judul { display: none; }
+/* Label kategori di daftar Member — bisa disembunyikan (nama lokasi tetap tampil) */
+.member-daftar.kategori-sembunyi .member-wilayah { display: none; }
 
 /* Saat sedang memilih member (klik [✎]/[−]) → daftar anggota disembunyikan,
    supaya tidak tampak dobel dengan panel pilih. */

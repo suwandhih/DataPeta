@@ -4,8 +4,31 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 3 Oktober 2026 — 👁️ **TOMBOL KEDUA: YANG DISEMBUNYIKAN = LABEL KATEGORI DI DAFTAR**
 
-## 3 Oktober 2026 — �️ **HILANGKAN TAMPILAN DOBEL SAAT [✎] / [−]**
+**Catatan Bapak:** *"👁 Judul kota di daftar → yg di sembunyikan seharusnya label kategori,
+yg tetap tampil adalah lokasinya"*
+
+**Perbaikan:**
+- Tombol kedua diganti nama jadi **"👁 Label kategori di daftar"** (sebelumnya “Judul kota di daftar”).
+- Yang **disembunyikan = label kategori** di daftar Member.
+- Yang **tetap tampil = nama lokasi** (dan judul kotanya).
+
+**Sekarang dua tombol jadi jelas pasangannya:**
+
+| Tombol | Mengatur | Yang disembunyikan |
+|--------|----------|-------------------|
+| 👁 **Label kategori pada peta** | tulisan kategori **di peta** | label kategori di peta |
+| 👁 **Label kategori di daftar** | tulisan kategori **di daftar Member** | label kategori di daftar |
+
+Keduanya: **nama lokasi tetap tampil**.
+
+**Hasil uji:** nama tombol sesuai ✅ · klik Sembunyi → judul kota **tetap tampil**
+("Balikpapan, Kalimantan Timur") ✅ · nama lokasi **tetap tampil** (8 baris) ✅ ·
+label kategori `display:none` ✅ · tanda keadaan "Sembunyi" ✅ · klik lagi → kategori
+muncul kembali, "Tampil" ✅ · tanpa error ✅
+
+---## 3 Oktober 2026 — �️ **HILANGKAN TAMPILAN DOBEL SAAT [✎] / [−]**
 
 **Catatan Bapak:** *"di edit tampil ... saya kotak merah.. seolah double tampilan"*
 

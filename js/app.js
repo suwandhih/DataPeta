@@ -100,7 +100,7 @@
   let labelTerpakai = [];    // kotak label lokasi yang sudah ditaruh (anti tumpang tindih)
   // Label kategori di peta: bisa disembunyikan sekaligus (satu tombol).
   let labelTampilGlobal = true;                 // tombol "Label kategori pada peta"
-  let judulKotaTampil = true;                   // tombol "Judul kota di daftar"
+  let kategoriDaftarTampil = true;              // tombol "Label kategori di daftar"
 
   // ---------- Bantu ----------
   function inisialDari(nama) {
@@ -1303,6 +1303,8 @@
 
   function gambarMember() {
     memberDaftar.innerHTML = "";
+    // Label kategori di daftar bisa disembunyikan (nama lokasi tetap tampil)
+    memberDaftar.classList.toggle("kategori-sembunyi", !kategoriDaftarTampil);
 
     if (!daftarLokasi.length) {
       memberDaftar.innerHTML = '<p class="member-kosong">Belum ada lokasi tersimpan.</p>';
@@ -1323,7 +1325,7 @@
         const isi = grup.get(kunci).slice().sort((a, b) => a.nama.localeCompare(b.nama, "id"));
 
         const kotak = document.createElement("div");
-        kotak.className = "member-grup" + (judulKotaTampil ? "" : " ringkas");
+        kotak.className = "member-grup";
 
         const judul = document.createElement("div");
         judul.className = "member-grup-judul";
@@ -1528,17 +1530,17 @@
     gambarPenanda();
   }
 
-  // Judul kota di daftar Member: tampil / sembunyi
+  // Label kategori DI DAFTAR: tampil / sembunyi (nama lokasi tetap tampil)
   function gambarTombolJudulKota() {
-    memberJudulKota.classList.toggle("aktif", judulKotaTampil);
-    memberJudulKota.title = judulKotaTampil
-      ? "Klik untuk menyembunyikan judul kota di daftar"
-      : "Klik untuk menampilkan lagi judul kota di daftar";
-    memberKotaKeadaan.textContent = judulKotaTampil ? "Tampil" : "Sembunyi";
+    memberJudulKota.classList.toggle("aktif", kategoriDaftarTampil);
+    memberJudulKota.title = kategoriDaftarTampil
+      ? "Klik untuk menyembunyikan label kategori di daftar"
+      : "Klik untuk menampilkan lagi label kategori di daftar";
+    memberKotaKeadaan.textContent = kategoriDaftarTampil ? "Tampil" : "Sembunyi";
   }
 
   function toggleJudulKota() {
-    judulKotaTampil = !judulKotaTampil;
+    kategoriDaftarTampil = !kategoriDaftarTampil;
     gambarTombolJudulKota();
     gambarMember();
   }
