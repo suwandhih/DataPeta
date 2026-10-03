@@ -3,6 +3,28 @@
 > Rekam **semua kejadian** di aplikasi: apa yang berubah, kapan, dan kenapa.
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
+---
+## 3 Oktober 2026 — 🗺️ **LABEL PETA: NAMA WILAYAH SELALU TAMPIL**
+
+**Catatan Bapak:** *"untuk tombol label kategori pada peta, yg saya maksud hide/un termasuk
+Klinik Sehat Bersama dan Kesehatan .. yg tetap di tampil hide/un adalah nama wilayah ..
+selama ada data tetap tampil nama wilayah"*
+
+**Perbaikan:**
+- Label di peta kini **3 baris**: **nama wilayah** (kepala) → **nama lokasi** → **kategori**.
+- Tombol 👁 diganti nama jadi **"Label lokasi pada peta"**.
+- Saat di-hide → **nama lokasi & kategori disembunyikan**; **nama wilayah tetap tampil**.
+
+**Contoh (member di Surabaya):**
+
+| Keadaan | Yang tampil di peta |
+|---------|---------------------|
+| **Tampil** | Surabaya, Jawa Timur · Klinik Sehat Bersama · Kesehatan |
+| **Sembunyi** | Surabaya, Jawa Timur |
+
+**Hasil uji:** tampil → 24 teks (8 wilayah + 8 nama + 8 kategori) ✅ · sembunyi → 8 teks
+(hanya nama wilayah) ✅ · klik lagi → kembali 24 teks, "Tampil" ✅ · tanpa error ✅
+
 ---## 3 Oktober 2026 — ↔️ **DUA TOMBOL 👁 DISATUKAN DALAM SATU BARIS**
 
 **Catatan Bapak:** *"apakah 2 tombol 👁 bisa dalam 1 baris tidak ambil 2 baris seperti sekarang?"*

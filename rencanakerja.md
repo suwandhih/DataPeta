@@ -97,6 +97,7 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K14g** | **Label peta: nama wilayah selalu tampil** — tombol 👁 (kini "Label lokasi pada peta") menyembunyikan nama lokasi & kategori; nama wilayah tetap | 3 Okt 2026 |
 | **K14f** | **Dua tombol 👁 disatukan dalam satu baris** (Label kategori pada peta & Ringkas daftar) | 3 Okt 2026 |
 | **K14e** | **Tombol 👁 kedua jadi "Ringkas daftar (hanya kota)"** — saat di-hide, seluruh baris member (nama & kategori) disembunyikan; hanya judul kota yang tampil | 3 Okt 2026 |
 | **K14d** | **Tombol 👁 kedua diperbaiki** — “Label kategori di daftar” yang disembunyikan; nama lokasi & judul kota tetap tampil | 3 Okt 2026 |
