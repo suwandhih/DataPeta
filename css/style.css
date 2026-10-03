@@ -241,6 +241,22 @@ html, body {
   stroke-dasharray: 2 1.6;
 }
 
+/* Nama wilayah — kepala label lokasi di peta (selalu tampil) */
+.lokasi-wilayah {
+  font-family: var(--font);
+  font-size: 9px;
+  font-weight: 700;
+  fill: #111827;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 2.4px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lokasi-wilayah.pratinjau { fill: #6b7280; font-style: italic; }
+.lokasi-wilayah.kedip { fill: #b91c1c; }
+
 /* Nama lokasi di samping titik */
 .lokasi-nama {
   font-family: var(--font);

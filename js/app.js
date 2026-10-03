@@ -816,7 +816,8 @@
       lapisPenanda.appendChild(g);
 
       gambarLabelLokasi(
-        pratinjau.nama,
+        pratinjau.wilayah || "",
+        labelTampilGlobal ? pratinjau.nama : "",
         labelTampilGlobal ? pratinjau.kategori : "",
         p,
         "pratinjau",
@@ -862,7 +863,14 @@
       });
       lapisPenanda.appendChild(g);
 
-      gambarLabelLokasi(lokasi.nama, teksKategoriPeta(lokasi), p, lokasi.id === idBerkedip ? "kedip" : "", rintanganLabel);
+      gambarLabelLokasi(
+        lokasi.wilayah || "",
+        labelTampilGlobal ? lokasi.nama : "",
+        teksKategoriPeta(lokasi),
+        p,
+        lokasi.id === idBerkedip ? "kedip" : "",
+        rintanganLabel
+      );
     });
   }
 
@@ -916,17 +924,20 @@
     return { kiri: sx - jarak - w, kanan: sx - jarak, atas: sy - g - h, bawah: sy - g };
   }
 
-  function gambarLabelLokasi(nama, kategori, p, kelas, rintangan) {
+  function gambarLabelLokasi(wilayah, nama, kategori, p, kelas, rintangan) {
     if (!proyeksi) return;
     const s = keLayar(p);
 
+    const punyaNama = !!nama;
     const punyaKat = !!kategori;
-    const lebarNama = ukuranTeks(nama, HURUF_LOKASI.nama, 0).w;
+    const lebarWilayah = ukuranTeks(wilayah || "", HURUF_LOKASI.nama, 0).w;
+    const lebarNama = ukuranTeks(nama || "", HURUF_LOKASI.nama, 0).w;
     const lebarKat = ukuranTeks(kategori || "", HURUF_LOKASI.kategori, 0).w;
-    const w = Math.max(lebarNama, lebarKat) + 6;
+    const w = Math.max(lebarWilayah, lebarNama, lebarKat) + 6;
     const tinggiBaris = HURUF_LOKASI.nama * 1.22;
-    // Kalau label kategori disembunyikan, kotak label lebih pendek
-    const h = tinggiBaris * (punyaKat ? 2 : 1);
+    // Baris: wilayah (selalu) + nama + kategori (bila tampil)
+    const jumlahBaris = 1 + (punyaNama ? 1 : 0) + (punyaKat ? 1 : 0);
+    const h = tinggiBaris * jumlahBaris;
 
     const semua = (rintangan || []).concat(labelTerpakai);
 
@@ -978,20 +989,27 @@
     garis.setAttribute("class", "lokasi-garis" + (kelas ? " " + kelas : ""));
     lapisNamaLokasi.appendChild(garis);
 
-    // Nama lokasi + label kategori (dua baris, ukuran sama)
+    // Baris label: wilayah (kepala) → nama lokasi → kategori
     const cx = (terpilih.kiri + terpilih.kanan) / 2;
-    const yNama = terpilih.atas + tinggiBaris * (punyaKat ? 0.6 : 0.5);
     const teksKelas = kelas ? " " + kelas : "";
+    let barisKe = 0;
 
     lapisNamaLokasi.appendChild(
-      buatTeksLokasi(nama, "lokasi-nama" + teksKelas, cx, yNama, null)
+      buatTeksLokasi(wilayah, "lokasi-wilayah" + teksKelas, cx, terpilih.atas + tinggiBaris * (barisKe + 0.5), null)
     );
+    barisKe++;
+
+    if (punyaNama) {
+      lapisNamaLokasi.appendChild(
+        buatTeksLokasi(nama, "lokasi-nama" + teksKelas, cx, terpilih.atas + tinggiBaris * (barisKe + 0.5), null)
+      );
+      barisKe++;
+    }
     if (punyaKat) {
-      const yKat = terpilih.atas + tinggiBaris * 1.6;
       // Warna memakai kategori UTAMA saja (teks bisa berisi beberapa kategori)
       const utama = kategori.split(" · ")[0];
       lapisNamaLokasi.appendChild(
-        buatTeksLokasi(kategori, "lokasi-kategori" + teksKelas, cx, yKat, warnaKategoriLokasi(utama))
+        buatTeksLokasi(kategori, "lokasi-kategori" + teksKelas, cx, terpilih.atas + tinggiBaris * (barisKe + 0.5), warnaKategoriLokasi(utama))
       );
     }
   }
@@ -1413,7 +1431,7 @@
         ty = VB_H / 2 - p.y * zk;
         batasiGeser();
         terapkanTampilan();
-        pratinjau = { nama: "Lokasi baru", lon: contoh.lon, lat: contoh.lat, kategori: fKategori.value };
+        pratinjau = { nama: "Lokasi baru", wilayah: contoh.wilayah || "", lon: contoh.lon, lat: contoh.lat, kategori: fKategori.value };
         gambarPenanda();
       }
     }
@@ -1513,14 +1531,14 @@
     );
   }
 
-  // ---------- Label kategori: tampil / sembunyi di peta ----------
-  // Nama lokasi tetap tampil selama datanya ada; hanya tulisan kategori
-  // yang disembunyikan. Satu tombol saja di bawah [+ Tambah Lokasi].
+  // ---------- Label lokasi: tampil / sembunyi di peta ----------
+  // Nama WILAYAH selalu tampil (kepala label). Yang disembunyikan = nama
+  // lokasi + kategori. Satu tombol saja di bawah [+ Tambah Lokasi].
   function gambarTombolMataGlobal() {
     memberMataGlobal.classList.toggle("aktif", labelTampilGlobal);
     memberMataGlobal.title = labelTampilGlobal
-      ? "Klik untuk menyembunyikan label kategori di peta"
-      : "Klik untuk menampilkan lagi label kategori di peta";
+      ? "Klik untuk menyembunyikan nama lokasi & kategori di peta (nama wilayah tetap tampil)"
+      : "Klik untuk menampilkan lagi nama lokasi & kategori di peta";
     memberLabelKeadaan.textContent = labelTampilGlobal ? "Tampil" : "Sembunyi";
   }
 
@@ -1807,6 +1825,7 @@
     if (typeof hasil.lat === "number" && typeof hasil.lon === "number") {
       pratinjau = {
         nama: fNama.value.trim() || hasil.nama,
+        wilayah: hasil.nama,
         lon: hasil.lon,
         lat: hasil.lat,
         kategori: fKategori.value
