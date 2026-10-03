@@ -985,35 +985,43 @@ html, body {
 .member-tombol-hapus { color: #b91c1c; }
 .member-tombol-hapus:hover { background: #fee2e2; }
 
-/* Satu tombol: tampil/sembunyi label kategori di peta */
-.member-label-tombol {
-  width: 100%;
+/* Dua tombol 👁 berdampingan dalam satu baris */
+.member-label-baris {
   display: flex;
-  align-items: center;
   gap: 8px;
   margin-bottom: 14px;
-  padding: 10px 12px;
+}
+
+/* Satu tombol: tampil/sembunyi label kategori di peta */
+.member-label-tombol {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 10px;
   border: 1px solid var(--abu-garis);
   border-radius: var(--radius-kecil);
   background: var(--putih);
   font-family: var(--font);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--hitam);
   cursor: pointer;
 }
 
 .member-label-tombol:hover { background: var(--abu-latar); }
-.member-label-tombol .member-label-ikon { font-size: 14px; line-height: 1; }
-.member-label-tombol .member-label-teks { flex: 1; text-align: left; }
+.member-label-tombol .member-label-ikon { font-size: 14px; line-height: 1; flex-shrink: 0; }
+.member-label-tombol .member-label-teks { flex: 1; text-align: left; line-height: 1.25; }
 
 .member-label-keadaan {
-  font-size: 11px;
+  flex-shrink: 0;
+  font-size: 10px;
   font-weight: 700;
   color: var(--putih);
   background: #16a34a;
   border-radius: 10px;
-  padding: 2px 9px;
+  padding: 2px 7px;
 }
 
 .member-label-tombol:not(.aktif) .member-label-keadaan { background: #9ca3af; }

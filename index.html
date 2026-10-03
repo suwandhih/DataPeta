@@ -6,7 +6,7 @@
   <title>Peta Indonesia</title>
   <!-- VERSI: naikkan angka ini setiap kali mengunggah supaya peramban
        selalu mengambil berkas terbaru (bukan versi lama dari cache). -->
-  <link rel="stylesheet" href="css/style.css?v=20261003-9" />
+  <link rel="stylesheet" href="css/style.css?v=20261003-10" />
 </head>
 <body>
 
@@ -126,16 +126,18 @@
     <button class="member-tambah" id="tombolTambah" aria-label="Tambah lokasi">
       <span class="tombol-tambah-ikon">+</span> Tambah Lokasi
     </button>
-    <button class="member-label-tombol aktif" id="memberMataGlobal" type="button">
-      <span class="member-label-ikon">👁</span>
-      <span class="member-label-teks">Label kategori pada peta</span>
-      <span class="member-label-keadaan" id="memberLabelKeadaan">Tampil</span>
-    </button>
-    <button class="member-label-tombol aktif" id="memberJudulKota" type="button">
-      <span class="member-label-ikon">👁</span>
-      <span class="member-label-teks">Ringkas daftar (hanya kota)</span>
-      <span class="member-label-keadaan" id="memberKotaKeadaan">Tampil</span>
-    </button>
+    <div class="member-label-baris">
+      <button class="member-label-tombol aktif" id="memberMataGlobal" type="button">
+        <span class="member-label-ikon">👁</span>
+        <span class="member-label-teks">Label kategori pada peta</span>
+        <span class="member-label-keadaan" id="memberLabelKeadaan">Tampil</span>
+      </button>
+      <button class="member-label-tombol aktif" id="memberJudulKota" type="button">
+        <span class="member-label-ikon">👁</span>
+        <span class="member-label-teks">Ringkas daftar (hanya kota)</span>
+        <span class="member-label-keadaan" id="memberKotaKeadaan">Tampil</span>
+      </button>
+    </div>
     <div class="member-daftar" id="memberDaftar"></div>
   </aside>
 
@@ -203,8 +205,8 @@
   <script src="data/kota-indonesia.js"></script>
   <script src="data/pulau.js"></script>
   <script src="data/contoh-lokasi.js"></script>
-  <script src="js/penyimpanan.js?v=20261003-9"></script>
-  <script src="js/awan.js?v=20261003-9"></script>
-  <script src="js/app.js?v=20261003-9"></script>
+  <script src="js/penyimpanan.js?v=20261003-10"></script>
+  <script src="js/awan.js?v=20261003-10"></script>
+  <script src="js/app.js?v=20261003-10"></script>
 </body>
 </html>
