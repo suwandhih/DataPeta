@@ -5,7 +5,27 @@
 
 ---
 
-## 3 Oktober 2026 — 🔒 **PERBAIKAN K14: [+] KUNCI WILAYAH · TOMBOOL HAPUS GANDA DIBUANG**
+## 3 Oktober 2026 — �️ **HILANGKAN TAMPILAN DOBEL SAAT [✎] / [−]**
+
+**Catatan Bapak:** *"di edit tampil ... saya kotak merah.. seolah double tampilan"*
+
+**Penyebab:** saat tombol **[✎]** (atau **[−]**) di baris kota ditekan, **daftar pilih member**
+muncul — tapi **daftar anggota kota di bawahnya tetap tampil**. Jadi di layar terlihat
+**dua daftar berisi nama yang sama** → terasa seperti dobel.
+
+**Perbaikan:**
+- Saat **daftar pilih** terbuka, **daftar anggota kota disembunyikan** otomatis.
+  Setelah memilih atau menutup (×), daftar anggota muncul lagi.
+- Ditambah fungsi pembersih → tanda “sedang memilih” selalu dilepas (tidak tertinggal).
+
+**Sekarang:** satu kota menampilkan **satu daftar saja** — tidak ada lagi yang dobel.
+
+**Hasil uji:** saat [✎] ditekan → daftar anggota `display:none` (tinggi 0 px) ✅ ·
+panel pilih tampil ✅ · tutup (×) → daftar anggota muncul lagi ✅ ·
+**tidak ada sisa state** (0 tanda, 0 panel) ✅ · anggota tetap 8 ✅ · tanpa error ✅
+
+---
+## 3 Oktober 2026 — �🔒 **PERBAIKAN K14: [+] KUNCI WILAYAH · TOMBOOL HAPUS GANDA DIBUANG**
 
 **Catatan Bapak:** *"klik [+] > seharusnya wilayah tidak bisa diganti.. karena head adalah wilayah"* ·
 *"klik [✎] > mengapa ada double"* · *"masih di edit [✎] → [hapus][batal][simpan] bukannya [-] adalah hapus??"*

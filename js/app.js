@@ -1424,12 +1424,18 @@
     const lama = memberDaftar.querySelector('[data-pilih="' + CSS.escape(penanda) + '"]');
     if (lama) {
       lama.remove();
+      bersihkanSedangPilih();
       return;
     }
     memberDaftar.querySelectorAll(".member-pilih").forEach((p) => p.remove());
+    bersihkanSedangPilih();
 
     const judulKota = memberDaftar.querySelector('[data-kota="' + CSS.escape(kunci) + '"]');
     if (!judulKota) return;
+
+    // Sembunyikan daftar anggota kota ini selama memilih → tidak tampak dobel
+    const grup = judulKota.parentElement;
+    if (grup) grup.classList.add("sedang-pilih");
 
     const panel = document.createElement("div");
     panel.className = "member-pilih";
@@ -1445,7 +1451,10 @@
     kepalaTutup.className = "member-kategori-tutup";
     kepalaTutup.textContent = "×";
     kepalaTutup.title = "Tutup daftar";
-    kepalaTutup.addEventListener("click", () => panel.remove());
+    kepalaTutup.addEventListener("click", () => {
+      panel.remove();
+      bersihkanSedangPilih();
+    });
     kepala.appendChild(kepalaTeks);
     kepala.appendChild(kepalaTutup);
     panel.appendChild(kepala);
@@ -1479,6 +1488,7 @@
       b.title = mode === "hapus" ? "Hapus " + lokasi.nama : "Ubah " + lokasi.nama;
       b.addEventListener("click", () => {
         panel.remove();
+        bersihkanSedangPilih();
         if (mode === "hapus") {
           hapusLokasi(lokasi.id);
         } else {
@@ -1492,6 +1502,13 @@
     panel.appendChild(daftar);
     judulKota.insertAdjacentElement("afterend", panel);
     panel.scrollIntoView({ block: "nearest" });
+  }
+
+  // Hapus tanda "sedang memilih" dari semua grup kota
+  function bersihkanSedangPilih() {
+    memberDaftar.querySelectorAll(".member-grup.sedang-pilih").forEach((g) =>
+      g.classList.remove("sedang-pilih")
+    );
   }
 
   // ---------- Label kategori: tampil / sembunyi di peta ----------

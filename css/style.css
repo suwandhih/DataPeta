@@ -1022,6 +1022,10 @@ html, body {
 /* Judul kota di daftar Member — bisa disembunyikan */
 .member-grup.ringkas .member-grup-judul { display: none; }
 
+/* Saat sedang memilih member (klik [✎]/[−]) → daftar anggota disembunyikan,
+   supaya tidak tampak dobel dengan panel pilih. */
+.member-grup.sedang-pilih .member-grup-isi { display: none; }
+
 /* Daftar pilih member (muncul saat klik [✎] atau [−] di baris kota) */
 .member-pilih {
   padding: 8px 10px 10px 14px;
