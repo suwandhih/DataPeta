@@ -1303,7 +1303,7 @@
 
   function gambarMember() {
     memberDaftar.innerHTML = "";
-    // Label kategori di daftar bisa disembunyikan (nama lokasi tetap tampil)
+    // Daftar bisa diringkas: saat di-hide, hanya judul kota yang tampil
     memberDaftar.classList.toggle("kategori-sembunyi", !kategoriDaftarTampil);
 
     if (!daftarLokasi.length) {
@@ -1530,12 +1530,12 @@
     gambarPenanda();
   }
 
-  // Label kategori DI DAFTAR: tampil / sembunyi (nama lokasi tetap tampil)
+  // Daftar Member: tampil penuh / ringkas (hanya judul kota)
   function gambarTombolJudulKota() {
     memberJudulKota.classList.toggle("aktif", kategoriDaftarTampil);
     memberJudulKota.title = kategoriDaftarTampil
-      ? "Klik untuk menyembunyikan label kategori di daftar"
-      : "Klik untuk menampilkan lagi label kategori di daftar";
+      ? "Klik untuk meringkas daftar (hanya judul kota)"
+      : "Klik untuk menampilkan lagi seluruh daftar member";
     memberKotaKeadaan.textContent = kategoriDaftarTampil ? "Tampil" : "Sembunyi";
   }
 
