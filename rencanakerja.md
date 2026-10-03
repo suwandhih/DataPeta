@@ -97,6 +97,7 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K14e** | **Tombol 👁 kedua jadi "Ringkas daftar (hanya kota)"** — saat di-hide, seluruh baris member (nama & kategori) disembunyikan; hanya judul kota yang tampil | 3 Okt 2026 |
 | **K14d** | **Tombol 👁 kedua diperbaiki** — “Label kategori di daftar” yang disembunyikan; nama lokasi & judul kota tetap tampil | 3 Okt 2026 |
 | **K14c** | **Hilangkan tampilan dobel** saat [✎]/[−] — daftar anggota kota disembunyikan selama memilih | 3 Okt 2026 |
 | **K14b** | **[+] kunci Wilayah** (wilayah = kepala kota) · **tombol Hapus dobel di form dibuang** (hapus lewat [−]) · panah ›/✕ di daftar pilih | 3 Okt 2026 |

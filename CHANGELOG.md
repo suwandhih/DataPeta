@@ -4,7 +4,26 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 3 Oktober 2026 — 👁️ **TOMBOL KEDUA: YANG DISEMBUNYIKAN = LABEL KATEGORI DI DAFTAR**
+## 3 Oktober 2026 — �️ **TOMBOL RINGKAS DAFTAR: HANYA JUDUL KOTA YANG TAMPIL**
+
+**Catatan Bapak:** *"masih salah, termasuk yayasan .. tujuan hide adalah untuk meminimal tampilan"*
+
+**Penjelasan:** tulisan **"Yayasan"** pada "Yayasan Bumi Lestari" itu bagian dari **NAMA**
+lokasi, bukan label kategori. Jadi saat di-hide, kategori memang sudah hilang — tapi nama
+lokasi masih tampil, sehingga daftar belum benar-benar ringkas.
+
+**Perbaikan (pilihan Bapak: hanya judul kota):**
+- Tombol 👁 kedua diganti nama jadi **"Ringkas daftar (hanya kota)"**.
+- Saat di-hide → **seluruh baris member (nama & kategori) disembunyikan**.
+- Yang tampil hanya **judul kota** (mis. ● Balikpapan, Kalimantan Timur (1)) beserta tombol [+] [✎] [−].
+- Klik lagi → seluruh daftar member muncul kembali.
+
+**Hasil uji:** sebelum hide → 8 grup, isi tampil ✅ · setelah hide → isi `display:none`,
+judul kota `display:flex` ✅ · tanda keadaan "Sembunyi" ✅ · klik lagi → isi tampil,
+"Tampil" ✅ · tanpa error ✅
+
+---
+## 3 Oktober 2026 — �👁️ **TOMBOL KEDUA: YANG DISEMBUNYIKAN = LABEL KATEGORI DI DAFTAR**
 
 **Catatan Bapak:** *"👁 Judul kota di daftar → yg di sembunyikan seharusnya label kategori,
 yg tetap tampil adalah lokasinya"*
