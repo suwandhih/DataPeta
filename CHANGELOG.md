@@ -5,6 +5,36 @@
 
 ---
 
+## 3 Oktober 2026 — 🔒 **PERBAIKAN K14: [+] KUNCI WILAYAH · TOMBOOL HAPUS GANDA DIBUANG**
+
+**Catatan Bapak:** *"klik [+] > seharusnya wilayah tidak bisa diganti.. karena head adalah wilayah"* ·
+*"klik [✎] > mengapa ada double"* · *"masih di edit [✎] → [hapus][batal][simpan] bukannya [-] adalah hapus??"*
+
+**1. Tombol [+] — Wilayah kini DIKUNCI**
+- Sebelumnya wilayah masih bisa diubah walau membuka form dari baris kota.
+- Sekarang: wilayah & titik **mengikuti kota** (abu-abu, tidak bisa diketik);
+  tombol "Ambil dari daftar" & "Bersihkan" **disembunyikan**.
+- Judul form: **"Tambah Member Baru"**.
+- Bapak hanya mengisi: **nama, kategori, inisial, keterangan**.
+
+**2. Tombol Hapus yang dobel di form — DIBUANG**
+- Form Ubah sebelumnya punya tombol **[Hapus]**, padahal **hapus sudah ada di tombol [−] baris kota**.
+- Tombol **[Hapus] di form dihapus** — sekarang form hanya punya **[Batal] [Simpan]**.
+- Jadi jelas: **hapus = tombol [−] di baris kota**.
+
+**3. Baris pilihan member dibuat lebih jelas**
+- Diberi **panah ›** (untuk [✎]) dan **✕** (untuk [−]) sebagai tanda baris bisa diklik.
+- Ditambah keterangan pada daftar member: *"Tombol [+] tambah member baru · [✎] ubah · [−] hapus"*.
+
+**Hasil uji:** [+] → wilayah **terkunci** (readOnly + dropdown tersembunyi) ✅ ·
+judul "Tambah Member Baru" ✅ · tombol Hapus form **sudah tidak ada** ✅ ·
+[+] isi "yayasan ABC" → Simpan → kota jadi **(2)** ✅ · [✎] → daftar pilih dengan panah **›** ✅ ·
+pilih → form ubah terbuka, **wilayah terkunci**, hanya **[Batal] [Simpan]** ✅ ·
+[−] → daftar pilih dengan panah **✕** ✅ · pilih "yayasan ABC" → terhapus, kota kembali **(1)** ✅ ·
+tanpa error ✅
+
+---
+
 ## 3 Oktober 2026 — 🏙️ **TOMBOOL PINDAH KE BARIS KOTA (K14)**
 
 **Order Bapak:** *"penempatan [+] [✎] [-] seharusnya di Balikpapan, Kalimantan Timur.

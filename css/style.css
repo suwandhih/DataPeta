@@ -1078,6 +1078,13 @@ html, body {
 
 .member-pilih-nama { flex: 1; min-width: 0; font-weight: 600; }
 
+.member-pilih-panah {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--abu-teks);
+}
+
 .member-pilih-kat {
   flex-shrink: 0;
   font-size: 10px;

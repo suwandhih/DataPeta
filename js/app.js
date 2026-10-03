@@ -43,7 +43,6 @@
   const formTutup = document.getElementById("formTutup");
   const formBatal = document.getElementById("formBatal");
   const formSimpan = document.getElementById("formSimpan");
-  const formHapus = document.getElementById("formHapus");
   const fNama = document.getElementById("fNama");
   const fWilayah = document.getElementById("fWilayah");
   const fWilayahPilih = document.getElementById("fWilayahPilih");
@@ -1398,8 +1397,8 @@
   function tambahMemberKota(isi) {
     const contoh = isi[0] || {};
     tutupMember();
-    bukaForm(null, true);
-    // Wilayah + titik kota langsung terisi (masih bisa diubah saat menambah)
+    // Wilayah dikunci — wilayah = kepala baris kota
+    bukaForm(null, true, true);
     if (contoh.wilayah) {
       fWilayah.value = contoh.wilayah;
       if (typeof contoh.lat === "number") fLat.value = contoh.lat;
@@ -1470,6 +1469,14 @@
 
       b.appendChild(tNama);
       b.appendChild(tKat);
+
+      // Panah penanda bahwa baris ini BISA diklik
+      const tPanah = document.createElement("span");
+      tPanah.className = "member-pilih-panah";
+      tPanah.textContent = mode === "hapus" ? "✕" : "›";
+      b.appendChild(tPanah);
+
+      b.title = mode === "hapus" ? "Hapus " + lokasi.nama : "Ubah " + lokasi.nama;
       b.addEventListener("click", () => {
         panel.remove();
         if (mode === "hapus") {
@@ -1914,15 +1921,16 @@
       });
   }
 
-  function bukaForm(id, dariMember) {
+  function bukaForm(id, dariMember, kunciWilayah) {
     idSedangDiubah = id || null;
-    // Kalau dibuka dari panel Member → setelah Simpan/Simpan, panel Member dibuka lagi
+    // Kalau dibuka dari panel Member → setelah Simpan, panel Member dibuka lagi
     kembaliKeMember = !!dariMember;
     const lokasi = id ? daftarLokasi.find((l) => l.id === id) : null;
 
-    // Saat MENGUBAH data: wilayah & koordinat dikunci (tidak bisa diubah).
-    // Kalau wilayah salah → hapus lokasi, lalu tambah baru di wilayah yang benar.
-    const kunci = !!lokasi;
+    // Wilayah & titik dikunci bila:
+    //  - mengubah data yang sudah ada, ATAU
+    //  - menambah member baru dari baris kota (wilayah = kepala/kota)
+    const kunci = !!lokasi || !!kunciWilayah;
     fWilayah.readOnly = kunci;
     fLon.readOnly = kunci;
     fLat.readOnly = kunci;
@@ -1933,9 +1941,9 @@
     fWilayahBersih.hidden = kunci;
     fWilayahCatatan.hidden = !kunci;
     if (kunci) {
-      fWilayahCatatan.textContent =
-        "Wilayah & titik dikunci. Yang diubah di sini hanya nama & label lokasi. " +
-        "Kalau wilayahnya salah → hapus lokasi ini, lalu tambah baru di wilayah yang benar.";
+      fWilayahCatatan.textContent = lokasi
+        ? "Wilayah & titik dikunci — wilayah tidak bisa diganti. Yang bisa diubah: nama, kategori, inisial, keterangan. Kalau wilayahnya salah → hapus lewat tombol [−] di baris kota, lalu tambah baru di wilayah yang benar."
+        : "Wilayah & titik mengikuti kota ini (tidak bisa diganti). Isi nama & kategori member barunya, lalu Simpan.";
     }
 
     // Pemilih wilayah selalu mulai dari keadaan bersih
@@ -1943,7 +1951,9 @@
     tutupDropdownWilayah();
     sembunyikanSaranWilayah();
 
-    formJudul.textContent = lokasi ? "Ubah Nama & Label Lokasi" : "Tambah Lokasi Baru";
+    formJudul.textContent = lokasi
+      ? "Ubah Nama & Label Lokasi"
+      : (kunciWilayah ? "Tambah Member Baru" : "Tambah Lokasi Baru");
     fNama.value = lokasi ? lokasi.nama : "";
     fWilayah.value = lokasi ? lokasi.wilayah : "";
     fKategori.value = lokasi ? lokasi.kategori : daftarKategori[1];
@@ -1953,7 +1963,6 @@
     fRincian.value = lokasi && lokasi.rincian
       ? lokasi.rincian.map((r) => r.label + " = " + r.nilai).join("\n")
       : "";
-    formHapus.style.display = lokasi ? "block" : "none";
 
     // Panel samping — peta tetap terlihat. Tirai TIDAK dipakai supaya
     // Bapak masih bisa melihat & menggeser peta sambil mengisi.
@@ -2130,7 +2139,6 @@
   formTutup.addEventListener("click", tutupForm);
   formBatal.addEventListener("click", tutupForm);
   formSimpan.addEventListener("click", simpanForm);
-  formHapus.addEventListener("click", hapusLokasi);
   tombolRincian.addEventListener("click", () => {
     fRincian.value += (fRincian.value ? "\n" : "") + "Keterangan = Isi di sini";
     fRincian.focus();
