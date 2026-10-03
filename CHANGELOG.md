@@ -4,7 +4,86 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 2 Oktober 2026 — � **PENANDA LOKASI & KATEGORI (K09)**
+
+## 3 Oktober 2026 — 🧭 **PILIH WILAYAH DARI DAFTAR + MEMBER SATU-SATUNYA MENU (K11)**
+
+**Order Bapak:** *"Wilayah (provinsi/kabupaten/kota) user bisa cari atau lewat
+pulldown menu untuk mencari lokasi"* · *"member di sediakan edit & hapus"* ·
+*"apakah + tambah lokasi baru di masukkan pada member · satu lokasi bisa ada
+beberapa yayasan · jadi menu hanya member saja"* · pilihan bentuk: **C** (cari + dropdown).
+
+**a. Kolom Wilayah di form — bisa DICARI atau DIPILIH dari daftar**
+- Ketik nama wilayah → muncul **daftar saran** (mis. ketik "bandung" → muncul
+  Kabupaten Bandung, Kabupaten Bandung Barat, Kota Bandung).
+- Pencarian kini mencakup **nama provinsi juga** — mengetik "bandung jawa barat"
+  tetap menemukan Kota Bandung.
+- Tombol **[Ambil dari daftar ▾]** membuka **daftar bertingkat**:
+  **Indonesia → Provinsi → Kabupaten/Kota → Kecamatan → Desa/Kelurahan**.
+  Tanda **›** masuk ke wilayah di bawahnya; jejak tingkatan di atas bisa diklik untuk kembali.
+- Setelah wilayah dipilih → kolom **Wilayah, Bujur, Lintang terisi otomatis** +
+  peta **geser & perbesar** ke wilayah itu + **titik sementara** muncul (bisa dilihat dulu).
+- Tombol **[Bersihkan]** mengosongkan kembali kolom wilayah & koordinat.
+- Data kecamatan & desa tetap dimuat **hanya saat dibuka** — aplikasi tetap ringan.
+
+**b. Daftar Member — ada tombol Ubah & Hapus**
+- Tiap baris member kini punya **dua tombol kecil**: **[Ubah]** dan **[Hapus]**.
+- **Ubah** → panel Member menutup, form isian lokasi itu terbuka.
+- **Hapus** → minta konfirmasi dulu, baru dihapus (data yang diisi Bapak tetap aman).
+- Klik badan baris tetap berfungsi: peta pindah + titik berkedip merah.
+
+**c. Menu kini hanya MEMBER**
+- Tombol **[+ Tambah Lokasi]** di baris atas **dihapus**.
+- Sebagai gantinya, di dalam panel **Member** ada tombol **[+ Tambah Lokasi]** di atas daftar.
+- Baris atas kini tinggal: kotak cari · **[Member]** · **[☰ Menu]**.
+- Alasan (sesuai maksud Bapak): **satu lokasi/kota boleh punya beberapa yayasan** —
+  jadi cukup satu tempat untuk menambah, mengubah, dan menghapus.
+
+**Hasil uji (blok K11):** elemen pemilih wilayah lengkap ✅ · cari "bandung" = 3 saran ✅ ·
+klik saran → Wilayah + Bujur + Lintang terisi + titik pratinjau ✅ · pencarian dengan nama
+provinsi ("bandung jawa barat") = 2 hasil ✅ · dropdown provinsi → Jawa Barat (27) →
+Kota Bandung (30 kec) → Sukasari (4 desa) ✅ · pilih desa → terisi otomatis + dropdown tertutup ✅ ·
+Bersihkan mengosongkan semua ✅ · tombol Ubah & Hapus ada di 8 baris ✅ ·
+Ubah → form terbuka terisi ✅ · Hapus (alur) → jumlah lokasi kembali 8 ✅ ·
+tombol Tambah Lokasi ada di dalam Member & baris atas bersih ✅ · tanpa error ✅
+
+---
+
+## 3 Oktober 2026 — 🔗 **LABEL LOKASI BERGARIS + MEMBER BERKELOMPOK (K10)**
+
+**Order Bapak:** *"seharusnya 1 kota banyak member / beberapa member"* ·
+*"dot member diusulkan dari nama lokasi dari dot warna dengan garis ke nama
+kategori tujuan nama lokasi tidak tertutup"* · *"tulisan label kategori di kecilkan"*
+
+**a. Daftar Member dikelompokkan per kota/wilayah**
+- Sebelumnya satu daftar rata diurutkan per nama.
+- Sekarang: **satu kota = satu kelompok** — jadi **1 kota boleh punya banyak member**.
+- Tiap kelompok punya **judul kota** + **tanda jumlah** (mis. `2`).
+- Di dalam kelompok, member diurutkan menurut nama; tiap baris menampilkan
+  **warna kategori + nama lokasi + kategori**.
+
+**b. Garis penghubung dari titik ke nama lokasi**
+- Titik (dot) warna kini dihubungkan **garis tipis** ke kotak label.
+- Label diletakkan di **tempat lapang** (8 arah × 4 jarak) — dipilih yang paling
+  sedikit bertabrakan dengan nama kota / nama gunung / titik lain.
+- Tujuan: **nama lokasi tidak tertutup** teks lain (anti saling tindih).
+- Garis **selalu tampil** selama label tampil, dan **tebalnya tetap** di semua zoom
+  (tidak ikut menebal saat diperbesar).
+- Warnanya mengikuti kategori; titik sementara (belum disimpan) bergaris putus-putus.
+
+**c. Label kategori dikecilkan**
+- Di ujung garis ditulis **nama lokasi** + **label kategori** (2 baris).
+- Ukuran label kategori **sama dengan nama lokasi (9 px)** — tidak lebih besar.
+- Label kategori diberi **warna kategori** supaya mudah dibedakan.
+
+**Hasil uji (blok K10):** 8 lokasi → 8 garis + 8 nama + 8 label kategori ✅ ·
+ukuran nama = kategori = 9 px ✅ · garis tebal tetap (non-scaling) ✅ ·
+0 tabrakan nama lokasi vs nama kota ✅ · member 8 kelompok / 8 baris ✅ ·
+uji tambah lokasi di kota sama → kelompok "Jakarta Pusat" jadi **2 member** ✅ ·
+data uji dihapus lagi (kembali 8 lokasi) ✅ · tanpa error ✅
+
+---
+
+## 2 Oktober 2026 — 🎯 **PENANDA LOKASI & KATEGORI (K09)**
 
 **Order Bapak:** *"penambahan fitur dot lokasi"* — 4 butir + 1 perbaikan tampilan.
 

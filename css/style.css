@@ -259,6 +259,33 @@ html, body {
 /* Titik berkedip merah — supaya mudah ditemukan */
 .lokasi-nama.kedip { fill: #b91c1c; }
 
+/* Garis penghubung dari titik ke nama lokasi */
+.lokasi-garis {
+  stroke: #1f2937;
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.55;
+  pointer-events: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.lokasi-garis.pratinjau { stroke: #6b7280; stroke-dasharray: 2 1.6; }
+.lokasi-garis.kedip { stroke: #b91c1c; opacity: 0.9; }
+
+/* Label kategori di ujung garis — ukuran sama dengan nama lokasi */
+.lokasi-kategori {
+  font-family: var(--font);
+  font-size: 9px;
+  font-weight: 500;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.92);
+  stroke-width: 2.4px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.lokasi-kategori.pratinjau { font-style: italic; }
+
 .penanda.kedip .penanda-bulat {
   animation: kedipMerah 0.5s ease-in-out 8;
 }
@@ -757,36 +784,33 @@ html, body {
 
 .tirai.tampil { opacity: 1; visibility: visible; }
 
-/* ================= TOMBOL TAMBAH LOKASI ================= */
-.tombol-tambah {
-  position: fixed;
-  top: 20px;
-  right: 78px;
-  height: 46px;
-  padding: 0 18px;
-  border-radius: var(--radius);
+/* ================= TOMBOL TAMBAH LOKASI (di dalam panel Member) ================= */
+.member-tambah {
+  width: 100%;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-kecil);
   background: var(--hitam);
   color: var(--putih);
   border: none;
-  box-shadow: var(--bayang);
   cursor: pointer;
   font-family: var(--font);
   font-size: 14px;
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  z-index: 20;
 }
 
-.tombol-tambah:hover { background: #333; }
+.member-tambah:hover { background: #333; }
 .tombol-tambah-ikon { font-size: 18px; line-height: 1; }
 
 /* ================= TOMBOL MEMBER ================= */
 .tombol-member {
   position: fixed;
   top: 20px;
-  right: 232px;
+  right: 78px;
   height: 46px;
   padding: 0 16px;
   border-radius: var(--radius);
@@ -849,7 +873,7 @@ html, body {
   margin: 0 0 16px;
 }
 
-.member-daftar { border: 1px solid var(--abu-garis); border-radius: var(--radius-kecil); }
+.member-daftar { display: flex; flex-direction: column; gap: 10px; }
 
 .member-baris {
   display: flex;
@@ -895,6 +919,68 @@ html, body {
   color: var(--abu-teks);
   margin: 0;
 }
+
+/* Satu kota/wilayah → satu kelompok (boleh berisi banyak member) */
+.member-grup {
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  overflow: hidden;
+}
+
+.member-grup-judul {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--abu-latar);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hitam);
+}
+
+.member-grup-pin { color: #dc2626; font-size: 10px; line-height: 1; }
+
+.member-grup-nama {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-grup-jumlah {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  background: var(--putih);
+  border: 1px solid var(--abu-garis);
+  border-radius: 10px;
+  padding: 1px 7px;
+}
+
+.member-grup-isi .member-baris { padding-left: 14px; }
+.member-grup-isi .member-baris:last-child { border-bottom: none; }
+
+/* Tombol Ubah / Hapus pada tiap baris member */
+.member-aksi { display: flex; gap: 4px; flex-shrink: 0; }
+
+.member-tombol {
+  border: 1px solid var(--abu-garis);
+  background: var(--putih);
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--hitam);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.member-tombol:hover { background: var(--abu-latar); }
+
+.member-tombol-hapus { color: #b91c1c; }
+.member-tombol-hapus:hover { background: #fee2e2; }
 
 /* ================= PANEL AKSI ================= */
 .panel-aksi { margin-top: 20px; }
@@ -982,6 +1068,147 @@ html, body {
 
 .form-baris2 { display: flex; gap: 12px; }
 .form-baris2 > div { flex: 1; }
+
+/* ---------- Pemilih wilayah di form (cari + dropdown) ---------- */
+.wilayah-pilih { position: relative; }
+
+.wilayah-saran {
+  display: none;
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-height: 210px;
+  overflow-y: auto;
+  background: var(--putih);
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.wilayah-saran.tampil { display: block; }
+
+.wilayah-saran-baris {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font-family: var(--font);
+  font-size: 13px;
+  padding: 9px 11px;
+  cursor: pointer;
+  color: var(--hitam);
+  border-bottom: 1px solid var(--abu-garis);
+}
+
+.wilayah-saran-baris:last-child { border-bottom: none; }
+.wilayah-saran-baris:hover { background: var(--abu-latar); }
+
+.wilayah-saran-tingkat {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.wilayah-saran-kosong {
+  padding: 10px 11px;
+  font-size: 12px;
+  color: var(--abu-teks);
+}
+
+/* Tombol "Ambil dari daftar" & "Bersihkan" */
+.wilayah-pilih-baris { display: flex; gap: 8px; margin-top: 8px; }
+
+.wilayah-pilih-tombol {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  background: var(--putih);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--hitam);
+  cursor: pointer;
+}
+
+.wilayah-pilih-tombol:hover { background: var(--abu-latar); }
+
+/* Dropdown bertingkat: provinsi → kab/kota → kecamatan → desa */
+.wilayah-langkah {
+  display: none;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  background: var(--abu-latar);
+}
+
+.wilayah-langkah.tampil { display: block; }
+
+.wilayah-langkah-isi { max-height: 190px; overflow-y: auto; margin-top: 8px; }
+
+.wilayah-langkah-baris {
+  display: flex;
+  align-items: stretch;
+  background: var(--putih);
+  border: 1px solid var(--abu-garis);
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.wilayah-langkah-baris:last-child { margin-bottom: 0; }
+
+.wilayah-langkah-nama {
+  flex: 1;
+  text-align: left;
+  border: none;
+  background: none;
+  font-family: var(--font);
+  font-size: 12px;
+  padding: 8px 10px;
+  cursor: pointer;
+  color: var(--hitam);
+}
+
+.wilayah-langkah-nama:hover { background: var(--abu-latar); }
+
+.wilayah-langkah-masuk {
+  width: 30px;
+  border: none;
+  border-left: 1px solid var(--abu-garis);
+  background: none;
+  font-size: 14px;
+  color: var(--abu-teks);
+  cursor: pointer;
+}
+
+.wilayah-langkah-masuk:hover { background: var(--abu-latar); color: var(--hitam); }
+
+.wilayah-langkah-jalan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.wilayah-langkah-jalan button {
+  border: none;
+  background: none;
+  font-family: var(--font);
+  font-size: 11px;
+  color: #2563eb;
+  cursor: pointer;
+  padding: 0;
+}
+
+.wilayah-langkah-jalan span { color: var(--abu-teks); }
 
 .form-tombol-kecil {
   margin-top: 8px;

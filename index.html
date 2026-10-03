@@ -60,11 +60,6 @@
     <span></span><span></span><span></span>
   </button>
 
-  <!-- ================= TOMBOL TAMBAH LOKASI ================= -->
-  <button class="tombol-tambah" id="tombolTambah" aria-label="Tambah lokasi">
-    <span class="tombol-tambah-ikon">+</span> Tambah Lokasi
-  </button>
-
   <!-- ================= TOMBOL MEMBER (daftar lokasi tersimpan) ================= -->
   <button class="tombol-member" id="tombolMember" aria-label="Daftar lokasi tersimpan">
     <span class="tombol-member-ikon">☰</span> Member
@@ -125,7 +120,10 @@
   <aside class="member" id="member" aria-hidden="true">
     <button class="member-tutup" id="memberTutup" aria-label="Tutup daftar member">×</button>
     <h2 class="member-judul">Member</h2>
-    <p class="member-catatan">Daftar lokasi yang sudah disimpan. Klik satu → peta pindah & titiknya berkedip merah.</p>
+    <p class="member-catatan">Daftar lokasi yang sudah disimpan, dikelompokkan per kota/wilayah. Satu kota boleh punya beberapa member. Klik satu → peta pindah & titiknya berkedip merah.</p>
+    <button class="member-tambah" id="tombolTambah" aria-label="Tambah lokasi">
+      <span class="tombol-tambah-ikon">+</span> Tambah Lokasi
+    </button>
     <div class="member-daftar" id="memberDaftar"></div>
   </aside>
 
@@ -141,7 +139,17 @@
       <input class="form-input" id="fNama" type="text" placeholder="Contoh: Yayasan Cahaya Nusantara" />
 
       <label class="form-label">Wilayah (provinsi / kabupaten / kota)</label>
-      <input class="form-input" id="fWilayah" type="text" placeholder="Contoh: Jakarta Pusat, DKI Jakarta" />
+      <div class="wilayah-pilih" id="fWilayahPilih">
+        <input class="form-input" id="fWilayah" type="text"
+               placeholder="Cari wilayah… atau pilih dari daftar ▾"
+               autocomplete="off" />
+        <div class="wilayah-saran" id="fWilayahSaran" aria-hidden="true"></div>
+      </div>
+      <div class="wilayah-pilih-baris">
+        <button class="wilayah-pilih-tombol" id="fWilayahDropdown" type="button">Ambil dari daftar ▾</button>
+        <button class="wilayah-pilih-tombol" id="fWilayahBersih" type="button">Bersihkan</button>
+      </div>
+      <div class="wilayah-langkah" id="fWilayahLangkah" aria-hidden="true"></div>
 
       <label class="form-label">Kategori</label>
       <select class="form-input" id="fKategori"></select>

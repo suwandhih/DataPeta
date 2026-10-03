@@ -42,16 +42,27 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 | 🔍 **Zoom** (kanan) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (bawah) | Klik kategori → hanya kategori itu tampil |
-| ➕ **Tambah Lokasi** (kanan atas) | Isi data lokasi baru |
-| ✏️ **Ubah data** (di panel) | Ubah / hapus data lokasi |
+| ☰ **Member** (kanan atas) | Buka daftar lokasi tersimpan — **di sini juga ada tombol Tambah Lokasi** |
+| ✏️ **Ubah / Hapus** (di daftar Member) | Ubah atau hapus data lokasi langsung dari daftar |
 | ☰ **Tombol menu** (kanan atas) | Buka menu samping |
 | ✕ **Tombol tutup** | Tutup panel / menu (bisa juga tekan `Esc`) |
 
 ### 📝 Cara mengisi data lokasi
 
-1. Klik tombol **"+ Tambah Lokasi"** (kanan atas).
-2. Isi: **nama**, **wilayah**, **kategori**, **bujur & lintang**, **inisial**, **keterangan**.
-3. Klik **Simpan** → penanda muncul di peta.
+1. Klik tombol **Member** (kanan atas).
+2. Klik tombol **"+ Tambah Lokasi"** di dalam panel Member.
+3. Isi: **nama**, **wilayah**, **kategori**, **bujur & lintang**, **inisial**, **keterangan**.
+4. Klik **Simpan** → penanda muncul di peta.
+
+**Cara cepat mengisi kolom Wilayah** (tidak perlu ketik manual):
+
+| Cara | Langkah |
+|------|---------|
+| **Cari** | Ketik nama wilayah (mis. "bandung") → muncul daftar saran → klik salah satu |
+| **Ambil dari daftar** | Klik **"Ambil dari daftar ▾"** → pilih Provinsi → Kabupaten/Kota → Kecamatan → Desa |
+
+Setelah wilayah dipilih, kolom **Bujur & Lintang terisi sendiri** dan peta otomatis
+bergerak ke wilayah itu. Klik **Bersihkan** kalau ingin mengulang.
 
 > **Keterangan** ditulis satu per baris, format: `Nama = Isi`
 > Contoh:

@@ -79,14 +79,6 @@
 | K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu + form terbuka | ✅ | ✅ | 2 Okt 2026 |
 | K08 | e. Unduh **data wilayah lengkap sampai desa** — 38 prov · 514 kab/kota · 7.285 kec · 83.762 desa (sumber Kepmendagri 2025 + BIG) | ✅ | ✅ | 2 Okt 2026 |
 | K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
-| **K09** | **Penanda lokasi & kategori** (order Bapak, 2 Okt 2026) | | | |
-| K09 | a. Pilih wilayah di daftar → **dot + nama lokasi muncul di peta** (pratinjau); Batal = hilang, Simpan = tetap | ✅ | ✅ | 2 Okt 2026 |
-| K09 | b. **Kategori bisa ditambah / diubah** — di menu ☰ bagian Pengaturan; kategori yang masih dipakai tidak boleh dihapus | ✅ | ✅ | 2 Okt 2026 |
-| K09 | c. Tombol **[member]** di baris atas (sebelah [+ Tambah Lokasi] & [☰]) — daftar lokasi yang sudah disimpan | ✅ | ✅ | 2 Okt 2026 |
-| K09 | d. Klik lokasi di daftar member → **peta pindah + dot berkedip merah** beberapa detik | ✅ | ✅ | 2 Okt 2026 |
-| K09 | e. 🎨 Lingkaran penanda 2 abjad **terlalu besar** → diperkecil jadi setengah | ✅ | ✅ | 2 Okt 2026 |
-| K09 | f. 🎨 Tiap kategori punya **warna sendiri** (titik & tombol kategori) | ✅ | ✅ | 2 Okt 2026 |
-| K09 | g. 🎨 **Nama lokasi tampil di samping titik** + tidak menutupi nama kota | ✅ | ✅ | 2 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
@@ -104,8 +96,10 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K11** | **Form wilayah (cari + dropdown bertingkat) + Member satu-satunya menu** — tombol Ubah/Hapus di member (a–c ✅) | 3 Okt 2026 |
+| **K10** | **Member berkelompok per kota** + **garis penghubung** dot–label + **label kategori** kecil (a–c ✅) | 3 Okt 2026 |
+| **K09** | **Penanda lokasi & kategori** — dot warna, kategori bisa diubah, member, kedip merah (a–g ✅) | 2 Okt 2026 |
 | **K06** | **Nama pulau tampil permanen** — 29 pulau, penempatan otomatis tidak menutupi nama kota (a–e ✅) | 2 Okt 2026 |
-| **K05** | **Kelengkapan peta** — zoom ✅ · sungai/danau/gunung ✅ (perbaikan urutan lapisan) · sisa: muara & bendungan (belum) | 2 Okt 2026 |
 | — | Inisialisasi proyek: backup 5 dokumen salinan ANodes, kosongkan, buat `agents.md` | 30 Sep 2026 |
 
 ---
