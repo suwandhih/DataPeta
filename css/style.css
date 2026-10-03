@@ -970,10 +970,13 @@ html, body {
   background: var(--putih);
   border-radius: 6px;
   font-family: var(--font);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
+  line-height: 1;
   color: var(--hitam);
-  padding: 4px 8px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -981,6 +984,66 @@ html, body {
 
 .member-tombol-hapus { color: #b91c1c; }
 .member-tombol-hapus:hover { background: #fee2e2; }
+
+/* Satu tombol: tampil/sembunyi label kategori di peta */
+.member-label-tombol {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
+  background: var(--putih);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hitam);
+  cursor: pointer;
+}
+
+.member-label-tombol:hover { background: var(--abu-latar); }
+.member-label-tombol .member-label-ikon { font-size: 14px; line-height: 1; }
+.member-label-tombol .member-label-teks { flex: 1; text-align: left; }
+
+.member-label-keadaan {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--putih);
+  background: #16a34a;
+  border-radius: 10px;
+  padding: 2px 9px;
+}
+
+.member-label-tombol:not(.aktif) .member-label-keadaan { background: #9ca3af; }
+.member-label-tombol:not(.aktif) .member-label-ikon { opacity: 0.45; }
+
+/* Panel kategori per member (terbuka lewat tombol [+]) */
+.member-kategori {
+  padding: 8px 10px 10px 24px;
+  border-bottom: 1px solid var(--abu-garis);
+  background: var(--abu-latar);
+}
+
+.member-kategori-ket { font-size: 11px; color: var(--abu-teks); margin: 0 0 6px; }
+
+.member-kategori-daftar { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.member-chip {
+  border: 1px solid var(--abu-garis);
+  background: var(--putih);
+  border-radius: 20px;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--abu-teks);
+  padding: 3px 9px;
+  cursor: pointer;
+}
+
+.member-chip.aktif { color: var(--putih); border-color: transparent; }
+.member-chip.utama { cursor: default; }
 
 /* ================= PANEL AKSI ================= */
 .panel-aksi { margin-top: 20px; }

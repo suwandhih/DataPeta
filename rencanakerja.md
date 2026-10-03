@@ -91,11 +91,14 @@ _(kosong — belum ada order yang disetujui)_
 | Data proyek yayasan (diisi manual Bapak di tiap titik peta) | 🟡 perlu diperdalam | lihat aturan F4 |
 | **Akses di HP lewat My Files (folder Download)** | ⚠️ bermasalah | **Tidak bisa** dipakai bersama Layerbase — `file://` diblokir hubungi cloud (CORS). Cara buka di HP harus berubah. |
 | **Fitur Ekspor/Impor data** (pindah data PC↔HP) | ⏸️ ditahan | tidak perlu kalau pakai cloud (data sudah sama otomatis) |
+| **Peta dasar MapLibre + citra satelit** (permintaan Bapak, 3 Okt 2026) | ⏸️ ditahan | Belum diproses — Bapak: *"catat dulu, ada request mendadak, jangan diproses, fokus member dulu"*. **Perlu jawaban Bapak:** (1) setuju peta jadi **butuh internet** (ubah aturan F3)? (2) sumber citra: **Esri World Imagery** (tanpa kunci) atau **MapTiler** (perlu daftar+kunci)? (3) **tukar Peta ↔ Satelit** (tombol) atau **ganti total**? |
 
 ### D. SELESAI
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K12b** | **Satu tombol “Label kategori pada peta”** di bawah [+ Tambah Lokasi] — tombol 👁 per member dihapus (sisa [+][✎][−]) | 3 Okt 2026 |
+| **K12** | **Member: banyak kategori per member + tombol [+][✎][−][👁] + hide/unhide label kategori (per member & global)** (a–e ✅) | 3 Okt 2026 |
 | **K11** | **Form wilayah (cari + dropdown bertingkat) + Member satu-satunya menu** — tombol Ubah/Hapus di member (a–c ✅) | 3 Okt 2026 |
 | **K10** | **Member berkelompok per kota** + **garis penghubung** dot–label + **label kategori** kecil (a–c ✅) | 3 Okt 2026 |
 | **K09** | **Penanda lokasi & kategori** — dot warna, kategori bisa diubah, member, kedip merah (a–g ✅) | 2 Okt 2026 |

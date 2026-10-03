@@ -5,6 +5,80 @@
 
 ---
 
+## 3 Oktober 2026 — 👁️ **SATU TOMBOL LABEL KATEGORI (perbaikan K12)**
+
+**Order Bapak:** *"fitur hide/unhide label kategori pada peta cukup 1 tombol tempatkan
+saja di bawah [+ Tambah Lokasi] [label kategori pada peta] jadi bukan per member
+[+][✎][−] dihapus → [👁]"*
+
+**Perubahan:**
+- Tombol **[👁]** pada **tiap member dihapus** — jadi tombol per member sekarang
+  tinggal **3**: **[+] [✎] [−]**.
+- Ditambah **satu tombol** di panel Member, tepat **di bawah [+ Tambah Lokasi]**:
+
+  **[👁  Label kategori pada peta  ( Tampil / Sembunyi )]**
+
+- Tombol ini menyembunyikan / menampilkan **SEMUA label kategori** di peta sekaligus.
+- Tanda keadaan jelas: **Tampil** (hijau) atau **Sembunyi** (abu-abu).
+- **Nama lokasi tetap tampil** dalam kedua keadaan.
+
+**Hasil uji:** tombol ada & berada di bawah [+ Tambah Lokasi] (13 px) ✅ ·
+tombol per member = **[+] [✎] [−]** (tanpa 👁) ✅ · klik Sembunyi → label kategori
+**8 → 0**, **nama lokasi tetap 8** ✅ · tanda keadaan berubah “Tampil” → “Sembunyi” ✅ ·
+klik lagi Tampil → label kategori kembali **8** ✅ · tanpa error ✅
+
+---
+
+## 3 Oktober 2026 — 🏷️ **MEMBER: BANYAK KATEGORI + TOMBOL AKSI + SEMBUNYIKAN LABEL (K12)**
+
+**Order Bapak:** *"baru belum ada dalam daftar member"* · *"masing2 lokasi harus ada
+[+][v][-] … fungsi [tambah] adalah menambah label kategori"* · *"masing2 member ada
+tombol hide/unhide detail label kategori"* · *"di barisan judul Member perlu ada tombol
+hide/unhide menampilkan label ke peta secara keseluruhan"*
+
+**a. 🐛 Lokasi baru kini langsung terlihat**
+- Sebelumnya setelah **Simpan**, panel Member **menutup sendiri** — jadi lokasi baru
+  tidak kelihatan, seolah belum masuk.
+- Sekarang panel Member **tetap terbuka** setelah Simpan (kalau form dibuka dari Member).
+- Data lokasi baru sebenarnya **sudah tersimpan** — sekarang langsung terlihat di daftar.
+
+**b. Satu member boleh punya BEBERAPA kategori**
+- Tombol **[+]** pada member membuka daftar kategori. Klik kategori → **tertambah**;
+  klik lagi → **terhapus**.
+- **Kategori pertama = utama** (menentukan **warna titik** di peta) — tidak bisa dihapus
+  selama masih ada kategori lain.
+- Kategori tambahan tampil di peta sebagai tulisan terpisah (mis. `Yayasan · Sosial`).
+- Data lama **tidak diubah** — kategori lama tetap jadi kategori utama.
+
+**c. Tiap member punya 4 tombol**
+| Tombol | Arti |
+|--------|------|
+| **[+]** | Tambah / hapus kategori member itu |
+| **[✎]** | Ubah data lokasi (buka form) |
+| **[−]** | Hapus lokasi (dengan konfirmasi) |
+| **[👁]** | Sembunyikan / tampilkan label kategori member itu di peta |
+
+**d. Sembunyikan label kategori per member**
+- Tombol **[👁]** menyembunyikan **tulisan kategori** member itu di peta.
+- **Nama lokasi tetap tampil** selama datanya ada (sesuai permintaan Bapak).
+  Tombolnya jadi pucat kalau label sedang disembunyikan.
+- **e. Sembunyikan SEMUA label kategori sekaligus**
+- Di baris judul **"Member"** ada tombol **[👁]** global.
+- Menekannya menyembunyikan **semua label kategori** di peta sekaligus —
+  **nama lokasi tetap tampil**. Tekan lagi untuk menampilkan kembali.
+
+**Hasil uji (blok K12):** label kategori awal 8 ✅ · hide global → label kategori **0**,
+**nama lokasi tetap 8** ✅ · tampilkan lagi → 8 ✅ · hide per member → 8 jadi **7** ✅ ·
+tombol per baris = **[+] [✎] [−] [👁]** ✅ · panel kategori terbuka, chip kategori tampil ✅ ·
+tambah "Sosial" → peta jadi **"Yayasan · Sosial"** + baris member ikut ✅ ·
+hapus → kembali "Yayasan" ✅ · tambah lokasi dari Member → **panel Member tetap terbuka**,
+lokasi baru langsung terlihat (9 baris) ✅ · data uji dihapus (kembali 8) ✅ · tanpa error ✅
+
+**Perbaikan sampingan:** label gabungan (mis. "Yayasan · Sosial") sempat ikut masuk ke
+daftar kategori sehingga mengganggu warna — **sudah diperbaiki** (warna memakai kategori utama).
+
+---
+
 ## 3 Oktober 2026 — 🧭 **PILIH WILAYAH DARI DAFTAR + MEMBER SATU-SATUNYA MENU (K11)**
 
 **Order Bapak:** *"Wilayah (provinsi/kabupaten/kota) user bisa cari atau lewat

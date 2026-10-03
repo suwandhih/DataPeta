@@ -43,7 +43,9 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (bawah) | Klik kategori → hanya kategori itu tampil |
 | ☰ **Member** (kanan atas) | Buka daftar lokasi tersimpan — **di sini juga ada tombol Tambah Lokasi** |
-| ✏️ **Ubah / Hapus** (di daftar Member) | Ubah atau hapus data lokasi langsung dari daftar |
+| ➕ **Tambah Lokasi** (di panel Member) | Isi data lokasi baru |
+| 🏷️ **Label kategori pada peta** (di panel Member) | Tombol **Tampil / Sembunyi** → menampilkan atau menyembunyikan tulisan kategori di peta |
+| ✏️ **[+]** **[✎]** **[−]** (tiap member) | **[+]** tambah kategori · **[✎]** ubah data · **[−]** hapus |
 | ☰ **Tombol menu** (kanan atas) | Buka menu samping |
 | ✕ **Tombol tutup** | Tutup panel / menu (bisa juga tekan `Esc`) |
 
@@ -74,7 +76,7 @@ bergerak ke wilayah itu. Klik **Bersihkan** kalau ingin mengulang.
 ⚠️ **Penting:** data tersimpan **di perangkat ini saja**. Data di PC dan di HP **terpisah**.
 Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
 
-### �️ Bentang alam di peta
+### 🗺️ Bentang alam di peta
 
 Peta sudah dilengkapi **bentang alam** supaya mudah dibaca:
 
@@ -87,7 +89,7 @@ Peta sudah dilengkapi **bentang alam** supaya mudah dibaca:
 | ⚪ **Bulatan putih berisi huruf** | Data lokasi Bapak (bisa diklik) |
 | 🌫️ **Pucat di pinggir** | Negara tetangga |
 
-### �🏙️ Nama kota di peta
+### 🏙️ Nama kota di peta
 
 Nama kota **muncul sendiri** sesuai tingkat zoom:
 
