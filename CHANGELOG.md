@@ -3,8 +3,19 @@
 > Rekam **semua kejadian** di aplikasi: apa yang berubah, kapan, dan kenapa.
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
----
-## 3 Oktober 2026 — �️ **TOMBOL RINGKAS DAFTAR: HANYA JUDUL KOTA YANG TAMPIL**
+---## 3 Oktober 2026 — ↔️ **DUA TOMBOL 👁 DISATUKAN DALAM SATU BARIS**
+
+**Catatan Bapak:** *"apakah 2 tombol 👁 bisa dalam 1 baris tidak ambil 2 baris seperti sekarang?"*
+
+**Perbaikan:**
+- Dua tombol 👁 (**Label kategori pada peta** & **Ringkas daftar (hanya kota)**)
+  kini **berdampingan dalam satu baris** (kiri–kanan), tidak lagi bertumpuk dua baris.
+- Ukuran huruf & lencana keadaan sedikit dikecilkan agar muat rapi di HP.
+
+**Hasil uji:** kedua tombol sebaris (posisi Y sama) ✅ · tombol peta → "Sembunyi" ✅ ·
+tombol daftar → isi daftar `display:none` ✅ · tanpa error ✅
+
+---## 3 Oktober 2026 — �️ **TOMBOL RINGKAS DAFTAR: HANYA JUDUL KOTA YANG TAMPIL**
 
 **Catatan Bapak:** *"masih salah, termasuk yayasan .. tujuan hide adalah untuk meminimal tampilan"*
 
