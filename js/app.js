@@ -51,6 +51,7 @@
   const fWilayahDropdown = document.getElementById("fWilayahDropdown");
   const fWilayahBersih = document.getElementById("fWilayahBersih");
   const fWilayahLangkah = document.getElementById("fWilayahLangkah");
+  const fWilayahCatatan = document.getElementById("fWilayahCatatan");
   const fKategori = document.getElementById("fKategori");
   const fLon = document.getElementById("fLon");
   const fLat = document.getElementById("fLat");
@@ -66,6 +67,8 @@
   const memberDaftar = document.getElementById("memberDaftar");
   const memberMataGlobal = document.getElementById("memberMataGlobal");
   const memberLabelKeadaan = document.getElementById("memberLabelKeadaan");
+  const memberJudulKota = document.getElementById("memberJudulKota");
+  const memberKotaKeadaan = document.getElementById("memberKotaKeadaan");
   const kategoriAtur = document.getElementById("kategoriAtur");
   const kategoriBaru = document.getElementById("kategoriBaru");
   const kategoriTambah = document.getElementById("kategoriTambah");
@@ -98,6 +101,7 @@
   let labelTerpakai = [];    // kotak label lokasi yang sudah ditaruh (anti tumpang tindih)
   // Label kategori di peta: bisa disembunyikan sekaligus (satu tombol).
   let labelTampilGlobal = true;                 // tombol "Label kategori pada peta"
+  let judulKotaTampil = true;                   // tombol "Judul kota di daftar"
 
   // ---------- Bantu ----------
   function inisialDari(nama) {
@@ -127,16 +131,16 @@
     return warnaKategori(nama);
   }
 
-  // Daftar kategori sebuah lokasi: kategori utama + kategori tambahan.
+  // Daftar kategori sebuah lokasi: kategori utama + label tambahan.
   // Satu member boleh punya beberapa kategori (mis. Sekolah + Sosial).
   function kategoriLengkap(lokasi) {
     const hasil = [];
     if (lokasi.kategori) hasil.push(lokasi.kategori);
-    if (Array.isArray(lokasi.kategoriLain)) {
-      lokasi.kategoriLain.forEach((k) => {
-        if (k && hasil.indexOf(k) === -1) hasil.push(k);
-      });
-    }
+    // "label" = kategori tambahan (nama kolom baru). "kategoriLain" = data lama.
+    const tambahan = [].concat(lokasi.label || [], lokasi.kategoriLain || []);
+    tambahan.forEach((k) => {
+      if (k && hasil.indexOf(k) === -1) hasil.push(k);
+    });
     return hasil;
   }
 
@@ -1077,11 +1081,7 @@
     `;
 
     const aksiUbah = document.getElementById("aksiUbah");
-    if (aksiUbah)
-      aksiUbah.addEventListener("click", () => {
-        kembaliKeMember = false;
-        bukaForm(id);
-      });
+    if (aksiUbah) aksiUbah.addEventListener("click", () => bukaForm(id));
 
     panel.classList.add("terbuka");
     panel.setAttribute("aria-hidden", "false");
@@ -1262,7 +1262,6 @@
   // Klik nama wilayah → peta geser + perbesar ke wilayah itu, lalu form terbuka
   function pilihWilayah(w) {
     tutupLaci();
-    kembaliKeMember = false;
     bukaForm(null);
     terapkanWilayah({ kode: w[0], nama: w[1], lat: w[2], lon: w[3] });
     fNama.focus();
@@ -1319,10 +1318,11 @@
         const isi = grup.get(kunci).slice().sort((a, b) => a.nama.localeCompare(b.nama, "id"));
 
         const kotak = document.createElement("div");
-        kotak.className = "member-grup";
+        kotak.className = "member-grup" + (judulKotaTampil ? "" : " ringkas");
 
         const judul = document.createElement("div");
         judul.className = "member-grup-judul";
+        judul.setAttribute("data-kota", kunci);
 
         const pin = document.createElement("span");
         pin.className = "member-grup-pin";
@@ -1382,9 +1382,8 @@
           bUbah.title = "Ubah data " + lokasi.nama;
           bUbah.addEventListener("click", (e) => {
             e.stopPropagation();
-            kembaliKeMember = true;
             tutupMember();
-            bukaForm(lokasi.id);
+            bukaForm(lokasi.id, true);
           });
 
           const bHapus = document.createElement("button");
@@ -1430,6 +1429,21 @@
     gambarPenanda();
   }
 
+  // Judul kota di daftar Member: tampil / sembunyi
+  function gambarTombolJudulKota() {
+    memberJudulKota.classList.toggle("aktif", judulKotaTampil);
+    memberJudulKota.title = judulKotaTampil
+      ? "Klik untuk menyembunyikan judul kota di daftar"
+      : "Klik untuk menampilkan lagi judul kota di daftar";
+    memberKotaKeadaan.textContent = judulKotaTampil ? "Tampil" : "Sembunyi";
+  }
+
+  function toggleJudulKota() {
+    judulKotaTampil = !judulKotaTampil;
+    gambarTombolJudulKota();
+    gambarMember();
+  }
+
   // ---------- Tambah kategori pada satu member ----------
   // Kategori utama tetap; kategori tambahan disimpan di kategoriLain.
   // Warna titik di peta mengikuti kategori utama.
@@ -1437,12 +1451,15 @@
     const lokasi = daftarLokasi.find((l) => l.id === id);
     if (!lokasi) return;
 
-    // Panel kategori inline (bukan prompt) — supaya kelihatan semua pilihan.
-    const baris = memberDaftar.querySelector('[data-kategori="' + id + '"]');
-    if (baris) {
-      baris.remove();
+    // Klik [+] lagi → tutup panel yang sedang terbuka
+    const terbuka = memberDaftar.querySelector('[data-kategori="' + id + '"]');
+    if (terbuka) {
+      terbuka.remove();
       return;
     }
+
+    // Tutup panel kategori member lain → supaya tidak menumpuk
+    memberDaftar.querySelectorAll(".member-kategori").forEach((p) => p.remove());
 
     const barisLokasi = memberDaftar.querySelector('[data-lokasi="' + id + '"]');
     if (!barisLokasi) return;
@@ -1451,10 +1468,28 @@
     panel.className = "member-kategori";
     panel.setAttribute("data-kategori", id);
 
+    // Judul panel + tombol tutup — supaya jelas panel ini milik lokasi mana
+    const kepala = document.createElement("div");
+    kepala.className = "member-kategori-judul";
+
+    const kepalaTeks = document.createElement("span");
+    kepalaTeks.textContent = "Label kategori — " + lokasi.nama;
+
+    const kepalaTutup = document.createElement("button");
+    kepalaTutup.type = "button";
+    kepalaTutup.className = "member-kategori-tutup";
+    kepalaTutup.textContent = "×";
+    kepalaTutup.title = "Tutup daftar label";
+    kepalaTutup.addEventListener("click", () => panel.remove());
+
+    kepala.appendChild(kepalaTeks);
+    kepala.appendChild(kepalaTutup);
+    panel.appendChild(kepala);
+
     const ket = document.createElement("p");
     ket.className = "member-kategori-ket";
     ket.textContent =
-      "Kategori " + lokasi.nama + " — klik untuk tambah/hapus (kategori pertama = utama, warna titik).";
+      "Klik nama label untuk MENAMBAH (jadi berwarna) atau MENGHAPUS. Label pertama = utama (warna titik di peta).";
     panel.appendChild(ket);
 
     const daftar = document.createElement("div");
@@ -1484,34 +1519,36 @@
 
     panel.appendChild(daftar);
     barisLokasi.insertAdjacentElement("afterend", panel);
+    // Baris bisa berada di bawah layar — pastikan panelnya terlihat
+    panel.scrollIntoView({ block: "nearest" });
   }
 
-  // Tambah / hapus satu kategori pada sebuah lokasi
+  // Tambah / hapus satu label pada sebuah lokasi
   function simpanKategoriMember(lokasi, kat, tambah) {
-    const lain = (lokasi.kategoriLain || []).slice();
+    const lain = (lokasi.label || []).slice();
     let data;
 
     if (tambah) {
       if (lain.indexOf(kat) === -1 && lokasi.kategori !== kat) lain.push(kat);
-      data = Object.assign({}, lokasi, { kategoriLain: lain });
+      data = Object.assign({}, lokasi, { label: lain, kategoriLain: [] });
     } else {
       if (lokasi.kategori === kat) {
-        // Kategori utama dihapus → salah satu kategori tambahan naik jadi utama
+        // Label utama dihapus → salah satu label tambahan naik jadi utama
         const baru = lain.shift();
         if (baru === undefined) {
-          alert("Tidak bisa dihapus — lokasi harus punya minimal 1 kategori.");
+          alert("Tidak bisa dihapus — lokasi harus punya minimal 1 label.");
           return;
         }
-        data = Object.assign({}, lokasi, { kategori: baru, kategoriLain: lain });
+        data = Object.assign({}, lokasi, { kategori: baru, label: lain, kategoriLain: [] });
       } else {
-        data = Object.assign({}, lokasi, { kategoriLain: lain.filter((k) => k !== kat) });
+        data = Object.assign({}, lokasi, { label: lain.filter((k) => k !== kat), kategoriLain: [] });
       }
     }
 
     Penyimpanan.simpan(data).then(() => muatUlang()).then(() => {
       if (member.classList.contains("terbuka")) {
         gambarMember();
-        // buka lagi panel kategori tadi supaya Bapak bisa klik lagi
+        // buka lagi panel label tadi supaya Bapak bisa klik lagi
         tambahKategoriMember(lokasi.id);
       }
     });
@@ -1912,16 +1949,36 @@
       });
   }
 
-  function bukaForm(id) {
+  function bukaForm(id, dariMember) {
     idSedangDiubah = id || null;
+    // Kalau dibuka dari panel Member → setelah Simpan/Simpan, panel Member dibuka lagi
+    kembaliKeMember = !!dariMember;
     const lokasi = id ? daftarLokasi.find((l) => l.id === id) : null;
+
+    // Saat MENGUBAH data: wilayah & koordinat dikunci (tidak bisa diubah).
+    // Kalau wilayah salah → hapus lokasi, lalu tambah baru di wilayah yang benar.
+    const kunci = !!lokasi;
+    fWilayah.readOnly = kunci;
+    fLon.readOnly = kunci;
+    fLat.readOnly = kunci;
+    fWilayah.classList.toggle("nonaktif", kunci);
+    fLon.classList.toggle("nonaktif", kunci);
+    fLat.classList.toggle("nonaktif", kunci);
+    fWilayahDropdown.hidden = kunci;
+    fWilayahBersih.hidden = kunci;
+    fWilayahCatatan.hidden = !kunci;
+    if (kunci) {
+      fWilayahCatatan.textContent =
+        "Wilayah & titik dikunci. Yang diubah di sini hanya nama & label lokasi. " +
+        "Kalau wilayahnya salah → hapus lokasi ini, lalu tambah baru di wilayah yang benar.";
+    }
 
     // Pemilih wilayah selalu mulai dari keadaan bersih
     langkahJejak = [];
     tutupDropdownWilayah();
     sembunyikanSaranWilayah();
 
-    formJudul.textContent = lokasi ? "Ubah Data Lokasi" : "Tambah Lokasi Baru";
+    formJudul.textContent = lokasi ? "Ubah Nama & Label Lokasi" : "Tambah Lokasi Baru";
     fNama.value = lokasi ? lokasi.nama : "";
     fWilayah.value = lokasi ? lokasi.wilayah : "";
     fKategori.value = lokasi ? lokasi.kategori : daftarKategori[1];
@@ -1991,15 +2048,17 @@
       return;
     }
 
+    const lama = idSedangDiubah ? daftarLokasi.find((l) => l.id === idSedangDiubah) : null;
+    const labelLama = lama ? [].concat(lama.label || [], lama.kategoriLain || []) : [];
+
     const data = {
       id: idSedangDiubah || Penyimpanan.idBaru(),
       nama: nama,
       wilayah: fWilayah.value.trim(),
       kategori: fKategori.value,
-      // Kategori tambahan (kalau ada) ikut dipertahankan
-      kategoriLain: idSedangDiubah
-        ? ((daftarLokasi.find((l) => l.id === idSedangDiubah) || {}).kategoriLain || [])
-        : [],
+      // Label tambahan (kalau ada) ikut dipertahankan
+      label: labelLama,
+      kategoriLain: [],
       lon: lon,
       lat: lat,
       inisial: fInisial.value.trim(),
@@ -2008,15 +2067,13 @@
     };
 
     pratinjau = null;   // sudah disimpan — titik sementara tidak dipakai lagi
+    // Simpan dulu keadaan "balik ke Member" sebelum form ditutup
+    const balikMember = kembaliKeMember;
     Penyimpanan.simpan(data).then(() => {
-      // kategoriLain ikut dipertahankan saat mengubah data lokasi
       tutupForm();
       muatUlang()
         .then(() => {
-          if (kembaliKeMember) {
-            kembaliKeMember = false;
-            bukaMember();
-          }
+          if (balikMember) bukaMember();
         })
         .catch(() => {});
     });
@@ -2061,16 +2118,16 @@
   tombolMember.addEventListener("click", bukaMember);
   memberTutup.addEventListener("click", tutupMember);
   memberMataGlobal.addEventListener("click", toggleLabelGlobal);
+  memberJudulKota.addEventListener("click", toggleJudulKota);
   kategoriTambah.addEventListener("click", tambahKategori);
   kategoriBaru.addEventListener("keydown", (e) => {
     if (e.key === "Enter") tambahKategori();
   });
   tombolTambah.addEventListener("click", () => {
     // Form & menu sama-sama di kanan — jangan bertumpuk.
-    kembaliKeMember = true;
     tutupMember();
     tutupLaci();
-    bukaForm(null);
+    bukaForm(null, true);
   });
 
   // Titik sementara mengikuti isian form
@@ -2079,6 +2136,7 @@
 
   // Pemilih wilayah: cari (ketik) atau dropdown bertingkat
   fWilayah.addEventListener("input", () => {
+    if (fWilayah.readOnly) return;   // wilayah dikunci saat mengubah data
     clearTimeout(wilayahSaranTimer);
     const teks = fWilayah.value;
     wilayahSaranTimer = setTimeout(() => gambarSaranWilayah(teks), 120);
@@ -2290,6 +2348,7 @@
   isiPilihanKategori();
   gambarWilayah();
   gambarTombolMataGlobal();
+  gambarTombolJudulKota();
   terapkanTampilan();
 
   // Kategori yang pernah diubah Bapak disimpan di peramban

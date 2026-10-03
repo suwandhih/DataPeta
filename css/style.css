@@ -1019,12 +1019,40 @@ html, body {
 .member-label-tombol:not(.aktif) .member-label-keadaan { background: #9ca3af; }
 .member-label-tombol:not(.aktif) .member-label-ikon { opacity: 0.45; }
 
+/* Judul kota di daftar Member — bisa disembunyikan */
+.member-grup.ringkas .member-grup-judul { display: none; }
+
 /* Panel kategori per member (terbuka lewat tombol [+]) */
 .member-kategori {
   padding: 8px 10px 10px 24px;
   border-bottom: 1px solid var(--abu-garis);
   background: var(--abu-latar);
 }
+
+.member-kategori-judul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--hitam);
+}
+
+.member-kategori-tutup {
+  width: 22px;
+  height: 22px;
+  border: none;
+  border-radius: 50%;
+  background: var(--putih);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.member-kategori-tutup:hover { background: #e5e7eb; }
 
 .member-kategori-ket { font-size: 11px; color: var(--abu-teks); margin: 0 0 6px; }
 
@@ -1126,6 +1154,24 @@ html, body {
 }
 
 .form-input:focus { border-color: var(--hitam); }
+
+/* Kolom yang tidak boleh diubah (mis. Wilayah saat mengubah data) */
+.form-input.nonaktif {
+  background: var(--abu-latar);
+  color: var(--abu-teks);
+  cursor: not-allowed;
+}
+
+.form-catatan {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--abu-garis);
+  background: var(--abu-latar);
+  border-radius: 6px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--abu-teks);
+}
 
 .form-area { resize: vertical; line-height: 1.5; }
 

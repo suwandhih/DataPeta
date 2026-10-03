@@ -97,6 +97,8 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K13b** | **Debug fitur member [+][✎][−]** — temuan: versi online masih lama; panel label diberi judul + tombol ×; alur simpan disatukan. Lolos 10 uji | 3 Okt 2026 |
+| **K13** | **Member: tombol judul kota · perbaikan panel [+] · edit tanpa ubah wilayah** (a–c ✅) | 3 Okt 2026 |
 | **K12b** | **Satu tombol “Label kategori pada peta”** di bawah [+ Tambah Lokasi] — tombol 👁 per member dihapus (sisa [+][✎][−]) | 3 Okt 2026 |
 | **K12** | **Member: banyak kategori per member + tombol [+][✎][−][👁] + hide/unhide label kategori (per member & global)** (a–e ✅) | 3 Okt 2026 |
 | **K11** | **Form wilayah (cari + dropdown bertingkat) + Member satu-satunya menu** — tombol Ubah/Hapus di member (a–c ✅) | 3 Okt 2026 |

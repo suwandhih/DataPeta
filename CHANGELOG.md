@@ -4,8 +4,92 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 3 Oktober 2026 — 🔧 **DEBUG FITUR MEMBER [+] [✎] [−]**
 
-## 3 Oktober 2026 — 👁️ **SATU TOMBOL LABEL KATEGORI (perbaikan K12)**
+**Order Bapak:** *"km harus debugging member dari fitur [+] [✎] [−] sampai di simpan dan di hapus
+sampai benar.. nanti saya tes lagi.. sekarang belum berfungsi dengan baik"*
+
+**🔴 TEMUAN UTAMA (penyebab “belum berfungsi”):**
+Bapak menguji **versi ONLINE** (`suwandhih.github.io/DataPeta`), sedangkan versi itu
+**masih LAMA** — belum memuat K12 & K13. Pemeriksaan membuktikan:
+
+| Versi | Keadaan |
+|-------|---------|
+| **Komputer ini** (berkas `index.html`) | **Terbaru** — semua fitur member jalan ✅ |
+| **Online** (github.io) | **Lama** — belum ada tombol “Judul kota”, belum ada kunci Wilayah ❌ |
+
+**Penyebab:** K13 (tombol judul kota, perbaikan [+], kunci Wilayah) **belum diunggah** ke GitHub.
+
+**Yang diperbaiki di kode (agar lebih tahan salah):**
+- **Panel label dibuat lebih jelas** — ada **judul** (“Label kategori — nama lokasi”) +
+  **tombol ×** untuk menutup. Sebelumnya panel terbuka tanpa judul sehingga terasa “tidak ada reaksi”.
+- **Keterangan panel dipertegas:** *”Klik nama label untuk MENAMBAH (jadi berwarna) atau
+  MENGHAPUS. Label pertama = utama (warna titik).”*
+- **Alur simpan disatukan** — kalau form dibuka dari Member, setelah **Simpan**
+  panel Member **selalu terbuka lagi** (baik saat menambah maupun mengubah). Sebelumnya
+  bergantung pada variabel global yang bisa tertinggal nilainya.
+
+**Hasil debug (klik nyata, 0 error):**
+| Uji | Hasil |
+|-----|-------|
+| Panel Member terbuka | 8 member ✅ |
+| **[+]** → panel label muncul (judul + 5 label + tombol ×) | ✅ |
+| **[+]** tambah “Sosial” → tersimpan di database & tampil di UI | ✅ |
+| **[+]** hapus “Sosial” → kembali kosong | ✅ |
+| **[✎]** buka edit → **Wilayah terkunci** | ✅ |
+| **[✎]** simpan → form tutup & panel Member terbuka | ✅ |
+| **[+ Tambah Lokasi]** → nama baru langsung terlihat di daftar | ✅ |
+| **[−]** hapus → data hilang, penanda kembali 8 | ✅ |
+| **Ketahanan data** (muat ulang halaman) label tetap ada | ✅ |
+| Error / console error | **0** ✅ |
+
+⚠️ **PERLU BAPAK TAHU:** selama belum diunggah, uji online akan **selalu** memakai
+versi lama. Perlu **unggah** supaya versi online = versi di komputer ini.
+
+---
+## 3 Oktober 2026 — �️ **MEMBER: JUDUL KOTA BISA DISEMBUNYIKAN + FIX [+] + EDIT TANPA UBAH WILAYAH (K13)**
+
+**Order Bapak:** *"mau saya sekalian hide/un detail label kategori secara keseluruhan ...
+● Balikpapan, Kalimantan Timur (3) ... label di hide/un lewat tombol di atas"* ·
+*"perbaiki mungkin bug [+] member tidak bisa menambah misal sekolah/kesehatan tidak ada reaksi"* ·
+*"kalau edit [✎] member seharusnya wilayah tidak bisa di edit ... arti edit disini adalah
+bukan edit wilayah tapi nama label"*
+
+**a. Tombol baru: 👁 Judul kota di daftar**
+- Di panel Member kini ada **dua** tombol:
+
+  **[👁  Label kategori pada peta   (Tampil/Sembunyi)]** → mengatur tulisan kategori **di peta** (sudah benar, tidak diubah)
+
+  **[👁  Judul kota di daftar   (Tampil/Sembunyi)]** → mengatur **judul kelompok kota** di daftar Member
+
+- Saat "Sembunyi": judul `● Balikpapan, Kalimantan Timur (3)` **hilang**, daftar jadi ramping —
+  **hanya nama member** yang tampil (tetap 8 member).
+
+**b. Perbaikan tombol [+] (tambah label)**
+- Tombol **[+]** kini **selalu membuka panel label** di bawah barisnya.
+- **Hanya satu panel** terbuka pada satu waktu (panel member lain ikut tertutup).
+- Panel **otomatis di-scroll ke layar** — jadi tidak lagi terasa “tidak ada reaksi”.
+- Label tambahan disimpan di kolom `label` (lebih rapi dari `kategoriLain` lama).
+
+**c. Tombol [✎] Edit — Wilayah & titik DIKUNCI**
+- Form ubah data kini berjudul **"Ubah Nama & Label Lokasi"**.
+- Kolom **Wilayah, Bujur, Lintang dibiarkan abu-abu (tidak bisa diubah)**;
+  tombol “Ambil dari daftar” & “Bersihkan” disembunyikan.
+- Muncul keterangan singkat di bawahnya:
+  *”Wilayah & titik dikunci. Yang diubah di sini hanya nama & label lokasi. Kalau wilayahnya
+  salah → hapus lokasi ini, lalu tambah baru di wilayah yang benar.”*
+- Artinya sesuai maksud Bapak: edit = **nama & label**, bukan wilayah.
+
+**Hasil uji:** dua tombol tampil (Label peta + Judul kota) ✅ · “Judul kota” Sembunyi →
+judul hilang (`display:none`, 8 grup ringkas) tapi **8 member tetap tampil** ✅ · Tampil lagi → normal ✅ ·
+**[+]** panel muncul (5 label) ✅ · klik “Kesehatan” → baris jadi **“Yayasan · Kesehatan”** + label di peta ikut ✅ ·
+panel tetap terbuka setelah menambah ✅ · **[✎]** → form judul “Ubah Nama & Label Lokasi”,
+**Wilayah/Bujur/Lintang terkunci** (readOnly + abu-abu), dropdown & Bersihkan tersembunyi, keterangan muncul,
+**Nama tetap bisa diubah** ✅ · data uji dibersihkan (kembali 8) ✅ · tanpa error ✅
+
+---
+
+## 3 Oktober 2026 — �👁️ **SATU TOMBOL LABEL KATEGORI (perbaikan K12)**
 
 **Order Bapak:** *"fitur hide/unhide label kategori pada peta cukup 1 tombol tempatkan
 saja di bawah [+ Tambah Lokasi] [label kategori pada peta] jadi bukan per member
