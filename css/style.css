@@ -1022,9 +1022,9 @@ html, body {
 /* Judul kota di daftar Member — bisa disembunyikan */
 .member-grup.ringkas .member-grup-judul { display: none; }
 
-/* Panel kategori per member (terbuka lewat tombol [+]) */
-.member-kategori {
-  padding: 8px 10px 10px 24px;
+/* Daftar pilih member (muncul saat klik [✎] atau [−] di baris kota) */
+.member-pilih {
+  padding: 8px 10px 10px 14px;
   border-bottom: 1px solid var(--abu-garis);
   background: var(--abu-latar);
 }
@@ -1034,7 +1034,7 @@ html, body {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   font-size: 12px;
   font-weight: 700;
   color: var(--hitam);
@@ -1054,24 +1054,38 @@ html, body {
 
 .member-kategori-tutup:hover { background: #e5e7eb; }
 
-.member-kategori-ket { font-size: 11px; color: var(--abu-teks); margin: 0 0 6px; }
+.member-pilih-daftar { display: flex; flex-direction: column; gap: 5px; }
 
-.member-kategori-daftar { display: flex; flex-wrap: wrap; gap: 5px; }
-
-.member-chip {
+.member-pilih-baris {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
   border: 1px solid var(--abu-garis);
+  border-radius: var(--radius-kecil);
   background: var(--putih);
-  border-radius: 20px;
   font-family: var(--font);
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--abu-teks);
-  padding: 3px 9px;
+  font-size: 12px;
+  text-align: left;
+  color: var(--hitam);
   cursor: pointer;
 }
 
-.member-chip.aktif { color: var(--putih); border-color: transparent; }
-.member-chip.utama { cursor: default; }
+.member-pilih-baris:hover { background: var(--abu-latar); }
+.member-pilih-baris.hapus { border-color: #fecaca; }
+.member-pilih-baris.hapus:hover { background: #fee2e2; }
+
+.member-pilih-nama { flex: 1; min-width: 0; font-weight: 600; }
+
+.member-pilih-kat {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--putih);
+  border-radius: 10px;
+  padding: 2px 8px;
+}
 
 /* ================= PANEL AKSI ================= */
 .panel-aksi { margin-top: 20px; }

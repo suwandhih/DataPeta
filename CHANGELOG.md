@@ -4,6 +4,47 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+
+## 3 Oktober 2026 — 🏙️ **TOMBOOL PINDAH KE BARIS KOTA (K14)**
+
+**Order Bapak:** *"penempatan [+] [✎] [-] seharusnya di Balikpapan, Kalimantan Timur.
+klik [+] ada penambahan daftar label pada wilayah Balikpapan Kalimantan Timur.
+klik [✎] atau [-] di dalam daftar user memilih label yg mana mau di edit atau hapus"* ·
+*"1 wilayah banyak label kategori... bukankah seharusnya data seperti ini?"*
+
+**Susunan baru daftar Member:**
+
+```
+● Balikpapan, Kalimantan Timur (3)        [+][✎][−]
+   - Yayasan Bumi Lestari - Yayasan
+   - Komunitas Nelayan Pesisir - Sosial
+   - Sekolah Paud - Sekolah
+
+● Bandung, Jawa Barat (1)                 [+][✎][−]
+   - SD Harapan Bangsa - Sekolah
+```
+
+| Tombol | Letak | Fungsi |
+|--------|-------|--------|
+| **[+]** | baris **kota** | Tambah member baru — form terbuka, **wilayah + titik kota sudah terisi** |
+| **[✎]** | baris **kota** | Muncul **daftar isi kota** → pilih member mana yang mau diubah |
+| **[−]** | baris **kota** | Muncul **daftar isi kota** → pilih member mana yang mau dihapus |
+
+**Yang diubah:**
+- Tombol `[+][✎][−]` **dipindah** dari baris member → **baris kota**.
+- Baris member kini **bersih**: hanya `- Nama - Kategori` (tanpa tombol).
+- Fitur **banyak label per member** (chip "Yayasan · Sosial") **dibuang** — cukup
+  **1 kategori per member**, diatur di form. Ini sesuai contoh Bapak.
+- Tombol **👁 Label kategori pada peta** & **👁 Judul kota di daftar** tetap di atas.
+
+**Hasil uji:** tombol pindah ke baris kota (24 tombol / 8 kota, 0 di member) ✅ ·
+baris member bersih `- Nama` / `Yayasan` ✅ · **[−]** muncul daftar pilih hapus ✅ ·
+**[✎]** muncul daftar pilih ubah ✅ · pilih member → form ubah terbuka & **wilayah terkunci** ✅ ·
+**[+]** → form terbuka dengan **wilayah + titik kota terisi** ✅ · isi "Sekolah Paud" → Simpan →
+kota Balikpapan jadi **(2)** berisi `- Sekolah Paud` + `- Yayasan Bumi Lestari` ✅ ·
+**[−]** pilih "Sekolah Paud" → terhapus, kota kembali **(1)**, penanda kembali 8 ✅ · tanpa error ✅
+
+---
 ## 3 Oktober 2026 — 🔧 **DEBUG FITUR MEMBER [+] [✎] [−]**
 
 **Order Bapak:** *"km harus debugging member dari fitur [+] [✎] [−] sampai di simpan dan di hapus
