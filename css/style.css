@@ -847,6 +847,39 @@ body {
 .tombol-member:hover { background: var(--abu-latar); }
 .tombol-member-ikon { font-size: 15px; line-height: 1; }
 
+/* ================= TOMBOL SUKU (di dalam bar atas) ================= */
+.tombol-suku {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--radius-kecil);
+  background: var(--putih);
+  color: var(--hitam);
+  border: 1px solid var(--abu-garis);
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.tombol-suku:hover { background: var(--abu-latar); }
+.tombol-suku-ikon { font-size: 14px; line-height: 1; }
+
+/* Tingkat tampilan suku: 0 sembunyi · 1 sedang · 2 penuh.
+   Saat sedang/penuh, tombol diberi tanda supaya Bapak tahu keadaannya. */
+.tombol-suku.tingkat-1 { background: #eef4ff; border-color: #bcd3ff; color: #1d4ed8; }
+.tombol-suku.tingkat-2 { background: var(--hitam); border-color: var(--hitam); color: var(--putih); }
+
+/* ================= SUKU DI PETA ================= */
+.suku-titik { fill: #7c5cff; stroke: #ffffff; stroke-width: 0.7; }
+.suku-titik.perkiraan { stroke-dasharray: 2 1.6; }
+.suku-nama { font-family: var(--font); font-size: 9px; font-weight: 700; fill: #5b3fd6; }
+.suku-jumlah { font-family: var(--font); font-size: 8px; fill: #6b7280; }
+.suku-perkiraan { font-family: var(--font); font-size: 7.5px; font-style: italic; fill: #8b93a1; }
+
 /* ================= PANEL MEMBER ================= */
 .member {
   position: fixed;
@@ -1416,6 +1449,8 @@ body {
   .zoom-kendali button { width: 30px; height: 30px; font-size: 14px; }
   .tombol-member { height: 30px; padding: 0 8px; font-size: 13px; }
   .tombol-member-teks { display: none; }
+  .tombol-suku { height: 30px; padding: 0 8px; font-size: 13px; }
+  .tombol-suku-teks { display: none; }
   .tombol-menu { width: 30px; height: 30px; }
   .tombol-menu span { width: 16px; }
   .kategori { padding: 10px 12px; }

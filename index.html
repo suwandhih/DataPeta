@@ -6,7 +6,7 @@
   <title>Peta Indonesia</title>
   <!-- VERSI: naikkan angka ini setiap kali mengunggah supaya peramban
        selalu mengambil berkas terbaru (bukan versi lama dari cache). -->
-  <link rel="stylesheet" href="css/style.css?v=20261004-01" />
+  <link rel="stylesheet" href="css/style.css?v=20261004-02" />
 </head>
 <body>
 
@@ -34,6 +34,10 @@
       <span class="tombol-member-ikon">☰</span><span class="tombol-member-teks">Member</span>
     </button>
 
+    <button class="tombol-suku" id="tombolSuku" aria-label="Suku bangsa di peta" title="Suku bangsa di peta">
+      <span class="tombol-suku-ikon">👥</span><span class="tombol-suku-teks">Suku</span>
+    </button>
+
     <button class="tombol-menu" id="tombolMenu" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -57,6 +61,8 @@
         <g id="lapisGunung"></g>
         <g id="lapisKota"></g>
         <g id="lapisPulau"></g>
+        <!-- Suku bangsa (K16) — di bawah penanda supaya penanda Bapak tetap di atas -->
+        <g id="lapisSuku"></g>
         <g id="lapisPenanda"></g>
         <!-- Tanda pulau kecil di atas penanda supaya tidak tertutup -->
         <g id="lapisPulauKecil"></g>
@@ -207,9 +213,10 @@
   <script src="data/gunung.js"></script>
   <script src="data/kota-indonesia.js"></script>
   <script src="data/pulau.js"></script>
+  <script src="data/suku.js"></script>
   <script src="data/contoh-lokasi.js"></script>
-  <script src="js/penyimpanan.js?v=20261004-01"></script>
-  <script src="js/awan.js?v=20261004-01"></script>
-  <script src="js/app.js?v=20261004-01"></script>
+  <script src="js/penyimpanan.js?v=20261004-02"></script>
+  <script src="js/awan.js?v=20261004-02"></script>
+  <script src="js/app.js?v=20261004-02"></script>
 </body>
 </html>

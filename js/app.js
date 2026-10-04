@@ -23,10 +23,12 @@
   const lapisPenanda = document.getElementById("lapisPenanda");
   const lapisNamaKota = document.getElementById("lapisNamaKota");
   const lapisNamaLokasi = document.getElementById("lapisNamaLokasi");
+  const lapisSuku = document.getElementById("lapisSuku");
   const labelPeta = document.getElementById("labelPeta");
   const zoomMasuk = document.getElementById("zoomMasuk");
   const zoomKeluar = document.getElementById("zoomKeluar");
   const zoomReset = document.getElementById("zoomReset");
+  const tombolSuku = document.getElementById("tombolSuku");
   const kotakCari = document.getElementById("kotakCari");
   const hapusCari = document.getElementById("hapusCari");
   const kategoriBar = document.getElementById("kategori");
@@ -101,6 +103,10 @@
   // Label kategori di peta: bisa disembunyikan sekaligus (satu tombol).
   let labelTampilGlobal = true;                 // tombol "Label kategori pada peta"
   let kategoriDaftarTampil = true;              // tombol "Label kategori di daftar"
+
+  // ---------- Suku bangsa (K16) ----------
+  // 0 = sembunyi · 1 = sedang (titik + nama) · 2 = penuh (+ jumlah & tanda perkiraan)
+  let sukuTingkat = 0;
 
   // ---------- Bantu ----------
   function inisialDari(nama) {
@@ -193,6 +199,7 @@
     gambarPulau();
     gambarKota();
     gambarGunung();
+    gambarSuku();
     gambarPenanda();
   }
 
@@ -1054,6 +1061,100 @@
       });
       kategoriBar.appendChild(btn);
     });
+  }
+
+  // ---------- Suku bangsa (K16) ----------
+  // Titik suku = IBU KOTA PROVINSI ASAL (perkiraan) — lihat data/suku.js.
+  // Hanya ditampilkan saat zoom ≥ 2 dan hanya untuk provinsi yang sedang terlihat,
+  // supaya peta tidak terlalu ramai saat zoom keluar.
+  const HURUF_SUKU = { nama: 9, jumlah: 8, perkiraan: 7.5 };
+  const SISI_SUKU = ["atas", "kanan", "bawah", "kiri", "kanan-atas", "kanan-bawah", "kiri-atas", "kiri-bawah"];
+
+  function namaProvinsiSuku(kode) {
+    if (typeof WILAYAH_PROVINSI === "undefined") return "";
+    const p = WILAYAH_PROVINSI.find((x) => x[0] === kode);
+    return p ? p[1] : "";
+  }
+
+  function gambarSuku() {
+    if (!lapisSuku) return;
+    lapisSuku.innerHTML = "";
+    if (sukuTingkat <= 0) return;
+    if (typeof SUKU_INDONESIA === "undefined" || !proyeksi) return;
+    if (zk < 1.5) return;   // zoom keluar → terlalu ramai
+
+    const rintangan = kotakRintanganLabel().slice();
+
+    SUKU_INDONESIA.forEach((s) => {
+      const prov = (typeof WILAYAH_PROVINSI !== "undefined" ? WILAYAH_PROVINSI.find((x) => x[0] === s.p) : null);
+      if (!prov) return;
+      const p = proyek(prov[3], prov[2]);   // [kode, nama, lat, lng] → proyek(lon, lat)
+      const layar = keLayar(p);
+
+      // Hanya gambar bila provinsinya sedang terlihat di layar
+      if (layar.x < -40 || layar.x > VB_W + 40 || layar.y < -40 || layar.y > VB_H + 40) return;
+
+      const g = document.createElementNS(NS, "g");
+      g.setAttribute("class", "suku");
+      g.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ") scale(" + (1 / zk).toFixed(4) + ")");
+
+      const bulat = document.createElementNS(NS, "circle");
+      bulat.setAttribute("r", "3.4");
+      bulat.setAttribute("class", "suku-titik perkiraan");
+      g.appendChild(bulat);
+
+      const judul = document.createElementNS(NS, "title");
+      judul.textContent =
+        s.n + (s.a ? " (kelompok gabungan)" : "") + " — suku" +
+        "\nJumlah (BPS 2010): " + s.j.toLocaleString("id-ID") + " jiwa" +
+        "\nKawasan utama (BPS 2010): " + s.k +
+        "\n\n⚠️ Titik ini PERKIRAAN: diletakkan di ibu kota provinsi asal," +
+        "\n   bukan lokasi persis suku.";
+      g.appendChild(judul);
+      lapisSuku.appendChild(g);
+
+      // Label: nama selalu; jumlah + tanda "perkiraan" hanya pada tingkat penuh
+      const baris = [{ isi: s.n, kelas: "suku-nama", tinggi: HURUF_SUKU.nama }];
+      if (sukuTingkat >= 2) {
+        baris.push({ isi: s.j.toLocaleString("id-ID") + " jiwa", kelas: "suku-jumlah", tinggi: HURUF_SUKU.jumlah });
+        baris.push({ isi: "perkiraan", kelas: "suku-perkiraan", tinggi: HURUF_SUKU.perkiraan });
+      }
+
+      const lebar = Math.max.apply(null, baris.map((b) => ukuranTeks(b.isi, b.tinggi, 0).w));
+      const tinggi = baris.reduce((t, b) => t + b.tinggi * 1.25, 0);
+
+      const sisi = pilihSisi(layar.x, layar.y, lebar, tinggi, SISI_SUKU, rintangan, 10);
+      const kotak = kotakSisi(sisi, lebar, tinggi, layar.x, layar.y, 10);
+      rintangan.push(kotak);
+
+      // Sama seperti label lokasi: teks digambar lewat buatTeksLokasi supaya
+      // besar huruf di layar TETAP (tidak ikut membesar saat zoom).
+      const tengahX = (kotak.kiri + kotak.kanan) / 2;
+      let yAtas = kotak.atas;
+      baris.forEach((b) => {
+        lapisSuku.appendChild(buatTeksLokasi(b.isi, b.kelas, tengahX, yAtas + b.tinggi * 0.62));
+        yAtas += b.tinggi * 1.25;
+      });
+    });
+  }
+
+  // Tombol [suku]: sembunyi → sedang → penuh → sembunyi
+  function perbaruiTombolSuku() {
+    if (!tombolSuku) return;
+    tombolSuku.classList.toggle("tingkat-1", sukuTingkat === 1);
+    tombolSuku.classList.toggle("tingkat-2", sukuTingkat === 2);
+    const kata = ["Sembunyi", "Sedang", "Penuh"][sukuTingkat];
+    tombolSuku.title = "Suku bangsa di peta — sekarang: " + kata + " (klik untuk ganti)";
+    tombolSuku.setAttribute("aria-label", "Suku bangsa di peta — " + kata);
+  }
+
+  if (tombolSuku) {
+    tombolSuku.addEventListener("click", () => {
+      sukuTingkat = (sukuTingkat + 1) % 3;
+      perbaruiTombolSuku();
+      gambarSuku();
+    });
+    perbaruiTombolSuku();
   }
 
   // ---------- Panel rincian ----------

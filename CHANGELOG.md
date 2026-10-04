@@ -4,6 +4,57 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 4 Oktober 2026 — 👥 **SUKU BANGSA DI PETA + TOMBOL [suku]**
+
+**Permintaan Bapak:** *"apakah data suku indonesia siap di siapkan .. suku lewat tombol
+hide/un diposisi pada baris [cari lokasi di peta…] [+] [−] [⟲] [☰ Member][suku] [☰]"* → *"di proses"*
+
+**Hasil pemeriksaan sumber (aturan F8 — tidak mengarang):**
+
+| Sumber | Hasil |
+|--------|-------|
+| Wikidata | 1.558 suku, tapi hanya **72 punya koordinat** — **semuanya bukan suku** (kampus, keuskupan, sekolah) |
+| Wikipedia tabel "Kelompok etnik di Indonesia" | **Data resmi Sensus BPS 2010** — 31 kelompok besar, **tanpa koordinat** |
+| Wikipedia "Daftar suku bangsa menurut provinsi" | 351 nama suku, **tanpa koordinat** |
+| Peta Bahasa Kemendikbud | Server mati |
+| BPS | Diblokir (403) |
+
+⚠️ **Tidak ada satu pun sumber yang memberi koordinat suku.**
+**Keputusan Bapak:** titik suku **ditempelkan ke ibu kota provinsi asal** dan diberi
+**tanda "perkiraan"**.
+
+**Yang dibuat:**
+- Berkas baru **`data/suku.js`** — **28 suku** dari tabel resmi BPS 2010
+  (nama, jumlah penduduk, kawasan utama). Angka pasti, bukan karangan.
+- Tombol **[suku] 👥** di bar atas (setelah ☰ Member) — **hide/un 3 tingkat**:
+
+| Klik | Tingkat | Yang tampil di peta | Warna tombol |
+|------|---------|---------------------|--------------|
+| 1× | **Sembunyi** | (tidak ada) | putih |
+| 2× | **Sedang** | titik + nama suku | biru muda |
+| 3× | **Penuh** | titik + nama + **jumlah jiwa** + tulisan **"perkiraan"** | hitam |
+
+Klik ke-4 kembali ke Sembunyi (berputar).
+
+- Titik suku = **ibu kota provinsi asal** (22 provinsi). Karena itu peta tetap ringan:
+  hanya suku yang provinsinya terlihat yang digambar.
+- Suku baru tampil saat **diperbesar** (zoom ≥ 1,5 — cukup satu klik **[+]**).
+  Saat zoom keluar, suku disembunyikan otomatis supaya peta tidak ramai.
+- Tiap titik bisa **didekati kursor** (PC) → muncul keterangan: nama suku, jumlah jiwa,
+  kawasan utama, **dan peringatan bahwa titiknya perkiraan**.
+- Suku **"Asal Sulawesi", "Asal Papua", "Asal NTT", "Asal Sumatra", "Asal Kalimantan",
+  "Asal NTB", "Asal Aceh", "Asal Sumatera Selatan"** = kelompok gabungan "asal wilayah"
+  menurut BPS (bukan satu suku tunggal) — diberi catatan pada keterangannya.
+
+**Hasil uji (K16):** 5 uji tampilan × 7 ukuran layar + 8 uji fungsi, **0 gagal** —
+lima tombol masih sebaris ✅ · tidak keluar layar ✅ · bar beku saat zoom/geser ✅ ·
+3 tingkat suku berfungsi (0 → 20 → 20 + jumlah) ✅ · suku hilang saat zoom keluar ✅ ·
+tanpa error ✅. **Cek data:** 28 suku · total **236.565.607 jiwa** = angka resmi BPS
+(236.728.379 − 162.772 warga asing) ✅
+
+Diuji di: PC 1440 & 1024 · tablet 768 · HP 412, 360, 320 · HP diputar.
+
+---
 ## 4 Oktober 2026 — 📐 **TOMBOL & BARIS KATEGORI KELUAR DARI PETA (PC + HP)**
 
 **Catatan Bapak:** *"tata letak tombol zoom in [+] out [-] dan [⟲] menutupi peta ..

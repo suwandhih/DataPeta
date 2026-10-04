@@ -16,7 +16,7 @@ Peta sudah memakai **bentuk Indonesia asli** — **38 provinsi lengkap** (termas
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│ [cari lokasi di peta…]  [+] [−] [⟲]  [☰ Member] [☰]      │ ← bar atas (beku)
+│ [cari lokasi di peta…]  [+] [−] [⟲]  [☰ Member] [👥] [☰]  │ ← bar atas (beku)
 ├──────────────────────────────────────────────────────────┤
 │                                                          │
 │              P E T A   I N D O N E S I A                 │ ← peta (lebar penuh,
@@ -28,11 +28,11 @@ Peta sudah memakai **bentuk Indonesia asli** — **38 provinsi lengkap** (termas
 
 | Bagian | Isi | Sifat |
 |--------|-----|-------|
-| **Bar atas** | kotak cari · tombol zoom · Member · menu | **Beku** — tidak bergeser saat peta digeser |
+| **Bar atas** | kotak cari · tombol zoom · Member · **suku** · menu | **Beku** — tidak bergeser saat peta digeser |
 | **Peta** | peta Indonesia | Selalu terlihat penuh |
 | **Bar bawah** | Semua / Yayasan / Sekolah / … | **Beku** — tidak bergeser |
 
-⚠️ Di HP, tombol **Member** tampil sebagai **ikon ☰** saja (supaya muat satu baris).
+⚠️ Di HP, tombol **Member** dan **Suku** tampil sebagai **ikon saja** (supaya muat satu baris).
 
 ---
 
@@ -64,6 +64,32 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 | 🔍 **Zoom** (bar atas, di kanan kotak cari) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (paling bawah) | Klik kategori → hanya kategori itu tampil |
+| 👥 **[suku]** (bar atas, setelah ☰ Member) | **Suku bangsa di peta** — klik bergantian: **Sembunyi → Sedang → Penuh** |
+
+### 👥 Cara melihat suku bangsa di peta
+
+1. **Perbesar peta** dulu (klik **+** minimal satu kali) — kalau peta masih kecil, suku
+   tidak ditampilkan supaya peta tidak ramai.
+2. Klik tombol **👥 (Suku)** di bar atas, berulang kali:
+
+| Klik ke- | Yang muncul di peta |
+|----------|---------------------|
+| **1** | **Sedang** — titik ungu + **nama suku** |
+| **2** | **Penuh** — titik + nama + **jumlah jiwa** + tulisan **"perkiraan"** |
+| **3** | **Tidak tampil** (kembali seperti semula) |
+
+3. **Dekatkan kursor** ke titik suku (PC) → muncul keterangan lengkap: nama suku,
+   jumlah jiwa, kawasan utama, dan peringatan perkiraan.
+
+> ⚠️ **PENTING — titik suku = PERKIRAAN.**
+> Sumber resmi (BPS) **tidak menyediakan titik lokasi suku**. Jadi titik suku
+> diletakkan di **ibu kota provinsi asalnya**, **bukan** lokasi persis suku.
+> Karena itu setiap titik suku diberi tulisan **"perkiraan"**.
+> Angka jumlah jiwa asli dari **Sensus BPS 2010** (bukan perkiraan).
+
+> 📌 **28 suku** yang tampil adalah kelompok besar menurut BPS 2010. Beberapa di antaranya
+> **kelompok gabungan** (mis. "Asal Sulawesi", "Asal Papua") — yaitu gabungan suku-suku
+> kecil di wilayah itu. Jumlahnya dihitung **otomatis** dari data, tidak dikarang.
 | ☰ **Member** (bar atas, kanan) | Buka daftar lokasi tersimpan — **di sini juga ada tombol Tambah Lokasi** |
 | ➕ **Tambah Lokasi** (di panel Member) | Isi data lokasi baru |
 | 🏷️ **Label kategori pada peta** (di panel Member) | Tombol **Tampil / Sembunyi** → menampilkan atau menyembunyikan tulisan kategori di peta |
@@ -145,15 +171,15 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 
 ## 1. 📂 Apa saja isi folder ini?
 
-| Nama | Untuk siapa | Isinya |
-|------|-------------|--------|
+| Berkas | Untuk siapa | Isi |
+|--------|-------------|-----|
 | 📋 **CHANGELOG.md** | Bapak | Rekam semua kejadian: apa yang berubah, kapan |
 | 📖 **panduan.md** | Bapak | Berkas yang sedang Anda baca |
 | 🧩 **prompt.md** | Bapak / AI lain | Konsep proyek, supaya bisa dibangun ulang |
 | 📖 **rencanakerja.md** | Bapak + AI | Papan rencana: apa yang sudah & belum |
 | 🤖 **agents.md** | AI | Aturan main untuk AI |
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
-| 💾 **backups/** | Semua | Cadangan file, supaya tidak hilang |
+| 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
 
 ---
 
