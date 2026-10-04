@@ -79,6 +79,14 @@
 | K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu + form terbuka | ✅ | ✅ | 2 Okt 2026 |
 | K08 | e. Unduh **data wilayah lengkap sampai desa** — 38 prov · 514 kab/kota · 7.285 kec · 83.762 desa (sumber Kepmendagri 2025 + BIG) | ✅ | ✅ | 2 Okt 2026 |
 | K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
+| **K15** | **Tata letak tombol beku + bar kategori di luar peta** (order Bapak, 4 Okt 2026) — permintaan: *"tata letak tombol zoom in [+] out [-] dan [⟲] menutupi peta .. usul: [cari lokasi di peta ...] tombol [+][-][⟲] [☰ Member] [☰] dalam satu baris di atas tapi di freeze pada saat zoom/move cursor menu tidak bergeser .. untuk tampilan bawah: semua/yayasan/sekolah... tempatkan baris dibawah peta di freeze .. berlaku untuk PC dan HP"* | | | |
+| K15 | a. **Bar atas baru** — satu baris: `[cari lokasi di peta…] [+] [−] [⟲] [☰ Member] [☰]` | ✅ | ✅ | 4 Okt 2026 |
+| K15 | b. Tombol **[+] [−] [⟲]** dipindah dari tengah peta → masuk bar atas (yang lama dihapus) | ✅ | ✅ | 4 Okt 2026 |
+| K15 | c. **Bar kategori** (Semua/Yayasan/Sekolah…) dipindah ke baris bawah di luar peta → **peta tidak tertutup** | ✅ | ✅ | 4 Okt 2026 |
+| K15 | d. Kedua bar **beku (freeze)** — tidak bergeser saat peta di-zoom/digeser | ✅ | ✅ | 4 Okt 2026 |
+| K15 | e. Penyesuaian **HP**: muat satu baris di layar kecil (teks "Member" jadi ikon ☰ saja) | ✅ | ✅ | 4 Okt 2026 |
+| K15 | f. Uji PC + HP (oleh AI) — 15 uji, 0 gagal | ✅ | ✅ | 4 Okt 2026 |
+| K15 | g. **Uji di HP (oleh Bapak)** | ⬜ | ⬜ | — |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
@@ -92,6 +100,7 @@ _(kosong — belum ada order yang disetujui)_
 | **Akses di HP lewat My Files (folder Download)** | ⚠️ bermasalah | **Tidak bisa** dipakai bersama Layerbase — `file://` diblokir hubungi cloud (CORS). Cara buka di HP harus berubah. |
 | **Fitur Ekspor/Impor data** (pindah data PC↔HP) | ⏸️ ditahan | tidak perlu kalau pakai cloud (data sudah sama otomatis) |
 | **Peta dasar MapLibre + citra satelit** (permintaan Bapak, 3 Okt 2026) | ⏸️ ditahan | Belum diproses — Bapak: *"catat dulu, ada request mendadak, jangan diproses, fokus member dulu"*. **Perlu jawaban Bapak:** (1) setuju peta jadi **butuh internet** (ubah aturan F3)? (2) sumber citra: **Esri World Imagery** (tanpa kunci) atau **MapTiler** (perlu daftar+kunci)? (3) **tukar Peta ↔ Satelit** (tombol) atau **ganti total**? |
+| **Suku bangsa di peta** (pertanyaan Bapak, 4 Okt 2026) | ⏸️ ditahan | Bapak: *"catat dulu di rencanakerja.md sebagai ide — jangan dikerjakan sekarang"*. **Hasil pemeriksaan sumber (4 Okt 2026):** Wikipedia = **348 nama suku** (tanpa koordinat) · Wikidata = 1.558 suku, hanya **72 punya koordinat** dan hampir semua bukan suku · BPS = diblokir 403 · Peta Bahasa Kemendikbud = server mati · Commons = gambar SVG, bukan data. **Yang bisa otomatis:** hanya **55 suku** (nama suku = nama wilayah proyek). **Usulan:** 55 suku titik otomatis + 293 suku titik diisi Bapak lewat form [+ Tambah Lokasi] yang sudah ada. **Perlu keputusan Bapak** sebelum dikerjakan. |
 
 ### D. SELESAI
 
