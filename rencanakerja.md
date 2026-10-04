@@ -86,7 +86,7 @@
 | K15 | d. Kedua bar **beku (freeze)** — tidak bergeser saat peta di-zoom/digeser | ✅ | ✅ | 4 Okt 2026 |
 | K15 | e. Penyesuaian **HP**: muat satu baris di layar kecil (teks "Member" jadi ikon ☰ saja) | ✅ | ✅ | 4 Okt 2026 |
 | K15 | f. Uji PC + HP (oleh AI) — 15 uji, 0 gagal | ✅ | ✅ | 4 Okt 2026 |
-| K15 | g. **Uji di HP (oleh Bapak)** | ⬜ | ⬜ | — |
+| K15 | g. **Uji di HP (oleh Bapak)** — *"sudah ok sementara sudah bisa tes di hp luas pandang lebih baik"* | ✅ | ✅ | 4 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
@@ -100,7 +100,8 @@ _(kosong — belum ada order yang disetujui)_
 | **Akses di HP lewat My Files (folder Download)** | ⚠️ bermasalah | **Tidak bisa** dipakai bersama Layerbase — `file://` diblokir hubungi cloud (CORS). Cara buka di HP harus berubah. |
 | **Fitur Ekspor/Impor data** (pindah data PC↔HP) | ⏸️ ditahan | tidak perlu kalau pakai cloud (data sudah sama otomatis) |
 | **Peta dasar MapLibre + citra satelit** (permintaan Bapak, 3 Okt 2026) | ⏸️ ditahan | Belum diproses — Bapak: *"catat dulu, ada request mendadak, jangan diproses, fokus member dulu"*. **Perlu jawaban Bapak:** (1) setuju peta jadi **butuh internet** (ubah aturan F3)? (2) sumber citra: **Esri World Imagery** (tanpa kunci) atau **MapTiler** (perlu daftar+kunci)? (3) **tukar Peta ↔ Satelit** (tombol) atau **ganti total**? |
-| **Suku bangsa di peta** (pertanyaan Bapak, 4 Okt 2026) | ⏸️ ditahan | Bapak: *"catat dulu di rencanakerja.md sebagai ide — jangan dikerjakan sekarang"*. **Hasil pemeriksaan sumber (4 Okt 2026):** Wikipedia = **348 nama suku** (tanpa koordinat) · Wikidata = 1.558 suku, hanya **72 punya koordinat** dan hampir semua bukan suku · BPS = diblokir 403 · Peta Bahasa Kemendikbud = server mati · Commons = gambar SVG, bukan data. **Yang bisa otomatis:** hanya **55 suku** (nama suku = nama wilayah proyek). **Usulan:** 55 suku titik otomatis + 293 suku titik diisi Bapak lewat form [+ Tambah Lokasi] yang sudah ada. **Perlu keputusan Bapak** sebelum dikerjakan. |
+| **Suku bangsa di peta** (pertanyaan Bapak, 4 Okt 2026) | 🟡 perlu diperdalam | Bapak: *"apakah data suku indonesia siap di siapkan .. suku lewat tombol hide/un diposisi pada baris [cari lokasi di peta…] [+] [−] [⟲] [☰ Member][suku] [☰]"*. **Hasil pemeriksaan sumber (4 Okt 2026):** Wikidata = 1.558 suku, hanya **72 punya koordinat** & **semuanya bukan suku** (kampus/keuskupan/sekolah) · tabel Wikipedia "Kelompok etnik di Indonesia" = **data resmi Sensus BPS 2010**, **31 kelompok besar**, tanpa koordinat · Wikipedia "Daftar suku bangsa menurut provinsi" = **351 nama suku** per provinsi, **tanpa koordinat** · Peta Bahasa Kemendikbud = **server mati** · BPS = diblokir 403. → **Data titik suku TIDAK tersedia di sumber mana pun.** **Keputusan Bapak (4 Okt 2026):** titik suku **ditempelkan ke ibu kota provinsi asalnya** dan diberi tanda **"perkiraan"**. |
+| ↳ Rencana suku (dari keputusan Bapak) | ⏳ antre | **a.** Buat `data/suku.js` dari tabel BPS 2010 (31 suku: nama · jumlah penduduk · provinsi asal) — angka pasti, bukan karangan. **b.** Tambah tombol **[suku]** di bar atas (setelah ☰ Member) + **hide/un 3 tingkat** (sembunyi / titik+nama / titik+nama+jumlah). **c.** Titik = ibu kota provinsi asal + **tanda "perkiraan"** di label & panel rincian. **d.** Uji PC + HP. |
 
 ### D. SELESAI
 

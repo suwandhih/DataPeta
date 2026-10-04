@@ -4,6 +4,40 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 4 Oktober 2026 — 📐 **TOMBOL & BARIS KATEGORI KELUAR DARI PETA (PC + HP)**
+
+**Catatan Bapak:** *"tata letak tombol zoom in [+] out [-] dan [⟲] menutupi peta ..
+usul: [cari lokasi di peta ...] tombol [+][-][⟲] [☰ Member] [☰] dalam satu baris di atas
+tapi di freeze pada saat zoom/move cursor menu tidak bergeser .. untuk tampilan bawah
+semua/yayasan/sekolah... tempatkan baris dibawah peta di freeze .. berlaku untuk PC dan HP"*
+
+**Hasil di HP (Bapak):** *"sudah ok sementara sudah bisa tes di hp luas pandang lebih baik"*
+
+**Perbaikan:**
+- **Bar atas baru** — satu baris: **kotak cari · [+] [−] [⟲] · ☰ Member · ☰**.
+- Tombol zoom dipindah dari **tengah peta** → **bar atas** (yang lama dihapus).
+- **Bar kategori** (Semua / Yayasan / Sekolah / …) dipindah ke **baris di bawah peta** →
+  **peta tidak lagi tertutup**, pandangan peta jadi lebih luas.
+- Kedua bar **beku (freeze)** — saat peta di-zoom atau digeser, tombol **tidak ikut bergeser**.
+- Di HP: teks "Member" diganti **ikon ☰** saja supaya muat satu baris.
+
+**Susunan layar sekarang (3 bagian tetap):**
+
+| Bagian | Isi | Sifat |
+|--------|-----|-------|
+| **Bar atas** | cari · zoom · Member · menu | Beku |
+| **Peta** | peta Indonesia | Selalu terlihat penuh, tidak tertutup |
+| **Bar bawah** | Semua / Yayasan / Sekolah / … | Beku |
+
+**Hasil uji:** 15 uji, 0 gagal — 5 tombol sebaris ✅ · tidak keluar layar ✅ ·
+bar atas di atas peta ✅ · kategori di bawah peta ✅ · **beku saat zoom + geser** ✅ ·
+zoom + / − / ⟲ ✅ · cari & hapus cari ✅ · Member & menu buka/tutup ✅ ·
+tombol kategori aktif ✅ · tombol 👁 masih bekerja ✅ · tanpa error ✅
+
+Diuji di: PC 1440 & 1024 · tablet 768 · HP 412, 360, 320 · HP diputar (landscape) —
+semuanya lolos. Diuji juga di **versi online** (GitHub Pages) setelah diunggah.
+
+---
 ## 3 Oktober 2026 — 🗺️ **LABEL PETA: NAMA WILAYAH SELALU TAMPIL**
 
 **Catatan Bapak:** *"untuk tombol label kategori pada peta, yg saya maksud hide/un termasuk

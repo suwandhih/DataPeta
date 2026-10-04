@@ -12,6 +12,28 @@ Peta sudah memakai **bentuk Indonesia asli** — **38 provinsi lengkap** (termas
 4 provinsi baru di Papua). **Negara tetangga** juga tampil sebagai latar abu-abu
 (hanya bentuk daratan, tanpa kota).
 
+**Susunan layar sekarang (sejak 4 Okt 2026) — 3 bagian tetap:**
+
+```
+┌──────────────────────────────────────────────────────────┐
+│ [cari lokasi di peta…]  [+] [−] [⟲]  [☰ Member] [☰]      │ ← bar atas (beku)
+├──────────────────────────────────────────────────────────┤
+│                                                          │
+│              P E T A   I N D O N E S I A                 │ ← peta (lebar penuh,
+│                                                          │   tidak tertutup)
+├──────────────────────────────────────────────────────────┤
+│ [Semua] [Yayasan] [Sekolah] [Kesehatan] …                │ ← bar bawah (beku)
+└──────────────────────────────────────────────────────────┘
+```
+
+| Bagian | Isi | Sifat |
+|--------|-----|-------|
+| **Bar atas** | kotak cari · tombol zoom · Member · menu | **Beku** — tidak bergeser saat peta digeser |
+| **Peta** | peta Indonesia | Selalu terlihat penuh |
+| **Bar bawah** | Semua / Yayasan / Sekolah / … | **Beku** — tidak bergeser |
+
+⚠️ Di HP, tombol **Member** tampil sebagai **ikon ☰** saja (supaya muat satu baris).
+
 ---
 
 ## 0b. 🖥️ Cara membuka aplikasi
@@ -36,17 +58,17 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 
 | Bagian | Kegunaan |
 |--------|----------|
-| 🔍 **Kotak pencarian** (kiri atas) | Ketik nama lokasi → penanda menyaring |
+| 🔍 **Kotak pencarian** (bar atas, paling kiri) | Ketik nama lokasi → penanda menyaring |
 | 📍 **Penanda bulat** di peta | Klik → muncul rincian di panel kanan |
 | 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi |
-| 🔍 **Zoom** (kanan) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
+| 🔍 **Zoom** (bar atas, di kanan kotak cari) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
-| 🏷️ **Bar kategori** (bawah) | Klik kategori → hanya kategori itu tampil |
-| ☰ **Member** (kanan atas) | Buka daftar lokasi tersimpan — **di sini juga ada tombol Tambah Lokasi** |
+| 🏷️ **Bar kategori** (paling bawah) | Klik kategori → hanya kategori itu tampil |
+| ☰ **Member** (bar atas, kanan) | Buka daftar lokasi tersimpan — **di sini juga ada tombol Tambah Lokasi** |
 | ➕ **Tambah Lokasi** (di panel Member) | Isi data lokasi baru |
 | 🏷️ **Label kategori pada peta** (di panel Member) | Tombol **Tampil / Sembunyi** → menampilkan atau menyembunyikan tulisan kategori di peta |
 | ✏️ **[+]** **[✎]** **[−]** (tiap member) | **[+]** tambah kategori · **[✎]** ubah data · **[−]** hapus |
-| ☰ **Tombol menu** (kanan atas) | Buka menu samping |
+| ☰ **Tombol menu** (bar atas, paling kanan) | Buka menu samping |
 | ✕ **Tombol tutup** | Tutup panel / menu (bisa juga tekan `Esc`) |
 
 ### 📝 Cara mengisi data lokasi
