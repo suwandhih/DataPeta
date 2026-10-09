@@ -66,6 +66,7 @@
 | **B10** | "Rapikan / harusnya sama seperti…" = **perbaiki TINGKAT SETARA**, ❌ bukan menghapus. Permintaan sama ke-2× → **berhenti menambal**, baca ulang. |
 | **B11** | **Tiap selesai satu butir → lapor ke Bapak** sebelum lanjut butir berikutnya. |
 | **B12** | 🔴 **IDE dari AI → SAMPAIKAN dulu ke Bapak, ❌ JANGAN diproses langsung.** Ide disetujui → baru dikerjakan. (Bapak, 2 Okt 2026) |
+| **B13** | 🔴 **Setiap mengubah `css/style.css` atau `js/*.js` → WAJIB naikkan penanda versi di `index.html`** (`?v=YYYYMMDD-nn`, 4 tempat). Kalau tidak, peramban memakai berkas **lama dari cache** → Bapak melihat versi lama padahal sudah di-unggah. (temuan 9 Okt 2026) |
 
 ---
 
@@ -83,6 +84,7 @@
 | **C6** | **Lapor** selalu menyebut: blok uji mana + hasilnya ("K01-01…K01-12: 12 uji, 0 gagal"). |
 | **C7** | **Uji tampilan pakai `getComputedStyle`**, bukan sekadar "elemennya ada". |
 | **C8** | **Uji PC + HP.** Kalau revisi menyentuh tampilan → uji di **keduanya**. |
+| **C9** | **Sesudah push, uji versi ONLINE — bukan hanya berkasnya sudah berubah.** Periksa dulu `index.html` memang menunjuk versi baru (`?v=…`). Kalau versi belum dinaikkan, peramban memakai berkas **lama dari cache** → uji online **tidak sah** (lihat B13). |
 
 ---
 

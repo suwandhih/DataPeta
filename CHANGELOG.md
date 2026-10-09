@@ -4,6 +4,26 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — ⚠️ **TEMUAN: PENANDA VERSI BERKAS TIDAK DINAIKKAN**
+
+**Kejadian:** perbaikan K24 (klik provinsi saat zoom in) sudah di-unggah, tetapi
+saat diuji di alamat web, **masih belum berubah**. Padahal berkas `js/app.js` di
+server **sudah versi baru**.
+
+**Sebabnya:** `index.html` masih menunjuk berkas dengan penanda lama
+`?v=20261006-05`. Karena penandanya sama, **peramban mengambil berkas lama dari
+cache** — jadi yang diuji Bapak adalah versi lama, bukan versi baru.
+
+**Perbaikan:** penanda versi dinaikkan jadi `?v=20261009-01` di 4 tempat
+(`css/style.css`, `js/penyimpanan.js`, `js/awan.js`, `js/app.js`).
+
+**Aturan baru yang dibuat supaya tidak terulang:**
+- **B13** — setiap mengubah `css/style.css` atau `js/*.js` **wajib** menaikkan
+  penanda versi di `index.html`.
+- **C9** — sesudah push, uji versi **online**; periksa dulu halaman memang
+  menunjuk versi baru.
+
+---
 ## 9 Oktober 2026 — 🐛 **KLIK PROVINSI TIDAK JALAN SAAT PETA DI-ZOOM IN**
 
 **Catatan Bapak:** *"jumlah penduduk ada bug · berfungsi jika peta terlihat full
