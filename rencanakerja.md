@@ -15,8 +15,8 @@
 | K05 | a. Zoom in / zoom out — ✅ sudah ada (verifikasi) | ✅ | ✅ | 2 Okt 2026 |
 | K05 | b. **Sungai, danau, gunung** di peta (agar mudah dibaca) | ✅ | ✅ | 2 Okt 2026 |
 | K05 | b1. 🐛 Bapak: *"5b tidak tampil"* → **dinilai**: lapisan air tertutup warna provinsi → urutan lapisan diperbaiki | ✅ | ✅ | 2 Okt 2026 |
-| K05 | c. **Muara** (kuala) di peta | ⬜ | ⬜ | — |
-| K05 | d. **Bendungan / waduk** di peta | ⬜ | ⬜ | — |
+| K05 | c. **Muara** (kuala) di peta — ⏸️ **DITAHAN** (keputusan Bapak, 9 Okt 2026): *"di pending dulu.. karena sudah pakai citra satelit"* | ⏸️ | ⏸️ | 9 Okt 2026 |
+| K05 | d. **Bendungan / waduk** di peta — ⏸️ **DITAHAN** (keputusan Bapak, 9 Okt 2026), alasan sama | ⏸️ | ⏸️ | 9 Okt 2026 |
 | **K01** | **Data wilayah Indonesia lengkap** | | | |
 | K01 | a. Cari sumber data lengkap & tepercaya (38 prov → 514 kab/kota → 7.285 kec → 83.762 desa/kelurahan) | ⬜ | ⬜ | — |
 | K01 | b. Ambil & verifikasi data **38 provinsi** | ⬜ | ⬜ | — |
@@ -61,7 +61,17 @@
 | K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
 | **K04** | **Nama kota utama + daftar wilayah** (order Bapak, 2 Okt 2026) | | | |
-| K04 | a. **38 ibu kota provinsi** tampil permanen di peta | ⬜ | ⬜ | — |
+| K04 | a. **38 ibu kota provinsi** tampil permanen di peta | 🔨 | 🔨 | — |
+| K04 | a1. Sumber nama + koordinat ibu kota: **Wikipedia "Daftar ibu kota provinsi di Indonesia"** (tabel + peta lokasi artikel) — 38 baris lengkap | 🔨 | 🔨 | — |
+| K04 | a2. **Kota Banjarbaru** (Kalsel) & **Kota Samarinda** (Kaltim) belum ada di `data/kota-indonesia.js` → ditambah dari sumber yang sama | ⬜ | ⬜ | — |
+| K04 | a3. **Kota Serang** (Banten) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a4. **Kota Tanjungpinang** (Kepri) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a5. **Kota Palangka Raya** (Kalteng) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a6. **Kota Sofifi** (Malut) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a7. **Kota Mamuju** (Sulbar) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a8. **Kota Manokwari** (Pabar) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a9. **Kota Tanjung Selor** (Kaltara) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a10. **Ibu kota 5 provinsi Papua baru** (Nabire, Wamena/Hubikosi, Salor/Merauke) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
 | K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) — **dikerjakan sebagai K08 c** | ✅ | ✅ | 2 Okt 2026 |
 | K04 | c. Klik wilayah di daftar → **form isian data** — **dikerjakan sebagai K08 d** | ✅ | ✅ | 2 Okt 2026 |
 | K04 | d. Unduh **data wilayah asli** (BPS/BIG) — **dikerjakan sebagai K08 e** | ✅ | ✅ | 2 Okt 2026 |
