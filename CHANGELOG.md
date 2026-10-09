@@ -4,6 +4,32 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 🔴 **GARIS BATAS PROVINSI JADI MERAH SAAT DIKLIK**
+
+**Permintaan Bapak:** *"klik jawa barat area di peta minta di garis batas provinsi dibuat
+garis merah sampai form provinsi di tutup warna merah kembali normal"*
+
+**Yang dibuat:**
+- Saat **provinsi diklik**, **garis batasnya jadi merah** dan sedikit lebih tebal,
+  supaya jelas provinsi mana yang sedang dibuka.
+- Warnanya **kembali normal** begitu panel ditutup — lewat tombol **×**, tombol
+  **Escape**, atau klik di peta.
+- Kalau Bapak **pindah ke provinsi lain**, provinsi yang lama **langsung normal** lagi
+  dan yang baru jadi merah. Jadi **hanya satu** provinsi yang merah pada satu waktu.
+- Berlaku juga untuk **pulau kecil** (mis. Kepulauan Seribu).
+
+**Hasil uji (K19-01…K19-10): 10 uji, 0 gagal** — garis jadi merah saat diklik ✅ ·
+garis merah lebih tebal (1,8 px) ✅ · warna kembali normal saat panel ditutup ✅ ·
+panel benar-benar tertutup ✅ · pindah provinsi: yang lama normal ✅ ·
+hanya satu provinsi merah ✅ · tetap normal setelah klik penanda lokasi ✅ ·
+tutup lewat Escape juga melepas merah ✅ · panel HP tidak keluar layar ✅ ·
+tanpa galat skrip ✅
+
+Diuji di: **PC 1440×900** dan **HP 390×844**.
+
+**Backup:** `backups\sebelum-k19-garis-merah-20261009-154500`
+
+---
 ## 9 Oktober 2026 — 👥 **JUMLAH PENDUDUK 38 PROVINSI MUNCUL DI PETA**
 
 **Permintaan Bapak:** *"apakah km bisa dapatkan data untuk desa kota kab. provinsi

@@ -90,6 +90,13 @@ body {
 
 .provinsi:hover { fill: rgba(255, 255, 255, 0.22); }
 
+/* Provinsi yang sedang dibuka — garis batasnya jadi merah. */
+.provinsi.terpilih {
+  stroke: #ff2d2d;
+  stroke-width: 1.8;
+  fill: rgba(255, 45, 45, 0.16);
+}
+
 /* Sungai */
 .sungai {
   fill: none;
@@ -190,6 +197,13 @@ body {
 }
 
 .pulau-kecil-bentuk:hover { fill: rgba(255, 255, 255, 0.22); }
+
+/* Pulau kecil (mis. Kepulauan Seribu) yang sedang dibuka — garis merah. */
+.pulau-kecil-bentuk.terpilih {
+  stroke: #ff2d2d;
+  stroke-width: 1.8;
+  fill: rgba(255, 45, 45, 0.16);
+}
 
 /* ================= KENDALI ZOOM (di dalam bar atas) ================= */
 .zoom-kendali {

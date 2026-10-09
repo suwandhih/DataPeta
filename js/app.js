@@ -1193,8 +1193,24 @@
     gambarPenanda();
   }
 
+  // ---------- Provinsi terpilih (garis merah) ----------
+  // Saat provinsi diklik, garis batasnya jadi merah sampai panel ditutup.
+  let provinsiTerpilih = null;
+
+  function tandaiProvinsiTerpilih(nama) {
+    if (provinsiTerpilih) provinsiTerpilih.classList.remove("terpilih");
+    provinsiTerpilih = null;
+    if (!nama) return;
+    const cocok = Array.from(
+      document.querySelectorAll("path.provinsi, path.pulau-kecil-bentuk")
+    ).filter((p) => p.dataset.nama === nama);
+    cocok.forEach((p) => p.classList.add("terpilih"));
+    provinsiTerpilih = cocok[0] || null;
+  }
+
   function bukaPanelProvinsi(nama) {
     idTerpilih = null;
+    tandaiProvinsiTerpilih(nama);
     const kode = kodeProvinsiDariNama(nama);
     const jiwa = pendudukProvinsi(kode);
     panelIsi.innerHTML = `
@@ -1214,6 +1230,7 @@
     panel.classList.remove("terbuka");
     panel.setAttribute("aria-hidden", "true");
     idTerpilih = null;
+    tandaiProvinsiTerpilih(null);
     gambarPenanda();
   }
 

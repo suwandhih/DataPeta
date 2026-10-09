@@ -103,6 +103,13 @@
 | K18 | e. Uji PC + HP (oleh AI) — 10 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
 | K18 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K19** | **Garis batas provinsi jadi merah saat diklik** (order Bapak, 9 Okt 2026) — *"klik jawa barat area di peta minta di garis batas provinsi dibuat garis merah sampai form provinsi di tutup warna merah kembali normal"* | | | |
+| K19 | a. Garis batas provinsi terpilih jadi **merah** (lebih tebal) | ✅ | ✅ | 9 Okt 2026 |
+| K19 | b. Warna **kembali normal** saat panel ditutup (tombol ×, Escape, klik peta) | ✅ | ✅ | 9 Okt 2026 |
+| K19 | c. Pindah provinsi → yang lama normal, yang baru merah (hanya 1 merah) | ✅ | ✅ | 9 Okt 2026 |
+| K19 | d. Uji PC + HP (oleh AI) — 10 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K19 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

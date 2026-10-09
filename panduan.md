@@ -68,7 +68,7 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 |--------|----------|
 | 🔍 **Kotak pencarian** (bar atas, paling kiri) | Ketik nama lokasi → penanda menyaring |
 | 📍 **Penanda bulat** di peta | Klik → muncul rincian di panel kanan |
-| 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi **+ jumlah penduduknya** (data resmi BPS) |
+| 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi **+ jumlah penduduknya** (data resmi BPS). **Garis batasnya jadi merah** selama panel terbuka |
 | 🔍 **Zoom** (bar atas, di kanan kotak cari) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (paling bawah) | Klik kategori → hanya kategori itu tampil |
@@ -148,6 +148,15 @@ supaya tetap jelas di atas foto bumi yang gelap:
 | 🌫️ **Garis putih tipis** | Negara tetangga |
 | 🟡 **Tulisan kuning muda** | Nama pulau |
 | 🟣 **Titik ungu muda** | Suku bangsa (muncul saat di-zoom) |
+
+### 🔴 Garis merah penanda provinsi
+
+Kalau Bapak **klik salah satu provinsi** di peta, **garis batas provinsi itu berubah
+jadi merah** — supaya Bapak tahu persis provinsi mana yang sedang dibuka.
+
+Warnanya **kembali normal** begitu panel rincian ditutup (tombol **×**, tombol
+**Escape**, atau klik di peta). Kalau Bapak klik provinsi lain, yang lama langsung
+normal lagi — jadi **hanya satu** provinsi yang merah.
 
 ### 🗺️ Jumlah penduduk provinsi
 
