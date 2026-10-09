@@ -2465,6 +2465,9 @@
   let geserAktif = false;
   let geserX = 0;
   let geserY = 0;
+  let geserSiap = false;      // menekan peta (belum tentu menggeser)
+  let geserJalan = false;     // sudah benar-benar menggeser
+  let geserPointerId = null;
   const jari = {};       // pointer aktif (untuk cubit)
   let jarakCubit = 0;
 
@@ -2488,10 +2491,16 @@
       return;
     }
     if (zk <= 1) return;
+    // Penangkapan kursor (setPointerCapture) SENGAJA belum dilakukan di sini.
+    // Kalau dilakukan saat menekan, klik singkat ikut "tertangkap" peta dan
+    // tidak sampai ke wilayah → panel provinsi tidak terbuka saat sudah
+    // di-zoom. Penangkapan baru dilakukan setelah benar-benar menggeser.
     geserAktif = true;
     geserX = e.clientX;
     geserY = e.clientY;
-    svg.setPointerCapture(e.pointerId);
+    geserSiap = true;
+    geserJalan = false;
+    geserPointerId = e.pointerId;
   });
 
   svg.addEventListener("pointermove", (e) => {
@@ -2513,6 +2522,20 @@
     }
 
     if (!geserAktif) return;
+
+    // Perpindahan masih dianggap "klik" kalau kurang dari 5 piksel.
+    if (geserSiap && !geserJalan) {
+      const jauh = Math.abs(e.clientX - geserX) + Math.abs(e.clientY - geserY);
+      if (jauh < 5) return;
+      geserJalan = true;
+      geserSiap = false;
+            // Peta dipegang supaya geser tidak terputus saat kursor keluar tepi peta.
+            // Menyusul kejadian yang sedang berjalan — supaya klik tetap utuh.
+            if (geserPointerId !== null) {
+              try { svg.setPointerCapture(geserPointerId); } catch (salah) { /* abaikan */ }
+            }
+          }
+
     const kotak = svg.getBoundingClientRect();
     const skalaKanvas = VB_W / Math.max(kotak.width, 1);
     tx += (e.clientX - geserX) * skalaKanvas;
@@ -2530,8 +2553,11 @@
   function lepasJari(e) {
     delete jari[e.pointerId];
     geserAktif = false;
-    jarakCubit = 0;
-  }
+    geserSiap = false;
+    geserJalan = false;
+    if (geserPointerId === e.pointerId) geserPointerId = null;
+        jarakCubit = 0;
+      }
 
   svg.addEventListener("pointerup", lepasJari);
   svg.addEventListener("pointercancel", lepasJari);

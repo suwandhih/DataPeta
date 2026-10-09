@@ -149,6 +149,16 @@ supaya tetap jelas di atas foto bumi yang gelap:
 | 🟡 **Tulisan kuning muda** | Nama pulau |
 | 🟣 **Titik ungu muda** | Suku bangsa (muncul saat di-zoom) |
 
+### 🖱️ Mengklik provinsi di peta
+
+Klik salah satu **provinsi** di peta → panel kanan terbuka, berisi **jumlah penduduk**.
+Ini bisa dipakai **kapan saja** — baik saat peta terlihat penuh (Sumatera sampai
+Papua) **maupun saat sudah di-zoom in** ke lokasi yang lebih detail.
+
+💡 **Tip:** kalau Bapak ingin **menggeser peta**, tekan lalu **tarik**. Kalau hanya
+**ingin mengklik** provinsi, cukup **tekan lalu lepas tanpa menggeser** — aplikasi
+tahu bedanya, jadi panel tetap terbuka.
+
 ### 🔴 Garis merah penanda provinsi
 
 Kalau Bapak **klik salah satu provinsi** di peta, **garis batas provinsi itu berubah

@@ -4,7 +4,42 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 9 Oktober 2026 — 📚 **REFERENSI SUMBER DATA DICANTUMKAN DI PANDUAN**
+## 9 Oktober 2026 — 🐛 **KLIK PROVINSI TIDAK JALAN SAAT PETA DI-ZOOM IN**
+
+**Catatan Bapak:** *"jumlah penduduk ada bug · berfungsi jika peta terlihat full
+sumatera sampai papua · tapi jika di zoom in untuk detail lokasi tidak berfungsi"*
+
+**Sebabnya (dinilai, bukan ditebak):** ada satu perintah yang membuat peta
+**"menahan" kursor** (`setPointerCapture`). Perintah itu dijalankan **begitu Bapak
+menekan peta** — padahal gunanya cuma supaya **geser peta tidak terputus**.
+
+Akibatnya: saat Bapak **menekan lalu melepas** (maksudnya mengklik provinsi),
+kliknya ikut "tertahan" peta → **tidak pernah sampai** ke provinsi → panel tidak
+terbuka → jumlah penduduk tidak muncul.
+
+**Kenapa hanya saat zoom in?** Karena **geser peta hanya aktif saat di-zoom**
+(saat tampilan penuh, peta tidak bisa digeser). Jadi saat tampilan penuh perintah
+itu dilewati → klik normal. Saat di-zoom → perintah itu jalan → klik rusak.
+
+**Perbaikan:** peta sekarang baru "menahan" kursor **setelah Bapak benar-benar
+menggeser** (bergerak ≥ 5 piksel). Kalau hanya menekan lalu melepas, klik tetap
+diteruskan ke provinsi.
+
+**Hasil uji (K24-01…K24-12): 12 uji, 0 gagal**
+- zoom penuh: klik provinsi → panel + jumlah penduduk ✅
+- zoom in 3×: klik provinsi → panel + jumlah penduduk ✅
+- zoom in 7×: klik provinsi → panel + jumlah penduduk ✅
+- garis merah muncul saat provinsi diklik ✅
+- tutup panel → garis merah hilang ✅
+- zoom penuh: peta **tidak bisa digeser** (perilaku asli dipertahankan) ✅
+- zoom in: geser peta **tetap jalan** ✅
+- geser besar → peta geser, panel **tidak** ikut terbuka ✅
+- klik setelah menggeser → panel terbuka ✅
+- HP: klik provinsi → panel + jumlah penduduk ✅
+- HP: panel tidak keluar layar ✅
+- HP: geser peta tetap jalan ✅
+
+---
 
 **Catatan Bapak:** *"di panduan .. cantumkan referensi data dari mana > peta, jumlah
 penduduk, agama .. supaya data yg di pelajari user tau dari sumbernya"*

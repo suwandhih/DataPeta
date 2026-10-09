@@ -140,6 +140,13 @@
 | K23 | f. Tahap 2…n — provinsi yang tersisa, **dicicil** | ⏳ | ⏳ | — |
 | K23 | g. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K24** | **🐛 Klik provinsi tidak jalan saat di-zoom in** (temuan Bapak, 9 Okt 2026) — *"jumlah penduduk ada bug · berfungsi jika peta terlihat full sumatera sampai papua · tapi jika di zoom in untuk detail lokasi tidak berfungsi"* | | | |
+| K24 | a. **Dinilai:** `svg.setPointerCapture()` dijalankan saat pointer **ditekan**, padahal penangkapan hanya perlu saat **menggeser**. Akibatnya klik singkat ikut "tertangkap" peta → tidak sampai ke wilayah | ✅ | ✅ | 9 Okt 2026 |
+| K24 | b. Sebab tambahan: geser hanya aktif saat zoom > 1 → **kenapa bug-nya hanya muncul saat zoom in** | ✅ | ✅ | 9 Okt 2026 |
+| K24 | c. Perbaikan: penangkapan kursor dilakukan **setelah benar-benar menggeser** (≥ 5 piksel), bukan saat menekan | ✅ | ✅ | 9 Okt 2026 |
+| K24 | d. Uji PC + HP (oleh AI) — 12 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K24 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 
