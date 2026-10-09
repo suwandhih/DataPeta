@@ -233,6 +233,31 @@ seragam) — akan **dicicil** sedikit demi sedikit.
 
 Sesuai aturan proyek, angka yang belum ada **tidak dikarang** dan **tidak ditaksir**.
 
+### ⭐ Ibu kota provinsi di peta (tampil permanen)
+
+**38 ibu kota provinsi** selalu tampil di peta — **tidak hilang** walau peta
+diperkecil sampai seluruh Indonesia terlihat.
+
+| Bagian | Keterangan |
+|--------|------------|
+| **Tanda** | **Bintang kuning ⭐** di titik ibu kota |
+| **Nama** | Nama ibu kota, contoh: **⭐ Bandung** |
+| **Kapan tampil** | **Selalu** — di semua tingkat zoom |
+| **Ukuran huruf** | **Tetap** — tidak ikut membesar saat peta di-zoom |
+
+**Contoh 38 ibu kota:** Banda Aceh, Medan, Padang, Pekanbaru, Jambi, Palembang,
+Bengkulu, Bandar Lampung, Pangkalpinang, Tanjungpinang, **Jakarta**, Bandung,
+Semarang, Yogyakarta, Surabaya, Serang, Denpasar, Mataram, Kupang, Pontianak,
+Palangka Raya, Banjarbaru, Samarinda, Tanjung Selor, Manado, Palu, Makassar,
+Kendari, Gorontalo, Mamuju, Ambon, Sofifi, Jayapura, Manokwari, Merauke, Nabire,
+Wamena, Sorong.
+
+💡 **Tip:** nama ibu kota **tidak akan menutupi** nama kota lain, nama gunung,
+penanda lokasi Bapak, maupun nama pulau — tempatnya diatur otomatis.
+
+📚 **Sumber nama & koordinat:** Wikipedia bahasa Indonesia — lihat bagian
+**1b. 📚 Dari mana datanya?**
+
 ### 🏙️ Nama kota di peta
 
 Nama kota **muncul sendiri** sesuai tingkat zoom:
@@ -297,6 +322,7 @@ tahu **asal setiap angka**.
 | **Nama pulau** | **Natural Earth** | Disimpan jadi `data/pulau.js`. |
 | **Sungai, danau, gunung** | **Natural Earth** | Disimpan jadi `data/sungai.js`, `data/danau.js`, `data/gunung.js`. |
 | **Nama kota** | **Natural Earth** | Disimpan jadi `data/kota-indonesia.js`. |
+| **38 ibu kota provinsi** (⭐ tampil permanen di peta) | **Wikipedia bahasa Indonesia** | Artikel *"Daftar ibu kota provinsi di Indonesia"* + artikel tiap ibu kota. Disimpan jadi `data/ibu-kota.js`. Nama **dan** koordinatnya dari sumber yang sama. |
 | **Suku bangsa** | **BPS** (Sensus Penduduk 2010) | Disimpan jadi `data/suku.js`. ⚠️ Titiknya **perkiraan** — ditempelkan ke ibu kota provinsi asal, karena sumber koordinat asli belum ada. |
 | **Daftar wilayah** (38 prov · 514 kab/kota · 7.285 kec · 83.762 desa) | **Kepmendagri 2025** + **BIG** | Disimpan di `data/wilayah/`. |
 

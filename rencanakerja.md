@@ -61,17 +61,13 @@
 | K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
 | **K04** | **Nama kota utama + daftar wilayah** (order Bapak, 2 Okt 2026) | | | |
-| K04 | a. **38 ibu kota provinsi** tampil permanen di peta | 🔨 | 🔨 | — |
-| K04 | a1. Sumber nama + koordinat ibu kota: **Wikipedia "Daftar ibu kota provinsi di Indonesia"** (tabel + peta lokasi artikel) — 38 baris lengkap | 🔨 | 🔨 | — |
-| K04 | a2. **Kota Banjarbaru** (Kalsel) & **Kota Samarinda** (Kaltim) belum ada di `data/kota-indonesia.js` → ditambah dari sumber yang sama | ⬜ | ⬜ | — |
-| K04 | a3. **Kota Serang** (Banten) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a4. **Kota Tanjungpinang** (Kepri) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a5. **Kota Palangka Raya** (Kalteng) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a6. **Kota Sofifi** (Malut) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a7. **Kota Mamuju** (Sulbar) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a8. **Kota Manokwari** (Pabar) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a9. **Kota Tanjung Selor** (Kaltara) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
-| K04 | a10. **Ibu kota 5 provinsi Papua baru** (Nabire, Wamena/Hubikosi, Salor/Merauke) belum ada di `data/kota-indonesia.js` → ditambah | ⬜ | ⬜ | — |
+| K04 | a. **38 ibu kota provinsi** tampil permanen di peta | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a1. Sumber nama + koordinat ibu kota: **Wikipedia "Daftar ibu kota provinsi di Indonesia"** (tabel + peta lokasi artikel) — 38 baris lengkap | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a2. Berkas baru `data/ibu-kota.js` (38 ibu kota + koordinat) | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a3. Lapisan `lapisIbuKota` + `gambarIbuKota()` — bintang kuning ⭐ + nama, ukuran tetap, tampil di semua tingkat zoom | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a4. Penempatan otomatis: hindari nama kota, gunung, penanda, nama pulau, ibu kota lain | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a5. Nama di tepi peta (Jayapura, Merauke, Wamena) digeser masuk supaya tidak terpotong | ✅ | ✅ | 9 Okt 2026 |
+| K04 | a6. Uji PC (1440×900) + HP (390×844), zoom 1×–9×: 38 nama tampil, 0 terpotong, 0 bertumpuk | ✅ | ✅ | 9 Okt 2026 |
 | K04 | b. Panel **daftar wilayah lain** di dalam menu ☰ (kab/kota/kec/desa/kelurahan) — **dikerjakan sebagai K08 c** | ✅ | ✅ | 2 Okt 2026 |
 | K04 | c. Klik wilayah di daftar → **form isian data** — **dikerjakan sebagai K08 d** | ✅ | ✅ | 2 Okt 2026 |
 | K04 | d. Unduh **data wilayah asli** (BPS/BIG) — **dikerjakan sebagai K08 e** | ✅ | ✅ | 2 Okt 2026 |

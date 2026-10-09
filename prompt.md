@@ -117,10 +117,11 @@ DataPeta/
 ├── data/danau.js              → danau Indonesia
 ├── data/gunung.js             → gunung Indonesia (nama + tinggi)
 ├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
+├── data/ibu-kota.js           → 38 ibu kota provinsi (nama + koordinat) — tampil permanen ⭐
 ├── data/pulau.js              → nama pulau Indonesia
 ├── data/suku.js               → suku bangsa (BPS 2010)
 ├── data/penduduk.js           → jumlah penduduk 38 provinsi + 514 kab/kota (BPS 2026)
-├── data/agama.js              → agama per kab/kota (BPS provinsi; baru 5 provinsi)
+├── data/agama.js              → agama per kab/kota (BPS provinsi; 9 provinsi)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
 ├── alat/unduh-citra-satelit.py → pengunduh citra satelit (dijalankan sekali saja)
 ├── alat/buat-penduduk.js      → pembuat data/penduduk.js dari angka BPS
@@ -141,6 +142,10 @@ DataPeta/
 - Negara dunia → **Natural Earth** (public domain)
 - **Latar citra satelit → Esri World Imagery** (gratis, tanpa kunci API) — diunduh sekali
   lewat `alat/unduh-citra-satelit.py`, disimpan sebagai `data/citra-satelit.jpg`
+- **Nama kota → Natural Earth** (public domain) — `data/kota-indonesia.js`
+- **38 ibu kota provinsi → Wikipedia bahasa Indonesia** — artikel *"Daftar ibu kota
+  provinsi di Indonesia"* (tabel + peta lokasi artikel) dan artikel tiap ibu kota.
+  Disimpan sebagai `data/ibu-kota.js`. Tampil **permanen** di peta (⭐ + nama).
 - **Jumlah penduduk 38 provinsi & 514 kabupaten/kota → BPS** (tabel resmi 2026) —
   disimpan sebagai `data/penduduk.js`, dibuat lewat `alat/buat-penduduk.js`
 - **Agama per kabupaten/kota → BPS PROVINSI** (BPS Pusat tidak menerbitkannya).

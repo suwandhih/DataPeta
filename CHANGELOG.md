@@ -4,6 +4,37 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — ⭐ **38 IBU KOTA PROVINSI TAMPIL PERMANEN DI PETA (K04a)**
+
+**Catatan Bapak:** *"K05c/d di pending dulu.. karena sudah pakai citra satelit.. K04a saja lalu lanjut"*
+
+**Apa yang berubah:** sekarang **38 ibu kota provinsi** tampil di peta dengan
+**bintang kuning ⭐ + namanya**, dan **selalu terlihat** — tidak hilang walau peta
+diperkecil sampai seluruh Indonesia.
+
+**Bentuk tampilannya** (pilihan Bapak): **nama saja + titik ibu kota berwarna khusus**,
+contoh: ⭐ Bandung.
+
+**Dari mana datanya?** Nama dan koordinat 38 ibu kota diambil dari **Wikipedia bahasa
+Indonesia** — artikel *"Daftar ibu kota provinsi di Indonesia"* (tabel + peta lokasi
+artikel) dan artikel tiap ibu kota. Tidak ada angka yang dikarang.
+
+**Yang dirapikan supaya enak dibaca:**
+
+- Nama ibu kota **tidak menutupi** nama kota lain, nama gunung, penanda lokasi Bapak,
+  nama pulau, maupun nama ibu kota lain.
+- Nama yang jatuh di tepi peta (**Jayapura, Merauke, Wamena**) **digeser masuk**
+  supaya tidak terpotong.
+- Nama pulau juga **menghindari** titik ibu kota.
+- Ukuran huruf **tetap** di layar — tidak ikut membesar saat peta di-zoom.
+
+**Diuji:** PC (1440×900) dan HP (390×844), pada zoom 1× sampai 9×.
+Hasil: **38 nama selalu tampil, 0 terpotong, 0 bertumpuk.** Klik provinsi + garis
+merah tetap berfungsi seperti sebelumnya.
+
+**Berkas baru:** `data/ibu-kota.js` (38 ibu kota + koordinat).
+
+---
 ## 9 Oktober 2026 — 🕌 **DATA AGAMA PER KABUPATEN/KOTA (TAHAP 2)**
 
 **Catatan Bapak:** *"ok sdh benar.. lanjut tahap 2"*
