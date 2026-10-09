@@ -17,13 +17,6 @@
 | K05 | b1. 🐛 Bapak: *"5b tidak tampil"* → **dinilai**: lapisan air tertutup warna provinsi → urutan lapisan diperbaiki | ✅ | ✅ | 2 Okt 2026 |
 | K05 | c. **Muara** (kuala) di peta — ⏸️ **DITAHAN** (keputusan Bapak, 9 Okt 2026): *"di pending dulu.. karena sudah pakai citra satelit"* | ⏸️ | ⏸️ | 9 Okt 2026 |
 | K05 | d. **Bendungan / waduk** di peta — ⏸️ **DITAHAN** (keputusan Bapak, 9 Okt 2026), alasan sama | ⏸️ | ⏸️ | 9 Okt 2026 |
-| **K01** | **Data wilayah Indonesia lengkap** | | | |
-| K01 | a. Cari sumber data lengkap & tepercaya (38 prov → 514 kab/kota → 7.285 kec → 83.762 desa/kelurahan) | ⬜ | ⬜ | — |
-| K01 | b. Ambil & verifikasi data **38 provinsi** | ⬜ | ⬜ | — |
-| K01 | c. Turunkan ke **kabupaten & kota** | ⬜ | ⬜ | — |
-| K01 | d. Turunkan ke **kecamatan** | ⬜ | ⬜ | — |
-| K01 | e. Turunkan ke **desa & kelurahan** | ⬜ | ⬜ | — |
-| K01 | f. Simpan sebagai data proyek (format & struktur) | ⬜ | ⬜ | — |
 | **K02** | **Antarmuka (UI) peta seperti acuan CHNGMKR** | | | |
 | K02 | a. Tentukan peta dasar → **OFFLINE** (keputusan Bapak, 2 Okt 2026) | ✅ | ✅ | 2 Okt 2026 |
 | K02 | b. Kerangka UI: peta layar penuh + panel | ✅ | ✅ | 2 Okt 2026 |
@@ -37,12 +30,12 @@
 | K02 | k. **Lengkapi 38 provinsi** dengan data lebih baru | ✅ | ✅ | 2 Okt 2026 |
 | K02 | l. **Zoom in/out** peta (roda mouse, tombol, geser, cubit dua jari) | ✅ | ✅ | 2 Okt 2026 |
 | K02 | m. **Nama kota** tampil sesuai zoom (zoom out = kota besar, zoom in = kota kecil) | ✅ | ✅ | 2 Okt 2026 |
-| K02 | g. Tempat isian data client per lokasi | ⬜ | ⬜ | — |
+| K02 | g. Tempat isian data client per lokasi — ✅ **dikerjakan sebagai K03 j** | ✅ | ✅ | 2 Okt 2026 |
 | **K03** | **Penyimpanan data di Layerbase cloud** (keputusan Bapak, 2 Okt 2026) | | | |
 | K03 | a. ⚠️ **Ubah aturan F3** — aplikasi kini butuh internet (keputusan Bapak) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | b. ⚠️ **Ubah cara buka di HP** — tidak bisa lagi dari My Files (`file://`) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | f. **Hosting GitHub Pages** — aplikasi online di `suwandhih.github.io/DataPeta` | ✅ | ✅ | 2 Okt 2026 |
-| K03 | c. Buat database SQLite di Layerbase (paket Free, 5 GB) | ⬜ | ⬜ | — |
+| K03 | c. Buat database SQLite di Layerbase (paket Free, 5 GB) — ✅ **dikerjakan sebagai K03 h1** | ✅ | ✅ | 2 Okt 2026 |
 | K03 | d. ⚠️ **Masalah keamanan:** kunci API Layerbase akan terlihat di halaman publik GitHub Pages → data bisa dicuri/dihapus orang. **Perlu perantara (proxy)** atau ganti cara. | ⚠️ | ⚠️ | 2 Okt 2026 |
 | K03 | g. **Ide Bapak: IndexedDB utama + Layerbase titipan (semi-online)** — ✅ **DIPERBOLEHKAN** (pemakaian database biasa, bukan proxy/reselling). Batas Free: 10 GB/24j, 5 GB simpan, harus tidur ≥25% — semua cukup. | ✅ | ✅ | 2 Okt 2026 |
 | K03 | h. **Perantara Cloudflare Worker** (sembunyikan kunci API) — pakai akun Bapak | ✅ | ✅ | 2 Okt 2026 |
@@ -54,11 +47,10 @@
 | K03 | h3. AI buat Cloudflare Worker `peta-api` (perantara) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | h4. Sambungkan aplikasi ke Worker (tombol Kirim/Ambil) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | h5. Uji: kirim 8/8 · hapus lokal → tarik 8 kembali · **tanpa duplikat** | ✅ | ✅ | 2 Okt 2026 |
-| K03 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+| K03 | f. Uji di HP (oleh Bapak) — ⏳ **menunggu Bapak** | ⬜ | ⬜ | — |
 | K03 | i. **IndexedDB** — penyimpanan data lokal (dikerjakan dulu, keputusan Bapak) | ✅ | ✅ | 2 Okt 2026 |
 | K03 | j. Form isian data client (tambah/ubah/hapus lokasi) — K02 g | ✅ | ✅ | 2 Okt 2026 |
 | K03 | e. Sambungkan aplikasi ke database cloud (cara aman) | ✅ | ✅ | 2 Okt 2026 |
-| K03 | f. Uji di PC & HP | ⬜ | ⬜ | — |
 
 | **K04** | **Nama kota utama + daftar wilayah** (order Bapak, 2 Okt 2026) | | | |
 | K04 | a. **38 ibu kota provinsi** tampil permanen di peta | ✅ | ✅ | 9 Okt 2026 |
@@ -84,7 +76,7 @@
 | K08 | c. **Daftar wilayah** (provinsi → kab/kota → kecamatan → desa) di menu ☰ | ✅ | ✅ | 2 Okt 2026 |
 | K08 | d. Klik wilayah di daftar → **peta geser + perbesar** ke wilayah itu + form terbuka | ✅ | ✅ | 2 Okt 2026 |
 | K08 | e. Unduh **data wilayah lengkap sampai desa** — 38 prov · 514 kab/kota · 7.285 kec · 83.762 desa (sumber Kepmendagri 2025 + BIG) | ✅ | ✅ | 2 Okt 2026 |
-| K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) | ⏸️ | ⏸️ | — |
+| K08 | f. Form isian: bujur/lintang/inisial diganti yang lebih jelas (nanti) — ⏸️ **DITAHAN** (belum ada order Bapak) | ⏸️ | ⏸️ | — |
 | **K15** | **Tata letak tombol beku + bar kategori di luar peta** (order Bapak, 4 Okt 2026) — permintaan: *"tata letak tombol zoom in [+] out [-] dan [⟲] menutupi peta .. usul: [cari lokasi di peta ...] tombol [+][-][⟲] [☰ Member] [☰] dalam satu baris di atas tapi di freeze pada saat zoom/move cursor menu tidak bergeser .. untuk tampilan bawah: semua/yayasan/sekolah... tempatkan baris dibawah peta di freeze .. berlaku untuk PC dan HP"* | | | |
 | K15 | a. **Bar atas baru** — satu baris: `[cari lokasi di peta…] [+] [−] [⟲] [☰ Member] [☰]` | ✅ | ✅ | 4 Okt 2026 |
 | K15 | b. Tombol **[+] [−] [⟲]** dipindah dari tengah peta → masuk bar atas (yang lama dihapus) | ✅ | ✅ | 4 Okt 2026 |
@@ -177,6 +169,7 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K01** | **Data wilayah Indonesia lengkap** — 38 provinsi · 514 kab/kota · 7.285 kecamatan · 83.762 desa/kelurahan. Sumber **Kepmendagri No. 300.2.2-2430 Tahun 2025** (kode & nama) + **BIG** (koordinat). Disimpan di `data/wilayah/`. Dikerjakan sebagai **K08 e**; diperiksa ulang 9 Okt 2026 — jumlah persis sama | 2 Okt 2026 |
 | **K17** | **Peta diganti citra satelit (tetap offline)** — latar peta kini **foto asli bumi dari satelit** (Esri World Imagery), disimpan lokal `data/citra-satelit.jpg` (8192×3277 · 1,95 MB) + pengunduh `alat/unduh-citra-satelit.py`. Tampilan lain tidak diubah; warna garis/tulisan disesuaikan agar terbaca. 🐛 Garis meleset 66 px → **dinilai**: salah hitung di pengunduh → diperbaiki + pengaman dipasang. Uji: 4 keselarasan + 20 aplikasi, **0 gagal** (PC & HP). Bapak: *"sudah benar"* | 6 Okt 2026 |
 | **K14g** | **Label peta: nama wilayah selalu tampil** — tombol 👁 (kini "Label lokasi pada peta") menyembunyikan nama lokasi & kategori; nama wilayah tetap | 3 Okt 2026 |
 | **K14f** | **Dua tombol 👁 disatukan dalam satu baris** (Label kategori pada peta & Ringkas daftar) | 3 Okt 2026 |
