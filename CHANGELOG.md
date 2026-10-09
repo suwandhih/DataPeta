@@ -4,6 +4,53 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 👥 **JUMLAH PENDUDUK 38 PROVINSI MUNCUL DI PETA**
+
+**Permintaan Bapak:** *"apakah km bisa dapatkan data untuk desa kota kab. provinsi
+jumlah penduduknya, agama"* → Bapak memilih: **mulai dari yang paling ringan —
+jumlah penduduk 38 provinsi dulu.**
+
+**Hasil pemeriksaan sumber (aturan F8 — tidak mengarang):**
+
+| Sumber | Hasil |
+|--------|-------|
+| **BPS** — tabel resmi "Penduduk … Menurut Provinsi, 2026" | ✅ **BISA** — 38 provinsi lengkap |
+| BPS (akses otomatis biasa) | ❌ Diblokir (403) — harus dibuka lewat peramban |
+| Dukcapil Kemendagri (pusat) | ❌ Tidak menerbitkan rekap nasional yang bisa diunduh |
+| Dinas Dukcapil daerah | ⚠️ Ada, tapi tersebar di ±500 situs & berupa hasil pindai (perlu OCR) |
+| Agama per kecamatan / desa | ❌ **Tidak ada** sumber resmi siapa pun |
+
+**Yang dibuat:**
+- Berkas baru **`data/penduduk.js`** — jumlah penduduk **38 provinsi** (dalam jiwa).
+  Sumber: **BPS**, tabel resmi tahun 2026. Angka asli BPS dalam ribuan, dikali 1.000.
+- Berkas baru **`alat/buat-penduduk.js`** — pembuat berkas di atas. Jalankan
+  `node alat/buat-penduduk.js` kalau data perlu dibuat ulang.
+- **Panel rincian provinsi** kini menampilkan baris **"Jumlah penduduk"**.
+  Contoh: klik **Jawa Barat** → *Jumlah penduduk 51.163.900 jiwa*.
+
+**Pemeriksaan kejujuran data:**
+- Jumlah 38 provinsi dijumlahkan = **287.198.400** jiwa.
+- Angka Indonesia menurut BPS = **287.198.400** jiwa.
+- **Selisih 0** ✅ — data utuh, tidak ada yang salah salin.
+
+**Catatan penting:** nama provinsi di peta kadang beda dengan nama resmi
+(mis. peta menulis **"DKI Jakarta"**, daftar resmi menulis **"Daerah Khusus Ibukota
+Jakarta"**). Sudah diberi **padanan nama** supaya angkanya tetap muncul.
+
+**Hasil uji (K18-01…K18-10): 10 uji, 0 gagal** — data termuat (38 provinsi) ✅ ·
+jumlah = angka BPS ✅ · angka tampil di **38 provinsi** ✅ · panel PC tidak keluar
+layar ✅ · isi tidak meluber ✅ · gaya angka benar (`getComputedStyle`) ✅ ·
+panel HP tidak keluar layar ✅ · angka tampil di HP ✅ · isi HP tidak meluber ✅ ·
+tanpa galat skrip ✅
+
+Diuji di: **PC 1440×900** dan **HP 390×844**.
+
+**Backup:** `backups\sebelum-k18-penduduk-20261009-151015`
+
+**Belum dikerjakan (menunggu aba-aba Bapak):** jumlah penduduk per kabupaten/kota,
+per kecamatan, per desa — dan **agama** (hanya tersedia sampai kabupaten/kota).
+
+---
 ## 6 Oktober 2026 — 🛰️ **PETA DIGANTI CITRA SATELIT (tetap offline)**
 
 **Permintaan Bapak:** *"saya mau map diganti dengan citra satelit"* → *"tampilan sama seperti

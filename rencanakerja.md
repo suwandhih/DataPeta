@@ -95,6 +95,14 @@
 | K16 | d. Uji PC + HP (oleh AI) — 5 uji tampilan × 7 ukuran + 8 uji fungsi, **0 gagal** | ✅ | ✅ | 4 Okt 2026 |
 | K16 | e. **Uji di HP (oleh Bapak)** | ⬜ | ⬜ | — |
 
+| **K18** | **Jumlah penduduk 38 provinsi** (order Bapak, 9 Okt 2026) — tahap **a** dari rencana data penduduk & agama | | | |
+| K18 | a. Cari sumber resmi jumlah penduduk 38 provinsi → **BPS** (tabel resmi 2026) | ✅ | ✅ | 9 Okt 2026 |
+| K18 | b. Ambil & verifikasi data — jumlah 38 provinsi **persis sama** dengan angka BPS (selisih 0) | ✅ | ✅ | 9 Okt 2026 |
+| K18 | c. Simpan sebagai data proyek (`data/penduduk.js` + `alat/buat-penduduk.js`) | ✅ | ✅ | 9 Okt 2026 |
+| K18 | d. Tampilkan di panel rincian saat provinsi diklik | ✅ | ✅ | 9 Okt 2026 |
+| K18 | e. Uji PC + HP (oleh AI) — 10 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K18 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

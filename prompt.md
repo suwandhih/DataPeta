@@ -117,8 +117,12 @@ DataPeta/
 ├── data/danau.js              → danau Indonesia
 ├── data/gunung.js             → gunung Indonesia (nama + tinggi)
 ├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
+├── data/pulau.js              → nama pulau Indonesia
+├── data/suku.js               → suku bangsa (BPS 2010)
+├── data/penduduk.js           → jumlah penduduk 38 provinsi (BPS 2026)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
 ├── alat/unduh-citra-satelit.py → pengunduh citra satelit (dijalankan sekali saja)
+├── alat/buat-penduduk.js      → pembuat data/penduduk.js dari angka BPS
 └── (5 dokumen .md)
 ```
 
@@ -133,6 +137,8 @@ DataPeta/
 - Negara dunia → **Natural Earth** (public domain)
 - **Latar citra satelit → Esri World Imagery** (gratis, tanpa kunci API) — diunduh sekali
   lewat `alat/unduh-citra-satelit.py`, disimpan sebagai `data/citra-satelit.jpg`
+- **Jumlah penduduk 38 provinsi → BPS** (tabel resmi 2026) — disimpan sebagai
+  `data/penduduk.js`, dibuat lewat `alat/buat-penduduk.js`
 
 ### 3.3 Cara menambah lokasi (sementara)
 

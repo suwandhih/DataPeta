@@ -68,7 +68,7 @@ sudah di cloud, mengisi data **butuh internet** (harus lewat alamat web di atas)
 |--------|----------|
 | 🔍 **Kotak pencarian** (bar atas, paling kiri) | Ketik nama lokasi → penanda menyaring |
 | 📍 **Penanda bulat** di peta | Klik → muncul rincian di panel kanan |
-| 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi |
+| 🗺️ **Provinsi** di peta | Klik wilayah → muncul nama provinsi **+ jumlah penduduknya** (data resmi BPS) |
 | 🔍 **Zoom** (bar atas, di kanan kotak cari) | Tombol **+** perbesar · **−** perkecil · **⟲** kembalikan. Bisa juga **roda mouse** (PC) atau **cubit dua jari** (HP) |
 | ✋ **Geser peta** | Tahan & tarik peta (setelah di-zoom) |
 | 🏷️ **Bar kategori** (paling bawah) | Klik kategori → hanya kategori itu tampil |
@@ -149,6 +149,19 @@ supaya tetap jelas di atas foto bumi yang gelap:
 | 🟡 **Tulisan kuning muda** | Nama pulau |
 | 🟣 **Titik ungu muda** | Suku bangsa (muncul saat di-zoom) |
 
+### 🗺️ Jumlah penduduk provinsi
+
+Klik salah satu **provinsi** di peta → di panel kanan muncul **jumlah penduduknya**.
+
+Contoh: klik **Jawa Barat** → *Jumlah penduduk 51.163.900 jiwa*.
+
+Angkanya **resmi dari BPS** (Badan Pusat Statistik), bukan perkiraan. Kalau dijumlahkan
+seluruh 38 provinsi, hasilnya **287.198.400 jiwa** — persis sama dengan angka resmi BPS
+untuk seluruh Indonesia.
+
+⚠️ **Catatan:** angka ini baru tersedia sampai **provinsi**. Jumlah penduduk per
+kabupaten/kota, kecamatan, dan desa **belum** — masih menunggu keputusan Bapak.
+
 ### 🏙️ Nama kota di peta
 
 Nama kota **muncul sendiri** sesuai tingkat zoom:
@@ -192,6 +205,7 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 | 🤖 **agents.md** | AI | Aturan main untuk AI |
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
 | 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
+| 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi (sumber: BPS) |
 
 ---
 

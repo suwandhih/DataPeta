@@ -1195,11 +1195,14 @@
 
   function bukaPanelProvinsi(nama) {
     idTerpilih = null;
+    const kode = kodeProvinsiDariNama(nama);
+    const jiwa = pendudukProvinsi(kode);
     panelIsi.innerHTML = `
       <div class="panel-gambar">${inisialDari(nama)}</div>
       <span class="panel-kategori">Provinsi</span>
       <h2 class="panel-nama">${nama}</h2>
       <p class="panel-wilayah">Wilayah Indonesia</p>
+      ${jiwa === null ? "" : `<div class="panel-baris"><span class="label">Jumlah penduduk</span><span class="nilai">${jiwa.toLocaleString("id-ID")} jiwa</span></div>`}
       <div class="panel-baris"><span class="label">Data lokasi</span><span class="nilai">Belum ada</span></div>
     `;
     panel.classList.add("terbuka");
@@ -1226,6 +1229,25 @@
 
   function wilayahKabKota() {
     return typeof WILAYAH_KABKOTA !== "undefined" ? WILAYAH_KABKOTA : [];
+  }
+
+  // Jumlah penduduk provinsi (jiwa) menurut BPS — null kalau tidak ada datanya.
+  // Nama di peta kadang beda dengan nama resmi (mis. "DKI Jakarta" vs
+  // "Daerah Khusus Ibukota Jakarta") — dicocokkan lewat kode wilayah.
+  function pendudukProvinsi(kode) {
+    const d = typeof PENDUDUK_PROVINSI !== "undefined" ? PENDUDUK_PROVINSI : null;
+    if (!d || !kode) return null;
+    const n = d[kode];
+    return typeof n === "number" ? n : null;
+  }
+
+  // Nama di peta yang beda dengan nama resmi (Kepmendagri).
+  const ALIAS_PROVINSI = { "DKI Jakarta": "31" };
+
+  function kodeProvinsiDariNama(nama) {
+    if (ALIAS_PROVINSI[nama]) return ALIAS_PROVINSI[nama];
+    const w = wilayahProvinsi().find((x) => x[1] === nama);
+    return w ? w[0] : null;
   }
 
   function muatBerkasWilayah(berkas, namaVar) {
