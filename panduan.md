@@ -233,6 +233,30 @@ seragam) — akan **dicicil** sedikit demi sedikit.
 
 Sesuai aturan proyek, angka yang belum ada **tidak dikarang** dan **tidak ditaksir**.
 
+### 🕌 Agama penduduk provinsi (saat provinsi diklik di peta)
+
+Kalau Bapak **klik provinsi di peta**, panel kanan menampilkan **jumlah penduduk**
+provinsi itu. Untuk **9 provinsi yang sudah ada datanya**, di bawahnya muncul kotak
+hijau berisi **agama penduduk provinsi** — dijumlahkan dari seluruh kabupaten/kota
+di provinsi itu.
+
+Contoh: klik **Jawa Barat** → *Islam 48.581.396 jiwa · Kristen 883.850 jiwa ·
+Katolik 303.633 jiwa · Hindu 17.356 jiwa · Budha 98.232 jiwa · Konghucu 12.250 jiwa ·
+Kepercayaan Lain 3.275 jiwa* (jumlah 27 kab/kota).
+
+⚠️ **Perhatikan bedanya:**
+
+| Provinsi | Yang ditampilkan | Kenapa |
+|----------|------------------|--------|
+| Jawa Barat, DKI Jakarta, Sumatera Utara, Jambi, Sumatera Selatan, Sulawesi Utara, Sulawesi Tenggara | **Jumlah** (jiwa) | Tabel BPS-nya dalam satuan **jiwa** → bisa dijumlahkan |
+| Jawa Tengah, Kalimantan Utara | **Rata-rata** (%) | Tabel BPS-nya dalam satuan **persen** → persen tidak bisa dijumlahkan, jadi dirata-ratakan |
+
+Judul kotak hijau selalu menyebut mana yang dipakai — *"Jumlah penduduk menurut agama"*
+atau *"Rata-rata penduduk menurut agama"* — supaya tidak salah paham.
+
+Untuk **29 provinsi yang belum ada datanya**, kotak hijau **tidak muncul** — hanya
+jumlah penduduknya saja. Itu memang belum ada, bukan rusak.
+
 ### ⭐ Ibu kota provinsi di peta (tampil permanen)
 
 **38 ibu kota provinsi** selalu tampil di peta — **tidak hilang** walau peta
@@ -302,7 +326,7 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
 | 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
 | 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi + 514 kab/kota (sumber: BPS) |
-| 🕌 **data/agama.js** | Aplikasi | Agama per kabupaten/kota (sumber: BPS provinsi; baru 5 provinsi) |
+| 🕌 **data/agama.js** | Aplikasi | Agama per kabupaten/kota (sumber: BPS provinsi; baru 9 provinsi) |
 
 ---
 

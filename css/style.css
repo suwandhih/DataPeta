@@ -570,6 +570,33 @@ body {
 .panel-baris .label { color: var(--abu-teks); }
 .panel-baris .nilai { font-weight: 600; text-align: right; }
 
+/* Agama di panel provinsi (K25) — angka BPS, dijumlahkan dari kab/kota */
+.panel-agama {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-left: 3px solid #2f8f5b;
+  background: #eef8f2;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #1c5a3a;
+}
+
+.panel-agama-judul { margin: 0 0 8px; font-weight: 600; }
+
+.panel-agama-daftar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 12px;
+}
+
+.panel-agama-daftar li { display: contents; }
+.panel-agama-daftar li > span { opacity: .85; }
+.panel-agama-daftar li > strong { font-weight: 600; text-align: right; }
+
 .panel-kosong {
   padding: 60px 24px;
   text-align: center;

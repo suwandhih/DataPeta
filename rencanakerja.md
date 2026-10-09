@@ -150,6 +150,13 @@
 | K24 | d. Uji PC + HP (oleh AI) — 12 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
 | K24 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K25** | **Agama di panel provinsi** (order Bapak, 9 Okt 2026) — *"agama sudah ada? tapi belum di masuk dalam member form isian"* → **dinilai:** agama **sudah** tampil di form isian (member & tambah lokasi); yang belum = **panel provinsi** (klik provinsi di peta) hanya menampilkan jumlah penduduk | | | |
+| K25 | a. Tampilkan agama di panel provinsi — dijumlahkan dari kab/kota (angka BPS, tidak dikarang) | ✅ | ✅ | 9 Okt 2026 |
+| K25 | b. Hanya untuk **9 provinsi** yang ada datanya; provinsi lain tidak menampilkan apa-apa | ✅ | ✅ | 9 Okt 2026 |
+| K25 | c. Provinsi bersatuan **persen** (Jawa Tengah, Kalimantan Utara) → ditampilkan **rata-rata**, bukan dijumlahkan | ✅ | ✅ | 9 Okt 2026 |
+| K25 | d. Uji PC + HP (oleh AI) — 18 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K25 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

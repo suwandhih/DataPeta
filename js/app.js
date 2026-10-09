@@ -1360,12 +1360,14 @@
     tandaiProvinsiTerpilih(nama);
     const kode = kodeProvinsiDariNama(nama);
     const jiwa = pendudukProvinsi(kode);
+    const agama = agamaProvinsi(kode);
     panelIsi.innerHTML = `
       <div class="panel-gambar">${inisialDari(nama)}</div>
       <span class="panel-kategori">Provinsi</span>
       <h2 class="panel-nama">${nama}</h2>
       <p class="panel-wilayah">Wilayah Indonesia</p>
       ${jiwa === null ? "" : `<div class="panel-baris"><span class="label">Jumlah penduduk</span><span class="nilai">${jiwa.toLocaleString("id-ID")} jiwa</span></div>`}
+      ${agama === null ? "" : blokAgamaPanel(agama)}
       <div class="panel-baris"><span class="label">Data lokasi</span><span class="nilai">Belum ada</span></div>
     `;
     panel.classList.add("terbuka");
@@ -1466,6 +1468,40 @@
       `<span style="opacity:.75">(BPS ${a.info.provinsi}, ${a.info.tahun})</span></p>` +
       `<ul class="form-agama-daftar">${baris}</ul>`;
     fAgama.hidden = false;
+  }
+
+  // Agama tingkat provinsi — dihitung dari kab/kota, angka BPS apa adanya.
+  // Provinsi yang tabelnya dalam PERSEN tidak dijumlahkan (tidak ada artinya),
+  // melainkan dirata-ratakan dan diberi keterangan jelas di judulnya.
+  function agamaProvinsi(kode) {
+    const d = typeof AGAMA_KABKOTA !== "undefined" ? AGAMA_KABKOTA : null;
+    const s = typeof AGAMA_SUMBER !== "undefined" ? AGAMA_SUMBER : null;
+    if (!d || !s || !kode) return null;
+    const info = s[kode];
+    if (!info) return null;
+    const anak = Object.keys(d).filter((k) => k.split(".")[0] === kode);
+    if (!anak.length) return null;
+    const jumlah = info.kolom.map((_, i) =>
+      anak.reduce((a, k) => a + ((d[k] && d[k][i]) || 0), 0)
+    );
+    return { info, jumlah, banyak: anak.length };
+  }
+
+  // Blok agama untuk panel provinsi.
+  function blokAgamaPanel(a) {
+    const persen = a.info.satuan === "persen";
+    const baris = a.info.kolom.map((nama, i) => {
+      const v = a.jumlah[i] || 0;
+      const teks = persen
+        ? (v / a.banyak).toLocaleString("id-ID", { maximumFractionDigits: 2 }) + "%"
+        : v.toLocaleString("id-ID") + " jiwa";
+      return `<li><span>${nama}</span><strong>${teks}</strong></li>`;
+    }).join("");
+    const judul = persen
+      ? `Rata-rata penduduk menurut agama <span style="opacity:.75">(BPS ${a.info.provinsi}, ${a.info.tahun} — rata-rata ${a.banyak} kab/kota)</span>`
+      : `Jumlah penduduk menurut agama <span style="opacity:.75">(BPS ${a.info.provinsi}, ${a.info.tahun} — jumlah ${a.banyak} kab/kota)</span>`;
+    return `<div class="panel-agama"><p class="panel-agama-judul">${judul}</p>` +
+      `<ul class="panel-agama-daftar">${baris}</ul></div>`;
   }
 
   // Nama di peta yang beda dengan nama resmi (Kepmendagri).

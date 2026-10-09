@@ -155,6 +155,10 @@ DataPeta/
   Jambi (2022), Sumatera Selatan (2022).
   Disimpan sebagai `data/agama.js`, dibuat lewat `alat/buat-agama.js`.
   Provinsi lain **belum menerbitkan** — tidak dikarang (aturan F8).
+  **Tampil di dua tempat:** (1) form isian saat wilayah dipilih (kab/kota),
+  (2) panel provinsi saat provinsi diklik di peta — dijumlahkan dari kab/kotanya.
+  Provinsi bersatuan **persen** (Jawa Tengah, Kalimantan Utara) ditampilkan
+  sebagai **rata-rata**, bukan dijumlahkan.
 
 ### 3.3 Cara menambah lokasi (sementara)
 

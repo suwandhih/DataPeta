@@ -4,6 +4,41 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 🕌 **AGAMA PENDUDUK PROVINSI DI PANEL PETA (K25)**
+
+**Catatan Bapak:** *"agama sudah ada? tapi belum di masuk dalam member form isian"*
+
+**Hasil pemeriksaan:** agama **sudah** tampil di form isian (menu Member **[+]** dan **[✎]**).
+Yang **belum** ada = **panel provinsi** — saat provinsi diklik di peta, hanya jumlah
+penduduk yang tampil, agama tidak.
+
+**Apa yang berubah:** sekarang saat provinsi diklik di peta, di bawah jumlah penduduk
+muncul **kotak hijau berisi agama penduduk provinsi** — dijumlahkan dari seluruh
+kabupaten/kota di provinsi itu.
+
+**Penting — dua cara penyajian, sesuai bentuk tabel BPS:**
+
+| Provinsi | Yang ditampilkan | Alasan |
+|----------|------------------|--------|
+| Jawa Barat · DKI Jakarta · Sumatera Utara · Jambi · Sumatera Selatan · Sulawesi Utara · Sulawesi Tenggara | **Jumlah** (jiwa) | Tabel BPS dalam satuan **jiwa** → bisa dijumlahkan |
+| Jawa Tengah · Kalimantan Utara | **Rata-rata** (%) | Tabel BPS dalam satuan **persen** → persen tidak bisa dijumlahkan |
+
+Judul kotak selalu menyebut mana yang dipakai (*"Jumlah penduduk menurut agama"* atau
+*"Rata-rata penduduk menurut agama"*) + menyebut **berapa kab/kota** yang dijumlahkan.
+
+**Contoh hasil (Jawa Barat, 27 kab/kota):** Islam 48.581.396 · Kristen 883.850 ·
+Katolik 303.633 · Hindu 17.356 · Budha 98.232 · Konghucu 12.250 · Kepercayaan Lain 3.275 jiwa.
+
+**29 provinsi yang belum ada datanya** → kotak hijau **tidak muncul**, hanya jumlah
+penduduk. Angka **tidak dikarang** dan **tidak ditaksir** (aturan F8).
+
+**Hasil uji:** 9 provinsi berdata → kotak hijau muncul dengan jumlah baris yang benar ·
+6 provinsi tanpa data (Aceh, Jawa Timur, Bali, Kalimantan Timur, Papua, Sulawesi Selatan)
+→ kotak hijau tidak muncul, jumlah penduduk tetap tampil · angka panel **cocok persis**
+dengan hitungan terpisah · HP (390×844) tidak meluber · garis merah provinsi & form isian
+tetap normal · galat konsol 0. **Uji: 18, 0 gagal.**
+
+---
 ## 9 Oktober 2026 — ⭐ **38 IBU KOTA PROVINSI TAMPIL PERMANEN DI PETA (K04a)**
 
 **Catatan Bapak:** *"K05c/d di pending dulu.. karena sudah pakai citra satelit.. K04a saja lalu lanjut"*
