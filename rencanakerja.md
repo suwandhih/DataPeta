@@ -137,8 +137,13 @@
 | K23 | c. Simpan sebagai data proyek (`data/agama.js` + `alat/bps-agama-mentah.txt`) | ✅ | ✅ | 9 Okt 2026 |
 | K23 | d. Tampilkan di form saat wilayah dipilih (termasuk form **Member**) | ✅ | ✅ | 9 Okt 2026 |
 | K23 | e. Uji PC + HP (oleh AI) — 12 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
-| K23 | f. Tahap 2…n — provinsi yang tersisa, **dicicil** | ⏳ | ⏳ | — |
-| K23 | g. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+| K23 | f. **Tahap 2** — ditambah **4 provinsi** (Jawa Barat, Jawa Tengah, Jambi, Sumatera Selatan) → total **9 provinsi / 166 kab/kota** | ✅ | ✅ | 9 Okt 2026 |
+| K23 | g. Pemindaian ulang 38 provinsi → sisa **29 provinsi belum menerbitkan** tabel agama per kab/kota (bukan gagal dicari) | ✅ | ✅ | 9 Okt 2026 |
+| K23 | h. 🐛 **Dinilai:** situs BPS membatasi permintaan beruntun (tampak "No results" padahal bukan) → perlu jeda antarpermintaan | ✅ | ✅ | 9 Okt 2026 |
+| K23 | i. 🐛 **Dinilai:** tabel Jambi memakai format `257.189,00` → semua angka terbaca **0**; diperbaiki + ditambah penolakan baris tak terbaca | ✅ | ✅ | 9 Okt 2026 |
+| K23 | j. Uji PC + HP (oleh AI) — 11 uji, 0 gagal; **166 kab/kota semuanya cocok** dengan baris BPS | ✅ | ✅ | 9 Okt 2026 |
+| K23 | k. Tahap 3…n — provinsi yang **sudah menerbitkan** (perlu dicari ke Dinas Dukcapil daerah), **dicicil** | ⏳ | ⏳ | — |
+| K23 | l. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
 | **K24** | **🐛 Klik provinsi tidak jalan saat di-zoom in** (temuan Bapak, 9 Okt 2026) — *"jumlah penduduk ada bug · berfungsi jika peta terlihat full sumatera sampai papua · tapi jika di zoom in untuk detail lokasi tidak berfungsi"* | | | |
 | K24 | a. **Dinilai:** `svg.setPointerCapture()` dijalankan saat pointer **ditekan**, padahal penangkapan hanya perlu saat **menggeser**. Akibatnya klik singkat ikut "tertangkap" peta → tidak sampai ke wilayah | ✅ | ✅ | 9 Okt 2026 |

@@ -66,7 +66,7 @@
 | **B10** | "Rapikan / harusnya sama seperti…" = **perbaiki TINGKAT SETARA**, ❌ bukan menghapus. Permintaan sama ke-2× → **berhenti menambal**, baca ulang. |
 | **B11** | **Tiap selesai satu butir → lapor ke Bapak** sebelum lanjut butir berikutnya. |
 | **B12** | 🔴 **IDE dari AI → SAMPAIKAN dulu ke Bapak, ❌ JANGAN diproses langsung.** Ide disetujui → baru dikerjakan. (Bapak, 2 Okt 2026) |
-| **B13** | 🔴 **Setiap mengubah `css/style.css` atau `js/*.js` → WAJIB naikkan penanda versi di `index.html`** (`?v=YYYYMMDD-nn`, 4 tempat). Kalau tidak, peramban memakai berkas **lama dari cache** → Bapak melihat versi lama padahal sudah di-unggah. (temuan 9 Okt 2026) |
+| **B13** | 🔴 **Setiap mengubah `css/style.css`, `js/*.js`, ATAU `data/*.js` → WAJIB naikkan penanda versi di `index.html`.** Semua berkas lokal memakai penanda yang sama (`?v=YYYYMMDD-nn`). Kalau tidak, peramban memakai berkas **lama dari cache** (batas 10 menit) → Bapak melihat versi lama padahal sudah di-unggah. (temuan 9 Okt 2026) |
 
 ---
 

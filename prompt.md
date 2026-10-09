@@ -144,10 +144,12 @@ DataPeta/
 - **Jumlah penduduk 38 provinsi & 514 kabupaten/kota → BPS** (tabel resmi 2026) —
   disimpan sebagai `data/penduduk.js`, dibuat lewat `alat/buat-penduduk.js`
 - **Agama per kabupaten/kota → BPS PROVINSI** (BPS Pusat tidak menerbitkannya).
-  Baru **5 provinsi** yang tersedia: DKI Jakarta (2024), Sumatera Utara (2025),
-  Sulawesi Utara (2018), Sulawesi Tenggara (2022), Kalimantan Utara (2021 — persen).
+  Sudah **9 provinsi** (166 dari 514 kabupaten/kota): DKI Jakarta (2024),
+  Sumatera Utara (2025), Sulawesi Utara (2018), Sulawesi Tenggara (2022),
+  Kalimantan Utara (2021 — persen), Jawa Barat (2023), Jawa Tengah (2023 — persen),
+  Jambi (2022), Sumatera Selatan (2022).
   Disimpan sebagai `data/agama.js`, dibuat lewat `alat/buat-agama.js`.
-  Provinsi lain **belum ada datanya** — tidak dikarang (aturan F8).
+  Provinsi lain **belum menerbitkan** — tidak dikarang (aturan F8).
 
 ### 3.3 Cara menambah lokasi (sementara)
 

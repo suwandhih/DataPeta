@@ -4,6 +4,50 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 🕌 **DATA AGAMA PER KABUPATEN/KOTA (TAHAP 2)**
+
+**Catatan Bapak:** *"ok sdh benar.. lanjut tahap 2"*
+
+**Hasil pemindaian ulang 38 provinsi:** ditambah **4 provinsi** → total kini **9 provinsi**,
+**166 kabupaten/kota** (tahap 1: 5 provinsi / 76 kab/kota).
+
+| Provinsi baru | Tahun | Kab/kota |
+|---------------|-------|----------|
+| **Jawa Barat** | 2023 | **27** |
+| **Jawa Tengah** | 2023 (persen) | **35** |
+| **Jambi** | 2022 | **11** |
+| **Sumatera Selatan** | 2022 | **17** |
+
+Sisa **29 provinsi** (dan 4 provinsi baru Papua) **memang belum menerbitkan** tabel
+agama per kabupaten/kota — bukan gagal dicari.
+
+**Dua masalah yang ditemukan & diperbaiki (jujur, tidak disembunyikan):**
+
+1. **Situs BPS membatasi permintaan beruntun.** Saat dipindai cepat, semua provinsi
+   tampak "No results" — padahal tidak. Setelah diberi jeda, hasilnya keluar.
+
+2. **Format angka berbeda.** Tabel Jambi memakai format `257.189,00` (koma = desimal).
+   Percobaan pertama membuat semua angkanya terbaca **0**. Sudah diperbaiki, dan
+   ditambah **pemeriksa otomatis**: baris yang tidak terbaca **ditolak** — tidak
+   dipakai sebagai 0, supaya tidak ada angka palsu.
+
+**Perbaikan lain (aturan H1 — jangan tinggalkan kode tak terpakai):**
+- `AGAMA_PROVINSI` **dihapus** dari `data/agama.js` — tidak dipakai aplikasi, dan
+  baris total di tabel BPS tidak selalu sama dengan penjumlahan kabupaten/kotanya.
+- Semua berkas di `index.html` (termasuk `data/*.js`) kini **memakai penanda versi
+  yang sama** — supaya pembaruan data langsung terpakai, tidak tertahan cache.
+  Aturan **B13** diperbarui mengikuti temuan ini.
+
+**Hasil uji (K23-tahap2-01…K23-tahap2-11): 11 uji, 0 gagal**
+- **166 kab/kota semuanya cocok** dengan baris tabel BPS aslinya ✅
+- Jawa Barat: Kabupaten Bogor ✅ · Kota Bogor tidak tertukar ✅
+- Jawa Tengah: satuan persen tampil benar (%) ✅
+- Sumatera Selatan (tabel 4 tahun berdampingan): yang diambil tahun **2022** ✅
+- Nama kembar tidak tertukar: Kota Pagar Alam ✅ · Kota Lubuk Linggau ✅ · Kota Prabumulih ✅
+- Jambi: Kota Jambi ✅ · Kota Sungai Penuh ✅
+- Versi online = lokal ✅
+
+---
 ## 9 Oktober 2026 — ⚠️ **TEMUAN: PENANDA VERSI BERKAS TIDAK DINAIKKAN**
 
 **Kejadian:** perbaikan K24 (klik provinsi saat zoom in) sudah di-unggah, tetapi

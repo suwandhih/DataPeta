@@ -207,24 +207,29 @@ Konghucu 406 jiwa*.
 Kotak ini muncul **bersamaan** dengan kotak jumlah penduduk biru — termasuk saat
 Bapak menambah/ubah data lewat menu **Member** (tombol **[+]** dan **[✎]**).
 
-⚠️ **Penting — data agama belum lengkap.** Baru **5 provinsi** yang tersedia:
+⚠️ **Penting — data agama belum lengkap.** Sudah **9 provinsi** tersedia
+(**166 dari 514** kabupaten/kota):
 
-| Provinsi | Tahun data | Berlaku sampai |
-|----------|-----------|----------------|
-| DKI Jakarta | 2024 | 6 kabupaten/kota |
-| Sumatera Utara | 2025 | 33 kabupaten/kota |
-| Sulawesi Utara | 2018 | 15 kabupaten/kota |
-| Sulawesi Tenggara | 2022 | 17 kabupaten/kota |
-| Kalimantan Utara | 2021 | 5 kabupaten/kota |
+| Provinsi | Tahun data | Kab/kota | Satuan |
+|----------|-----------|----------|--------|
+| DKI Jakarta | 2024 | 6 | jiwa |
+| Sumatera Utara | 2025 | 33 | jiwa |
+| Sulawesi Utara | 2018 | 15 | jiwa |
+| Sulawesi Tenggara | 2022 | 17 | jiwa |
+| Kalimantan Utara | 2021 | 5 | persen |
+| **Jawa Barat** | 2023 | 27 | jiwa |
+| **Jawa Tengah** | 2023 | 35 | persen |
+| **Jambi** | 2022 | 11 | jiwa |
+| **Sumatera Selatan** | 2022 | 17 | jiwa |
 
-Jumlahnya **76 dari 514 kabupaten/kota**. Kalau wilayah yang Bapak pilih belum ada
+Jumlahnya **166 dari 514 kabupaten/kota**. Kalau wilayah yang Bapak pilih belum ada
 datanya, **kotak hijau tidak muncul** — itu memang **belum ada**, bukan rusak.
 
 Kenapa belum lengkap? **BPS Pusat tidak menerbitkan data agama sampai kabupaten/kota.**
 Yang menerbitkan hanya **BPS provinsi**, dan itupun **tidak semua provinsi** — dari
-38 provinsi, hanya **10** yang punya, dan **hanya 5** yang benar-benar sampai
-kabupaten/kota. Sisanya harus dicari ke Dinas Dukcapil tiap kabupaten/kota (±500
-situs, format tidak seragam) — akan **dicicil** sedikit demi sedikit.
+38 provinsi, **29 di antaranya belum menerbitkan** tabel agama per kabupaten/kota.
+Sisanya harus dicari ke Dinas Dukcapil tiap kabupaten/kota (±500 situs, format tidak
+seragam) — akan **dicicil** sedikit demi sedikit.
 
 Sesuai aturan proyek, angka yang belum ada **tidak dikarang** dan **tidak ditaksir**.
 
@@ -319,7 +324,7 @@ resmi BPS untuk seluruh Indonesia (selisih **0**).
 📁 Disimpan sebagai **`data/agama.js`** · dibuat lewat **`alat/buat-agama.js`** ·
 angka mentah apa adanya di **`alat/bps-agama-mentah.txt`**.
 
-Baru **5 provinsi** yang tersedia (76 dari 514 kabupaten/kota):
+Baru **9 provinsi** yang tersedia (**166 dari 514** kabupaten/kota):
 
 | Provinsi | Tahun | Tabel BPS | Tautan |
 |----------|-------|-----------|--------|
@@ -328,6 +333,10 @@ Baru **5 provinsi** yang tersedia (76 dari 514 kabupaten/kota):
 | Sulawesi Utara | 2018 | *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama di Provinsi Sulawesi Utara (Jiwa)* | [sulut.bps.go.id](https://sulut.bps.go.id/id/statistics-table/2/NjE3IzI=/jumlah-penduduk-menurut-kabupaten-kota-dan-agama-di-provinsi-sulawesi-utara--jiwa-.html) |
 | Sulawesi Tenggara | 2022 | *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Sulawesi Tenggara, 2022* | [sultra.bps.go.id](https://sultra.bps.go.id/id/statistics-table/1/NDUwNCMx/jumlah-penduduk-menurut-kabupaten-kota-dan-agama-yang-dianut-di-provinsi-sulawesi-tenggara--2022.html) |
 | Kalimantan Utara | 2021 | *Persentase Penduduk Menurut Agama yang Dianut (Persen)* | [kaltara.bps.go.id](https://kaltara.bps.go.id/id/statistics-table/2/NDYyIzI=/persentase-penduduk-menurut-agama-yang-dianut--persen-.html) |
+| Jawa Barat | 2023 | *Jumlah Penduduk dan Agama Yang Dianut (Jiwa)* | [jabar.bps.go.id](https://jabar.bps.go.id/id/statistics-table/2/MzM1IzI=/jumlah-penduduk-dan-agama-yang-dianut--jiwa-.html) |
+| Jawa Tengah | 2023 | *Persentase Penduduk Menurut Agama yang Dianut (Persen)* | [jateng.bps.go.id](https://jateng.bps.go.id/id/statistics-table?subject=519&keyword=agama) |
+| Jambi | 2022 | *Jumlah Penduduk Menurut Agama yang Dianut (Jiwa)* | [jambi.bps.go.id](https://jambi.bps.go.id/id/statistics-table?subject=519&keyword=agama) |
+| Sumatera Selatan | 2022 | *Jumlah Penduduk Menurut Agama di Sumatera Selatan Tahun 2019-2022* | [sumsel.bps.go.id](https://sumsel.bps.go.id/id/statistics-table?subject=519&keyword=agama) |
 
 ⚠️ **Perhatikan:** tahun datanya **berbeda-beda** (2018–2025) dan Kalimantan Utara
 satuannya **persen**, bukan jiwa. Jadi angka antarprovinsi **tidak bisa dibandingkan
