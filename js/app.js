@@ -53,6 +53,7 @@
   const fWilayahBersih = document.getElementById("fWilayahBersih");
   const fWilayahLangkah = document.getElementById("fWilayahLangkah");
   const fWilayahCatatan = document.getElementById("fWilayahCatatan");
+  const fPenduduk = document.getElementById("fPenduduk");
   const fKategori = document.getElementById("fKategori");
   const fLon = document.getElementById("fLon");
   const fLat = document.getElementById("fLat");
@@ -1258,6 +1259,31 @@
     return typeof n === "number" ? n : null;
   }
 
+  // Jumlah penduduk kabupaten/kota (jiwa) menurut BPS.
+  function pendudukKabKota(kode) {
+    const d = typeof PENDUDUK_KABKOTA !== "undefined" ? PENDUDUK_KABKOTA : null;
+    if (!d || !kode) return null;
+    const n = d[kode];
+    return typeof n === "number" ? n : null;
+  }
+
+  // Tampilkan jumlah penduduk wilayah terpilih di dalam form.
+  function tampilkanPenduduk(kode) {
+    if (!fPenduduk) return;
+    const tingkat = (kode || "").split(".").length;
+    const jiwa = tingkat === 1 ? pendudukProvinsi(kode) : pendudukKabKota(kode);
+    if (jiwa === null) {
+      fPenduduk.hidden = true;
+      fPenduduk.textContent = "";
+      return;
+    }
+    const sebutan = tingkat === 1 ? "Provinsi" : "Kabupaten/kota";
+    fPenduduk.innerHTML =
+      `${sebutan} ini berpenduduk <strong>${jiwa.toLocaleString("id-ID")} jiwa</strong>` +
+      ` <span style="opacity:.75">(sumber: BPS)</span>`;
+    fPenduduk.hidden = false;
+  }
+
   // Nama di peta yang beda dengan nama resmi (Kepmendagri).
   const ALIAS_PROVINSI = { "DKI Jakarta": "31" };
 
@@ -1300,6 +1326,20 @@
     const kec = jejak[2].kode;
     return muatBerkasWilayah("data/wilayah/desa/" + kab + ".js", "WILAYAH_DESA")
       .then((d) => d.filter((k) => k[0].split(".").slice(0, 3).join(".") === kec));
+  }
+
+  // Cari kode wilayah dari namanya (dipakai untuk menampilkan jumlah penduduk).
+  function kodeWilayahDariNama(nama) {
+    if (!nama) return null;
+    const bersih = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const n = bersih(nama);
+    const prov = wilayahProvinsi().find((x) => bersih(x[1]) === n);
+    if (prov) return prov[0];
+    const kab = wilayahKabKota().find((x) => bersih(x[1]) === n);
+    if (kab) return kab[0];
+    // Nama di peta kadang beda (mis. "DKI Jakarta")
+    if (ALIAS_PROVINSI[nama]) return ALIAS_PROVINSI[nama];
+    return null;
   }
 
   // Nama induk wilayah, dibaca dari kode (dipisah titik)
@@ -1949,6 +1989,7 @@
     fWilayah.value = namaWilayahLengkap(hasil.kode, hasil.nama);
     if (typeof hasil.lat === "number") fLat.value = hasil.lat;
     if (typeof hasil.lon === "number") fLon.value = hasil.lon;
+    tampilkanPenduduk(hasil.kode);
 
     if (typeof hasil.lat === "number" && typeof hasil.lon === "number" && proyeksi) {
       const p = proyek(hasil.lon, hasil.lat);
@@ -2142,6 +2183,12 @@
       ? lokasi.rincian.map((r) => r.label + " = " + r.nilai).join("\n")
       : "";
 
+    // Jumlah penduduk wilayah yang sedang diisi (kalau ada datanya)
+    const kodeWilayah = lokasi
+      ? kodeWilayahDariNama(lokasi.wilayah)
+      : (kunciWilayah ? kunciWilayah.kode : null);
+    tampilkanPenduduk(kodeWilayah);
+
     // Panel samping — peta tetap terlihat. Tirai TIDAK dipakai supaya
     // Bapak masih bisa melihat & menggeser peta sambil mengisi.
     formLokasi.classList.add("terbuka");
@@ -2155,6 +2202,7 @@
     idSedangDiubah = null;
     sembunyikanSaranWilayah();
     tutupDropdownWilayah();
+    tampilkanPenduduk(null);
     // Titik sementara ikut hilang kalau form ditutup tanpa disimpan
     if (pratinjau) {
       pratinjau = null;

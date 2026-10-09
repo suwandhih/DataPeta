@@ -4,7 +4,61 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 9 Oktober 2026 — 🔴 **GARIS BATAS PROVINSI JADI MERAH SAAT DIKLIK**
+## 9 Oktober 2026 — 🏙️ **JUMLAH PENDUDUK KABUPATEN/KOTA (514) MUNCUL DI FORM**
+
+**Permintaan Bapak:** *"ok lanjut"* — lanjutan dari jumlah penduduk provinsi.
+
+**Sumber:** **BPS**, tabel resmi *"Jumlah Penduduk menurut Kabupaten/Kota dan
+Kelompok Umur"* (data 2026). Angka mentahnya disimpan apa adanya di
+`alat/bps-penduduk-2026.json`.
+
+**Yang dibuat:**
+- **`data/penduduk.js`** kini memuat **dua** data sekaligus:
+  - **38 provinsi** (dari tabel BPS "Menurut Provinsi")
+  - **514 kabupaten/kota** (dari tabel BPS "Menurut Kabupaten/Kota")
+- **`alat/buat-penduduk.js`** — satu alat untuk membuat keduanya.
+- Saat Bapak **memilih wilayah** di form (provinsi **atau** kabupaten/kota),
+  muncul kotak biru: *"Provinsi ini berpenduduk **51.163.888** jiwa (sumber: BPS)"*
+  atau *"Kabupaten/kota ini berpenduduk **1.089.179** jiwa (sumber: BPS)"*.
+
+**Pemeriksaan kejujuran data:**
+- Jumlah **514 kabupaten/kota** = **287.198.383** jiwa.
+- Angka Indonesia menurut BPS = **287.198.383** jiwa. **Selisih 0** ✅
+- Jumlah **38 provinsi** = **287.198.383** jiwa. **Selisih 0** ✅
+- Dibandingkan satu per satu dengan tabel BPS per provinsi: **cocok** ✅
+
+**⚠️ Dua masalah yang ditemukan & diperbaiki (penting):**
+
+1. **"Kota Bogor" sempat mengambil angka "Kabupaten Bogor"** — karena nama
+   kabupaten dan kota sama. Akibatnya jumlah Jawa Barat membengkak 12,3 juta.
+   **Perbaikan:** pencocokan kini membedakan **Kabupaten** dan **Kota**.
+   Sekarang Kota Bogor = 1.089.179 (benar), Kabupaten Bogor = 5.760.944 (benar).
+
+2. **BPS masih memakai batas wilayah LAMA untuk "Papua" dan "Papua Barat"**,
+   padahal provinsi baru (Papua Selatan/Tengah/Pegunungan, Papua Barat Daya)
+   juga dicantumkan. Kabupaten yang sama jadi terhitung **dua kali**.
+   **Perbaikan:** kabupaten milik provinsi baru dikeluarkan dari daftar provinsi lama.
+   Sekarang jumlahnya **pas** — selisih 0.
+
+**Hasil uji (K20-01…K20-17): 17 uji, 0 gagal** — data termuat (38 provinsi + 514
+kab/kota) ✅ · jumlah = angka BPS (selisih 0) ✅ · penduduk tampil saat provinsi
+dipilih ✅ · saat kab/kota dipilih ✅ · **Kota Bogor ≠ Kabupaten Bogor** ✅ ·
+gaya kotak benar (`getComputedStyle`) ✅ · kotak hilang saat form ditutup ✅ ·
+tetap kosong saat form dibuka lagi ✅ · HP: tampil ✅ · HP: tidak keluar layar ✅ ·
+HP: tidak meluber ✅ · HP: gaya benar ✅ · **semua 38 provinsi punya angka** ✅ ·
+**semua 514 kab/kota punya angka** ✅ · tanpa galat skrip ✅ ·
+**fitur lama masih bekerja** (K18 panel provinsi, K19 garis merah, K16 tombol suku,
+K15 bar atas & bar kategori) ✅
+
+Diuji di: **PC 1440×900** dan **HP 390×844**.
+
+**Backup:** `backups\sebelum-k20-penduduk-kabkota-20261009-160000`
+
+**Belum dikerjakan:** **agama** per kabupaten/kota (tahap c) — sumbernya ada
+(Data Agregat Kependudukan Dukcapil), tapi tersebar di ±500 situs daerah dan
+berupa hasil pindai (perlu OCR). Menunggu keputusan Bapak.
+
+---
 
 **Permintaan Bapak:** *"klik jawa barat area di peta minta di garis batas provinsi dibuat
 garis merah sampai form provinsi di tutup warna merah kembali normal"*

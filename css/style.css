@@ -1302,6 +1302,18 @@ body {
 
 .form-area { resize: vertical; line-height: 1.5; }
 
+/* Jumlah penduduk wilayah terpilih (sumber: BPS) */
+.form-penduduk {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-left: 3px solid #2f6fb5;
+  background: #eef4fb;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #1c4a7a;
+}
+
 .form-baris2 { display: flex; gap: 12px; }
 .form-baris2 > div { flex: 1; }
 

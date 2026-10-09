@@ -162,14 +162,25 @@ normal lagi — jadi **hanya satu** provinsi yang merah.
 
 Klik salah satu **provinsi** di peta → di panel kanan muncul **jumlah penduduknya**.
 
-Contoh: klik **Jawa Barat** → *Jumlah penduduk 51.163.900 jiwa*.
+Contoh: klik **Jawa Barat** → *Jumlah penduduk 51.163.888 jiwa*.
 
 Angkanya **resmi dari BPS** (Badan Pusat Statistik), bukan perkiraan. Kalau dijumlahkan
-seluruh 38 provinsi, hasilnya **287.198.400 jiwa** — persis sama dengan angka resmi BPS
+seluruh 38 provinsi, hasilnya **287.198.383 jiwa** — persis sama dengan angka resmi BPS
 untuk seluruh Indonesia.
 
-⚠️ **Catatan:** angka ini baru tersedia sampai **provinsi**. Jumlah penduduk per
-kabupaten/kota, kecamatan, dan desa **belum** — masih menunggu keputusan Bapak.
+### 🏙️ Jumlah penduduk kabupaten/kota
+
+Saat Bapak **memilih wilayah** di form (mau tambah lokasi), muncul kotak biru berisi
+**jumlah penduduk wilayah itu**.
+
+Contoh: pilih **Kota Bogor** → *"Kabupaten/kota ini berpenduduk **1.089.179** jiwa
+(sumber: BPS)"*.
+
+Semua **514 kabupaten/kota** sudah ada angkanya. Kalau dijumlahkan, hasilnya
+**287.198.383 jiwa** — **persis sama** dengan angka resmi BPS untuk seluruh Indonesia.
+
+⚠️ **Catatan:** angka ini baru **jumlah penduduk**. Data **agama** per kabupaten/kota
+**belum** — masih menunggu keputusan Bapak.
 
 ### 🏙️ Nama kota di peta
 
@@ -214,7 +225,7 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 | 🤖 **agents.md** | AI | Aturan main untuk AI |
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
 | 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
-| 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi (sumber: BPS) |
+| 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi + 514 kab/kota (sumber: BPS) |
 
 ---
 

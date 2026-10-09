@@ -1,138 +1,207 @@
 /* ============================================================
-   BUAT DATA JUMLAH PENDUDUK 38 PROVINSI — data/penduduk.js
-   Sumber: Badan Pusat Statistik (BPS), tabel resmi
-     "Penduduk, Laju Pertumbuhan Penduduk, Distribusi Persentase Penduduk,
-      Kepadatan Penduduk, Rasio Jenis Kelamin Penduduk Menurut Provinsi, 2026"
-     https://www.bps.go.id/id/statistics-table?subject=519
-   Angka BPS asli dalam RIBUAN (mis. 5.695,9) — di sini dikali 1.000 jadi jiwa.
+   BUAT DATA JUMLAH PENDUDUK — data/penduduk.js
+   Sumber: Badan Pusat Statistik (BPS), dua tabel resmi:
+     1. "Penduduk, Laju Pertumbuhan Penduduk, ... Menurut Provinsi, 2026"
+        https://www.bps.go.id/id/statistics-table?subject=519
+     2. "Jumlah Penduduk menurut Kabupaten/Kota dan Kelompok Umur"
+        https://www.bps.go.id/id/statistics-table/2/Mjc5MCMy/-jumlah-penduduk-menurut-kabupaten-kota-dan-kelompok-umur.html
+   Angka mentah kedua tabel disimpan apa adanya di alat/bps-penduduk-2026.json
+
+   Hasil:
+     data/penduduk.js -> PENDUDUK_PROVINSI (38) · PENDUDUK_KABKOTA (514)
+                         PENDUDUK_INDONESIA
 
    Cara pakai:  node alat/buat-penduduk.js
    ============================================================ */
 
 const fs = require("fs");
 const path = require("path");
+const vm = require("vm");
+
+const AKAR = path.join(__dirname, "..");
+const MENTAH = path.join(__dirname, "bps-penduduk-2026.json");
+
+// ---------- Bantu ----------
+const kunci = (s) => s.toUpperCase().replace(/[^A-Z0-9]/g, "");
+const keJiwa = (teks) => Number(String(teks).replace(/\./g, ""));
 
 // Nama provinsi BPS -> kode provinsi (Kepmendagri)
-const KODE = {
-  "Aceh": "11",
-  "Sumatera Utara": "12",
-  "Sumatera Barat": "13",
-  "Riau": "14",
-  "Jambi": "15",
-  "Sumatera Selatan": "16",
-  "Bengkulu": "17",
-  "Lampung": "18",
-  "Kepulauan Bangka Belitung": "19",
-  "Kepulauan Riau": "21",
-  "DKI Jakarta": "31",
-  "Jawa Barat": "32",
-  "Jawa Tengah": "33",
-  "DI Yogyakarta": "34",
-  "Jawa Timur": "35",
-  "Banten": "36",
-  "Bali": "51",
-  "Nusa Tenggara Barat": "52",
-  "Nusa Tenggara Timur": "53",
-  "Kalimantan Barat": "61",
-  "Kalimantan Tengah": "62",
-  "Kalimantan Selatan": "63",
-  "Kalimantan Timur": "64",
-  "Kalimantan Utara": "65",
-  "Sulawesi Utara": "71",
-  "Sulawesi Tengah": "72",
-  "Sulawesi Selatan": "73",
-  "Sulawesi Tenggara": "74",
-  "Gorontalo": "75",
-  "Sulawesi Barat": "76",
-  "Maluku": "81",
-  "Maluku Utara": "82",
-  "Papua": "91",
-  "Papua Barat": "92",
-  "Papua Selatan": "93",
-  "Papua Tengah": "94",
-  "Papua Pegunungan": "95",
-  "Papua Barat Daya": "96"
+const KODE_PROV = {
+  "ACEH": "11",
+  "SUMATERA UTARA": "12",
+  "SUMATERA BARAT": "13",
+  "RIAU": "14",
+  "JAMBI": "15",
+  "SUMATERA SELATAN": "16",
+  "BENGKULU": "17",
+  "LAMPUNG": "18",
+  "KEP. BANGKA BELITUNG": "19",
+  "KEPULAUAN RIAU": "21",
+  "DKI JAKARTA": "31",
+  "JAWA BARAT": "32",
+  "JAWA TENGAH": "33",
+  "D I YOGYAKARTA": "34",
+  "JAWA TIMUR": "35",
+  "BANTEN": "36",
+  "BALI": "51",
+  "NUSA TENGGARA BARAT": "52",
+  "NUSA TENGGARA TIMUR": "53",
+  "KALIMANTAN BARAT": "61",
+  "KALIMANTAN TENGAH": "62",
+  "KALIMANTAN SELATAN": "63",
+  "KALIMANTAN TIMUR": "64",
+  "KALIMANTAN UTARA": "65",
+  "SULAWESI UTARA": "71",
+  "SULAWESI TENGAH": "72",
+  "SULAWESI SELATAN": "73",
+  "SULAWESI TENGGARA": "74",
+  "GORONTALO": "75",
+  "SULAWESI BARAT": "76",
+  "MALUKU": "81",
+  "MALUKU UTARA": "82",
+  "PAPUA": "91",
+  "PAPUA BARAT": "92",
+  "PAPUA SELATAN": "93",
+  "PAPUA TENGAH": "94",
+  "PAPUA PEGUNUNGAN": "95",
+  "PAPUA BARAT DAYA": "96"
 };
 
-// Salinan apa adanya dari tabel BPS (kolom "Jumlah Penduduk (Ribu)").
-const BPS = [
-  ["Aceh", "5.695,9"],
-  ["Sumatera Utara", "15.978,6"],
-  ["Sumatera Barat", "5.991,6"],
-  ["Riau", "6.892,4"],
-  ["Jambi", "3.811,7"],
-  ["Sumatera Selatan", "9.017,1"],
-  ["Bengkulu", "2.163,3"],
-  ["Lampung", "9.623,8"],
-  ["Kepulauan Bangka Belitung", "1.569,7"],
-  ["Kepulauan Riau", "2.243,1"],
-  ["DKI Jakarta", "10.669,7"],
-  ["Jawa Barat", "51.163,9"],
-  ["Jawa Tengah", "38.565,0"],
-  ["DI Yogyakarta", "3.802,7"],
-  ["Jawa Timur", "42.352,0"],
-  ["Banten", "12.641,3"],
-  ["Bali", "4.488,2"],
-  ["Nusa Tenggara Barat", "5.815,3"],
-  ["Nusa Tenggara Timur", "5.828,6"],
-  ["Kalimantan Barat", "5.835,0"],
-  ["Kalimantan Tengah", "2.879,5"],
-  ["Kalimantan Selatan", "4.372,1"],
-  ["Kalimantan Timur", "4.478,4"],
-  ["Kalimantan Utara", "758,8"],
-  ["Sulawesi Utara", "2.740,5"],
-  ["Sulawesi Tengah", "3.189,8"],
-  ["Sulawesi Selatan", "9.661,3"],
-  ["Sulawesi Tenggara", "2.880,0"],
-  ["Gorontalo", "1.256,4"],
-  ["Sulawesi Barat", "1.547,4"],
-  ["Maluku", "1.995,2"],
-  ["Maluku Utara", "1.391,7"],
-  ["Papua", "1.086,5"],
-  ["Papua Barat", "596,5"],
-  ["Papua Selatan", "557,2"],
-  ["Papua Tengah", "1.510,8"],
-  ["Papua Pegunungan", "1.501,9"],
-  ["Papua Barat Daya", "645,5"]
-];
+// Nama kabupaten/kota BPS -> kode wilayah proyek.
+// Dipakai HANYA kalau pencocokan otomatis gagal (beda ejaan / nama lama).
+const PADANAN = {
+  "12.12": "Toba Samosir / Toba",
+  "16.02": "Ogan Komering Ilir",
+  "16.07": "Banyu Asin",
+  "16.73": "Kota Lubuklinggau",
+  "31.01": "Kep. Seribu",
+  "31.71": "Kota Jakarta Pusat",
+  "31.72": "Kota Jakarta Utara",
+  "31.73": "Kota Jakarta Barat",
+  "31.74": "Kota Jakarta Selatan",
+  "31.75": "Kota Jakarta Timur",
+  "71.09": "Siau Tagulandang Biaro",
+  "73.71": "Kota Makasar",
+  "76.01": "Mamuju Utara / Pasangkayu",
+  "81.03": "Maluku Tenggara Barat / Kepulauan Tanimbar"
+};
 
-const INDONESIA = "287.198,4";
-
-// "5.695,9" (ribuan) -> 5695900 (jiwa)
-function keJiwa(teks) {
-  const angka = Number(teks.replace(/\./g, "").replace(",", "."));
-  if (!Number.isFinite(angka)) throw new Error("Angka tidak terbaca: " + teks);
-  return Math.round(angka * 1000);
+// ---------- Baca data wilayah proyek ----------
+function muatWilayah(berkas) {
+  const ctx = { window: {} };
+  vm.createContext(ctx);
+  vm.runInContext(fs.readFileSync(path.join(AKAR, "data", "wilayah", berkas), "utf8"), ctx);
+  return ctx.window;
 }
 
-const baris = BPS.map(([nama, ribu]) => {
-  const kode = KODE[nama];
-  if (!kode) throw new Error("Kode provinsi tidak ada untuk: " + nama);
-  return `  "${kode}": ${keJiwa(ribu)}`;
-});
+const wProv = muatWilayah("provinsi.js").WILAYAH_PROVINSI;
+const wKab = muatWilayah("kabkota.js").WILAYAH_KABKOTA;
 
-const isi = `/* JUMLAH PENDUDUK 38 PROVINSI
-   Sumber: Badan Pusat Statistik (BPS) — tabel resmi
-     "Penduduk, Laju Pertumbuhan Penduduk, Distribusi Persentase Penduduk,
-      Kepadatan Penduduk, Rasio Jenis Kelamin Penduduk Menurut Provinsi, 2026"
-     https://www.bps.go.id/id/statistics-table?subject=519
-   Angka asli BPS dalam ribuan (mis. 5.695,9 ribu) — di sini ditulis penuh (5.695.900 jiwa).
-   Format: { "kode provinsi": jumlah jiwa }
+// ---------- Baca angka BPS ----------
+const mentah = JSON.parse(fs.readFileSync(MENTAH, "utf8"));
+
+// Susun: nama provinsi BPS -> daftar [nama kab/kota, angka]
+const perProv = {};
+let provKini = null;
+let angkaIndonesia = null;
+for (const [nama, angka] of mentah) {
+  if (nama === "TOTAL") continue;
+  if (nama === "INDONESIA") { angkaIndonesia = angka; continue; }
+  if (KODE_PROV[nama]) { provKini = nama; perProv[provKini] = []; continue; }
+  if (provKini) perProv[provKini].push([nama, angka]);
+}
+
+// BPS masih memakai batas wilayah LAMA untuk "PAPUA" dan "PAPUA BARAT",
+// padahal provinsi baru (Papua Selatan/Tengah/Pegunungan, Papua Barat Daya)
+// juga dicantumkan sebagai bagian. Supaya tidak dihitung dua kali,
+// kabupaten/kota milik provinsi baru dikeluarkan dari daftar provinsi lama.
+const PAPUA_BARU = {
+  "PAPUA SELATAN": "PAPUA",
+  "PAPUA TENGAH": "PAPUA",
+  "PAPUA PEGUNUNGAN": "PAPUA",
+  "PAPUA BARAT DAYA": "PAPUA BARAT"
+};
+for (const [baru, lama] of Object.entries(PAPUA_BARU)) {
+  const namaBaru = new Set((perProv[baru] || []).map(([n]) => n));
+  perProv[lama] = (perProv[lama] || []).filter(([n]) => !namaBaru.has(n));
+}
+
+// ---------- Cocokkan kabupaten/kota ----------
+const hasilKab = {};
+const belumCocok = [];
+
+for (const [kode, nama] of wKab) {
+  const kodeProv = kode.split(".")[0];
+  const namaProvBps = Object.keys(KODE_PROV).find((p) => KODE_PROV[p] === kodeProv);
+  const daftar = perProv[namaProvBps] || [];
+
+  let namaBps = PADANAN[kode];
+  if (!namaBps) {
+    const kota = /^Kota\s+/i.test(nama);
+    const bersih = nama.replace(/^Kabupaten\s+/i, "").replace(/^Kota\s+/i, "");
+    // "Kota X" hanya boleh cocok dengan "Kota X" di BPS, dan sebaliknya —
+    // supaya Kota Bogor tidak mengambil angka Kabupaten Bogor.
+    const ketemu = daftar.find(([n]) => {
+      const nKota = /^Kota\s+/i.test(n);
+      if (nKota !== kota) return false;
+      const nBersih = n.replace(/^Kota\s+/i, "");
+      return kunci(nBersih) === kunci(bersih) || kunci(n) === kunci(nama);
+    });
+    if (ketemu) namaBps = ketemu[0];
+  }
+  if (!namaBps) { belumCocok.push([kode, nama, namaProvBps]); continue; }
+
+  const baris = daftar.find(([n]) => n === namaBps);
+  if (!baris) { belumCocok.push([kode, nama, "padanan tidak ada: " + namaBps]); continue; }
+  hasilKab[kode] = keJiwa(baris[1]);
+}
+
+// ---------- Jumlah penduduk provinsi ----------
+// Dijumlahkan dari kabupaten/kota di dalamnya (angka BPS yang sama).
+// Untuk provinsi Papua yang baru, kabupaten/kotanya sudah dipisahkan di atas.
+const hasilProv = {};
+for (const [kode] of wProv) {
+  const anak = wKab.filter((k) => k[0].split(".")[0] === kode);
+  const jumlah = anak.reduce((a, [k]) => a + (hasilKab[k] || 0), 0);
+  if (jumlah > 0) hasilProv[kode] = jumlah;
+}
+
+// ---------- Tulis berkas ----------
+const barisKab = Object.keys(hasilKab).sort().map((k) => `  "${k}": ${hasilKab[k]}`);
+const barisProv = Object.keys(hasilProv).sort().map((k) => `  "${k}": ${hasilProv[k]}`);
+
+const isi = `/* JUMLAH PENDUDUK PROVINSI & KABUPATEN/KOTA
+   Sumber: Badan Pusat Statistik (BPS) — tabel resmi 2026
+     · Provinsi : "Penduduk, Laju Pertumbuhan Penduduk, ... Menurut Provinsi, 2026"
+     · Kab/Kota : "Jumlah Penduduk menurut Kabupaten/Kota dan Kelompok Umur"
+   Angka mentah BPS: alat/bps-penduduk-2026.json
+   Format: { "kode wilayah": jumlah jiwa }
    Dibuat otomatis oleh alat/buat-penduduk.js — jangan diubah manual. */
 window.PENDUDUK_PROVINSI = {
-${baris.join(",\n")}
+${barisProv.join(",\n")}
+};
+
+window.PENDUDUK_KABKOTA = {
+${barisKab.join(",\n")}
 };
 
 /* Jumlah penduduk seluruh Indonesia menurut BPS (tabel yang sama). */
-window.PENDUDUK_INDONESIA = ${keJiwa(INDONESIA)};
+window.PENDUDUK_INDONESIA = ${keJiwa(angkaIndonesia)};
 `;
 
-const tujuan = path.join(__dirname, "..", "data", "penduduk.js");
-fs.writeFileSync(tujuan, isi, "utf8");
+fs.writeFileSync(path.join(AKAR, "data", "penduduk.js"), isi, "utf8");
 
-const total = BPS.reduce((a, [, ribu]) => a + keJiwa(ribu), 0);
-console.log("Ditulis:", tujuan);
-console.log("Provinsi:", BPS.length);
-console.log("Jumlah semua:", total.toLocaleString("id-ID"));
-console.log("Angka BPS Indonesia:", keJiwa(INDONESIA).toLocaleString("id-ID"));
-console.log("Selisih:", (total - keJiwa(INDONESIA)).toLocaleString("id-ID"));
+// ---------- Laporan ----------
+const totalKab = Object.values(hasilKab).reduce((a, b) => a + b, 0);
+const totalProv = Object.values(hasilProv).reduce((a, b) => a + b, 0);
+console.log("Kabupaten/kota tercocokkan :", Object.keys(hasilKab).length, "dari", wKab.length);
+console.log("Provinsi                   :", Object.keys(hasilProv).length, "dari", wProv.length);
+console.log("Jumlah kab/kota            :", totalKab.toLocaleString("id-ID"));
+console.log("Jumlah provinsi            :", totalProv.toLocaleString("id-ID"));
+console.log("Angka BPS Indonesia        :", keJiwa(angkaIndonesia).toLocaleString("id-ID"));
+console.log("Selisih kab/kota vs BPS    :", (totalKab - keJiwa(angkaIndonesia)).toLocaleString("id-ID"));
+console.log("Selisih provinsi vs BPS    :", (totalProv - keJiwa(angkaIndonesia)).toLocaleString("id-ID"));
+if (belumCocok.length) {
+  console.log("BELUM COCOK:", belumCocok.length);
+  belumCocok.forEach((x) => console.log("   ", x.join(" | ")));
+}

@@ -110,6 +110,14 @@
 | K19 | d. Uji PC + HP (oleh AI) — 10 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
 | K19 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K20** | **Jumlah penduduk kabupaten/kota** (lanjutan order Bapak, 9 Okt 2026) — tahap **b** dari rencana data penduduk & agama | | | |
+| K20 | a. Cari sumber resmi → **BPS**: tabel *"Jumlah Penduduk menurut Kabupaten/Kota dan Kelompok Umur"* | ✅ | ✅ | 9 Okt 2026 |
+| K20 | b. Ambil & verifikasi — **514 kab/kota**, jumlah **persis sama** dengan angka BPS (selisih 0) | ✅ | ✅ | 9 Okt 2026 |
+| K20 | c. Simpan sebagai data proyek (`data/penduduk.js` + `alat/bps-penduduk-2026.json`) | ✅ | ✅ | 9 Okt 2026 |
+| K20 | d. Tampilkan di form saat wilayah kab/kota dipilih | ✅ | ✅ | 9 Okt 2026 |
+| K20 | e. Uji PC + HP (oleh AI) — 17 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K20 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 
