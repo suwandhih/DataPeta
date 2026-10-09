@@ -118,6 +118,13 @@
 | K20 | e. Uji PC + HP (oleh AI) — 17 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
 | K20 | f. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K21** | **Info jumlah penduduk di form member** (temuan Bapak, 9 Okt 2026) — *"member · pengisian tambah data · wilayah sudah ditemukan · info jumlah penduduk ditampilkan pada dalam form isi data"* | | | |
+| K21 | a. 🐛 **Dinilai:** form member ([+] dan [✎]) **tidak** menampilkan jumlah penduduk | ✅ | ✅ | 9 Okt 2026 |
+| K21 | b. 🐛 **Sebab:** nama wilayah member berbentuk *"Bandung, Jawa Barat"* — **ambigu** (Kabupaten atau Kota Bandung?) | ✅ | ✅ | 9 Okt 2026 |
+| K21 | c. Perbaikan: nama wilayah dipotong di koma + **kode wilayah disimpan** saat menyimpan data | ✅ | ✅ | 9 Okt 2026 |
+| K21 | d. Uji PC + HP (oleh AI) — 11 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K21 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

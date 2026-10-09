@@ -4,6 +4,41 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 👥 **INFO JUMLAH PENDUDUK MUNCUL DI FORM MEMBER**
+
+**Catatan Bapak:** *"member · pengisian tambah data · wilayah sudah ditemukan ·
+info jumlah penduduk ditampilkan pada dalam form isi data"*
+
+**Masalah yang ditemukan:** saat menambah/ubah data lewat menu **Member**
+(tombol **[+]** dan **[✎]**), kotak jumlah penduduk **tidak muncul** — padahal
+wilayahnya sudah terisi.
+
+**Sebabnya (dinilai, bukan ditebak):** nama wilayah pada data member berbentuk
+**"Bandung, Jawa Barat"** — ada **koma**. Nama seperti itu **ambigu**: yang dimaksud
+**Kabupaten Bandung** atau **Kota Bandung**? Karena tidak jelas, pencocokan gagal.
+
+**Perbaikan:**
+- Nama wilayah kini **dipotong di koma** dulu sebelum dicocokkan
+  ("Bandung, Jawa Barat" → "Bandung").
+- Kalau tetap ambigu, dicoba berurutan: **Kota** dulu, lalu **Kabupaten**,
+  lalu **Kota Administrasi** / **Kabupaten Administrasi**.
+- **Kode wilayah ikut disimpan** saat Bapak menekan Simpan — jadi lain kali
+  tidak perlu menebak lagi.
+
+**Hasil uji (K21-01…K21-11): 11 uji, 0 gagal** — member **[+]** menampilkan jumlah
+penduduk ✅ · member **[✎]** menampilkan jumlah penduduk ✅ · panel pilih member
+muncul ✅ · HP: tampil ✅ · HP: tidak keluar layar ✅ · HP: tidak meluber ✅ ·
+HP: gaya benar ✅ · tanpa galat skrip ✅ · **fitur lama masih bekerja**
+(K18 panel provinsi, K19 garis merah, K20 form biasa) ✅
+
+Contoh hasil: member di **Bandung, Jawa Barat** → *"Kabupaten/kota ini berpenduduk
+**2.569.102** jiwa (sumber: BPS)"* (Kota Bandung).
+
+Diuji di: **PC 1440×900** dan **HP 390×844**.
+
+**Backup:** `backups\sebelum-k21-member-penduduk-20261009-183900`
+
+---
 ## 9 Oktober 2026 — 🏙️ **JUMLAH PENDUDUK KABUPATEN/KOTA (514) MUNCUL DI FORM**
 
 **Permintaan Bapak:** *"ok lanjut"* — lanjutan dari jumlah penduduk provinsi.

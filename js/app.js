@@ -1329,17 +1329,26 @@
   }
 
   // Cari kode wilayah dari namanya (dipakai untuk menampilkan jumlah penduduk).
+  // Nama bisa berbentuk "Bandung, Jawa Barat" — diambil bagian depannya saja.
   function kodeWilayahDariNama(nama) {
     if (!nama) return null;
     const bersih = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
-    const n = bersih(nama);
+    const depan = String(nama).split(",")[0].trim();
+    const n = bersih(depan);
+
     const prov = wilayahProvinsi().find((x) => bersih(x[1]) === n);
     if (prov) return prov[0];
-    const kab = wilayahKabKota().find((x) => bersih(x[1]) === n);
-    if (kab) return kab[0];
-    // Nama di peta kadang beda (mis. "DKI Jakarta")
-    if (ALIAS_PROVINSI[nama]) return ALIAS_PROVINSI[nama];
-    return null;
+    if (ALIAS_PROVINSI[depan]) return ALIAS_PROVINSI[depan];
+
+    const kab = wilayahKabKota();
+    const sama = (x) => bersih(x[1]) === n;
+    const ketemu =
+      kab.find(sama) ||
+      kab.find((x) => bersih(x[1]) === bersih("Kota " + depan)) ||
+      kab.find((x) => bersih(x[1]) === bersih("Kabupaten " + depan)) ||
+      kab.find((x) => bersih(x[1]) === bersih("Kota Administrasi " + depan)) ||
+      kab.find((x) => bersih(x[1]) === bersih("Kabupaten Administrasi " + depan));
+    return ketemu ? ketemu[0] : null;
   }
 
   // Nama induk wilayah, dibaca dari kode (dipisah titik)
@@ -1603,6 +1612,7 @@
       fWilayah.value = contoh.wilayah;
       if (typeof contoh.lat === "number") fLat.value = contoh.lat;
       if (typeof contoh.lon === "number") fLon.value = contoh.lon;
+      tampilkanPenduduk(contoh.kodeWilayah || kodeWilayahDariNama(contoh.wilayah));
 
       if (typeof contoh.lat === "number" && typeof contoh.lon === "number" && proyeksi) {
         const p = proyek(contoh.lon, contoh.lat);
@@ -2185,7 +2195,7 @@
 
     // Jumlah penduduk wilayah yang sedang diisi (kalau ada datanya)
     const kodeWilayah = lokasi
-      ? kodeWilayahDariNama(lokasi.wilayah)
+      ? (lokasi.kodeWilayah || kodeWilayahDariNama(lokasi.wilayah))
       : (kunciWilayah ? kunciWilayah.kode : null);
     tampilkanPenduduk(kodeWilayah);
 
@@ -2252,6 +2262,7 @@
       id: idSedangDiubah || Penyimpanan.idBaru(),
       nama: nama,
       wilayah: fWilayah.value.trim(),
+      kodeWilayah: kodeWilayahDariNama(fWilayah.value.trim()) || "",
       kategori: fKategori.value,
       lon: lon,
       lat: lat,

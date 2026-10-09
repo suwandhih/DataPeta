@@ -176,6 +176,9 @@ Saat Bapak **memilih wilayah** di form (mau tambah lokasi), muncul kotak biru be
 Contoh: pilih **Kota Bogor** → *"Kabupaten/kota ini berpenduduk **1.089.179** jiwa
 (sumber: BPS)"*.
 
+Kotak ini juga muncul saat Bapak menambah/ubah data lewat menu **Member**
+(tombol **[+]** dan **[✎]**) — jadi Bapak langsung tahu jumlah penduduk kotanya.
+
 Semua **514 kabupaten/kota** sudah ada angkanya. Kalau dijumlahkan, hasilnya
 **287.198.383 jiwa** — **persis sama** dengan angka resmi BPS untuk seluruh Indonesia.
 
