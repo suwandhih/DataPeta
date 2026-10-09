@@ -183,7 +183,40 @@ Semua **514 kabupaten/kota** sudah ada angkanya. Kalau dijumlahkan, hasilnya
 **287.198.383 jiwa** — **persis sama** dengan angka resmi BPS untuk seluruh Indonesia.
 
 ⚠️ **Catatan:** angka ini baru **jumlah penduduk**. Data **agama** per kabupaten/kota
-**belum** — masih menunggu keputusan Bapak.
+ada di bagian **🕌 Agama penduduk kabupaten/kota** di bawah.
+
+### 🕌 Agama penduduk kabupaten/kota
+
+Kalau wilayah yang Bapak pilih **sudah ada datanya**, muncul kotak **hijau** berisi
+**jumlah penduduk menurut agama** untuk wilayah itu.
+
+Contoh: pilih **Kota Medan** → kotak hijau menampilkan *Islam 1.641.401 jiwa ·
+Protestan 478.387 jiwa · Katolik 63.276 jiwa · Hindu 10.945 jiwa · Budha 220.770 jiwa ·
+Konghucu 406 jiwa*.
+
+Kotak ini muncul **bersamaan** dengan kotak jumlah penduduk biru — termasuk saat
+Bapak menambah/ubah data lewat menu **Member** (tombol **[+]** dan **[✎]**).
+
+⚠️ **Penting — data agama belum lengkap.** Baru **5 provinsi** yang tersedia:
+
+| Provinsi | Tahun data | Berlaku sampai |
+|----------|-----------|----------------|
+| DKI Jakarta | 2024 | 6 kabupaten/kota |
+| Sumatera Utara | 2025 | 33 kabupaten/kota |
+| Sulawesi Utara | 2018 | 15 kabupaten/kota |
+| Sulawesi Tenggara | 2022 | 17 kabupaten/kota |
+| Kalimantan Utara | 2021 | 5 kabupaten/kota |
+
+Jumlahnya **76 dari 514 kabupaten/kota**. Kalau wilayah yang Bapak pilih belum ada
+datanya, **kotak hijau tidak muncul** — itu memang **belum ada**, bukan rusak.
+
+Kenapa belum lengkap? **BPS Pusat tidak menerbitkan data agama sampai kabupaten/kota.**
+Yang menerbitkan hanya **BPS provinsi**, dan itupun **tidak semua provinsi** — dari
+38 provinsi, hanya **10** yang punya, dan **hanya 5** yang benar-benar sampai
+kabupaten/kota. Sisanya harus dicari ke Dinas Dukcapil tiap kabupaten/kota (±500
+situs, format tidak seragam) — akan **dicicil** sedikit demi sedikit.
+
+Sesuai aturan proyek, angka yang belum ada **tidak dikarang** dan **tidak ditaksir**.
 
 ### 🏙️ Nama kota di peta
 
@@ -229,6 +262,77 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
 | 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
 | 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi + 514 kab/kota (sumber: BPS) |
+| 🕌 **data/agama.js** | Aplikasi | Agama per kabupaten/kota (sumber: BPS provinsi; baru 5 provinsi) |
+
+---
+
+## 1b. 📚 Dari mana datanya? (referensi sumber)
+
+Semua data di aplikasi ini **diambil dari sumber resmi**, bukan dikarang dan bukan
+ditaksir. Berikut daftarnya supaya Bapak (dan siapa pun yang mempelajari aplikasi ini)
+tahu **asal setiap angka**.
+
+### 🗺️ Peta
+
+| Bagian peta | Sumber | Keterangan |
+|-------------|--------|------------|
+| **Latar peta (citra satelit)** | **Esri World Imagery** | Foto asli permukaan bumi. Gratis, **tanpa kunci API**. Diunduh **sekali** lewat `alat/unduh-citra-satelit.py` → disimpan jadi `data/citra-satelit.jpg` (8192 × 3277 px). Sesudah itu **tidak perlu internet** untuk melihat peta. |
+| **Batas 38 provinsi** | **BIG** (Badan Informasi Geospasial) | Lewat `github.com/ardian28/GeoJson-Indonesia-38-Provinsi`. Disimpan jadi `data/peta-indonesia.js`. |
+| **Batas negara tetangga** | **Natural Earth** | Domain publik. Disimpan jadi `data/negara-dunia.js`. |
+| **Nama pulau** | **Natural Earth** | Disimpan jadi `data/pulau.js`. |
+| **Sungai, danau, gunung** | **Natural Earth** | Disimpan jadi `data/sungai.js`, `data/danau.js`, `data/gunung.js`. |
+| **Nama kota** | **Natural Earth** | Disimpan jadi `data/kota-indonesia.js`. |
+| **Suku bangsa** | **BPS** (Sensus Penduduk 2010) | Disimpan jadi `data/suku.js`. ⚠️ Titiknya **perkiraan** — ditempelkan ke ibu kota provinsi asal, karena sumber koordinat asli belum ada. |
+| **Daftar wilayah** (38 prov · 514 kab/kota · 7.285 kec · 83.762 desa) | **Kepmendagri 2025** + **BIG** | Disimpan di `data/wilayah/`. |
+
+### 👥 Jumlah penduduk
+
+| Data | Sumber | Keterangan |
+|------|--------|------------|
+| **38 provinsi** | **BPS** — tabel *"Penduduk, Laju Pertumbuhan Penduduk, Distribusi Persentase Penduduk, Kepadatan Penduduk, Rasio Jenis Kelamin Penduduk Menurut Provinsi, 2026"* | Angka resmi BPS. |
+| **514 kabupaten/kota** | **BPS** — tabel *"Jumlah Penduduk menurut Kabupaten/Kota dan Kelompok Umur"* | Angka resmi BPS. |
+| **Seluruh Indonesia** | **BPS** | **287.198.383 jiwa**. |
+
+📁 Disimpan sebagai **`data/penduduk.js`** · dibuat lewat **`alat/buat-penduduk.js`** ·
+angka mentah apa adanya di **`alat/bps-penduduk-2026.json`**.
+
+✅ **Bukti cocok:** kalau 38 provinsi dijumlahkan → **287.198.383** · kalau 514
+kabupaten/kota dijumlahkan → **287.198.383**. Dua-duanya **persis sama** dengan angka
+resmi BPS untuk seluruh Indonesia (selisih **0**).
+
+### 🕌 Agama
+
+| Data | Sumber | Keterangan |
+|------|--------|------------|
+| **Agama per kabupaten/kota** | **BPS PROVINSI** (bukan BPS Pusat) | BPS Pusat **tidak** menerbitkan agama sampai kabupaten/kota. Yang menerbitkan hanya BPS provinsi, dan tidak semua. |
+
+📁 Disimpan sebagai **`data/agama.js`** · dibuat lewat **`alat/buat-agama.js`** ·
+angka mentah apa adanya di **`alat/bps-agama-mentah.txt`**.
+
+Baru **5 provinsi** yang tersedia (76 dari 514 kabupaten/kota):
+
+| Provinsi | Tahun | Tabel BPS | Tautan |
+|----------|-------|-----------|--------|
+| DKI Jakarta | 2024 | *Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi DKI Jakarta* | [jakarta.bps.go.id](https://jakarta.bps.go.id/id/statistics-table/2/ODQ0IzI=/jumlah-penduduk-menurut-agama-dan-kabupaten-kota-di-provinsi-dki-jakarta.html) |
+| Sumatera Utara | 2025 | *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut* | [sumut.bps.go.id](https://sumut.bps.go.id/id/statistics-table/2/ODA0IzI=/jumlah-penduduk-menurut-kabupaten-kota-dan-agama-yang-dianut.html) |
+| Sulawesi Utara | 2018 | *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama di Provinsi Sulawesi Utara (Jiwa)* | [sulut.bps.go.id](https://sulut.bps.go.id/id/statistics-table/2/NjE3IzI=/jumlah-penduduk-menurut-kabupaten-kota-dan-agama-di-provinsi-sulawesi-utara--jiwa-.html) |
+| Sulawesi Tenggara | 2022 | *Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Sulawesi Tenggara, 2022* | [sultra.bps.go.id](https://sultra.bps.go.id/id/statistics-table/1/NDUwNCMx/jumlah-penduduk-menurut-kabupaten-kota-dan-agama-yang-dianut-di-provinsi-sulawesi-tenggara--2022.html) |
+| Kalimantan Utara | 2021 | *Persentase Penduduk Menurut Agama yang Dianut (Persen)* | [kaltara.bps.go.id](https://kaltara.bps.go.id/id/statistics-table/2/NDYyIzI=/persentase-penduduk-menurut-agama-yang-dianut--persen-.html) |
+
+⚠️ **Perhatikan:** tahun datanya **berbeda-beda** (2018–2025) dan Kalimantan Utara
+satuannya **persen**, bukan jiwa. Jadi angka antarprovinsi **tidak bisa dibandingkan
+langsung**.
+
+⚠️ **Catatan jujur:** di tabel Sulawesi Tenggara, baris **total provinsi** dari BPS
+**tidak sama** dengan penjumlahan baris kabupaten/kotanya (selisih 58.737 jiwa).
+Yang dipakai di aplikasi adalah **angka BPS apa adanya** — tidak diperbaiki sendiri.
+
+### ☁️ Penyimpanan data isian
+
+| Bagian | Sumber / alat |
+|--------|---------------|
+| **Data lokal (di perangkat)** | **IndexedDB** — tersimpan di PC/HP Bapak sendiri |
+| **Titipan awan** | **Layerbase** (database SQLite) lewat perantara **Cloudflare Worker** `peta-api` |
 
 ---
 

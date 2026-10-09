@@ -4,6 +4,71 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 📚 **REFERENSI SUMBER DATA DICANTUMKAN DI PANDUAN**
+
+**Catatan Bapak:** *"di panduan .. cantumkan referensi data dari mana > peta, jumlah
+penduduk, agama .. supaya data yg di pelajari user tau dari sumbernya"*
+
+**Yang ditambahkan:** bagian baru **"1b. 📚 Dari mana datanya? (referensi sumber)"**
+di `panduan.md`, berisi tabel asal-usul **setiap** data:
+
+- **Peta** — latar citra satelit (Esri World Imagery), batas 38 provinsi (BIG),
+  negara tetangga & bentang alam (Natural Earth), suku bangsa (BPS 2010),
+  daftar wilayah (Kepmendagri 2025 + BIG).
+- **Jumlah penduduk** — BPS, dua tabel resmi 2026, lengkap dengan bukti
+  penjumlahan cocok (287.198.383 jiwa, selisih 0).
+- **Agama** — BPS provinsi, lengkap dengan **tautan tabel aslinya** untuk kelima
+  provinsi yang tersedia.
+- **Penyimpanan data isian** — IndexedDB + Layerbase lewat Cloudflare Worker.
+
+Ditulis dengan **bahasa biasa** (bukan teknis), sesuai aturan A7.
+
+---
+
+## 9 Oktober 2026 — 🕌 **DATA AGAMA PER KABUPATEN/KOTA (TAHAP 1)**
+
+**Catatan Bapak:** *"bisa lanjut agama .. ini sama seperti konsep jumlah penduduk yg
+km buat dan masuk ke member"* → lalu *"pilihan pertanyaan km no.2 di cicil"*.
+
+**Hasil riset sumber (dilaporkan dulu sebelum dikerjakan):**
+
+| Sumber | Cakupan agama | Hasil |
+|--------|---------------|-------|
+| BPS Pusat | hanya 38 provinsi | ❌ tidak sampai kabupaten/kota |
+| Dukcapil Kemendagri (menu *Data Kependudukan*) | **tidak ada kolom agama** | ❌ |
+| BPS provinsi | sebagian sampai kabupaten/kota | ⚠️ hanya 10 dari 38 provinsi punya, **5** benar-benar sampai kabupaten/kota |
+
+**Tahap 1 dikerjakan** — 5 provinsi, **76 kabupaten/kota**:
+
+| Provinsi | Tahun | Kab/kota |
+|----------|-------|----------|
+| DKI Jakarta | 2024 | 6 |
+| Sumatera Utara | 2025 | 33 |
+| Sulawesi Utara | 2018 | 15 |
+| Sulawesi Tenggara | 2022 | 17 |
+| Kalimantan Utara | 2021 (persen) | 5 |
+
+**Yang dibuat:**
+- `data/agama.js` — `AGAMA_KABKOTA`, `AGAMA_PROVINSI`, `AGAMA_SUMBER`
+- `alat/buat-agama.js` — pembuatnya dari angka BPS
+- `alat/bps-agama-mentah.txt` — angka mentah BPS apa adanya
+- Kotak **hijau** `#fAgama` di form — muncul saat wilayah dipilih, termasuk dari
+  menu **Member** (tombol **[+]** dan **[✎]**)
+
+**Kejujuran data (aturan F8):**
+- Provinsi yang belum ada datanya → kotak **tidak muncul**. **Tidak dikarang.**
+- Di tabel Sulawesi Tenggara, baris total BPS **tidak sama** dengan penjumlahan
+  kabupaten/kotanya (selisih 58.737 jiwa). Yang dipakai **angka BPS apa adanya**.
+- Kalimantan Utara satuannya **persen**, bukan jiwa — ditampilkan apa adanya
+  dengan tanda **%**.
+
+**Hasil uji (K23-01…K23-12): 12 uji, 0 gagal** — berkas termuat ✅ · kotak tersembunyi
+sebelum wilayah dipilih ✅ · muncul saat wilayah dipilih ✅ · angka cocok dengan BPS ✅ ·
+satuan persen tampil benar ✅ · wilayah tanpa data → kotak tidak muncul ✅ ·
+form Member **[+]** ✅ · form Member **[✎]** ✅ · HP: tampil ✅ · HP: tidak meluber ✅ ·
+kotak hilang saat form ditutup ✅ · warna & gaya sesuai ✅
+
+---
 ## 9 Oktober 2026 — 👥 **INFO JUMLAH PENDUDUK MUNCUL DI FORM MEMBER**
 
 **Catatan Bapak:** *"member · pengisian tambah data · wilayah sudah ditemukan ·

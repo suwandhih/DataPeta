@@ -1314,6 +1314,35 @@ body {
   color: #1c4a7a;
 }
 
+.form-agama {
+  margin: 8px 0 0;
+  padding: 8px 10px;
+  border-left: 3px solid #2f8f5b;
+  background: #eef8f2;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #1c5a3a;
+}
+
+.form-agama-judul { margin: 0 0 6px; font-weight: 600; }
+
+.form-agama-daftar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 10px;
+}
+
+.form-agama-daftar li {
+  display: contents;
+}
+
+.form-agama-daftar li > span { opacity: .85; }
+.form-agama-daftar li > strong { font-weight: 600; text-align: right; }
+
 .form-baris2 { display: flex; gap: 12px; }
 .form-baris2 > div { flex: 1; }
 

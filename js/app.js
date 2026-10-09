@@ -54,6 +54,7 @@
   const fWilayahLangkah = document.getElementById("fWilayahLangkah");
   const fWilayahCatatan = document.getElementById("fWilayahCatatan");
   const fPenduduk = document.getElementById("fPenduduk");
+  const fAgama = document.getElementById("fAgama");
   const fKategori = document.getElementById("fKategori");
   const fLon = document.getElementById("fLon");
   const fLat = document.getElementById("fLat");
@@ -1284,6 +1285,44 @@
     fPenduduk.hidden = false;
   }
 
+  // Data agama wilayah terpilih — null kalau wilayahnya belum ada datanya.
+  function agamaWilayah(kode) {
+    const d = typeof AGAMA_KABKOTA !== "undefined" ? AGAMA_KABKOTA : null;
+    const s = typeof AGAMA_SUMBER !== "undefined" ? AGAMA_SUMBER : null;
+    if (!d || !s || !kode) return null;
+    const kodeProv = kode.split(".")[0];
+    const info = s[kodeProv];
+    if (!info) return null;
+    const angka = d[kode];
+    if (!angka) return null;
+    return { info, angka };
+  }
+
+  // Tampilkan agama wilayah terpilih di dalam form.
+  // Angka BPS apa adanya — tidak ditaksir dan tidak dikarang.
+  function tampilkanAgama(kode) {
+    if (!fAgama) return;
+    const a = agamaWilayah(kode);
+    if (!a) {
+      fAgama.hidden = true;
+      fAgama.textContent = "";
+      return;
+    }
+    const persen = a.info.satuan === "persen";
+    const baris = a.info.kolom.map((nama, i) => {
+      const v = a.angka[i] || 0;
+      const teks = persen
+        ? v.toLocaleString("id-ID", { maximumFractionDigits: 2 }) + "%"
+        : v.toLocaleString("id-ID") + " jiwa";
+      return `<li><span>${nama}</span><strong>${teks}</strong></li>`;
+    }).join("");
+    fAgama.innerHTML =
+      `<p class="form-agama-judul">Penduduk menurut agama ` +
+      `<span style="opacity:.75">(BPS ${a.info.provinsi}, ${a.info.tahun})</span></p>` +
+      `<ul class="form-agama-daftar">${baris}</ul>`;
+    fAgama.hidden = false;
+  }
+
   // Nama di peta yang beda dengan nama resmi (Kepmendagri).
   const ALIAS_PROVINSI = { "DKI Jakarta": "31" };
 
@@ -1613,6 +1652,7 @@
       if (typeof contoh.lat === "number") fLat.value = contoh.lat;
       if (typeof contoh.lon === "number") fLon.value = contoh.lon;
       tampilkanPenduduk(contoh.kodeWilayah || kodeWilayahDariNama(contoh.wilayah));
+      tampilkanAgama(contoh.kodeWilayah || kodeWilayahDariNama(contoh.wilayah));
 
       if (typeof contoh.lat === "number" && typeof contoh.lon === "number" && proyeksi) {
         const p = proyek(contoh.lon, contoh.lat);
@@ -2000,6 +2040,7 @@
     if (typeof hasil.lat === "number") fLat.value = hasil.lat;
     if (typeof hasil.lon === "number") fLon.value = hasil.lon;
     tampilkanPenduduk(hasil.kode);
+    tampilkanAgama(hasil.kode);
 
     if (typeof hasil.lat === "number" && typeof hasil.lon === "number" && proyeksi) {
       const p = proyek(hasil.lon, hasil.lat);
@@ -2198,6 +2239,7 @@
       ? (lokasi.kodeWilayah || kodeWilayahDariNama(lokasi.wilayah))
       : (kunciWilayah ? kunciWilayah.kode : null);
     tampilkanPenduduk(kodeWilayah);
+    tampilkanAgama(kodeWilayah);
 
     // Panel samping — peta tetap terlihat. Tirai TIDAK dipakai supaya
     // Bapak masih bisa melihat & menggeser peta sambil mengisi.
@@ -2213,6 +2255,7 @@
     sembunyikanSaranWilayah();
     tutupDropdownWilayah();
     tampilkanPenduduk(null);
+    tampilkanAgama(null);
     // Titik sementara ikut hilang kalau form ditutup tanpa disimpan
     if (pratinjau) {
       pratinjau = null;

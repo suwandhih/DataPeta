@@ -120,10 +120,13 @@ DataPeta/
 ├── data/pulau.js              → nama pulau Indonesia
 ├── data/suku.js               → suku bangsa (BPS 2010)
 ├── data/penduduk.js           → jumlah penduduk 38 provinsi + 514 kab/kota (BPS 2026)
+├── data/agama.js              → agama per kab/kota (BPS provinsi; baru 5 provinsi)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
 ├── alat/unduh-citra-satelit.py → pengunduh citra satelit (dijalankan sekali saja)
 ├── alat/buat-penduduk.js      → pembuat data/penduduk.js dari angka BPS
 ├── alat/bps-penduduk-2026.json → angka mentah BPS (apa adanya)
+├── alat/buat-agama.js         → pembuat data/agama.js dari angka BPS provinsi
+├── alat/bps-agama-mentah.txt  → angka mentah agama BPS provinsi (apa adanya)
 └── (5 dokumen .md)
 ```
 
@@ -140,6 +143,11 @@ DataPeta/
   lewat `alat/unduh-citra-satelit.py`, disimpan sebagai `data/citra-satelit.jpg`
 - **Jumlah penduduk 38 provinsi & 514 kabupaten/kota → BPS** (tabel resmi 2026) —
   disimpan sebagai `data/penduduk.js`, dibuat lewat `alat/buat-penduduk.js`
+- **Agama per kabupaten/kota → BPS PROVINSI** (BPS Pusat tidak menerbitkannya).
+  Baru **5 provinsi** yang tersedia: DKI Jakarta (2024), Sumatera Utara (2025),
+  Sulawesi Utara (2018), Sulawesi Tenggara (2022), Kalimantan Utara (2021 — persen).
+  Disimpan sebagai `data/agama.js`, dibuat lewat `alat/buat-agama.js`.
+  Provinsi lain **belum ada datanya** — tidak dikarang (aturan F8).
 
 ### 3.3 Cara menambah lokasi (sementara)
 

@@ -125,6 +125,21 @@
 | K21 | d. Uji PC + HP (oleh AI) — 11 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
 | K21 | e. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
+| **K22** | **Referensi sumber data di `panduan.md`** (order Bapak, 9 Okt 2026) — *"cantumkan referensi data dari mana: peta, jumlah penduduk, agama — supaya data yang dipelajari user tahu dari sumbernya"* | | | |
+| K22 | a. Cantumkan sumber **latar peta** (citra satelit) + **batas provinsi** | ✅ | ✅ | 9 Okt 2026 |
+| K22 | b. Cantumkan sumber **jumlah penduduk** (38 provinsi + 514 kab/kota) | ✅ | ✅ | 9 Okt 2026 |
+| K22 | c. Cantumkan sumber **agama** (hasil K23) + tautan tabel BPS | ✅ | ✅ | 9 Okt 2026 |
+| K22 | d. Uji tampilan + periksa tautan | ✅ | ✅ | 9 Okt 2026 |
+
+| **K23** | **Data agama per kabupaten/kota** (order Bapak, 9 Okt 2026) — dikerjakan **dicicil per tahap** | | | |
+| K23 | a. Cari sumber resmi → **hasil riset:** BPS Pusat **tidak** menyediakan agama sampai kab/kota; Dukcapil Kemendagri menu *Data Kependudukan* **tidak ada kolom agama**; BPS provinsi hanya **10 dari 38** yang punya | ✅ | ✅ | 9 Okt 2026 |
+| K23 | b. **Tahap 1** — ambil agama kab/kota dari BPS provinsi yang tersedia (**5 provinsi**: DKI Jakarta, Sumatera Utara, Sulawesi Utara, Sulawesi Tenggara, Kalimantan Utara = **76 kab/kota**) | ✅ | ✅ | 9 Okt 2026 |
+| K23 | c. Simpan sebagai data proyek (`data/agama.js` + `alat/bps-agama-mentah.txt`) | ✅ | ✅ | 9 Okt 2026 |
+| K23 | d. Tampilkan di form saat wilayah dipilih (termasuk form **Member**) | ✅ | ✅ | 9 Okt 2026 |
+| K23 | e. Uji PC + HP (oleh AI) — 12 uji, 0 gagal | ✅ | ✅ | 9 Okt 2026 |
+| K23 | f. Tahap 2…n — provinsi yang tersisa, **dicicil** | ⏳ | ⏳ | — |
+| K23 | g. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 
