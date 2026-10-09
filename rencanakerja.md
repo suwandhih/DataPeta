@@ -141,6 +141,11 @@
 | K23 | i. 🐛 **Dinilai:** tabel Jambi memakai format `257.189,00` → semua angka terbaca **0**; diperbaiki + ditambah penolakan baris tak terbaca | ✅ | ✅ | 9 Okt 2026 |
 | K23 | j. Uji PC + HP (oleh AI) — 11 uji, 0 gagal; **166 kab/kota semuanya cocok** dengan baris BPS | ✅ | ✅ | 9 Okt 2026 |
 | K23 | k. Tahap 3…n — provinsi yang **sudah menerbitkan** (perlu dicari ke Dinas Dukcapil daerah), **dicicil** | ⏳ | ⏳ | — |
+| K23 | k1. **Pemindaian 9 Okt 2026 — jalur BPS & Dukcapil PUSAT sudah HABIS.** Hasil: BPS Pusat `subject=519&keyword=agama` → **"No results"**; Dukcapil Kemendagri (12 tabel) → **tidak ada kolom agama**; **28 provinsi BPS** (Aceh s/d Papua Barat) → **"No results"** | ✅ | ✅ | 9 Okt 2026 |
+| K23 | k2. 🎯 **TEMUAN: Kalimantan Timur PUNYA tabel "Jumlah Penduduk Menurut Agama"** (diperbarui 25 Feb 2025) — tapi halamannya **404 "Tabel Tidak Tersedia"** (rusak di sisi BPS). Wayback Machine belum mengarsipkannya. Publikasi Kaltim `keyword=agama` → 0 hasil | ✅ | ✅ | 9 Okt 2026 |
+| K23 | k3. **5 provinsi tanpa subdomain BPS:** Papua Selatan · Papua Barat Daya · Papua Tengah · Papua Pegunungan (+ `diy` harus pakai `yogyakarta`) | ✅ | ✅ | 9 Okt 2026 |
+| K23 | k4. **Jalur berikutnya (BELUM dicoba):** publikasi **"Provinsi Dalam Angka"** (PDF tahunan tiap BPS provinsi) — biasanya memuat tabel agama per kab/kota. **Mulai dari Kalimantan Timur** | ⬜ | ⬜ | — |
+| K23 | k5. Jalur cadangan: publikasi BPS Pusat *"Kewarganegaraan, Suku Bangsa, Agama dan Bahasa Sehari-hari Penduduk Indonesia"* (23 Mei 2012, data **SP2010**) — **provinsi saja**, bukan kab/kota | ⬜ | ⬜ | — |
 | K23 | l. Uji di HP (oleh Bapak) | ⬜ | ⬜ | — |
 
 | **K24** | **🐛 Klik provinsi tidak jalan saat di-zoom in** (temuan Bapak, 9 Okt 2026) — *"jumlah penduduk ada bug · berfungsi jika peta terlihat full sumatera sampai papua · tapi jika di zoom in untuk detail lokasi tidak berfungsi"* | | | |
@@ -159,6 +164,12 @@
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
+
+> 📌 **BESOK MULAI DARI SINI (catatan 9 Okt 2026, malam):**
+> 1. **K23 k4** — coba publikasi **"Kalimantan Timur Dalam Angka"** (PDF) di `kaltim.bps.go.id/id/publication` → cari tabel agama per kab/kota. Kalau berhasil, lanjut provinsi lain dengan cara sama.
+> 2. **K23 k5** — jalur cadangan: publikasi SP2010 BPS Pusat (provinsi saja).
+> 3. **Uji di HP oleh Bapak** yang masih menunggu: K03 f · K16 e · K18 f · K19 e · K20 f · K21 e · K23 l · K24 e · **K25 e**.
+> 4. ⚠️ **Jangan ulangi pemindaian BPS Pusat / Dukcapil pusat** — sudah habis (aturan B14).
 
 ### C. IDE
 

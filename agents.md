@@ -67,6 +67,7 @@
 | **B11** | **Tiap selesai satu butir → lapor ke Bapak** sebelum lanjut butir berikutnya. |
 | **B12** | 🔴 **IDE dari AI → SAMPAIKAN dulu ke Bapak, ❌ JANGAN diproses langsung.** Ide disetujui → baru dikerjakan. (Bapak, 2 Okt 2026) |
 | **B13** | 🔴 **Setiap mengubah `css/style.css`, `js/*.js`, ATAU `data/*.js` → WAJIB naikkan penanda versi di `index.html`.** Semua berkas lokal memakai penanda yang sama (`?v=YYYYMMDD-nn`). Kalau tidak, peramban memakai berkas **lama dari cache** (batas 10 menit) → Bapak melihat versi lama padahal sudah di-unggah. (temuan 9 Okt 2026) |
+| **B14** | 🔴 **Sumber data yang sudah diperiksa → CATAT hasilnya di `rencanakerja.md` / `prompt.md`, ❌ jangan diperiksa ulang dengan cara yang sama.** Kalau satu sumber gagal, **ganti pendekatan** (aturan C5) — jangan mengulang pemindaian yang sama. (temuan 9 Okt 2026, kasus K23 k) |
 
 ---
 
@@ -85,6 +86,7 @@
 | **C7** | **Uji tampilan pakai `getComputedStyle`**, bukan sekadar "elemennya ada". |
 | **C8** | **Uji PC + HP.** Kalau revisi menyentuh tampilan → uji di **keduanya**. |
 | **C9** | **Sesudah push, uji versi ONLINE — bukan hanya berkasnya sudah berubah.** Periksa dulu `index.html` memang menunjuk versi baru (`?v=…`). Kalau versi belum dinaikkan, peramban memakai berkas **lama dari cache** → uji online **tidak sah** (lihat B13). |
+| **C10** | **Sumber data yang memblokir / rusak → jangan diulang terus.** Situs BPS membatasi permintaan beruntun (tampak "No results" palsu) → beri jeda **9 detik** setelah muat + **3,5 detik** antarprovinsi. Kalau satu tabel **404 "Tabel Tidak Tersedia"**, itu **rusak di sisi BPS** — bukan salah kita; catat lalu cari jalur lain (publikasi PDF). |
 
 ---
 

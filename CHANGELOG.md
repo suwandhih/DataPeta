@@ -4,6 +4,30 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 9 Oktober 2026 — 🔍 **K23 k: PEMINDAIAN SUMBER AGAMA (hasil: jalur pusat habis)**
+
+**Order Bapak:** *"lanjut"* (melanjutkan K23 k — cari data agama provinsi berikutnya)
+
+**Yang diperiksa — dan hasilnya:**
+
+| Sumber | Hasil |
+|--------|-------|
+| BPS Pusat — Tabel Statistik `subject=519&keyword=agama` | **"No results"** — tidak ada tabel agama |
+| BPS Pusat — Publikasi `keyword=agama` | Hanya **1**: *"Kewarganegaraan, Suku Bangsa, Agama dan Bahasa Sehari-hari Penduduk Indonesia"* (23 Mei 2012, data **SP2010**) — **provinsi saja**, bukan kab/kota |
+| Dukcapil Kemendagri — halaman *Data Kependudukan* | 12 tabel diperiksa — **tidak ada kolom agama** sama sekali |
+| **28 provinsi BPS** (Aceh s/d Papua Barat) | **"No results"** — benar-benar belum menerbitkan |
+| **Kalimantan Timur** | 🎯 Tabel **"Jumlah Penduduk Menurut Agama"** **ADA** di daftar (diperbarui 25 Feb 2025) — tapi halamannya **404 "Tabel Tidak Tersedia"** (rusak di sisi BPS). Wayback Machine belum pernah mengarsipkannya. Publikasi Kaltim `keyword=agama` → **0 hasil** |
+| 5 provinsi tanpa subdomain BPS | Papua Selatan · Papua Barat Daya · Papua Tengah · Papua Pegunungan (+ `diy` harus pakai `yogyakarta`) |
+
+**Kesimpulan:** lewat jalur BPS Pusat & Dukcapil Pusat, **tidak ada** data agama kab/kota untuk 29 provinsi itu. Kalimantan Timur tabelnya **ada tapi rusak** — bukan "belum terbit".
+
+**Jalur berikutnya (belum dicoba):** publikasi **"Provinsi Dalam Angka"** (PDF tahunan tiap BPS provinsi) — biasanya memuat tabel agama per kab/kota. Mulai dari **Kalimantan Timur**.
+
+**Aturan baru dicatat:** **B14** (sumber yang sudah diperiksa → catat hasilnya, jangan diperiksa ulang dengan cara sama) dan **C10** (situs BPS membatasi permintaan beruntun → jeda 9 detik + 3,5 detik; tabel 404 = rusak di sisi BPS).
+
+**Tidak ada berkas aplikasi yang diubah** — sesi ini hanya pemeriksaan sumber. Tidak ada data yang dikarang (aturan F8).
+
+---
 ## 9 Oktober 2026 — 🕌 **AGAMA PENDUDUK PROVINSI DI PANEL PETA (K25)**
 
 **Catatan Bapak:** *"agama sudah ada? tapi belum di masuk dalam member form isian"*

@@ -160,6 +160,28 @@ DataPeta/
   Provinsi bersatuan **persen** (Jawa Tengah, Kalimantan Utara) ditampilkan
   sebagai **rata-rata**, bukan dijumlahkan.
 
+  **🔍 Hasil pemindaian sumber (9 Okt 2026) — jalur pusat sudah HABIS:**
+  - BPS Pusat `subject=519&keyword=agama` → **"No results"** (tidak ada tabel agama)
+  - BPS Pusat publikasi `keyword=agama` → hanya **1**: *"Kewarganegaraan, Suku Bangsa,
+    Agama dan Bahasa Sehari-hari Penduduk Indonesia"* (23 Mei 2012, data **SP2010**) —
+    **provinsi saja**, bukan kab/kota
+  - Dukcapil Kemendagri (12 tabel *Data Kependudukan*) → **tidak ada kolom agama**
+  - **28 provinsi BPS** (Aceh s/d Papua Barat) → **"No results"**
+  - **Kalimantan Timur** → tabel *"Jumlah Penduduk Menurut Agama"* **ADA** di daftar
+    (diperbarui 25 Feb 2025), tapi halamannya **404 "Tabel Tidak Tersedia"** (rusak di
+    sisi BPS). Wayback Machine belum mengarsipkannya.
+  - 5 provinsi **tanpa subdomain BPS**: Papua Selatan · Papua Barat Daya · Papua Tengah ·
+    Papua Pegunungan (+ `diy` harus pakai `yogyakarta`)
+
+  **Jalur berikutnya (belum dicoba):** publikasi **"Provinsi Dalam Angka"** (PDF tahunan
+  tiap BPS provinsi) — biasanya memuat tabel agama per kab/kota. Mulai dari **Kalimantan Timur**.
+
+  **Cara mengakses BPS (penting):** `Invoke-WebRequest`/`web_fetch` ke `bps.go.id` →
+  **403 Forbidden** (Cloudflare). Harus lewat peramban. Situs BPS membatasi permintaan
+  beruntun → jeda **9 detik** setelah muat + **3,5 detik** antarprovinsi; kalau terlalu
+  cepat semua provinsi tampak "No results" (palsu). URL benar:
+  `https://{sub}.bps.go.id/id/statistics-table?subject=519&keyword=agama` (tanpa `subject` → 404).
+
 ### 3.3 Cara menambah lokasi (sementara)
 
 Buka `data/contoh-lokasi.js`, salin satu blok `{ ... }`, ubah isinya:
