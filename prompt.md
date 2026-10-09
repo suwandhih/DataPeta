@@ -24,8 +24,12 @@ Tiga hal yang jadi inti:
 ### 0.2 Batasan yang TIDAK BOLEH dilanggar
 
 1. **Harus jalan di PC (70%) dan HP Android (30%)** — dua-duanya.
-2. **Tidak boleh bergantung pada server** — harus bisa dibuka langsung dari berkas
-   (offline, tanpa internet).
+2. **Peta & data peta tetap LOKAL (offline)** — citra satelit & batas wilayah disimpan
+   di dalam proyek, tidak diambil dari internet saat dipakai.
+   ⚠️ **Diubah 2 Okt 2026 (keputusan Bapak):** aplikasi **memakai database cloud
+   (Layerbase)** ⇒ **butuh internet untuk data isian**. Dibuka lewat **alamat web
+   (GitHub Pages)**, ❌ bukan dari berkas (`file://`). Yang tetap offline: **peta &
+   data peta**. Yang di cloud: **data isian Bapak**.
 3. **Nama proyek persis: "Peta Indonesia".** UI = peta + data informasi.
 4. **Data TIDAK boleh dikarang** — harus dari sumber yang dipercaya.
 
@@ -72,6 +76,29 @@ Peta Indonesia
 - **Hosting = GitHub Pages** ⇒ **https://suwandhih.github.io/DataPeta/**
 - **Peta & data peta tetap lokal** (offline); hanya **data isian** yang di cloud.
 
+### 3.1b Keputusan (6 Okt 2026) — **latar peta = CITRA SATELIT**
+
+- **Latar peta diganti citra satelit** supaya isi bumi terlihat realistis (keputusan Bapak).
+- **Tetap OFFLINE:** citra diunduh **sekali** lewat `alat/unduh-citra-satelit.py`,
+  disimpan jadi **`data/citra-satelit.jpg`** (8192 × 3277 px · 1,95 MB).
+  Aplikasi **tidak** memanggil internet untuk menampilkan peta.
+- **Sumber citra: Esri World Imagery** — gratis, **tanpa kunci API**.
+  Tulisan sumber wajib tampil di peta: *"Citra: Esri, Maxar, Earthstar Geographics"*.
+- **Tampilan lain tidak diubah** — tata letak, tombol, panel, dan alur kerja tetap sama.
+  Yang berubah hanya latar peta + warna garis/tulisan agar terbaca di atas citra gelap.
+- **Cara kerja pengunduh (penting, jangan diubah tanpa paham):**
+  1. Ubin citra diunduh dalam bentuk **Mercator** (EPSG:3857) — makin ke kutub makin melar.
+  2. Peta aplikasi memakai **equirectangular** (lintang digambar lurus) — lihat `js/app.js`.
+  3. Karena itu citra harus **diratakan** (Mercator → equirectangular) sebelum dipakai.
+     Tanpa langkah ini, garis provinsi akan meleset dari citra.
+  4. Bidang peta = **1000 × 400** (rasio 2,5). Citra akhir **dipaksa** rasionya 2,5 juga,
+     supaya tidak diregangkan oleh `preserveAspectRatio="none"`.
+  5. Pengunduh punya **pengaman**: kalau baris awal perataan salah, skrip **berhenti
+     dengan pesan jelas** — tidak diam-diam menghasilkan citra rusak.
+- **Cara memeriksa hasilnya:** jalankan `python alat/unduh-citra-satelit.py`, lalu lihat
+  ukuran berkas. Citra yang benar ≈ **1,95 MB**. Kalau jauh lebih kecil (mis. 0,85 MB),
+  berarti citra rusak/tidak tajam — jangan dipakai.
+
 ### 3.2 Struktur berkas aplikasi
 
 ```
@@ -84,12 +111,14 @@ DataPeta/
 ├── cloudflare/worker.js       → kode Worker (perantara aman)
 ├── cloudflare/wrangler.toml   → konfigurasi Worker
 ├── data/peta-indonesia.js     → batas 38 provinsi (GeoJSON, offline)
+├── data/citra-satelit.jpg     → latar peta: citra satelit (offline, 8192×3277)
 ├── data/negara-dunia.js       → batas negara dunia (latar tetangga)
 ├── data/sungai.js             → sungai Indonesia
 ├── data/danau.js              → danau Indonesia
 ├── data/gunung.js             → gunung Indonesia (nama + tinggi)
 ├── data/kota-indonesia.js     → nama kota Indonesia (untuk zoom)
 ├── data/contoh-lokasi.js      → data contoh (isi awal)
+├── alat/unduh-citra-satelit.py → pengunduh citra satelit (dijalankan sekali saja)
 └── (5 dokumen .md)
 ```
 
@@ -102,6 +131,8 @@ DataPeta/
 **Sumber peta:**
 - 38 provinsi → **BIG** via `github.com/ardian28/GeoJson-Indonesia-38-Provinsi`
 - Negara dunia → **Natural Earth** (public domain)
+- **Latar citra satelit → Esri World Imagery** (gratis, tanpa kunci API) — diunduh sekali
+  lewat `alat/unduh-citra-satelit.py`, disimpan sebagai `data/citra-satelit.jpg`
 
 ### 3.3 Cara menambah lokasi (sementara)
 

@@ -53,7 +53,7 @@ body {
   position: relative;
   flex: 1;
   min-height: 0;
-  background: linear-gradient(160deg, #eef1f5 0%, #e3e8ee 100%);
+  background: #0b1a24;
   overflow: hidden;
 }
 
@@ -64,30 +64,37 @@ body {
   height: 100%;
 }
 
+/* Citra satelit (latar peta) — berkas lokal, jadi tetap offline.
+   Titik-titiknya dibuat lebih terang supaya nama wilayah tetap terbaca. */
+.citra-satelit {
+  filter: brightness(1.18) saturate(1.05);
+}
+
 /* Negara tetangga (latar) — tanpa kota, hanya bentuk daratan */
 .negara {
-  fill: #eef0f3;
-  stroke: #e2e5e9;
+  fill: rgba(255, 255, 255, 0.10);
+  stroke: rgba(255, 255, 255, 0.22);
   stroke-width: 0.4;
   pointer-events: none;
 }
 
-/* Provinsi */
+/* Provinsi — di atas citra satelit: isi bening, garis putih tipis,
+   supaya citra tetap terlihat dan batas wilayah tetap jelas. */
 .provinsi {
-  fill: #c9d0d9;
-  stroke: #ffffff;
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(255, 255, 255, 0.85);
   stroke-width: 0.6;
   cursor: pointer;
   transition: fill 0.15s ease;
 }
 
-.provinsi:hover { fill: #aab3bf; }
+.provinsi:hover { fill: rgba(255, 255, 255, 0.22); }
 
 /* Sungai */
 .sungai {
   fill: none;
-  stroke: #4a90d9;
-  stroke-width: 1.4;
+  stroke: #7fd4ff;
+  stroke-width: 1.2;
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: none;
@@ -95,8 +102,8 @@ body {
 
 /* Danau */
 .danau {
-  fill: #7fb8e8;
-  stroke: #3d7fbf;
+  fill: rgba(120, 200, 255, 0.55);
+  stroke: #9fe0ff;
   stroke-width: 0.7;
   pointer-events: none;
 }
@@ -105,17 +112,17 @@ body {
 .gunung { pointer-events: none; }
 
 .gunung-tanda {
-  fill: #a0522d;
-  stroke: #ffffff;
+  fill: #ffd08a;
+  stroke: rgba(0, 0, 0, 0.55);
   stroke-width: 0.8;
 }
 
 .gunung-nama {
   font-family: var(--font);
   font-size: 8px;
-  fill: #7a3d15;
+  fill: #ffe9c2;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.95);
+  stroke: rgba(0, 0, 0, 0.7);
   stroke-width: 2.2px;
   user-select: none;
   opacity: 0;
@@ -127,16 +134,16 @@ body {
 
 /* Kota */
 .kota-titik {
-  fill: #6b7280;
-  opacity: 0.85;
+  fill: #ffffff;
+  opacity: 0.9;
 }
 
 .kota-nama {
   font-family: var(--font);
   font-size: 9px;
-  fill: #4b5563;
+  fill: #ffffff;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.9);
+  stroke: rgba(0, 0, 0, 0.65);
   stroke-width: 2px;
   pointer-events: none;
   user-select: none;
@@ -145,7 +152,7 @@ body {
 .kota-besar {
   font-size: 12px;
   font-weight: 700;
-  fill: #1f2937;
+  fill: #ffffff;
 }
 
 /* ================= NAMA PULAU (permanen) ================= */
@@ -157,9 +164,9 @@ body {
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  fill: #8a7457;
+  fill: #ffe9b8;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.75);
+  stroke: rgba(0, 0, 0, 0.6);
   stroke-width: 2.4px;
   user-select: none;
 }
@@ -167,22 +174,22 @@ body {
 .pulau-besar .pulau-nama {
   font-size: 12px;
   letter-spacing: 1.8px;
-  fill: #7a6446;
+  fill: #ffd98a;
 }
 
 /* ================= PULAU-PULAU KECIL ================= */
 /* Pulau di Kepulauan Seribu hanya 0,1–3,7 km — di peta kurang dari 1 piksel.
-   Warnanya disamakan dengan provinsi lain supaya tampak menyatu. */
+   Di atas citra satelit, bentuknya diberi garis putih tipis supaya terlihat. */
 .pulau-kecil-bentuk {
-  fill: #c9d0d9;
-  stroke: #ffffff;
+  fill: rgba(255, 255, 255, 0.04);
+  stroke: rgba(255, 255, 255, 0.85);
   stroke-width: 0.6;
   stroke-linejoin: round;
   cursor: pointer;
   transition: fill 0.15s ease;
 }
 
-.pulau-kecil-bentuk:hover { fill: #aab3bf; }
+.pulau-kecil-bentuk:hover { fill: rgba(255, 255, 255, 0.22); }
 
 /* ================= KENDALI ZOOM (di dalam bar atas) ================= */
 .zoom-kendali {
@@ -210,13 +217,27 @@ body {
 .label-sementara {
   position: absolute;
   left: 50%;
-  bottom: 14px;
+  bottom: 34px;
   transform: translateX(-50%);
   font-size: 11px;
-  color: var(--abu-teks);
-  background: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(0, 0, 0, 0.42);
   padding: 4px 10px;
   border-radius: 20px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Keterangan sumber citra satelit (kiri bawah peta) */
+.label-citra {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px 7px;
+  border-radius: 10px;
   white-space: nowrap;
   pointer-events: none;
 }
@@ -260,47 +281,47 @@ body {
   font-family: var(--font);
   font-size: 9px;
   font-weight: 700;
-  fill: #111827;
+  fill: #ffffff;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.92);
+  stroke: rgba(0, 0, 0, 0.7);
   stroke-width: 2.4px;
   pointer-events: none;
   user-select: none;
 }
 
-.lokasi-wilayah.pratinjau { fill: #6b7280; font-style: italic; }
-.lokasi-wilayah.kedip { fill: #b91c1c; }
+.lokasi-wilayah.pratinjau { fill: #d1d5db; font-style: italic; }
+.lokasi-wilayah.kedip { fill: #ff6b6b; }
 
 /* Nama lokasi di samping titik */
 .lokasi-nama {
   font-family: var(--font);
   font-size: 9px;
   font-weight: 600;
-  fill: #1f2937;
+  fill: #ffffff;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.92);
+  stroke: rgba(0, 0, 0, 0.7);
   stroke-width: 2.4px;
   pointer-events: none;
   user-select: none;
 }
 
-.lokasi-nama.pratinjau { fill: #6b7280; font-style: italic; }
+.lokasi-nama.pratinjau { fill: #d1d5db; font-style: italic; }
 
 /* Titik berkedip merah — supaya mudah ditemukan */
-.lokasi-nama.kedip { fill: #b91c1c; }
+.lokasi-nama.kedip { fill: #ff6b6b; }
 
 /* Garis penghubung dari titik ke nama lokasi */
 .lokasi-garis {
-  stroke: #1f2937;
+  stroke: #ffffff;
   stroke-width: 1;
   fill: none;
-  opacity: 0.55;
+  opacity: 0.7;
   pointer-events: none;
   vector-effect: non-scaling-stroke;
 }
 
-.lokasi-garis.pratinjau { stroke: #6b7280; stroke-dasharray: 2 1.6; }
-.lokasi-garis.kedip { stroke: #b91c1c; opacity: 0.9; }
+.lokasi-garis.pratinjau { stroke: #d1d5db; stroke-dasharray: 2 1.6; }
+.lokasi-garis.kedip { stroke: #ff6b6b; opacity: 0.9; }
 
 /* Label kategori di ujung garis — ukuran sama dengan nama lokasi */
 .lokasi-kategori {
@@ -308,7 +329,7 @@ body {
   font-size: 9px;
   font-weight: 500;
   paint-order: stroke;
-  stroke: rgba(255, 255, 255, 0.92);
+  stroke: rgba(0, 0, 0, 0.7);
   stroke-width: 2.4px;
   pointer-events: none;
   user-select: none;
@@ -874,11 +895,20 @@ body {
 .tombol-suku.tingkat-2 { background: var(--hitam); border-color: var(--hitam); color: var(--putih); }
 
 /* ================= SUKU DI PETA ================= */
-.suku-titik { fill: #7c5cff; stroke: #ffffff; stroke-width: 0.7; }
+.suku-titik { fill: #c4b5fd; stroke: rgba(0, 0, 0, 0.6); stroke-width: 0.7; }
 .suku-titik.perkiraan { stroke-dasharray: 2 1.6; }
-.suku-nama { font-family: var(--font); font-size: 9px; font-weight: 700; fill: #5b3fd6; }
-.suku-jumlah { font-family: var(--font); font-size: 8px; fill: #6b7280; }
-.suku-perkiraan { font-family: var(--font); font-size: 7.5px; font-style: italic; fill: #8b93a1; }
+.suku-nama {
+  font-family: var(--font); font-size: 9px; font-weight: 700; fill: #ffffff;
+  paint-order: stroke; stroke: rgba(0, 0, 0, 0.7); stroke-width: 2.2px;
+}
+.suku-jumlah {
+  font-family: var(--font); font-size: 8px; fill: #e9d5ff;
+  paint-order: stroke; stroke: rgba(0, 0, 0, 0.7); stroke-width: 2px;
+}
+.suku-perkiraan {
+  font-family: var(--font); font-size: 7.5px; font-style: italic; fill: #d8dbe2;
+  paint-order: stroke; stroke: rgba(0, 0, 0, 0.7); stroke-width: 2px;
+}
 
 /* ================= PANEL MEMBER ================= */
 .member {

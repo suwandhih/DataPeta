@@ -1,6 +1,6 @@
 # 📖 rencanakerja.md — PAPAN ORDER PROYEK **PETA INDONESIA**
 
-> Dibuat: 30 September 2026 · Lokasi: `C:\data\Peta Indonesia`
+> Dibuat: 30 September 2026 · Lokasi: `C:\data\DataPeta`
 > 🔴 **Aturan papan ini ada di `agents.md` bagian I.** Baca sana dulu.
 
 ---
@@ -106,7 +106,7 @@ _(kosong — belum ada order yang disetujui)_
 | Data proyek yayasan (diisi manual Bapak di tiap titik peta) | 🟡 perlu diperdalam | lihat aturan F4 |
 | **Akses di HP lewat My Files (folder Download)** | ⚠️ bermasalah | **Tidak bisa** dipakai bersama Layerbase — `file://` diblokir hubungi cloud (CORS). Cara buka di HP harus berubah. |
 | **Fitur Ekspor/Impor data** (pindah data PC↔HP) | ⏸️ ditahan | tidak perlu kalau pakai cloud (data sudah sama otomatis) |
-| **Peta dasar MapLibre + citra satelit** (permintaan Bapak, 3 Okt 2026) | ⏸️ ditahan | Belum diproses — Bapak: *"catat dulu, ada request mendadak, jangan diproses, fokus member dulu"*. **Perlu jawaban Bapak:** (1) setuju peta jadi **butuh internet** (ubah aturan F3)? (2) sumber citra: **Esri World Imagery** (tanpa kunci) atau **MapTiler** (perlu daftar+kunci)? (3) **tukar Peta ↔ Satelit** (tombol) atau **ganti total**? |
+| **Peta dasar MapLibre + citra satelit** (permintaan Bapak, 3 Okt 2026) | ✅ dikerjakan jadi **K17** (6 Okt 2026) | Bapak: *"catat dulu, ada request mendadak, jangan diproses, fokus member dulu"* → lalu 6 Okt 2026 diproses. **Jawaban yang dipakai:** (1) peta **tetap offline** — citra diunduh sekali, bukan butuh internet; (2) sumber **Esri World Imagery** (tanpa kunci API); (3) **ganti total** latar peta, tampilan lain tidak diubah. Selesai sebagai K17 (tabel D). |
 | **Suku bangsa di peta** | ✅ dikerjakan jadi **K16** (4 Okt 2026) | Bapak: *"di proses"*. **Hasil pemeriksaan sumber:** Wikidata = 1.558 suku tapi 72 koordinat **semuanya bukan suku** · Wikipedia tabel BPS 2010 = 31 kelompok, tanpa koordinat · Peta Bahasa Kemendikbud = server mati · BPS = 403. → **Keputusan Bapak:** titik suku **ditempelkan ke ibu kota provinsi asal** + tanda **"perkiraan"**. Selesai sebagai K16 (tabel A). |
 | ↳ Suku: tambah koordinat asli per suku | ⏸️ ditahan | Menunggu Bapak menemukan sumber koordinat suku. Sementara 28 suku titiknya di ibu kota provinsi asal (perkiraan). |
 
@@ -114,6 +114,7 @@ _(kosong — belum ada order yang disetujui)_
 
 | Kode | Keterangan | Tgl |
 |------|------------|-----|
+| **K17** | **Peta diganti citra satelit (tetap offline)** — latar peta kini **foto asli bumi dari satelit** (Esri World Imagery), disimpan lokal `data/citra-satelit.jpg` (8192×3277 · 1,95 MB) + pengunduh `alat/unduh-citra-satelit.py`. Tampilan lain tidak diubah; warna garis/tulisan disesuaikan agar terbaca. 🐛 Garis meleset 66 px → **dinilai**: salah hitung di pengunduh → diperbaiki + pengaman dipasang. Uji: 4 keselarasan + 20 aplikasi, **0 gagal** (PC & HP). Bapak: *"sudah benar"* | 6 Okt 2026 |
 | **K14g** | **Label peta: nama wilayah selalu tampil** — tombol 👁 (kini "Label lokasi pada peta") menyembunyikan nama lokasi & kategori; nama wilayah tetap | 3 Okt 2026 |
 | **K14f** | **Dua tombol 👁 disatukan dalam satu baris** (Label kategori pada peta & Ringkas daftar) | 3 Okt 2026 |
 | **K14e** | **Tombol 👁 kedua jadi "Ringkas daftar (hanya kota)"** — saat di-hide, seluruh baris member (nama & kategori) disembunyikan; hanya judul kota yang tampil | 3 Okt 2026 |

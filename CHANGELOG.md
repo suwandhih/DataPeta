@@ -4,6 +4,79 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+## 6 Oktober 2026 — 🛰️ **PETA DIGANTI CITRA SATELIT (tetap offline)**
+
+**Permintaan Bapak:** *"saya mau map diganti dengan citra satelit"* → *"tampilan sama seperti
+sekarang tapi kualitas map menggunakan citra dari satelit.. supaya isi bumi terlihat lebih
+realistis"* → *"apa bisa tetap offline tapi download dulu peta seperti diambil lewat satelit"*
+
+**Keputusan:** peta tetap **OFFLINE** — citra diunduh **sekali**, disimpan jadi satu berkas
+di dalam proyek. Aplikasi **tidak** memanggil internet untuk menampilkan peta.
+Tampilan (tata letak, tombol, panel, warna garis) **tidak diubah** — hanya latar petanya.
+
+**Yang dibuat:**
+- Berkas baru **`data/citra-satelit.jpg`** — citra satelit Indonesia, **8192 × 3277 px**,
+  **1,95 MB**. Sumber: **Esri World Imagery** (gratis, tanpa kunci API).
+- Berkas baru **`alat/unduh-citra-satelit.py`** — pengunduh citra. Jalankan
+  `python alat/unduh-citra-satelit.py` kalau citra perlu dibuat ulang.
+- Citra dipasang sebagai **lapis paling bawah** di peta (`<image id="lapisCitra">`),
+  di bawah garis negara, provinsi, sungai, danau, gunung, kota, dan penanda.
+- Tulisan sumber kecil di kiri bawah peta: **"Citra: Esri, Maxar, Earthstar Geographics"**.
+
+**Warna disesuaikan supaya tetap terbaca di atas citra gelap:**
+- Latar peta jadi gelap (`#0b1a24`); citra diberi sedikit pencerahan & kepekatan.
+- Garis provinsi & pulau kecil: **putih** (sebelumnya hijau tua).
+- Garis negara tetangga: putih tipis (sebelumnya abu).
+- Sungai: biru muda · danau: biru muda bening · gunung: jingga · nama kota: putih.
+- Nama pulau: kuning muda · titik suku: ungu muda · penanda lokasi: putih.
+
+**⚠️ Masalah yang ditemukan & diperbaiki (penting):**
+
+Bapak melaporkan: *"antara garis peta dengan citra peta belum sempurna"* (kirim gambar Sulawesi).
+
+**Penyebabnya bukan data, tapi salah hitung di pengunduh:**
+- Citra diunduh dalam bentuk **Mercator** (makin ke kutub makin melar), sedangkan peta
+  aplikasi memakai **equirectangular** (lintang digambar lurus). Citra harus "diratakan" dulu.
+- Saat meratakan, citra masih dibaca **dari batas ubin**, padahal pemotongan sudah menggeser
+  **67 px**. Akibatnya seluruh citra terbaca **66 px terlalu jauh ke bawah**.
+- **Bukti:** diukur di 6 wilayah terpisah — Sumatera −66 px · Jawa −67 px · Kalimantan −66 px ·
+  Sulawesi −66 px · Papua −66 px · Maluku −66 px. **Seragam** ⇒ satu kesalahan tetap,
+  bukan distorsi. Angka 66 ≈ 67 ⇒ cocok.
+- Dua kesalahan lain: tinggi potongan **kurang 1 baris** (tepi bawah citra terpotong), dan
+  **geseran pecahan bujur 0,96 px** diabaikan (tepi kiri citra tidak tepat di garis bujur peta).
+
+**Perbaikan:**
+- Baris awal perataan diperbaiki (pakai baris Mercator global, bukan pecahannya).
+- Tinggi potongan dibulatkan ke atas + 1 baris.
+- Geseran pecahan bujur ikut diperhitungkan.
+- **Pengaman dipasang:** kalau baris awal salah lagi, skrip **berhenti dengan pesan jelas** —
+  tidak lagi diam-diam menghasilkan citra rusak.
+- Rasio citra dipaksa **persis 2,5** (sama dengan bidang peta) supaya tidak diregangkan.
+
+**Hasil uji (G01–G04 + S01–S20):**
+- **G01** kecocokan garis provinsi vs garis pantai citra: **0,4346** vs acak 0,1563 → **2,8× lebih baik** ✅
+- **G02** geseran tersisa: **(+2, +2) px**, keuntungan hanya 0,1% → sudah optimal ✅
+- **G03** ketajaman citra: **4,346** — pulih persis ke angka semula (4,34) ✅
+- **G04** rasio citra 2,49985 vs bidang 2,5 → regangan di bawah 0,01% ✅
+- **S01–S20: 20 uji, 0 gagal** — di **PC (1440×900)** dan **HP (390×844)** ✅
+
+Cakupan uji: citra di lapis paling bawah · ukuran 1000×400 tanpa regang · latar gelap ·
+saringan warna · label sumber tidak menumpuk label peta & tetap di dalam bidang ·
+39 bentuk provinsi bergaris putih · negara tetangga & pulau kecil · nama kota ·
+tanpa galat skrip · semua gambar termuat · klik provinsi membuka panel ·
+tombol zoom & setel ulang bekerja (skala 1,000 → 1,500 → 1,000).
+
+Diperiksa dengan mata juga: **Sulawesi, Papua, Jawa, Sumatera** — garis sudah menempel.
+
+**Catatan jujur:** citra (Esri/Maxar) dan garis batas (BIG) berasal dari **dua sumber berbeda**.
+Selisih kecil beberapa ratus meter antar sumber itu wajar dan bukan kesalahan aplikasi.
+
+**Backup:** `backups\sebelum-citra-satelit-20261006-161757`
+
+**✅ Disetujui Bapak (6 Okt 2026):** *"sudah benar"* — hasilnya sudah diperiksa langsung
+di PC dan HP. Kasus **K17** dinyatakan **selesai** dan dipindah ke tabel D di `rencanakerja.md`.
+
+---
 ## 4 Oktober 2026 — 👥 **SUKU BANGSA DI PETA + TOMBOL [suku]**
 
 **Permintaan Bapak:** *"apakah data suku indonesia siap di siapkan .. suku lewat tombol
@@ -874,7 +947,7 @@ kebetulan digambar setelah provinsi → itu sebabnya gunung terlihat, sungai/dan
 
 **Dasar (fondasi) proyek dibuat dari nol.**
 
-- Folder `C:\data\Peta Indonesia` disiapkan.
+- Folder `C:\data\Peta Indonesia` disiapkan. *(catatan: folder ini kemudian dipindah/diganti nama menjadi `C:\data\DataPeta` — lihat catatan 6 Okt 2026)*
 - Backup 5 dokumen salinan lama → `backups\salinan-anodes-20260930-121306`.
 - 5 dokumen emptied (isi lama dibuang), lalu diisi sesuai aturan Peta Indonesia.
 - Dibuat `agents.md` = **aturan main AI** (versi 1).

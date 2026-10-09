@@ -12,6 +12,14 @@ Peta sudah memakai **bentuk Indonesia asli** — **38 provinsi lengkap** (termas
 4 provinsi baru di Papua). **Negara tetangga** juga tampil sebagai latar abu-abu
 (hanya bentuk daratan, tanpa kota).
 
+**Latar peta sekarang = CITRA SATELIT (sejak 6 Okt 2026).** Jadi yang terlihat bukan
+gambar peta biasa, tapi **foto asli permukaan bumi dari satelit** — gunung, hutan,
+sungai, dan laut terlihat seperti aslinya. Garis putih di atasnya = **batas provinsi**.
+
+✅ **Peta tetap bisa dibuka tanpa internet.** Citra satelitnya sudah **disimpan di dalam
+proyek** (diunduh sekali), jadi tidak perlu koneksi untuk melihat peta.
+Tulisan kecil di kiri bawah peta = keterangan sumber citra.
+
 **Susunan layar sekarang (sejak 4 Okt 2026) — 3 bagian tetap:**
 
 ```
@@ -126,16 +134,20 @@ Untuk memindahkan data antar perangkat, tunggu fitur cloud (sedang dikerjakan).
 
 ### 🗺️ Bentang alam di peta
 
-Peta sudah dilengkapi **bentang alam** supaya mudah dibaca:
+Peta sudah dilengkapi **bentang alam** supaya mudah dibaca.
+Sejak 6 Okt 2026 latar peta = **citra satelit**, jadi warnanya disesuaikan
+supaya tetap jelas di atas foto bumi yang gelap:
 
 | Tanda | Artinya |
 |-------|---------|
-| 🟫 **Segitiga coklat** | Gunung / puncak (nama & tinggi muncul saat di-zoom) |
-| 〰️ **Garis biru** | Sungai |
-| 💧 **Bidang biru muda** | Danau |
-| ⬜ **Kotak abu-abu** | Provinsi (bisa diklik) |
+| 🟫 **Segitiga jingga** | Gunung / puncak (nama & tinggi muncul saat di-zoom) |
+| 〰️ **Garis biru muda** | Sungai |
+| 💧 **Bidang biru muda bening** | Danau |
+| ⬜ **Garis putih** | Batas provinsi (bisa diklik) |
 | ⚪ **Bulatan putih berisi huruf** | Data lokasi Bapak (bisa diklik) |
-| 🌫️ **Pucat di pinggir** | Negara tetangga |
+| 🌫️ **Garis putih tipis** | Negara tetangga |
+| 🟡 **Tulisan kuning muda** | Nama pulau |
+| 🟣 **Titik ungu muda** | Suku bangsa (muncul saat di-zoom) |
 
 ### 🏙️ Nama kota di peta
 

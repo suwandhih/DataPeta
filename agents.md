@@ -1,6 +1,6 @@
 # 🤖 agents.md — ATURAN MAIN PROYEK **PETA INDONESIA**
 
-> Lokasi: `C:\data\Peta Indonesia` · dibuat 30 September 2026 · versi 1
+> Lokasi: `C:\data\DataPeta` · dibuat 30 September 2026 · versi 1
 > 📌 **BERKAS INI = ATURAN MAIN AI.** Bapak meminta AI **membaca ulang berkas ini**
 > setiap kali menyalakan komputer & melanjutkan proyek.
 > 🔴 **Isi berkas ini HANYA ATURAN.** Riwayat panjang ❌ TIDAK BOLEH di sini.
@@ -118,6 +118,7 @@
 | **F2** | **HARUS jalan di PC (70%) dan HP Android (30%)** — dua-duanya. |
 | **F3** | ~~Karena harus jalan di HP ⇒ tidak boleh bergantung pada server. Harus bisa dibuka langsung dari berkas.~~ **DIUBAH 2 Okt 2026 (keputusan Bapak):** aplikasi **memakai database cloud (Layerbase)** ⇒ **butuh internet**. Dibuka lewat **alamat web (GitHub Pages)**, ❌ bukan dari berkas (`file://`). Peta & data peta tetap **lokal/offline**; hanya **data isian** yang di cloud. |
 | **F3b** | **Cara buka di HP:** lewat **alamat web GitHub Pages** (bukan My Files / `file://`). Alasan: `file://` diblokir hubungi cloud (CORS). |
+| **F3c** | **Latar peta = citra satelit, tetap OFFLINE** (keputusan Bapak, 6 Okt 2026). Citra diunduh **sekali** lewat `alat/unduh-citra-satelit.py` → `data/citra-satelit.jpg`. Aplikasi ❌ **tidak** memanggil internet untuk menampilkan peta. Sumber: **Esri World Imagery** (tanpa kunci API); tulisan sumber wajib tampil di peta. |
 | **F4** | **Ada data yang harus diisi sendiri oleh Bapak** (data proyek yayasan). Sistem harus menyediakan tempatnya, dan **data itu tidak boleh hilang**. |
 | **F5** | **Titik-titik peta bisa diklik → muncul informasi → informasinya bisa diisi manual oleh Bapak.** |
 | **F6** | Data user **tidak boleh hilang** saat revisi / build ulang / uji. Selalu backup dulu. |

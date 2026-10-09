@@ -6,7 +6,7 @@
   <title>Peta Indonesia</title>
   <!-- VERSI: naikkan angka ini setiap kali mengunggah supaya peramban
        selalu mengambil berkas terbaru (bukan versi lama dari cache). -->
-  <link rel="stylesheet" href="css/style.css?v=20261004-02" />
+  <link rel="stylesheet" href="css/style.css?v=20261006-05" />
 </head>
 <body>
 
@@ -45,15 +45,20 @@
 
   <!-- ================= PETA (mengisi sisa layar) ================= -->
   <main class="peta" id="peta">
-    <!-- Peta digambar dari data batas provinsi asli (data/peta-indonesia.js).
-         Semua offline — tanpa internet. -->
+    <!-- Peta digambar dari data batas provinsi asli (data/peta-indonesia.js),
+         dengan latar citra satelit dari berkas lokal (data/citra-satelit.jpg).
+         Peta & citra tetap offline; hanya data isian yang butuh internet. -->
     <svg id="petaSvg" class="peta-svg" viewBox="0 0 1000 400"
          preserveAspectRatio="xMidYMid meet" aria-label="Peta Indonesia">
       <g id="viewport">
         <!-- Urutan lapisan = urutan tampil (bawah ke atas).
-             Provinsi dulu, baru danau/sungai, supaya air tidak tertutup
-             warna provinsi. Nama pulau paling atas supaya tetap terbaca,
-             tapi diletakkan jauh dari nama kota (diatur di js/app.js). -->
+             Citra satelit paling bawah, lalu negara tetangga, provinsi,
+             baru danau/sungai, supaya air tidak tertutup warna provinsi.
+             Nama pulau paling atas supaya tetap terbaca, tapi diletakkan
+             jauh dari nama kota (diatur di js/app.js). -->
+        <image id="lapisCitra" class="citra-satelit" x="0" y="0"
+               width="1000" height="400" preserveAspectRatio="none"
+               href="data/citra-satelit.jpg" aria-hidden="true"></image>
         <g id="lapisNegara"></g>
         <g id="lapisProvinsi"></g>
         <g id="lapisDanau"></g>
@@ -74,6 +79,8 @@
     </svg>
 
     <div class="label-sementara" id="labelPeta">Memuat peta…</div>
+    <!-- Keterangan sumber citra satelit — wajib dicantumkan menurut ketentuan Esri -->
+    <div class="label-citra">Citra: Esri, Maxar, Earthstar Geographics</div>
   </main>
 
   <!-- ================= BAR KATEGORI (beku, di bawah peta) ================= -->
@@ -215,8 +222,8 @@
   <script src="data/pulau.js"></script>
   <script src="data/suku.js"></script>
   <script src="data/contoh-lokasi.js"></script>
-  <script src="js/penyimpanan.js?v=20261004-02"></script>
-  <script src="js/awan.js?v=20261004-02"></script>
-  <script src="js/app.js?v=20261004-02"></script>
+  <script src="js/penyimpanan.js?v=20261006-05"></script>
+  <script src="js/awan.js?v=20261006-05"></script>
+  <script src="js/app.js?v=20261006-05"></script>
 </body>
 </html>
