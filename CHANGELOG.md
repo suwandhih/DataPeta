@@ -88,7 +88,18 @@ css/style.css (segitiga gunung bisa diklik) ·
 index.html (penanda versi naik jadi ?v=20261010-01).
 
 ### Uji
-K01-01…K01-12: **12 uji, 0 gagal** — PC (1440×900) + HP (390×844), zoom 1× sampai 12×.
+- **K01-01…K01-12: 12 uji, 0 gagal** — PC (1440×900) + HP (390×844), zoom 1× sampai 12×.
+- **K01-13…K01-22: 10 uji, 0 gagal** di **versi ONLINE** (`suwandhih.github.io/DataPeta`) — penanda versi sudah `?v=20261010-01`.
+
+### Bukti dari versi online (jarak nama dari bintangnya)
+| Ibu kota | Jarak | Tulisan itu berada di |
+|----------|-------|------------------------|
+| Mataram | 7,5 px | Nusa Tenggara Barat ✅ |
+| Denpasar | 10,1 px | **selat** di barat Pulau Lombok — bukan di pulaunya ✅ |
+| Makassar | 10,1 px | Sulawesi Selatan ✅ |
+| Surabaya | 10,5 px | selat ✅ |
+
+Sebelum perbaikan, pada zoom yang sama jarak nama Denpasar **95 px** — sudah masuk Pulau Lombok.
 
 ### Masih menunggu Bapak
 Uji di HP: **K27 h**.
