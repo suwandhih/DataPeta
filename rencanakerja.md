@@ -245,23 +245,51 @@
 | K30 | **TAHAP 4 — Uji & dokumen.** | | | |
 | K30 | q. Uji PC + HP (aturan C8) + versi online (C9). | ⬜ | ⬜ | — |
 | K30 | r. Update `panduan.md` + `CHANGELOG.md` (aturan D2). | ⬜ | ⬜ | — |
-| K30 | ⚪ **PERLU KEPUTUSAN BAPAK sebelum Tahap 2 dimulai:** ① bentuk tabel — di dalam aplikasi, berkas CSV, atau dua-duanya? ② kerja tim — perlu login atau cukup catat nama pengubah? ③ data apa saja yang bisa diubah user — hanya penduduk & agama, atau semua? ④ kalau dua user mengubah baris yang sama — yang terakhir menang, atau ditanya dulu? | ⚪ | ⬜ | — |
+| K30 | ⚪ **PERLU KEPUTUSAN BAPAK sebelum Tahap 2 dimulai:** ① bentuk tabel — di dalam aplikasi, berkas CSV, atau dua-duanya? ② kerja tim — perlu login atau cukup catat nama pengubah? ③ data apa saja yang bisa diubah user — hanya penduduk & agama, atau semua? ④ kalau dua user mengubah baris yang sama — yang terakhir menang, atau ditanya dulu? | ✅ | ✅ | 10 Okt 2026 |
+| K30 | s. ✅ **JAWABAN BAPAK (10 Okt 2026):** ① **dua-duanya** — *"biasanya user suka pakai excel kerjanya, jadi lebih ok ke dua2nya"* → tabel di aplikasi **dan** berkas Excel/CSV. ② **perlu login + SHA-256** — *"perlu login.. perlu sha256 .. tolong dibuat konsep pengamanan yg jelas"*. ③ **nama lokasi TIDAK boleh diubah** — *"seharusnya nama lokasi tidak bisa ubah memang nama seperti itu"*. ④ **bukan menang-kalah, tetapi SISTEM AMBIL KERJAAN** — *"user bukan memasukan data hanya satu2 1 kali ambil bisa satu kab atau prov jadi user mau ambil kerjaan untuk prov bali, prov bali tidak bisa diambil kerjaan oleh user lain"*. ⑤ *"semua di catat dalam rencanakerja baru.. besok baru mulai pekerjaan ini"* → **dikerjakan besok, belum mulai sekarang**. | ✅ | ✅ | 10 Okt 2026 |
+| K30 | **TAHAP 5 — KONSEP PENGAMANAN (permintaan Bapak: *"tolong dibuat konsep pengamanan yg jelas"*).** | | | |
+| K30 | t. **Enam lapis pengamanan.** | ⬜ | ⬜ | — |
+| K30 | t1. **Lapis 1 — Daftar akun.** Setiap orang punya **nama + kata sandi**. Gunanya bukan sekadar mengunci, tetapi supaya **tahu siapa mengubah apa**. | ⬜ | ⬜ | — |
+| K30 | t2. **Lapis 2 — Kata sandi diacak (SHA-256).** Kata sandi **TIDAK PERNAH disimpan apa adanya**. Yang disimpan hanya **hasil acakannya** + **garam** (tulisan tambahan supaya dua orang bersandi sama tetap berbeda hasilnya). ⚠️ **Penting:** SHA-256 biasa **terlalu cepat** — komputer bisa mencoba miliaran sandi per detik. Karena itu dipakai **PBKDF2-SHA-256** (tetap berbasis SHA-256 sesuai permintaan Bapak, tetapi **diulang 100.000 kali**) sehingga menebak sandi jadi sangat lambat. Alat: **Web Crypto API** (sudah ada di peramban, tidak perlu pustaka tambahan). | ⬜ | ⬜ | — |
+| K30 | t3. **Lapis 3 — Peran (siapa boleh apa).** **Admin** = Bapak (boleh semua) · **Petugas** = user (hanya wilayah yang dipegang) · **Pengamat** = hanya melihat (kalau perlu). | ⬜ | ⬜ | — |
+| K30 | t4. **Lapis 4 — Sesi.** Setelah login, peramban menyimpan **token sementara** supaya tidak perlu mengetik sandi tiap kali. Token punya **batas waktu** dan bisa **diputus** (keluar). | ⬜ | ⬜ | — |
+| K30 | t5. **Lapis 5 — Klaim wilayah.** Satu wilayah **hanya boleh dipegang satu petugas** (lihat butir u). Ini yang mencegah dua orang saling menimpa. | ⬜ | ⬜ | — |
+| K30 | t6. **Lapis 6 — Catatan perubahan.** Setiap perubahan dicatat: **siapa · kapan · apa yang diubah · nilai lama → nilai baru**. Jadi kalau ada salah, bisa **dikembalikan**. | ⬜ | ⬜ | — |
+| K30 | t7. ⚠️ **Yang TIDAK boleh masuk repo GitHub (aturan E5):** kunci API, kata sandi, garam, token. Semua disimpan di **database awan** dan folder **`catat/`** (sudah masuk `.gitignore`). | ⬜ | ⬜ | — |
+| K30 | u. **KONSEP "AMBIL KERJAAN" (klaim wilayah) — inti jawaban Bapak.** Petugas **mengambil satu wilayah utuh** (satu provinsi **atau** satu kabupaten/kota), bukan mengisi satu-satu. Selama dipegang, petugas lain **tidak bisa mengambilnya** → **tidak ada menang-kalah**. | ⬜ | ⬜ | — |
+| K30 | u1. **Empat keadaan wilayah:** 🟢 **Bebas** (belum dipegang, bisa diambil) · 🟡 **Sedang dikerjakan** (dipegang petugas A, petugas lain tidak bisa ambil) · ⚪ **Menunggu diperiksa** (petugas sudah kirim, menunggu Bapak) · 🔵 **Selesai** (sudah disetujui, bisa dibaca semua). | ⬜ | ⬜ | — |
+| K30 | u2. **Alurnya:** petugas pilih provinsi → klik **"Ambil"** → jadi miliknya (🟡) → isi data → klik **"Kirim"** (⚪) → Bapak periksa → **"Setujui"** (🔵) atau **"Kembalikan"** (🟡 lagi, dengan catatan). | ⬜ | ⬜ | — |
+| K30 | u3. **Kalau petugas berhenti di tengah jalan** — Bapak (admin) bisa **melepas** wilayah itu supaya bisa diambil orang lain. | ⬜ | ⬜ | — |
+| K30 | u4. **Batas waktu pegang** (opsional) — kalau petugas tidak menyentuh wilayahnya sekian lama, otomatis dilepas. ⚪ perlu keputusan Bapak. | ⚪ | ⬜ | — |
+| K30 | v. **APA YANG BOLEH & TIDAK BOLEH DIUBAH (jawaban pertanyaan Bapak *"semua mencakup apa saja?"*).** | ⬜ | ⬜ | — |
+| K30 | v1. ❌ **TIDAK BOLEH diubah siapa pun:** nama provinsi · nama kabupaten/kota · nama kecamatan · nama desa/kelurahan · kode wilayah. Alasan Bapak: *"memang nama seperti itu"* — nama resmi dari **Kepmendagri No. 300.2.2-2430 Tahun 2025**. | ⬜ | ⬜ | — |
+| K30 | v2. ✅ **BOLEH diubah petugas:** jumlah penduduk · data agama · tahun data · sumber/tautan · catatan. | ⬜ | ⬜ | — |
+| K30 | v3. ⚠️ **Hanya admin (Bapak):** titik koordinat · menambah/menghapus wilayah · menyetujui hasil kerja petugas · mengelola akun. | ⬜ | ⬜ | — |
+| K30 | v4. ⚠️ **Wilayah baru** (kalau ada pemekaran) — **hanya admin**, karena menyentuh peta & kode wilayah. | ⬜ | ⬜ | — |
+| K30 | w. **BENTUK TABEL — dua-duanya (jawaban Bapak).** ① **Di aplikasi** — tabel mirip Excel, bisa diklik & diubah langsung. ② **Berkas Excel/CSV** — bisa diunduh, dikerjakan di Excel seperti biasa, lalu diunggah kembali. *"biasanya user suka pakai excel kerjanya"*. | ⬜ | ⬜ | — |
+| K30 | w1. **Unduh (Ekspor)** — pilih provinsi/kabupaten → dapat berkas CSV/Excel berisi kolom: kode wilayah · nama · jumlah penduduk · tahun · sumber · agama (per kolom). | ⬜ | ⬜ | — |
+| K30 | w2. **Unggah (Impor)** — petugas unggah berkas yang sudah diisi → sistem **periksa dulu** (nama wilayah cocok? angka wajar? kolom lengkap?) → tampilkan **ringkasan perubahan** → baru disimpan. | ⬜ | ⬜ | — |
+| K30 | w3. ⚠️ **Nama wilayah di berkas dipakai untuk MENCOCOKKAN, bukan untuk mengubah** (aturan v1). Kalau nama di berkas tidak cocok → baris itu **ditolak** dan diberi tahu. | ⬜ | ⬜ | — |
+| K30 | x. **URUTAN PENGERJAAN (diusulkan).** ① **Tahap 1** catatan sumber & tanggal (fondasi, butir d–g) → ② **Tahap 5** pengamanan & login (butir t) → ③ **Tahap 2** tabel mirip Excel (butir h–l, w) → ④ **Tahap 3** ambil kerjaan & kerja tim (butir m–p, u) → ⑤ **Tahap 4** uji & dokumen (butir q–r). Alasan: pengamanan dikerjakan **sebelum** tabel, supaya tabel langsung punya pemilik & catatan perubahan. | ⬜ | ⬜ | — |
+| K30 | y. ⚪ **Masih perlu keputusan Bapak:** ① batas waktu pegang wilayah (butir u4) — perlu atau tidak? ② siapa saja yang boleh jadi petugas — semua orang bisa daftar sendiri, atau Bapak yang membuatkan akun? ③ kalau petugas salah mengisi, Bapak **setujui** dulu atau langsung tampil? | ⚪ | ⬜ | — |
 
 ### B. ANTREAN KERJA
 
 | Kode | Butir | Status | Tgl |
 |------|-------|--------|-----|
 | **K30** | **Tahap 1** — catatan sumber & tanggal per baris (butir **d–g**). Disetujui Bapak 10 Okt 2026. | ⏳ | — |
-| **K30** | **Tahap 2** — tabel mirip Excel (butir **h–l**). ⚪ menunggu jawaban 4 pertanyaan di butir terakhir K30. | ⏳ | — |
-| **K30** | **Tahap 3** — masuk data dari user / kerja tim (butir **m–p**). | ⏳ | — |
+| **K30** | **Tahap 5** — pengamanan & login SHA-256 (butir **t**). Dikerjakan **sebelum** tabel. | ⏳ | — |
+| **K30** | **Tahap 2** — tabel mirip Excel + unduh/unggah Excel (butir **h–l**, **w**). | ⏳ | — |
+| **K30** | **Tahap 3** — ambil kerjaan (klaim wilayah) & kerja tim (butir **m–p**, **u**). | ⏳ | — |
 | **K30** | **Tahap 4** — uji & dokumen (butir **q–r**). | ⏳ | — |
 
 > 📌 **BESOK MULAI DARI SINI (catatan 10 Okt 2026, malam):**
 > 1. **K30 Tahap 1** — catatan sumber & tanggal per baris (butir d–g). Ini fondasi, dikerjakan lebih dulu.
-> 2. **K30** — tanyakan 4 hal di butir terakhir K30 sebelum Tahap 2 dimulai.
-> 3. **Uji di HP oleh Bapak** yang masih menunggu: K03 f · K16 e · K18 f · K19 e · K20 f · K21 e · K23 l · K24 e · **K25 e**.
-> 4. ⚠️ **Jangan ulangi pemindaian BPS Pusat / Dukcapil pusat** — sudah habis (aturan B14).
-> 5. ⚠️ **8 provinsi data agama tidak bisa dilengkapi** (Riau · Bengkulu · Jatim · NTB · Sulteng · Papua · Papua Selatan · Papua Barat Daya) — 11 jalur sudah habis. Satu-satunya sisa: Dukcapil per kab/kota (±500 situs) — **tanya Bapak dulu**.
+> 2. **K30 Tahap 5** — pengamanan & login SHA-256 (butir t). Konsep sudah dibuat; Bapak bilang *"besok baru mulai"*.
+> 3. **K30** — tanyakan 3 hal di butir **y** sebelum Tahap 3 dimulai.
+> 4. **Uji di HP oleh Bapak** yang masih menunggu: K03 f · K16 e · K18 f · K19 e · K20 f · K21 e · K23 l · K24 e · **K25 e**.
+> 5. ⚠️ **Jangan ulangi pemindaian BPS Pusat / Dukcapil pusat** — sudah habis (aturan B14).
+> 6. ⚠️ **8 provinsi data agama tidak bisa dilengkapi** (Riau · Bengkulu · Jatim · NTB · Sulteng · Papua · Papua Selatan · Papua Barat Daya) — 11 jalur sudah habis. Satu-satunya sisa: Dukcapil per kab/kota (±500 situs) — **tanya Bapak dulu**.
 
 ### C. IDE
 
