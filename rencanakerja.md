@@ -197,13 +197,13 @@
 | K27 | n. **Uji versi ONLINE** (`suwandhih.github.io/DataPeta`) — **4 uji, 0 gagal** (aturan C9). Penanda versi online sudah `?v=20261010-06`. Hasil: z1 38 nama · z2,25 12 nama · z5,06 4 nama · z12 1 nama — **celahMaks 19,6 px**, **nama bertumpuk 0**, **nama menutupi bintang 0**, **galat konsol 0** | ✅ | ✅ | 10 Okt 2026 |
 
 | **K28** | **Daftar rincian kab/kota di panel provinsi** (ORDER BAPAK 10 Okt 2026) — *"kalau di uji sama.. saya perhatikan karena area bukan satu pulau.. atau satu lokasi angka itu terdiri dari beberapa lokasi. kalau begitu dibuat daftar provinsi terdiri dari lokasi a,b,c,d dengan jumlahnya jadi angka yg di sajikan bisa dibuktikan"*. Bapak memilih **tahap a + b**, dan **berlaku SELURUH WILAYAH (38 provinsi)**. | | | |
-| K28 | a. Periksa dulu (10 Okt 2026): **semua bahan sudah ada, tidak perlu cari data baru.** 38/38 provinsi punya penduduk; 38/38 punya daftar kab/kota; **jumlah kab/kota = angka provinsi cocok persis di 38 provinsi (selisih 0)**. Yang kurang hanya **cara menampilkan** | ✅ | ✅ | 10 Okt 2026 |
-| K28 | b. **Tahap a** — panel provinsi menampilkan **daftar kabupaten/kota + jumlahnya**, bisa dibuka-tutup supaya panel tidak kepanjangan | ⬜ | ⬜ | — |
-| K28 | c. **Tahap b** — tanda bukti di bawah daftar: *"Jumlah N kabupaten/kota = X jiwa — sama dengan angka BPS ✓"* (dihitung sendiri dari data, bukan ditulis manual — aturan F8) | ⬜ | ⬜ | — |
+| K28 | a. Periksa dulu (10 Okt 2026): **semua bahan sudah ada, tidak perlu cari data baru.** 38/38 provinsi punya penduduk; 38/38 punya daftar kab/kota (514 kab/kota); **jumlah kab/kota = angka provinsi cocok persis di 38 provinsi (selisih 0)**. Yang kurang hanya **cara menampilkan** | ✅ | ✅ | 10 Okt 2026 |
+| K28 | b. **Tahap a** — panel provinsi menampilkan **daftar kabupaten/kota + jumlahnya**, bisa dibuka-tutup (`<details>`), daftar digulir kalau panjang (maks 260 px). Fungsi baru `daftarKabKotaProvinsi()` + `blokKabKotaPanel()`; gaya baru `.panel-rincian` di `css/style.css`. Urut nama A–Z | ✅ | ✅ | 10 Okt 2026 |
+| K28 | c. **Tahap b** — tanda bukti **dihitung sendiri** dari data (bukan ditulis manual — aturan F8): *"Jumlah 10 kabupaten/kota = **5.815.328 jiwa** — sama dengan angka BPS ✓"*. Ada 3 kemungkinan pesan: cocok ✓ · beda (angka selisihnya disebut) · belum lengkap | ✅ | ✅ | 10 Okt 2026 |
 | K28 | d. Tahap c (klik nama kab/kota → peta melompat ke daerah itu) — **belum diputuskan Bapak**, tunggu aba-aba | ⏸️ | ⬜ | 10 Okt 2026 |
-| K28 | e. Naikkan penanda versi `index.html` (aturan B13) | ⬜ | ⬜ | — |
-| K28 | f. Uji PC (1440×900) + HP (390×844) — daftar tampil, jumlah cocok, panel tidak rusak | ⬜ | ⬜ | — |
-| K28 | g. Uji versi ONLINE (aturan C9) | ⬜ | ⬜ | — |
+| K28 | e. Penanda versi `index.html` dinaikkan (aturan B13) → `?v=20261010-07` (19 penanda) | ✅ | ✅ | 10 Okt 2026 |
+| K28 | f. Uji PC (1440×900) + HP (390×844) — **berlaku seluruh wilayah**: diuji perhitungan semua **38 provinsi / 514 kab/kota** → **38 lengkap · 38 cocok · 0 gagal**. Uji tampilan: NTB 10 baris · NTT 22 · Bali 9 · DKI Jakarta 6 · Jawa Barat 27 · Papua 9 · Papua Tengah 8 · Kaltim 10 · Papua Selatan 4 · **Jawa Timur 38 (paling banyak)** — daftar muat di dalam panel, bisa digulir, panel tidak kepanjangan, 0 galat konsol | ✅ | ✅ | 10 Okt 2026 |
+| K28 | g. **Uji versi ONLINE** (`suwandhih.github.io/DataPeta`) — **4 uji, 0 gagal** (aturan C9). Penanda versi online `?v=20261010-07`. Hasil: NTB 10 kab/kota ✓ · NTT 22 ✓ · Bali 9 ✓ · Jawa Timur 38 ✓ — semua bertanda "sama dengan angka BPS ✓", 0 galat konsol | ✅ | ✅ | 10 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_

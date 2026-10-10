@@ -4,6 +4,61 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
+
+## 10 Oktober 2026 — 🔧 **K28: ANGKA PENDUDUK PROVINSI KINI BISA DIBUKTIKAN**
+
+**Order Bapak:** *"kalau di uji sama.. saya perhatikan karena area bukan satu pulau.. atau satu lokasi angka itu terdiri dari beberapa lokasi. kalau begitu dibuat daftar provinsi terdiri dari lokasi a,b,c,d dengan jumlahnya jadi angka yg di sajikan bisa dibuktikan"* — dan Bapak minta **berlaku seluruh wilayah**.
+
+### Yang diperiksa lebih dulu
+
+Tidak perlu cari data baru — bahannya sudah ada semua:
+
+| Yang diperiksa | Hasil |
+|---|---|
+| Provinsi punya data penduduk | **38 dari 38** ✅ |
+| Provinsi punya daftar kabupaten/kota | **38 dari 38** (514 kab/kota) ✅ |
+| Jumlah kab/kota = angka provinsi | **38 dari 38 cocok, selisih 0** ✅ |
+
+### Perbaikan
+
+Panel provinsi sekarang punya tombol **"Lihat rincian N kabupaten/kota"**.
+
+Contoh **Nusa Tenggara Barat**:
+
+| Kabupaten/Kota | Penduduk |
+|---|---|
+| Kabupaten Bima | 559.349 |
+| Kabupaten Dompu | 258.349 |
+| Kabupaten Lombok Barat | 787.339 |
+| Kabupaten Lombok Tengah | 1.149.627 |
+| … (10 baris, urut A–Z) | … |
+
+**Jumlah 10 kabupaten/kota = 5.815.328 jiwa — sama dengan angka BPS ✓**
+
+Jadi sekarang Bapak **bisa membuktikan sendiri** bahwa angka 5.815.328 itu memang
+jumlah dari seluruh kabupaten/kota di NTB.
+
+**Rinciannya:**
+- Daftar bisa **dibuka-tutup** — panel tidak jadi kepanjangan.
+- Kalau daerahnya banyak (Jawa Timur **38** kab/kota), daftarnya **bisa digulir**.
+- Tanda bukti **dihitung sendiri oleh aplikasi** dari data BPS — bukan ditulis manual.
+  Kalau suatu saat angkanya tidak cocok, aplikasi akan bilang **"beda N jiwa"**,
+  bukan diam-diam menulis "sama".
+
+### Uji
+
+- **Seluruh wilayah**: perhitungan semua **38 provinsi / 514 kabupaten/kota** → **38 lengkap · 38 cocok · 0 gagal**.
+- **PC (1440×900) + HP (390×844)**: NTB 10 baris · NTT 22 · Bali 9 · DKI Jakarta 6 · Jawa Barat 27 · Papua 9 · Papua Tengah 8 · Kaltim 10 · Papua Selatan 4 · **Jawa Timur 38 (paling banyak)** — semua muat, bisa digulir, panel tidak rusak, **0 galat konsol**.
+- **Versi ONLINE** (`suwandhih.github.io/DataPeta`): NTB 10 ✓ · NTT 22 ✓ · Bali 9 ✓ · Jawa Timur 38 ✓ — semua bertanda "sama dengan angka BPS ✓", **0 galat konsol**.
+
+Penanda versi dinaikkan (aturan B13) → `?v=20261010-07`.
+
+### Belum dikerjakan (menunggu Bapak)
+
+**Tahap c** — klik nama kab/kota → peta melompat ke daerah itu. Belum diputuskan.
+
+---
+
 ## 10 Oktober 2026 — 🔧 **K27 lanjutan: NAMA YANG MENJAUH DIRAPIKAN**
 
 **Order Bapak:** *"2 perlu dirapikan"* (nama peta yang masih menjauh dari bintangnya).

@@ -178,6 +178,36 @@ Angkanya **resmi dari BPS** (Badan Pusat Statistik), bukan perkiraan. Kalau diju
 seluruh 38 provinsi, hasilnya **287.198.383 jiwa** — persis sama dengan angka resmi BPS
 untuk seluruh Indonesia.
 
+#### 🔍 Membuktikan angka itu — daftar kabupaten/kota
+
+Di bawah angka penduduk ada tombol **"Lihat rincian N kabupaten/kota"**. Klik → muncul
+**daftar semua kabupaten/kota** di provinsi itu beserta penduduknya.
+
+Contoh **Nusa Tenggara Barat** (klik → 10 baris):
+
+| Kabupaten/Kota | Penduduk |
+|----------------|----------|
+| Kabupaten Bima | 559.349 |
+| Kabupaten Dompu | 258.349 |
+| Kabupaten Lombok Barat | 787.339 |
+| … (urut A–Z) | … |
+
+Di bawah daftar tertulis:
+
+> **Jumlah 10 kabupaten/kota = 5.815.328 jiwa — sama dengan angka BPS ✓**
+
+Jadi angka yang ditampilkan **bisa dibuktikan sendiri** oleh Bapak — memang jumlah dari
+seluruh kabupaten/kota di provinsi itu, bukan angka entah dari mana.
+
+**Catatan:**
+- Daftarnya **bisa dibuka-tutup** — kalau tidak perlu, tinggal ditutup lagi.
+- Untuk daerah yang banyak (Jawa Timur **38** kabupaten/kota), daftarnya **bisa digulir**.
+- Tulisan **"sama dengan angka BPS ✓"** itu **hasil hitungan aplikasi sendiri**, bukan
+  tulisan tetap. Kalau suatu saat jumlahnya tidak cocok, aplikasi akan menulis
+  **"beda N jiwa"** — jadi tidak akan pernah menipu.
+- Berlaku untuk **seluruh 38 provinsi**. Sudah diuji: **38 provinsi · 514 kabupaten/kota ·
+  semua cocok, selisih 0**.
+
 ### 🏙️ Jumlah penduduk kabupaten/kota
 
 Saat Bapak **memilih wilayah** di form (mau tambah lokasi), muncul kotak biru berisi
