@@ -66,6 +66,20 @@ def baca_data_js(berkas, nama_var):
     return json.loads(m.group(1).rstrip(";"))
 
 
+def penduduk_provinsi(kode_prov):
+    """Jumlah penduduk provinsi dari data/penduduk.js.
+
+    Dipakai sebagai cadangan penguji kalau baris total provinsi di tabel BPS
+    kosong (ditulis "..."). Contohnya Papua Tengah 2024: angka 8 kabupaten
+    lengkap, tetapi baris totalnya tidak diisi BPS.
+    """
+    try:
+        d = baca_data_js("penduduk.js", "window.PENDUDUK_PROVINSI")
+    except Exception:
+        return None
+    return d.get(kode_prov)
+
+
 def nama_provinsi(kode_prov):
     """Nama provinsi dari data/wilayah/provinsi.js."""
     jalur = os.path.join(AKAR, "data", "wilayah", "provinsi.js")
@@ -423,7 +437,7 @@ def baca_tabel(halaman, kab, kota, nama_prov):
     return hasil
 
 
-def baca_kelompok(doc, kelompok, kab, kota, nama_prov):
+def baca_kelompok(doc, kelompok, kab, kota, nama_prov, kode_prov=None):
     """Gabungkan angka dari semua halaman satu kelompok, lalu uji kebenarannya.
 
     UJI KEBENARAN (dari dokumen itu sendiri):
@@ -446,6 +460,13 @@ def baca_kelompok(doc, kelompok, kab, kota, nama_prov):
         return {}, []
     # Baris total provinsi: pakai kolom "Jumlah" kalau ada, kalau tidak jumlahkan
     total_prov = prov["jumlah"] if prov["jumlah"] is not None else sum(prov["angka"])
+    # BPS kadang mengosongkan baris total provinsi ("..."). Kalau begitu, pakai
+    # jumlah penduduk provinsi dari data/penduduk.js sebagai penguji. Toleransinya
+    # lebih longgar karena tahun tabel agama dan tahun data penduduk berbeda.
+    dari_penduduk = False
+    if not total_prov and kode_prov:
+        total_prov = penduduk_provinsi(kode_prov) or 0
+        dari_penduduk = bool(total_prov)
     if not total_prov:
         return {}, []
     # Tabel penduduk pasti besar. Angka kecil berarti itu tabel lain yang
@@ -474,7 +495,8 @@ def baca_kelompok(doc, kelompok, kab, kota, nama_prov):
     # UJI: jumlah semua kabupaten/kota harus sama dengan baris total provinsi
     jumlah_kabkota = sum(v["jumlah"] if v["jumlah"] is not None else sum(v["angka"])
                          for v in kumpul.values())
-    if abs(jumlah_kabkota - total_prov) > max(1, total_prov * 0.005):
+    toleransi = 0.15 if dari_penduduk else 0.005
+    if abs(jumlah_kabkota - total_prov) > max(1, total_prov * toleransi):
         return {}, [["(seluruh provinsi)", "jumlah kab/kota %s vs provinsi %s"
                      % (jumlah_kabkota, total_prov)]]
     benar = {}
@@ -513,7 +535,7 @@ def utama():
         # Kalau ada beberapa tabel agama, ambil yang paling banyak tervalidasi
         terbaik, terbaik_gagal, terbaik_hal = {}, [], []
         for kelompok in halaman_tabel_agama(doc, kab, kota):
-            benar, gagal = baca_kelompok(doc, kelompok, kab, kota, prov)
+            benar, gagal = baca_kelompok(doc, kelompok, kab, kota, prov, kode)
             if len(benar) > len(terbaik):
                 terbaik, terbaik_gagal = benar, gagal
                 terbaik_hal = [h + 1 for h in kelompok]

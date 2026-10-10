@@ -5,7 +5,7 @@
 
 ---
 
-## 10 Oktober 2026 — 🕌 **K29: DATA AGAMA BERTAMBAH DARI 9 → 22 PROVINSI**
+## 10 Oktober 2026 — 🕌 **K29: DATA AGAMA BERTAMBAH DARI 9 → 30 PROVINSI**
 
 **Order Bapak:** *"agama belum semua kota / desa / kab terdata .. di lengkapi"* — dan pertanyaan *"apakah ada data pilihan tidak ada agama atau kepercayaan?"*
 
@@ -13,8 +13,8 @@
 
 | Pilihan | Ada di BPS? |
 |---|---|
-| **"Tidak ada agama"** | ❌ **TIDAK ADA.** BPS tidak menerbitkan jumlah penduduk tanpa agama. |
-| **"Kepercayaan"** | ✅ **ADA.** Kini bertambah 2 provinsi baru: **Bali 119 jiwa** dan **Sumatera Barat 269 jiwa**. Sebelumnya sudah ada di DKI Jakarta, Jawa Barat, Jambi, Sulawesi Tenggara, Kalimantan Utara. |
+| **"Tidak ada agama"** | ❌ **TIDAK ADA.** BPS tidak menerbitkan jumlah penduduk tanpa agama — di provinsi mana pun. |
+| **"Kepercayaan"** | ✅ **ADA di 7 provinsi:** Bali (119 jiwa) · Sumatera Barat (269) · DKI Jakarta (*Aliran Kepercayaan* 385) · Jawa Barat (*Kepercayaan Lain* 3.275) · Jambi (*Lainnya* 2.221) · Sulawesi Tenggara (*Lainnya* 28) · Kalimantan Utara (*Lainnya* 0,08%). ⚠️ Nama kolomnya berbeda-beda; BPS tidak menjelaskan apakah *"Lainnya"* murni kepercayaan. |
 
 ### Cara mendapatkannya
 
@@ -44,24 +44,71 @@ Contoh **Bali** (cocok persis dengan PDF halaman 262–263):
 
 | | Sebelum | Sesudah |
 |---|---|---|
-| Provinsi punya data agama | 9 | **22** |
-| Kabupaten/kota terdata | 166 | **338** |
+| Provinsi punya data agama | 9 | **30** |
+| Kabupaten/kota terdata | 166 | **412** |
 
-**13 provinsi baru:** Aceh · Sumatera Barat · Lampung · Kepulauan Bangka Belitung · Kepulauan Riau · Bali · Kalimantan Barat · Kalimantan Tengah · Kalimantan Selatan · Sulawesi Selatan · Gorontalo · Maluku · Maluku Utara.
+**21 provinsi baru:** Aceh · Sumatera Barat · Lampung · Kepulauan Bangka Belitung · Kepulauan Riau · Bali · Kalimantan Barat · Kalimantan Tengah · Kalimantan Selatan · Sulawesi Selatan · Gorontalo · Maluku · Maluku Utara · **D.I. Yogyakarta** · **Banten** · **Kalimantan Timur** · **Sulawesi Barat** · **Nusa Tenggara Timur** · **Papua Barat** · **Papua Tengah** · **Papua Pegunungan**.
 
-**16 provinsi belum ada** (tidak dikarang): Riau · Bengkulu · DIY · Jawa Timur · Banten · NTB · NTT · Sulawesi Tengah · Sulawesi Barat · Papua · Papua Barat · Kalimantan Timur · Papua Selatan · Papua Tengah · Papua Pegunungan · Papua Barat Daya.
+### Cara menembus provinsi yang tabelnya tidak ada di edisi terbaru
+
+Sebagian provinsi tidak menerbitkan tabel agama di edisi terbaru, tetapi **ada di edisi lama**. Alat diberi mode `--lama` untuk memeriksa semua edisi 2018–2026. Hasil: **DIY 2025** · **Banten 2025** · **Kalimantan Timur 2024** · **Sulawesi Barat 2024** · **Nusa Tenggara Timur 2026** · **Papua Barat 2026**.
+
+### 🎉 Temuan: provinsi baru Papua sudah ada datanya
+
+Buku **"Provinsi Papua Dalam Angka"** ternyata memuat tabel untuk provinsi hasil pemekaran:
+
+| Provinsi | Tahun | Kabupaten | Sumber |
+|---|---|---|---|
+| **Papua Tengah** | 2024 | 8 | Papua Dalam Angka 2024, hal 307 |
+| **Papua Pegunungan** | 2025 | 8 | Papua Dalam Angka 2025, hal 296 |
+
+### 8 provinsi yang TIDAK BISA dilengkapi
+
+BPS **tidak menerbitkan** tabel agama per kabupaten/kota untuk provinsi ini — bukan karena alat kita gagal:
+
+**Riau · Bengkulu · Jawa Timur · Nusa Tenggara Barat · Sulawesi Tengah · Papua · Papua Selatan · Papua Barat Daya**
+
+**11 jalur sudah dicoba, semuanya habis:**
+
+1. "Dalam Angka" **semua edisi 2018–2026** untuk 8 provinsi itu → tidak ada tabel agama
+2. Halaman tabel BPS `subject=519` → ternyata *"Kependudukan dan Migrasi"*, 0 tabel
+3. Publikasi BPS `keyword=agama` → hanya "Dalam Angka" yang sudah diperiksa
+4. Dukcapil provinsi (Riau/Jatim/NTB/Papua) → **ERR_NAME_NOT_RESOLVED**
+5. Dukcapil Bengkulu & Sulawesi Tengah → situsnya ada, tanpa data agama
+6. Kemenag (SIMBI, statistik, data.kemenag.go.id) → 404 / *"aplikasi sedang dalam perbaikan"*
+7. BPS Sensus → hanya halaman depan
+8. Perpustakaan BPS → butuh login SSO
+9. `webapi.bps.go.id` → butuh kunci API
+10. Subdomain BPS provinsi baru (papuatengah/papuaselatan/papuabaratdaya) → **tidak ada**
+11. Publikasi BPS Pusat `keyword=papua tengah/selatan/barat daya/pegunungan` → 0 tautan
+
+**Papua Selatan & Papua Barat Daya** tabelnya **ADA** (Papua 2026 hal 280; Papua Barat 2026), tetapi **seluruh isinya "..."** — BPS belum mengisi angkanya.
+
+### 5 kesalahan pembaca tabel yang ditemukan & diperbaiki
+
+| # | Kesalahan | Akibatnya | Perbaikan |
+|---|---|---|---|
+| 1 | Kolom **"Kristen"** tidak dikenali | Angka bergeser — Fakfak terbaca 79.177, seharusnya **95.699** | `kristen\|christian` ditambahkan ke daftar nama kolom |
+| 2 | **Tabel persen** tidak didukung | Sulawesi Barat 2024 & NTT 2026 gagal dibaca | Kalau total provinsi ~100, ujinya **per baris harus ~100%** |
+| 3 | **Desimal dipotong** | `99,85` terbaca `99` | Angka dibaca sebagai bilangan pecahan |
+| 4 | **Singkatan nama provinsi** | "D.I. Yogyakarta" tidak dikenali | Daftar singkatan ditambahkan |
+| 5 | Alias "yogyakarta" terlalu longgar | **Kota Yogyakarta** ikut terbaca sebagai baris provinsi | Alias dipersempit jadi `diyogyakarta` saja |
+
+### Validasi cadangan
+
+Kalau BPS mengosongkan baris total provinsi (ditulis `"..."`), pengujian memakai **jumlah penduduk provinsi** dari `data/penduduk.js` dengan toleransi 15% — karena tahun tabel agama dan tahun data penduduk berbeda. Dipakai untuk **Papua Tengah 2024**.
 
 ### Alat baru
 
 | Berkas | Gunanya |
 |---|---|
-| `alat/cari-agama-dalam-angka.py` | Mencari & mengunduh PDF "Provinsi Dalam Angka" |
+| `alat/cari-agama-dalam-angka.py` | Mencari & mengunduh PDF "Provinsi Dalam Angka" (mode `--lama` untuk edisi lama) |
 | `alat/baca-agama-dalam-angka.py` | Membaca tabel agama dari PDF |
 | `alat/buat-agama-dalam-angka.js` | Menggabungkan hasil ke `data/agama.js` |
 
 ### Uji
 
-22 provinsi/338 kab/kota termuat · Bali 7 kolom tampil lengkap · HP tidak meluber · provinsi tanpa data tidak menampilkan blok agama · **0 galat** · versi `?v=20261010-08` · uji online lulus.
+**30 provinsi/412 kab/kota termuat · 0 jumlah tidak cocok.** Panel diuji: Papua Tengah (5 baris) · Papua Pegunungan (5) · Papua Barat (6) · Bali (7) — **0 meluber** di PC (1440×900) maupun HP (390×844), 0 galat konsol · versi `?v=20261010-09`.
 
 ---
 

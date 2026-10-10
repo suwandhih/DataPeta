@@ -237,8 +237,8 @@ Konghucu 406 jiwa*.
 Kotak ini muncul **bersamaan** dengan kotak jumlah penduduk biru — termasuk saat
 Bapak menambah/ubah data lewat menu **Member** (tombol **[+]** dan **[✎]**).
 
-⚠️ **Penting — data agama belum lengkap.** Sudah **22 provinsi** tersedia
-(**338 dari 514** kabupaten/kota):
+⚠️ **Penting — data agama belum lengkap.** Sudah **30 provinsi** tersedia
+(**412 dari 514** kabupaten/kota):
 
 | Provinsi | Tahun data | Kab/kota | Satuan |
 |----------|-----------|----------|--------|
@@ -251,31 +251,47 @@ Bapak menambah/ubah data lewat menu **Member** (tombol **[+]** dan **[✎]**).
 | Jawa Tengah | 2023 | 35 | persen |
 | Jambi | 2022 | 11 | jiwa |
 | Sumatera Selatan | 2022 | 17 | jiwa |
-| **Aceh** | 2026 | 23 | jiwa |
-| **Sumatera Barat** | 2026 | 19 | jiwa |
-| **Lampung** | 2026 | 15 | jiwa |
-| **Kepulauan Bangka Belitung** | 2026 | 7 | jiwa |
-| **Kepulauan Riau** | 2026 | 7 | jiwa |
-| **Bali** | 2026 | 9 | jiwa |
-| **Kalimantan Barat** | 2026 | 14 | jiwa |
-| **Kalimantan Tengah** | 2026 | 14 | jiwa |
-| **Kalimantan Selatan** | 2026 | 13 | jiwa |
-| **Sulawesi Selatan** | 2026 | 24 | jiwa |
-| **Gorontalo** | 2026 | 6 | jiwa |
-| **Maluku** | 2026 | 11 | jiwa |
-| **Maluku Utara** | 2026 | 10 | jiwa |
+| Aceh | 2026 | 23 | jiwa |
+| Sumatera Barat | 2026 | 19 | jiwa |
+| Lampung | 2026 | 15 | jiwa |
+| Kepulauan Bangka Belitung | 2026 | 7 | jiwa |
+| Kepulauan Riau | 2026 | 7 | jiwa |
+| Bali | 2026 | 9 | jiwa |
+| Kalimantan Barat | 2026 | 14 | jiwa |
+| Kalimantan Tengah | 2026 | 14 | jiwa |
+| Kalimantan Selatan | 2026 | 13 | jiwa |
+| Sulawesi Selatan | 2026 | 24 | jiwa |
+| Gorontalo | 2026 | 6 | jiwa |
+| Maluku | 2026 | 11 | jiwa |
+| Maluku Utara | 2026 | 10 | jiwa |
+| **D.I. Yogyakarta** | 2025 | 5 | jiwa |
+| **Banten** | 2025 | 8 | jiwa |
+| **Kalimantan Timur** | 2024 | 10 | jiwa |
+| **Sulawesi Barat** | 2024 | 6 | persen |
+| **Nusa Tenggara Timur** | 2026 | 22 | persen |
+| **Papua Barat** | 2026 | 7 | jiwa |
+| **Papua Tengah** | 2024 | 8 | jiwa |
+| **Papua Pegunungan** | 2025 | 8 | jiwa |
 
-Jumlahnya **338 dari 514 kabupaten/kota**. Kalau wilayah yang Bapak pilih belum ada
+Jumlahnya **412 dari 514 kabupaten/kota**. Kalau wilayah yang Bapak pilih belum ada
 datanya, **kotak hijau tidak muncul** — itu memang **belum ada**, bukan rusak.
 
 Kenapa belum lengkap? **BPS Pusat tidak menerbitkan data agama sampai kabupaten/kota.**
 Yang menerbitkan hanya **BPS provinsi**, dan itupun **tidak semua provinsi**. Cara
 mendapatkannya: mengunduh buku **"Provinsi Dalam Angka"** (PDF resmi BPS) lalu membaca
-tabelnya otomatis. **16 provinsi belum ada** tabelnya: Riau · Bengkulu · DIY ·
-Jawa Timur · Banten · NTB · NTT · Sulawesi Tengah · Sulawesi Barat · Papua ·
-Papua Barat · Kalimantan Timur · Papua Selatan · Papua Tengah · Papua Pegunungan ·
-Papua Barat Daya. Sisanya harus dicari ke Dinas Dukcapil tiap kabupaten/kota
-(±500 situs, format tidak seragam) — akan **dicicil** sedikit demi sedikit.
+tabelnya otomatis. Sebagian provinsi tidak menerbitkan tabelnya di edisi terbaru,
+tetapi **ada di edisi lama** — itu sudah diperiksa sampai edisi 2018.
+
+**8 provinsi benar-benar belum ada** tabelnya: Riau · Bengkulu · Jawa Timur ·
+Nusa Tenggara Barat · Sulawesi Tengah · Papua · Papua Selatan · Papua Barat Daya.
+Untuk 8 provinsi ini **11 jalur sudah dicoba dan semuanya habis** (semua edisi
+"Dalam Angka" 2018–2026 · halaman tabel BPS · publikasi BPS · Dukcapil provinsi ·
+Kemenag · BPS Sensus · Perpustakaan BPS · API BPS · data.go.id · subdomain BPS
+provinsi baru · pencarian publikasi provinsi baru). **Papua Selatan & Papua Barat Daya**
+tabelnya ada, tetapi **isinya masih "..."** — BPS belum mengisi angkanya.
+
+Sisanya harus dicari ke Dinas Dukcapil tiap kabupaten/kota (±500 situs, format tidak
+seragam) — akan **dicicil** sedikit demi sedikit.
 
 Sesuai aturan proyek, angka yang belum ada **tidak dikarang** dan **tidak ditaksir**.
 
@@ -307,7 +323,7 @@ Contoh **Bali** — cocok persis dengan PDF halaman 262–263:
 ### 🕌 Agama penduduk provinsi (saat provinsi diklik di peta)
 
 Kalau Bapak **klik provinsi di peta**, panel kanan menampilkan **jumlah penduduk**
-provinsi itu. Untuk **22 provinsi yang sudah ada datanya**, di bawahnya muncul kotak
+provinsi itu. Untuk **30 provinsi yang sudah ada datanya**, di bawahnya muncul kotak
 hijau berisi **agama penduduk provinsi** — dijumlahkan dari seluruh kabupaten/kota
 di provinsi itu.
 
@@ -320,12 +336,12 @@ Kepercayaan Lain 3.275 jiwa* (jumlah 27 kab/kota).
 | Provinsi | Yang ditampilkan | Kenapa |
 |----------|------------------|--------|
 | Jawa Barat, DKI Jakarta, Sumatera Utara, Jambi, Sumatera Selatan, Sulawesi Utara, Sulawesi Tenggara | **Jumlah** (jiwa) | Tabel BPS-nya dalam satuan **jiwa** → bisa dijumlahkan |
-| Jawa Tengah, Kalimantan Utara | **Rata-rata** (%) | Tabel BPS-nya dalam satuan **persen** → persen tidak bisa dijumlahkan, jadi dirata-ratakan |
+| Jawa Tengah, Kalimantan Utara, Sulawesi Barat, Nusa Tenggara Timur | **Rata-rata** (%) | Tabel BPS-nya dalam satuan **persen** → persen tidak bisa dijumlahkan, jadi dirata-ratakan |
 
 Judul kotak hijau selalu menyebut mana yang dipakai — *"Jumlah penduduk menurut agama"*
 atau *"Rata-rata penduduk menurut agama"* — supaya tidak salah paham.
 
-Untuk **16 provinsi yang belum ada datanya**, kotak hijau **tidak muncul** — hanya
+Untuk **8 provinsi yang belum ada datanya**, kotak hijau **tidak muncul** — hanya
 jumlah penduduknya saja. Itu memang belum ada, bukan rusak.
 
 ### ⭐ Ibu kota provinsi di peta (tampil permanen)
@@ -412,7 +428,7 @@ bukan data asli. Data asli akan diisi Bapak sendiri nanti.
 | 📝 **catatanAI.md** | AI | Tempat sementara catatan AI |
 | 💾 **backups/** | Semua | Cadangan berkas, supaya tidak hilang |
 | 📊 **data/penduduk.js** | Aplikasi | Jumlah penduduk 38 provinsi + 514 kab/kota (sumber: BPS) |
-| 🕌 **data/agama.js** | Aplikasi | Agama per kabupaten/kota (sumber: BPS provinsi; sudah 22 provinsi) |
+| 🕌 **data/agama.js** | Aplikasi | Agama per kabupaten/kota (sumber: BPS provinsi; sudah 30 provinsi) |
 
 ---
 
@@ -461,7 +477,7 @@ resmi BPS untuk seluruh Indonesia (selisih **0**).
 **`alat/buat-agama-dalam-angka.js`** · angka mentah apa adanya di
 **`alat/bps-agama-mentah.txt`**.
 
-Sudah **22 provinsi** yang tersedia (**338 dari 514** kabupaten/kota):
+Sudah **30 provinsi** yang tersedia (**412 dari 514** kabupaten/kota):
 
 | Provinsi | Tahun | Tabel BPS | Tautan |
 |----------|-------|-----------|--------|
@@ -475,25 +491,32 @@ Sudah **22 provinsi** yang tersedia (**338 dari 514** kabupaten/kota):
 | Jambi | 2022 | *Jumlah Penduduk Menurut Agama yang Dianut (Jiwa)* | [jambi.bps.go.id](https://jambi.bps.go.id/id/statistics-table?subject=519&keyword=agama) |
 | Sumatera Selatan | 2022 | *Jumlah Penduduk Menurut Agama di Sumatera Selatan Tahun 2019-2022* | [sumsel.bps.go.id](https://sumsel.bps.go.id/id/statistics-table?subject=519&keyword=agama) |
 
-**13 provinsi berikutnya** diambil dari buku **"Provinsi Dalam Angka"** (PDF resmi BPS,
-tahun 2026, data 2025) — tabel *"Jumlah Penduduk Menurut Agama dan Kabupaten/Kota"*:
+**21 provinsi berikutnya** diambil dari buku **"Provinsi Dalam Angka"** (PDF resmi BPS)
+— tabel *"Jumlah Penduduk Menurut Agama dan Kabupaten/Kota"*:
 
-| Provinsi | Kab/kota | Provinsi | Kab/kota |
-|---|---|---|---|
-| Aceh | 23 | Kalimantan Barat | 14 |
-| Sumatera Barat | 19 | Kalimantan Tengah | 14 |
-| Lampung | 15 | Kalimantan Selatan | 13 |
-| Kepulauan Bangka Belitung | 7 | Sulawesi Selatan | 24 |
-| Kepulauan Riau | 7 | Gorontalo | 6 |
-| Bali | 9 | Maluku | 11 |
-| | | Maluku Utara | 10 |
+| Provinsi | Tahun | Kab/kota | Provinsi | Tahun | Kab/kota |
+|---|---|---|---|---|---|
+| Aceh | 2026 | 23 | Kalimantan Barat | 2026 | 14 |
+| Sumatera Barat | 2026 | 19 | Kalimantan Tengah | 2026 | 14 |
+| Lampung | 2026 | 15 | Kalimantan Selatan | 2026 | 13 |
+| Kepulauan Bangka Belitung | 2026 | 7 | Sulawesi Selatan | 2026 | 24 |
+| Kepulauan Riau | 2026 | 7 | Gorontalo | 2026 | 6 |
+| Bali | 2026 | 9 | Maluku | 2026 | 11 |
+| D.I. Yogyakarta | 2025 | 5 | Maluku Utara | 2026 | 10 |
+| Banten | 2025 | 8 | Sulawesi Barat | 2024 | 6 |
+| Kalimantan Timur | 2024 | 10 | Nusa Tenggara Timur | 2026 | 22 |
+| Papua Barat | 2026 | 7 | Papua Tengah | 2024 | 8 |
+| Papua Pegunungan | 2025 | 8 | | | |
 
-📄 PDF-nya disimpan di folder **`catat/pdf-agama/`** (36 berkas, 567 MB — tidak
-diunggah ke GitHub). Alat pembacanya: **`alat/baca-agama-dalam-angka.py`**.
+📄 PDF-nya disimpan di folder **`catat/pdf-agama/`** (±60 berkas — tidak diunggah ke
+GitHub). Alat pembacanya: **`alat/baca-agama-dalam-angka.py`**.
 
-⚠️ **Perhatikan:** tahun datanya **berbeda-beda** (2018–2026) dan Kalimantan Utara
-satuannya **persen**, bukan jiwa. Jadi angka antarprovinsi **tidak bisa dibandingkan
-langsung**.
+🎉 **Papua Tengah & Papua Pegunungan** ternyata tabelnya ada di buku **"Provinsi Papua
+Dalam Angka"** (provinsi hasil pemekaran belum punya buku sendiri).
+
+⚠️ **Perhatikan:** tahun datanya **berbeda-beda** (2018–2026) dan **4 provinsi**
+satuannya **persen**, bukan jiwa (Jawa Tengah · Kalimantan Utara · Sulawesi Barat ·
+Nusa Tenggara Timur). Jadi angka antarprovinsi **tidak bisa dibandingkan langsung**.
 
 ⚠️ **Catatan jujur:** di tabel Sulawesi Tenggara, baris **total provinsi** dari BPS
 **tidak sama** dengan penjumlahan baris kabupaten/kotanya (selisih 58.737 jiwa).

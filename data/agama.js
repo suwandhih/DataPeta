@@ -416,6 +416,34 @@ window.AGAMA_SUMBER = {
     ],
     "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Papua Barat, 2026 (tabel dari Papua Barat Dalam Angka 2026)",
     "url": "https://papuabarat.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "94": {
+    "provinsi": "Papua Tengah",
+    "tahun": "2024",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Papua Tengah, 2024 (tabel dari Papua Tengah Dalam Angka 2024)",
+    "url": "https://.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "95": {
+    "provinsi": "Papua Pegunungan",
+    "tahun": "2025",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Papua Pegunungan, 2025 (tabel dari Papua Pegunungan Dalam Angka 2025)",
+    "url": "https://.bps.go.id/id/publication?keyword=dalam+angka"
   }
 };
 
@@ -3452,6 +3480,118 @@ window.AGAMA_KABKOTA = {
     23328,
     0,
     0,
+    0,
+    0
+  ],
+  "94.01": [
+    86106,
+    62139,
+    23879,
+    477,
+    227
+  ],
+  "94.02": [
+    1417,
+    224527,
+    345,
+    0,
+    0
+  ],
+  "94.03": [
+    4482,
+    26753,
+    46343,
+    38,
+    0
+  ],
+  "94.04": [
+    98340,
+    166445,
+    111844,
+    445,
+    255
+  ],
+  "94.05": [
+    2815,
+    210577,
+    2986,
+    0,
+    0
+  ],
+  "94.06": [
+    1450,
+    13337,
+    90088,
+    0,
+    0
+  ],
+  "94.07": [
+    456,
+    79513,
+    75150,
+    0,
+    0
+  ],
+  "94.08": [
+    2772,
+    11509,
+    37766,
+    0,
+    0
+  ],
+  "95.01": [
+    16698,
+    20206,
+    119082,
+    93,
+    0
+  ],
+  "95.02": [
+    990,
+    22772,
+    22981,
+    0,
+    0
+  ],
+  "95.03": [
+    6404,
+    167417,
+    12457,
+    48,
+    0
+  ],
+  "95.04": [
+    1267,
+    297298,
+    247,
+    0,
+    0
+  ],
+  "95.05": [
+    616,
+    9689,
+    719,
+    0,
+    0
+  ],
+  "95.06": [
+    160,
+    114289,
+    3331,
+    0,
+    0
+  ],
+  "95.07": [
+    788,
+    457140,
+    475,
+    0,
+    0
+  ],
+  "95.08": [
+    770,
+    107115,
+    1051,
     0,
     0
   ]

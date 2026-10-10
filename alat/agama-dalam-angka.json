@@ -6090,5 +6090,367 @@
    "Konghucu"
   ],
   "satuan": "jiwa"
+ },
+ "94": {
+  "nama": "Papua Tengah",
+  "subdomain": "papua",
+  "tahun": 2024,
+  "judul": "Provinsi Papua Tengah Dalam Angka 2024 (tabel di buku Provinsi Papua Dalam Angka 2024)",
+  "pdf": "catat/pdf-agama/papua-2024.pdf",
+  "terbaca": {
+   "94.04": {
+    "nama": "Kabupaten Mimika",
+    "angka": [
+     98340.0,
+     166445.0,
+     111844.0,
+     445.0,
+     255.0
+    ],
+    "total": 377329.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.06": {
+    "nama": "Kabupaten Dogiyai",
+    "angka": [
+     1450.0,
+     13337.0,
+     90088.0,
+     0,
+     0
+    ],
+    "total": 104875.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.08": {
+    "nama": "Kabupaten Deiyai",
+    "angka": [
+     2772.0,
+     11509.0,
+     37766.0,
+     0,
+     0
+    ],
+    "total": 52047.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.01": {
+    "nama": "Kabupaten Nabire",
+    "angka": [
+     86106.0,
+     62139.0,
+     23879.0,
+     477.0,
+     227.0
+    ],
+    "total": 172828.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.03": {
+    "nama": "Kabupaten Paniai",
+    "angka": [
+     4482.0,
+     26753.0,
+     46343.0,
+     38.0,
+     0
+    ],
+    "total": 77616.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.07": {
+    "nama": "Kabupaten Intan Jaya",
+    "angka": [
+     456.0,
+     79513.0,
+     75150.0,
+     0,
+     0
+    ],
+    "total": 155119.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.05": {
+    "nama": "Kabupaten Puncak",
+    "angka": [
+     2815.0,
+     210577.0,
+     2986.0,
+     0,
+     0
+    ],
+    "total": 216378.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "94.02": {
+    "nama": "Kabupaten Puncak Jaya",
+    "angka": [
+     1417.0,
+     224527.0,
+     345.0,
+     0,
+     0
+    ],
+    "total": 226289.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   307
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "satuan": "jiwa"
+ },
+ "95": {
+  "nama": "Papua Pegunungan",
+  "subdomain": "papua",
+  "tahun": 2025,
+  "judul": "Provinsi Papua Pegunungan Dalam Angka 2025 (tabel di buku Provinsi Papua Dalam Angka 2025)",
+  "pdf": "catat/pdf-agama/papua-2025.pdf",
+  "terbaca": {
+   "95.08": {
+    "nama": "Kabupaten Nduga",
+    "angka": [
+     770.0,
+     107115.0,
+     1051.0,
+     0,
+     0
+    ],
+    "total": 108936.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.01": {
+    "nama": "Kabupaten Jayawijaya",
+    "angka": [
+     16698.0,
+     20206.0,
+     119082.0,
+     93.0,
+     0
+    ],
+    "total": 156079.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.07": {
+    "nama": "Kabupaten Lanny Jaya",
+    "angka": [
+     788.0,
+     457140.0,
+     475.0,
+     0,
+     0
+    ],
+    "total": 458403.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.04": {
+    "nama": "Kabupaten Tolikara",
+    "angka": [
+     1267.0,
+     297298.0,
+     247.0,
+     0,
+     0
+    ],
+    "total": 298812.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.05": {
+    "nama": "Kabupaten Mamberamo Tengah",
+    "angka": [
+     616.0,
+     9689.0,
+     719.0,
+     0,
+     0
+    ],
+    "total": 11024.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.06": {
+    "nama": "Kabupaten Yalimo",
+    "angka": [
+     160.0,
+     114289.0,
+     3331.0,
+     0,
+     0
+    ],
+    "total": 117780.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.03": {
+    "nama": "Kabupaten Yahukimo",
+    "angka": [
+     6404.0,
+     167417.0,
+     12457.0,
+     48.0,
+     0
+    ],
+    "total": 186326.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "95.02": {
+    "nama": "Kabupaten Pegunungan Bintang",
+    "angka": [
+     990.0,
+     22772.0,
+     22981.0,
+     0,
+     0
+    ],
+    "total": 46743.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   296
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "satuan": "jiwa"
  }
 }
