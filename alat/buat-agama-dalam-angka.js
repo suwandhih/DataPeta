@@ -75,7 +75,10 @@ function utama() {
     sumber[kode] = {
       provinsi: c.nama,
       tahun: tahun,
-      satuan: "jiwa",
+      // Satuan diambil dari hasil pembacaan tabel. Sebagian provinsi
+      // (mis. Nusa Tenggara Timur, Sulawesi Barat) tabelnya dalam PERSEN,
+      // bukan jiwa - kalau salah, angkanya jadi tidak masuk akal.
+      satuan: c.satuan || "jiwa",
       kolom: c.kolom,
       judul: "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi " +
         c.nama + ", " + tahun + " (tabel dari " + c.nama +

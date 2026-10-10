@@ -172,6 +172,35 @@ window.AGAMA_SUMBER = {
     "judul": "Persentase Penduduk Menurut Agama yang Dianut (Persen)",
     "url": "https://jateng.bps.go.id/id/statistics-table?subject=519&keyword=agama"
   },
+  "34": {
+    "provinsi": "Daerah Istimewa Yogyakarta",
+    "tahun": "2025",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha",
+      "Konghucu"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Daerah Istimewa Yogyakarta, 2025 (tabel dari Daerah Istimewa Yogyakarta Dalam Angka 2025)",
+    "url": "https://yogyakarta.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "36": {
+    "provinsi": "Banten",
+    "tahun": "2025",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Banten, 2025 (tabel dari Banten Dalam Angka 2025)",
+    "url": "https://banten.bps.go.id/id/publication?keyword=dalam+angka"
+  },
   "51": {
     "provinsi": "Bali",
     "tahun": "2026",
@@ -187,6 +216,20 @@ window.AGAMA_SUMBER = {
     ],
     "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Bali, 2026 (tabel dari Bali Dalam Angka 2026)",
     "url": "https://bali.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "53": {
+    "provinsi": "Nusa Tenggara Timur",
+    "tahun": "2026",
+    "satuan": "persen",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Nusa Tenggara Timur, 2026 (tabel dari Nusa Tenggara Timur Dalam Angka 2026)",
+    "url": "https://ntt.bps.go.id/id/publication?keyword=dalam+angka"
   },
   "61": {
     "provinsi": "Kalimantan Barat",
@@ -229,6 +272,20 @@ window.AGAMA_SUMBER = {
     ],
     "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Kalimantan Selatan, 2026 (tabel dari Kalimantan Selatan Dalam Angka 2026)",
     "url": "https://kalsel.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "64": {
+    "provinsi": "Kalimantan Timur",
+    "tahun": "2024",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Kalimantan Timur, 2024 (tabel dari Kalimantan Timur Dalam Angka 2024)",
+    "url": "https://kaltim.bps.go.id/id/publication?keyword=dalam+angka"
   },
   "65": {
     "provinsi": "Kalimantan Utara",
@@ -302,6 +359,20 @@ window.AGAMA_SUMBER = {
     "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Gorontalo, 2026 (tabel dari Gorontalo Dalam Angka 2026)",
     "url": "https://gorontalo.bps.go.id/id/publication?keyword=dalam+angka"
   },
+  "76": {
+    "provinsi": "Sulawesi Barat",
+    "tahun": "2024",
+    "satuan": "persen",
+    "kolom": [
+      "Islam",
+      "Protestan",
+      "Katolik",
+      "Hindu",
+      "Budha"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Sulawesi Barat, 2024 (tabel dari Sulawesi Barat Dalam Angka 2024)",
+    "url": "https://sulbar.bps.go.id/id/publication?keyword=dalam+angka"
+  },
   "81": {
     "provinsi": "Maluku",
     "tahun": "2026",
@@ -330,6 +401,21 @@ window.AGAMA_SUMBER = {
     ],
     "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Maluku Utara, 2026 (tabel dari Maluku Utara Dalam Angka 2026)",
     "url": "https://malut.bps.go.id/id/publication?keyword=dalam+angka"
+  },
+  "92": {
+    "provinsi": "Papua Barat",
+    "tahun": "2026",
+    "satuan": "jiwa",
+    "kolom": [
+      "Islam",
+      "Kristen",
+      "Katolik",
+      "Hindu",
+      "Budha",
+      "Konghucu"
+    ],
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota di Provinsi Papua Barat, 2026 (tabel dari Papua Barat Dalam Angka 2026)",
+    "url": "https://papuabarat.bps.go.id/id/publication?keyword=dalam+angka"
   }
 };
 
@@ -1935,6 +2021,102 @@ window.AGAMA_KABKOTA = {
     0.38,
     0.07
   ],
+  "34.01": [
+    428903,
+    5798,
+    17077,
+    33,
+    571,
+    0
+  ],
+  "34.02": [
+    927912,
+    12538,
+    24696,
+    774,
+    187,
+    2
+  ],
+  "34.03": [
+    756321,
+    12979,
+    13069,
+    963,
+    362,
+    2
+  ],
+  "34.04": [
+    994314,
+    32262,
+    69324,
+    1128,
+    696,
+    32
+  ],
+  "34.71": [
+    353453,
+    26379,
+    40524,
+    472,
+    1153,
+    24
+  ],
+  "36.01": [
+    127916,
+    712,
+    186,
+    21,
+    262
+  ],
+  "36.02": [
+    1429534,
+    2014,
+    1011,
+    150,
+    1
+  ],
+  "36.03": [
+    3101768,
+    105209,
+    44533,
+    1959,
+    54887
+  ],
+  "36.04": [
+    1390267,
+    4216,
+    2312,
+    762,
+    621
+  ],
+  "36.71": [
+    1682913,
+    107617,
+    47283,
+    2651,
+    71236
+  ],
+  "36.72": [
+    459474,
+    7072,
+    1885,
+    248,
+    1688
+  ],
+  "36.73": [
+    617051,
+    10015,
+    5701,
+    722,
+    1867
+  ],
+  "36.74": [
+    1207254,
+    79850,
+    48039,
+    3014,
+    13168
+  ],
   "51.01": [
     88752,
     2690,
@@ -2015,6 +2197,160 @@ window.AGAMA_KABKOTA = {
     15696,
     353,
     41
+  ],
+  "53.01": [
+    2.06,
+    84.48,
+    13.37,
+    0.08,
+    0
+  ],
+  "53.02": [
+    2.19,
+    88.44,
+    9.32,
+    0.05,
+    0
+  ],
+  "53.03": [
+    1.89,
+    7.59,
+    90.47,
+    0.05,
+    0
+  ],
+  "53.04": [
+    3.83,
+    5.6,
+    90.43,
+    0.14,
+    0
+  ],
+  "53.05": [
+    25.05,
+    71.7,
+    3.1,
+    0.15,
+    0
+  ],
+  "53.06": [
+    20.05,
+    0.63,
+    79.28,
+    0.03,
+    0
+  ],
+  "53.07": [
+    14.13,
+    1.6,
+    84.12,
+    0.13,
+    0.02
+  ],
+  "53.08": [
+    22.62,
+    1.8,
+    75.51,
+    0.07,
+    0
+  ],
+  "53.09": [
+    6.85,
+    2.43,
+    90.63,
+    0.09,
+    0
+  ],
+  "53.10": [
+    4.79,
+    1.01,
+    94.14,
+    0.06,
+    0
+  ],
+  "53.11": [
+    7.9,
+    81.53,
+    10.4,
+    0.17,
+    0.01
+  ],
+  "53.12": [
+    8.88,
+    68.2,
+    22.82,
+    0.1,
+    0
+  ],
+  "53.13": [
+    28.79,
+    1.71,
+    69.4,
+    0.09,
+    0.01
+  ],
+  "53.14": [
+    5.32,
+    92.92,
+    1.73,
+    0.02,
+    0
+  ],
+  "53.15": [
+    21.71,
+    0.77,
+    77.45,
+    0.08,
+    0
+  ],
+  "53.16": [
+    9.6,
+    0.42,
+    89.95,
+    0.03,
+    0
+  ],
+  "53.17": [
+    6.27,
+    75.9,
+    17.74,
+    0.08,
+    0
+  ],
+  "53.18": [
+    2.2,
+    57.53,
+    40.23,
+    0.04,
+    0
+  ],
+  "53.19": [
+    6.84,
+    0.32,
+    92.81,
+    0.03,
+    0
+  ],
+  "53.20": [
+    1.04,
+    95.92,
+    2.99,
+    0.05,
+    0
+  ],
+  "53.21": [
+    1.23,
+    6.97,
+    91.77,
+    0.02,
+    0
+  ],
+  "53.71": [
+    10.06,
+    58.75,
+    30.17,
+    0.99,
+    0.03
   ],
   "61.01": [
     579114,
@@ -2302,6 +2638,76 @@ window.AGAMA_KABKOTA = {
     2719,
     404,
     264
+  ],
+  "64.01": [
+    282521,
+    9759,
+    10082,
+    518,
+    539
+  ],
+  "64.02": [
+    237159,
+    17272,
+    25653,
+    234,
+    648
+  ],
+  "64.03": [
+    350567,
+    34378,
+    42026,
+    2504,
+    137
+  ],
+  "64.07": [
+    727081,
+    15273,
+    42822,
+    2625,
+    239
+  ],
+  "64.08": [
+    86173,
+    37253,
+    56411,
+    147,
+    36
+  ],
+  "64.09": [
+    186278,
+    2795,
+    7323,
+    124,
+    45
+  ],
+  "64.11": [
+    9247,
+    23500,
+    5696,
+    51,
+    2
+  ],
+  "64.71": [
+    666015,
+    13925,
+    51303,
+    1388,
+    5856
+  ],
+  "64.72": [
+    786964,
+    22173,
+    43701,
+    832,
+    7862
+  ],
+  "64.74": [
+    170641,
+    3344,
+    15571,
+    279,
+    133
   ],
   "65.01": [
     73.53,
@@ -2794,6 +3200,48 @@ window.AGAMA_KABKOTA = {
     141,
     811
   ],
+  "76.01": [
+    86.44,
+    7.14,
+    2.02,
+    4.37,
+    0.01
+  ],
+  "76.02": [
+    85.19,
+    13.1,
+    0.68,
+    0.98,
+    0.04
+  ],
+  "76.03": [
+    17.17,
+    75.09,
+    3.07,
+    1.46,
+    0
+  ],
+  "76.04": [
+    98.48,
+    1.16,
+    0.32,
+    0.02,
+    0.02
+  ],
+  "76.05": [
+    99.85,
+    0.09,
+    0.04,
+    0,
+    0.01
+  ],
+  "76.06": [
+    84.07,
+    9.26,
+    2.39,
+    4.15,
+    0.12
+  ],
   "81.01": [
     275086,
     150134,
@@ -2950,5 +3398,61 @@ window.AGAMA_KABKOTA = {
     10,
     0,
     3
+  ],
+  "92.02": [
+    65041,
+    87385,
+    15599,
+    409,
+    240,
+    0
+  ],
+  "92.03": [
+    61996,
+    16522,
+    17112,
+    55,
+    14,
+    0
+  ],
+  "92.06": [
+    41573,
+    28243,
+    19270,
+    65,
+    48,
+    0
+  ],
+  "92.07": [
+    10041,
+    41140,
+    937,
+    0,
+    0,
+    0
+  ],
+  "92.08": [
+    27907,
+    30965,
+    7147,
+    45,
+    0,
+    0
+  ],
+  "92.11": [
+    8837,
+    40006,
+    443,
+    5,
+    0,
+    0
+  ],
+  "92.12": [
+    0,
+    23328,
+    0,
+    0,
+    0,
+    0
   ]
 };

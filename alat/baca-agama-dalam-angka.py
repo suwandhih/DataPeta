@@ -43,7 +43,12 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 AKAR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KELUARAN = os.path.join(AKAR, "alat", "agama-dalam-angka.json")
 
-KATA_AGAMA = re.compile(r"islam|katolik|protestan|hindu|budha|buddha|konghucu|kepercayaan", re.I)
+# Nama kolom agama yang dipakai BPS. "Kristen" WAJIB ada: sebagian provinsi
+# (mis. Papua Barat, Sulawesi Utara, DKI Jakarta) memakai "Kristen", bukan
+# "Protestan". Kalau tidak dikenali, kolomnya terlewat dan angka jadi bergeser.
+KATA_AGAMA = re.compile(
+    r"islam|katolik|protestan|kristen|christian|hindu|budha|buddha|konghucu|kepercayaan",
+    re.I)
 KOSONG = ("-", "\u2013", "\u2014", "...", "\u2026", "", "~0", "0,00", "0.00")
 AWALAN = re.compile(r"^(provinsi|kabupaten|kota|kab\.|kotamadya)\s+", re.I)
 JUDUL_KAB = re.compile(r"kabupaten\s*/?\s*regency", re.I)
@@ -125,7 +130,9 @@ def angka_dari(teks):
     else:
         t = t.replace(",", ".")
     try:
-        return int(float(t))
+        # Desimal dipertahankan (tabel persen memakai koma, mis. "99,85").
+        # Angka jiwa selalu bulat, jadi tidak terpengaruh.
+        return float(t)
     except ValueError:
         return None
 
@@ -304,13 +311,27 @@ def ada_pisah_kelamin(tabel, kepala):
         bool(re.search(r"perempuan|female", bawah, re.I))
 
 
+# Singkatan nama provinsi yang dipakai BPS di baris total tabel.
+# HATI-HATI: singkatan harus khas provinsi. Contoh "Yogyakarta" TIDAK boleh
+# dipakai untuk D.I. Yogyakarta, karena itu juga nama Kota Yogyakarta.
+ALIAS_PROV = {
+    "daerahistimewayogyakarta": ("diyogyakarta",),
+    "daerahkhususibukotajakarta": ("dkijakarta",),
+    "kepulauanbangkabelitung": ("kepbangkabelitung",),
+    "kepulauanriau": ("kepriau",),
+    "nusatenggarabarat": ("ntb",),
+    "nusatenggaratimur": ("ntt",),
+}
+
+
 def _baris_provinsi(sel, nama_prov):
     """Apakah sel ini baris total provinsi (boleh kena tanda air)?
 
-    Tiga bentuk yang ditemui di PDF BPS:
+    Bentuk yang ditemui di PDF BPS:
       "Aceh"                                  -> sama persis
       "t\\nLampung t"                          -> kena tanda air (beda 2 huruf)
       "Provinsi Gorontalo\\nGorontalo Province" -> disertai kata "Provinsi"
+      "D.I. Yogyakarta"                        -> disingkat
     Nama kabupaten yang mirip ("Aceh Besar") TIDAK boleh ikut terbaca, karena
     itu selisih panjangnya dibatasi ketat.
     """
@@ -321,6 +342,8 @@ def _baris_provinsi(sel, nama_prov):
     if re.search(r"provinsi|province", str(sel), re.I):
         return True
     if b == p:
+        return True
+    if b in ALIAS_PROV.get(p, ()):
         return True
     # Nama provinsi di tabel kadang disingkat, mis. "Kep. Bangka Belitung"
     # untuk "Kepulauan Bangka Belitung".
@@ -423,10 +446,31 @@ def baca_kelompok(doc, kelompok, kab, kota, nama_prov):
         return {}, []
     # Baris total provinsi: pakai kolom "Jumlah" kalau ada, kalau tidak jumlahkan
     total_prov = prov["jumlah"] if prov["jumlah"] is not None else sum(prov["angka"])
+    if not total_prov:
+        return {}, []
     # Tabel penduduk pasti besar. Angka kecil berarti itu tabel lain yang
     # kebetulan punya kolom agama (mis. tabel tempat ibadah) -> dibuang.
-    if not total_prov or total_prov < 100000:
+    # KECUALI kalau totalnya ~100: itu tabel PERSEN (bagian dari penduduk),
+    # seperti Sulawesi Barat 2024, Jawa Tengah, dan Kalimantan Utara.
+    persen = 99 <= total_prov <= 101
+    if not persen and total_prov < 100000:
         return {}, []
+
+    if persen:
+        # Tabel persen: tiap baris harus berjumlah ~100% (bagian dari penduduk
+        # kabupaten/kota itu sendiri). Menjumlahkan antar kabupaten tidak ada
+        # artinya, jadi ujinya per baris.
+        benar, gagal = {}, []
+        for k, v in kumpul.items():
+            total = v["jumlah"] if v["jumlah"] is not None else sum(v["angka"])
+            if abs(total - 100) > 1:
+                gagal.append([v["nama"], "jumlah persen %s (harus ~100)" % total])
+                continue
+            benar[k] = {"nama": v["nama"], "angka": v["angka"], "total": total,
+                        "kolom": v["kolom"], "satuan": "persen",
+                        "cara": "kolom-jumlah" if v["jumlah"] is not None else "dijumlahkan"}
+        return benar, gagal
+
     # UJI: jumlah semua kabupaten/kota harus sama dengan baris total provinsi
     jumlah_kabkota = sum(v["jumlah"] if v["jumlah"] is not None else sum(v["angka"])
                          for v in kumpul.values())
@@ -437,7 +481,7 @@ def baca_kelompok(doc, kelompok, kab, kota, nama_prov):
     for k, v in kumpul.items():
         total = v["jumlah"] if v["jumlah"] is not None else sum(v["angka"])
         benar[k] = {"nama": v["nama"], "angka": v["angka"], "total": total,
-                    "kolom": v["kolom"],
+                    "kolom": v["kolom"], "satuan": "jiwa",
                     "cara": "kolom-jumlah" if v["jumlah"] is not None else "dijumlahkan"}
     return benar, []
 
@@ -485,6 +529,10 @@ def utama():
             if len(v["kolom"]) > len(kolom_terbaik):
                 kolom_terbaik = v["kolom"]
         catat["kolom"] = kolom_terbaik
+        # Satuan (jiwa / persen) diambil dari hasil pembacaan
+        for v in terbaik.values():
+            catat["satuan"] = v.get("satuan", "jiwa")
+            break
         ringkas[kode] = (catat["nama"], len(terbaik), len(kab) + len(kota), len(terbaik_gagal))
 
     with open(KELUARAN, "w", encoding="utf-8") as f:

@@ -40,13 +40,13 @@
    "11.09": {
     "nama": "Kabupaten Simeulue",
     "angka": [
-     96279,
-     208,
-     14,
+     96279.0,
+     208.0,
+     14.0,
      0,
-     9
+     9.0
     ],
-    "total": 96510,
+    "total": 96510.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -54,18 +54,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.10": {
     "nama": "Kabupaten Aceh Singkil",
     "angka": [
-     121320,
-     15786,
-     1427,
-     10,
-     1
+     121320.0,
+     15786.0,
+     1427.0,
+     10.0,
+     1.0
     ],
-    "total": 138544,
+    "total": 138544.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -73,18 +74,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.01": {
     "nama": "Kabupaten Aceh Selatan",
     "angka": [
-     237743,
-     160,
-     28,
+     237743.0,
+     160.0,
+     28.0,
      0,
-     90
+     90.0
     ],
-    "total": 238021,
+    "total": 238021.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -92,18 +94,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.02": {
     "nama": "Kabupaten Aceh Tenggara",
     "angka": [
-     192311,
-     39010,
-     2305,
+     192311.0,
+     39010.0,
+     2305.0,
      0,
      0
     ],
-    "total": 233626,
+    "total": 233626.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -111,18 +114,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.03": {
     "nama": "Kabupaten Aceh Timur",
     "angka": [
-     454602,
-     68,
-     10,
+     454602.0,
+     68.0,
+     10.0,
      0,
-     43
+     43.0
     ],
-    "total": 454723,
+    "total": 454723.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -130,18 +134,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.04": {
     "nama": "Kabupaten Aceh Tengah",
     "angka": [
-     229947,
-     452,
-     119,
-     4,
-     249
+     229947.0,
+     452.0,
+     119.0,
+     4.0,
+     249.0
     ],
-    "total": 230771,
+    "total": 230771.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -149,18 +154,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.05": {
     "nama": "Kabupaten Aceh Barat",
     "angka": [
-     206537,
-     412,
-     69,
+     206537.0,
+     412.0,
+     69.0,
      0,
-     672
+     672.0
     ],
-    "total": 207690,
+    "total": 207690.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -168,18 +174,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.06": {
     "nama": "Kabupaten Aceh Besar",
     "angka": [
-     437863,
-     847,
-     194,
-     12,
-     132
+     437863.0,
+     847.0,
+     194.0,
+     12.0,
+     132.0
     ],
-    "total": 439048,
+    "total": 439048.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -187,18 +194,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.07": {
     "nama": "Kabupaten Pidie",
     "angka": [
-     447942,
-     88,
-     9,
-     1,
-     91
+     447942.0,
+     88.0,
+     9.0,
+     1.0,
+     91.0
     ],
-    "total": 448131,
+    "total": 448131.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -206,18 +214,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.11": {
     "nama": "Kabupaten Bireuen",
     "angka": [
-     462355,
-     159,
-     16,
-     11,
-     295
+     462355.0,
+     159.0,
+     16.0,
+     11.0,
+     295.0
     ],
-    "total": 462836,
+    "total": 462836.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -225,18 +234,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.08": {
     "nama": "Kabupaten Aceh Utara",
     "angka": [
-     633333,
-     168,
-     41,
-     1,
-     90
+     633333.0,
+     168.0,
+     41.0,
+     1.0,
+     90.0
     ],
-    "total": 633633,
+    "total": 633633.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -244,18 +254,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.12": {
     "nama": "Kabupaten Aceh Barat Daya",
     "angka": [
-     154740,
-     42,
-     4,
-     12,
-     199
+     154740.0,
+     42.0,
+     4.0,
+     12.0,
+     199.0
     ],
-    "total": 154997,
+    "total": 154997.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -263,18 +274,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.13": {
     "nama": "Kabupaten Gayo Lues",
     "angka": [
-     105746,
-     350,
-     39,
+     105746.0,
+     350.0,
+     39.0,
      0,
      0
     ],
-    "total": 106135,
+    "total": 106135.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -282,18 +294,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.16": {
     "nama": "Kabupaten Aceh Tamiang",
     "angka": [
-     308820,
-     583,
-     91,
-     9,
-     980
+     308820.0,
+     583.0,
+     91.0,
+     9.0,
+     980.0
     ],
-    "total": 310483,
+    "total": 310483.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -301,18 +314,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.15": {
     "nama": "Kabupaten Nagan Raya",
     "angka": [
-     178523,
-     507,
-     53,
+     178523.0,
+     507.0,
+     53.0,
      0,
-     25
+     25.0
     ],
-    "total": 179108,
+    "total": 179108.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -320,18 +334,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.14": {
     "nama": "Kabupaten Aceh Jaya",
     "angka": [
-     100605,
-     50,
-     13,
+     100605.0,
+     50.0,
+     13.0,
      0,
-     6
+     6.0
     ],
-    "total": 100674,
+    "total": 100674.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -339,18 +354,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.17": {
     "nama": "Kabupaten Bener Meriah",
     "angka": [
-     178855,
-     93,
-     20,
-     1,
-     37
+     178855.0,
+     93.0,
+     20.0,
+     1.0,
+     37.0
     ],
-    "total": 179006,
+    "total": 179006.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -358,18 +374,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.18": {
     "nama": "Kabupaten Pidie Jaya",
     "angka": [
-     165059,
-     15,
-     6,
+     165059.0,
+     15.0,
+     6.0,
      0,
      0
     ],
-    "total": 165080,
+    "total": 165080.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -377,18 +394,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.71": {
     "nama": "Kota Banda Aceh",
     "angka": [
-     258259,
-     1654,
-     487,
-     22,
-     2540
+     258259.0,
+     1654.0,
+     487.0,
+     22.0,
+     2540.0
     ],
-    "total": 262962,
+    "total": 262962.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -396,18 +414,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.72": {
     "nama": "Kota Sabang",
     "angka": [
-     42169,
-     279,
-     54,
+     42169.0,
+     279.0,
+     54.0,
      0,
-     215
+     215.0
     ],
-    "total": 42717,
+    "total": 42717.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -415,18 +434,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.74": {
     "nama": "Kota Langsa",
     "angka": [
-     181446,
-     641,
-     36,
-     7,
-     484
+     181446.0,
+     641.0,
+     36.0,
+     7.0,
+     484.0
     ],
-    "total": 182614,
+    "total": 182614.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -434,18 +454,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.73": {
     "nama": "Kota Lhokseumawe",
     "angka": [
-     196234,
-     472,
-     137,
+     196234.0,
+     472.0,
+     137.0,
      0,
-     496
+     496.0
     ],
-    "total": 197339,
+    "total": 197339.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -453,18 +474,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "11.75": {
     "nama": "Kota Subulussalam",
     "angka": [
-     101799,
-     2940,
-     810,
+     101799.0,
+     2940.0,
+     810.0,
      0,
-     4
+     4.0
     ],
-    "total": 105553,
+    "total": 105553.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -472,6 +494,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -485,7 +508,8 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "13": {
   "nama": "Sumatera Barat",
@@ -541,15 +565,15 @@
    "13.09": {
     "nama": "Kabupaten Kepulauan Mentawai",
     "angka": [
-     23378,
-     47537,
-     28720,
-     1,
-     3,
+     23378.0,
+     47537.0,
+     28720.0,
+     1.0,
+     3.0,
      0,
-     171
+     171.0
     ],
-    "total": 99810,
+    "total": 99810.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -559,20 +583,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.01": {
     "nama": "Kabupaten Pesisir Selatan",
     "angka": [
-     542090,
-     1036,
-     209,
-     4,
-     1,
+     542090.0,
+     1036.0,
+     209.0,
+     4.0,
+     1.0,
      0,
      0
     ],
-    "total": 543340,
+    "total": 543340.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -582,20 +607,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.02": {
     "nama": "Kabupaten Solok",
     "angka": [
-     418713,
-     297,
-     18,
-     2,
-     1,
+     418713.0,
+     297.0,
+     18.0,
+     2.0,
+     1.0,
      0,
      0
     ],
-    "total": 419031,
+    "total": 419031.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -605,20 +631,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.03": {
     "nama": "Kabupaten Sijunjung",
     "angka": [
-     248457,
-     977,
-     304,
-     3,
-     1,
+     248457.0,
+     977.0,
+     304.0,
+     3.0,
+     1.0,
      0,
      0
     ],
-    "total": 249742,
+    "total": 249742.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -628,20 +655,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.04": {
     "nama": "Kabupaten Tanah Datar",
     "angka": [
-     384237,
-     318,
-     126,
-     1,
-     7,
+     384237.0,
+     318.0,
+     126.0,
+     1.0,
+     7.0,
      0,
      0
     ],
-    "total": 384689,
+    "total": 384689.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -651,20 +679,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.05": {
     "nama": "Kabupaten Padang Pariaman",
     "angka": [
-     458306,
-     1614,
-     523,
-     4,
-     4,
+     458306.0,
+     1614.0,
+     523.0,
+     4.0,
+     4.0,
      0,
-     1
+     1.0
     ],
-    "total": 460452,
+    "total": 460452.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -674,20 +703,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.06": {
     "nama": "Kabupaten Agam",
     "angka": [
-     530025,
-     3639,
-     504,
+     530025.0,
+     3639.0,
+     504.0,
      0,
-     5,
+     5.0,
      0,
      0
     ],
-    "total": 534173,
+    "total": 534173.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -697,20 +727,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.07": {
     "nama": "Kabupaten Lima Puluh Kota",
     "angka": [
-     405218,
-     655,
-     346,
+     405218.0,
+     655.0,
+     346.0,
      0,
-     5,
+     5.0,
      0,
-     4
+     4.0
     ],
-    "total": 406228,
+    "total": 406228.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -720,20 +751,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.08": {
     "nama": "Kabupaten Pasaman",
     "angka": [
-     316006,
-     1234,
-     175,
+     316006.0,
+     1234.0,
+     175.0,
      0,
      0,
      0,
      0
     ],
-    "total": 317415,
+    "total": 317415.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -743,20 +775,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.11": {
     "nama": "Kabupaten Solok Selatan",
     "angka": [
-     181629,
-     1302,
-     182,
-     1,
-     2,
+     181629.0,
+     1302.0,
+     182.0,
+     1.0,
+     2.0,
      0,
      0
     ],
-    "total": 183116,
+    "total": 183116.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -766,20 +799,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.10": {
     "nama": "Kabupaten Dharmasraya",
     "angka": [
-     240490,
-     4820,
-     753,
-     5,
-     2,
+     240490.0,
+     4820.0,
+     753.0,
+     5.0,
+     2.0,
      0,
-     53
+     53.0
     ],
-    "total": 246123,
+    "total": 246123.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -789,20 +823,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.12": {
     "nama": "Kabupaten Pasaman Barat",
     "angka": [
-     450718,
-     8252,
-     2863,
+     450718.0,
+     8252.0,
+     2863.0,
      0,
-     13,
+     13.0,
      0,
-     21
+     21.0
     ],
-    "total": 461867,
+    "total": 461867.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -812,20 +847,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.71": {
     "nama": "Kota Padang",
     "angka": [
-     932170,
-     14694,
-     12137,
-     41,
-     2845,
-     4,
-     19
+     932170.0,
+     14694.0,
+     12137.0,
+     41.0,
+     2845.0,
+     4.0,
+     19.0
     ],
-    "total": 961910,
+    "total": 961910.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -835,20 +871,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.72": {
     "nama": "Kota Solok",
     "angka": [
-     86010,
-     583,
-     314,
+     86010.0,
+     583.0,
+     314.0,
      0,
-     4,
+     4.0,
      0,
      0
     ],
-    "total": 86911,
+    "total": 86911.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -858,20 +895,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.73": {
     "nama": "Kota Sawahlunto",
     "angka": [
-     68414,
-     273,
-     106,
+     68414.0,
+     273.0,
+     106.0,
      0,
      0,
      0,
      0
     ],
-    "total": 68793,
+    "total": 68793.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -881,20 +919,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.74": {
     "nama": "Kota Padang Panjang",
     "angka": [
-     63596,
-     405,
-     333,
+     63596.0,
+     405.0,
+     333.0,
      0,
-     46,
-     1,
+     46.0,
+     1.0,
      0
     ],
-    "total": 64381,
+    "total": 64381.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -904,20 +943,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.75": {
     "nama": "Kota Bukittinggi",
     "angka": [
-     139933,
-     2399,
-     1126,
-     5,
-     132,
+     139933.0,
+     2399.0,
+     1126.0,
+     5.0,
+     132.0,
      0,
      0
     ],
-    "total": 143595,
+    "total": 143595.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -927,20 +967,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.76": {
     "nama": "Kota Payakumbuh",
     "angka": [
-     149277,
-     829,
-     663,
-     9,
-     91,
+     149277.0,
+     829.0,
+     663.0,
+     9.0,
+     91.0,
      0,
      0
     ],
-    "total": 150869,
+    "total": 150869.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -950,20 +991,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "13.77": {
     "nama": "Kota Pariaman",
     "angka": [
-     104672,
-     193,
-     108,
+     104672.0,
+     193.0,
+     108.0,
      0,
      0,
      0,
      0
     ],
-    "total": 104973,
+    "total": 104973.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -973,6 +1015,7 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    }
   },
@@ -989,7 +1032,8 @@
    "Budha",
    "Konghucu",
    "Kepercayaan"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "14": {
   "nama": "Riau",
@@ -1010,7 +1054,54 @@
   "tabel_agama": [],
   "terbaca": {},
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\riau-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\riau-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\riau-2024.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2023,
+    "pdf": "catat\\pdf-agama\\riau-2023.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2022,
+    "pdf": "catat\\pdf-agama\\riau-2022.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2021,
+    "pdf": "catat\\pdf-agama\\riau-2021.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2020,
+    "pdf": "catat\\pdf-agama\\riau-2020.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2019,
+    "pdf": "catat\\pdf-agama\\riau-2019.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2018,
+    "pdf": "catat\\pdf-agama\\riau-2018.pdf",
+    "halaman": []
+   }
+  ]
  },
  "17": {
   "nama": "Bengkulu",
@@ -1024,7 +1115,41 @@
   "tabel_agama": [],
   "terbaca": {},
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\bengkulu-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\bengkulu-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\bengkulu-2024.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2023,
+    "pdf": "catat\\pdf-agama\\bengkulu-2023.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2022,
+    "pdf": "catat\\pdf-agama\\bengkulu-2022.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2021,
+    "pdf": "catat\\pdf-agama\\bengkulu-2021.pdf",
+    "halaman": [
+     270
+    ]
+   }
+  ]
  },
  "18": {
   "nama": "Lampung",
@@ -1073,13 +1198,13 @@
    "18.04": {
     "nama": "Kabupaten Lampung Barat",
     "angka": [
-     311585,
-     2520,
-     568,
-     429,
-     91
+     311585.0,
+     2520.0,
+     568.0,
+     429.0,
+     91.0
     ],
-    "total": 315193,
+    "total": 315193.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1087,18 +1212,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.06": {
     "nama": "Kabupaten Tanggamus",
     "angka": [
-     638439,
-     1456,
-     2541,
-     729,
-     313
+     638439.0,
+     1456.0,
+     2541.0,
+     729.0,
+     313.0
     ],
-    "total": 643478,
+    "total": 643478.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1106,18 +1232,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.01": {
     "nama": "Kabupaten Lampung Selatan",
     "angka": [
-     1100124,
-     13171,
-     6623,
-     16222,
-     1023
+     1100124.0,
+     13171.0,
+     6623.0,
+     16222.0,
+     1023.0
     ],
-    "total": 1137163,
+    "total": 1137163.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1125,18 +1252,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.07": {
     "nama": "Kabupaten Lampung Timur",
     "angka": [
-     1091463,
-     13675,
-     6235,
-     18913,
-     2023
+     1091463.0,
+     13675.0,
+     6235.0,
+     18913.0,
+     2023.0
     ],
-    "total": 1132309,
+    "total": 1132309.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1144,18 +1272,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.02": {
     "nama": "Kabupaten Lampung Tengah",
     "angka": [
-     1328041,
-     15769,
-     15900,
-     47192,
-     1798
+     1328041.0,
+     15769.0,
+     15900.0,
+     47192.0,
+     1798.0
     ],
-    "total": 1408700,
+    "total": 1408700.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1163,18 +1292,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.03": {
     "nama": "Kabupaten Lampung Utara",
     "angka": [
-     667914,
-     6191,
-     4127,
-     2626,
-     530
+     667914.0,
+     6191.0,
+     4127.0,
+     2626.0,
+     530.0
     ],
-    "total": 681388,
+    "total": 681388.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1182,18 +1312,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.08": {
     "nama": "Kabupaten Way Kanan",
     "angka": [
-     475991,
-     4425,
-     3412,
-     13470,
-     146
+     475991.0,
+     4425.0,
+     3412.0,
+     13470.0,
+     146.0
     ],
-    "total": 497444,
+    "total": 497444.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1201,18 +1332,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.05": {
     "nama": "Kabupaten Tulang Bawang",
     "angka": [
-     419837,
-     7272,
-     2557,
-     12312,
-     261
+     419837.0,
+     7272.0,
+     2557.0,
+     12312.0,
+     261.0
     ],
-    "total": 442239,
+    "total": 442239.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1220,18 +1352,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.09": {
     "nama": "Kabupaten Pesawaran",
     "angka": [
-     499260,
-     4002,
-     2514,
-     363,
-     1489
+     499260.0,
+     4002.0,
+     2514.0,
+     363.0,
+     1489.0
     ],
-    "total": 507628,
+    "total": 507628.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1239,18 +1372,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.10": {
     "nama": "Kabupaten Pringsewu",
     "angka": [
-     433323,
-     3547,
-     8275,
-     2362,
-     543
+     433323.0,
+     3547.0,
+     8275.0,
+     2362.0,
+     543.0
     ],
-    "total": 448050,
+    "total": 448050.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1258,18 +1392,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.11": {
     "nama": "Kabupaten Mesuji",
     "angka": [
-     234260,
-     2958,
-     801,
-     5735,
-     184
+     234260.0,
+     2958.0,
+     801.0,
+     5735.0,
+     184.0
     ],
-    "total": 243938,
+    "total": 243938.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1277,18 +1412,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.12": {
     "nama": "Kabupaten Tulang Bawang Barat",
     "angka": [
-     299128,
-     7096,
-     2272,
-     4350,
-     330
+     299128.0,
+     7096.0,
+     2272.0,
+     4350.0,
+     330.0
     ],
-    "total": 313176,
+    "total": 313176.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1296,18 +1432,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.13": {
     "nama": "Kabupaten Pesisir Barat",
     "angka": [
-     176448,
-     329,
-     126,
-     1641,
-     4
+     176448.0,
+     329.0,
+     126.0,
+     1641.0,
+     4.0
     ],
-    "total": 178548,
+    "total": 178548.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1315,18 +1452,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.71": {
     "nama": "Kota Bandar Lampung",
     "angka": [
-     1013215,
-     35335,
-     17139,
-     3016,
-     13180
+     1013215.0,
+     35335.0,
+     17139.0,
+     3016.0,
+     13180.0
     ],
-    "total": 1081885,
+    "total": 1081885.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1334,18 +1472,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "18.72": {
     "nama": "Kota Metro",
     "angka": [
-     173075,
-     4412,
-     4122,
-     451,
-     1675
+     173075.0,
+     4412.0,
+     4122.0,
+     451.0,
+     1675.0
     ],
-    "total": 183735,
+    "total": 183735.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1353,6 +1492,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -1366,7 +1506,8 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "19": {
   "nama": "Kepulauan Bangka Belitung",
@@ -1404,14 +1545,14 @@
    "19.01": {
     "nama": "Kabupaten Bangka",
     "angka": [
-     295983,
-     8042,
-     3631,
-     39,
-     22948,
-     8433
+     295983.0,
+     8042.0,
+     3631.0,
+     39.0,
+     22948.0,
+     8433.0
     ],
-    "total": 339076,
+    "total": 339076.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1420,19 +1561,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.02": {
     "nama": "Kabupaten Belitung",
     "angka": [
-     178321,
-     3545,
-     1275,
-     805,
-     9196,
-     192
+     178321.0,
+     3545.0,
+     1275.0,
+     805.0,
+     9196.0,
+     192.0
     ],
-    "total": 193334,
+    "total": 193334.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1441,19 +1583,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.05": {
     "nama": "Kabupaten Bangka Barat",
     "angka": [
-     203191,
-     3120,
-     1112,
-     30,
-     7871,
-     3700
+     203191.0,
+     3120.0,
+     1112.0,
+     30.0,
+     7871.0,
+     3700.0
     ],
-    "total": 219024,
+    "total": 219024.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1462,19 +1605,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.04": {
     "nama": "Kabupaten Bangka Tengah",
     "angka": [
-     188215,
-     5318,
-     5300,
-     49,
-     5735,
-     7371
+     188215.0,
+     5318.0,
+     5300.0,
+     49.0,
+     5735.0,
+     7371.0
     ],
-    "total": 211988,
+    "total": 211988.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1483,19 +1627,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.03": {
     "nama": "Kabupaten Bangka Selatan",
     "angka": [
-     211468,
-     1371,
-     867,
-     274,
-     1461,
-     2472
+     211468.0,
+     1371.0,
+     867.0,
+     274.0,
+     1461.0,
+     2472.0
     ],
-    "total": 217913,
+    "total": 217913.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1504,19 +1649,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.06": {
     "nama": "Kabupaten Belitung Timur",
     "angka": [
-     127755,
-     1743,
-     437,
-     2,
-     2954,
-     162
+     127755.0,
+     1743.0,
+     437.0,
+     2.0,
+     2954.0,
+     162.0
     ],
-    "total": 133053,
+    "total": 133053.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1525,19 +1671,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "19.71": {
     "nama": "Kota Pangkal Pinang",
     "angka": [
-     208406,
-     9859,
-     7126,
-     73,
-     11401,
-     7864
+     208406.0,
+     9859.0,
+     7126.0,
+     73.0,
+     11401.0,
+     7864.0
     ],
-    "total": 244729,
+    "total": 244729.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1546,6 +1693,7 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -1560,7 +1708,8 @@
    "Hindu",
    "Budha",
    "Konghucu"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "21": {
   "nama": "Kepulauan Riau",
@@ -1583,13 +1732,13 @@
    "21.02": {
     "nama": "Kabupaten Karimun",
     "angka": [
-     159742,
-     9763,
-     4618,
-     102,
-     7621
+     159742.0,
+     9763.0,
+     4618.0,
+     102.0,
+     7621.0
     ],
-    "total": 181846,
+    "total": 181846.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1597,18 +1746,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.01": {
     "nama": "Kabupaten Bintan",
     "angka": [
-     237538,
-     10158,
-     2861,
-     11,
-     23949
+     237538.0,
+     10158.0,
+     2861.0,
+     11.0,
+     23949.0
     ],
-    "total": 274517,
+    "total": 274517.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1616,18 +1766,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.03": {
     "nama": "Kabupaten Natuna",
     "angka": [
-     82188,
-     1166,
-     324,
-     1,
-     757
+     82188.0,
+     1166.0,
+     324.0,
+     1.0,
+     757.0
     ],
-    "total": 84436,
+    "total": 84436.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1635,18 +1786,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.04": {
     "nama": "Kabupaten Lingga",
     "angka": [
-     93426,
-     1870,
-     1130,
-     4,
-     4853
+     93426.0,
+     1870.0,
+     1130.0,
+     4.0,
+     4853.0
     ],
-    "total": 101283,
+    "total": 101283.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1654,18 +1806,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.05": {
     "nama": "Kabupaten Kepulauan Anambas",
     "angka": [
-     47650,
-     1160,
-     1174,
-     1,
-     1060
+     47650.0,
+     1160.0,
+     1174.0,
+     1.0,
+     1060.0
     ],
-    "total": 51045,
+    "total": 51045.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1673,18 +1826,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.71": {
     "nama": "Kota Batam",
     "angka": [
-     988227,
-     241040,
-     47271,
-     751,
-     86414
+     988227.0,
+     241040.0,
+     47271.0,
+     751.0,
+     86414.0
     ],
-    "total": 1363703,
+    "total": 1363703.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1692,18 +1846,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "21.72": {
     "nama": "Kota Tanjung Pinang",
     "angka": [
-     194820,
-     14993,
-     3495,
-     43,
-     26227
+     194820.0,
+     14993.0,
+     3495.0,
+     43.0,
+     26227.0
     ],
-    "total": 239578,
+    "total": 239578.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -1711,6 +1866,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -1725,21 +1881,144 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "34": {
   "nama": "Daerah Istimewa Yogyakarta",
   "subdomain": "yogyakarta",
-  "tahun": 2026,
-  "judul": "Provinsi Daerah Istimewa Yogyakarta Dalam Angka 2026",
+  "tahun": 2025,
+  "judul": "Provinsi Daerah Istimewa Yogyakarta Dalam Angka 2025",
   "halaman_publikasi": "/id/publication/2026/02/27/77355be26097c9f6197b0ef9/provinsi-di-yogyakarta-dalam-angka-2026.html",
-  "pdf": "catat\\pdf-agama\\yogyakarta-2026.pdf",
+  "pdf": "catat/pdf-agama/yogyakarta-2025.pdf",
   "ukuran_pdf": 14758400,
   "temuan": [],
   "tabel_agama": [],
-  "terbaca": {},
+  "terbaca": {
+   "34.01": {
+    "nama": "Kabupaten Kulon Progo",
+    "angka": [
+     428903.0,
+     5798.0,
+     17077.0,
+     33.0,
+     571.0,
+     0
+    ],
+    "total": 452382.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "34.02": {
+    "nama": "Kabupaten Bantul",
+    "angka": [
+     927912.0,
+     12538.0,
+     24696.0,
+     774.0,
+     187.0,
+     2.0
+    ],
+    "total": 966109.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "34.03": {
+    "nama": "Kabupaten Gunungkidul",
+    "angka": [
+     756321.0,
+     12979.0,
+     13069.0,
+     963.0,
+     362.0,
+     2.0
+    ],
+    "total": 783696.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "34.04": {
+    "nama": "Kabupaten Sleman",
+    "angka": [
+     994314.0,
+     32262.0,
+     69324.0,
+     1128.0,
+     696.0,
+     32.0
+    ],
+    "total": 1097756.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "34.71": {
+    "nama": "Kota Yogyakarta",
+    "angka": [
+     353453.0,
+     26379.0,
+     40524.0,
+     472.0,
+     1153.0,
+     24.0
+    ],
+    "total": 422005.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   }
+  },
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [
+   303
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu"
+  ],
+  "satuan": "jiwa"
  },
  "35": {
   "nama": "Jawa Timur",
@@ -1758,10 +2037,10 @@
  "36": {
   "nama": "Banten",
   "subdomain": "banten",
-  "tahun": 2026,
-  "judul": "Provinsi Banten Dalam Angka 2026",
+  "tahun": 2025,
+  "judul": "Provinsi Banten Dalam Angka 2025",
   "halaman_publikasi": "/id/publication/2026/02/27/3346730ea6b65ef5c02faa10/provinsi-banten-dalam-angka-2026.html",
-  "pdf": "catat\\pdf-agama\\banten-2026.pdf",
+  "pdf": "catat/pdf-agama/banten-2025.pdf",
   "ukuran_pdf": 17656489,
   "temuan": [
    {
@@ -1772,9 +2051,194 @@
    }
   ],
   "tabel_agama": [],
-  "terbaca": {},
+  "terbaca": {
+   "36.01": {
+    "nama": "Kabupaten Pandeglang",
+    "angka": [
+     127916.0,
+     712.0,
+     186.0,
+     21.0,
+     262.0
+    ],
+    "total": 129097.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.02": {
+    "nama": "Kabupaten Lebak",
+    "angka": [
+     1429534.0,
+     2014.0,
+     1011.0,
+     150.0,
+     1.0
+    ],
+    "total": 1432710.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.03": {
+    "nama": "Kabupaten Tangerang",
+    "angka": [
+     3101768.0,
+     105209.0,
+     44533.0,
+     1959.0,
+     54887.0
+    ],
+    "total": 3308356.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.04": {
+    "nama": "Kabupaten Serang",
+    "angka": [
+     1390267.0,
+     4216.0,
+     2312.0,
+     762.0,
+     621.0
+    ],
+    "total": 1398178.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.71": {
+    "nama": "Kota Tangerang",
+    "angka": [
+     1682913.0,
+     107617.0,
+     47283.0,
+     2651.0,
+     71236.0
+    ],
+    "total": 1911700.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.72": {
+    "nama": "Kota Cilegon",
+    "angka": [
+     459474.0,
+     7072.0,
+     1885.0,
+     248.0,
+     1688.0
+    ],
+    "total": 470367.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.73": {
+    "nama": "Kota Serang",
+    "angka": [
+     617051.0,
+     10015.0,
+     5701.0,
+     722.0,
+     1867.0
+    ],
+    "total": 635356.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "36.74": {
+    "nama": "Kota Tangerang Selatan",
+    "angka": [
+     1207254.0,
+     79850.0,
+     48039.0,
+     3014.0,
+     13168.0
+    ],
+    "total": 1351325.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   }
+  },
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [
+   387
+  ],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\banten-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\banten-2025.pdf",
+    "halaman": [
+     387
+    ]
+   }
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "satuan": "jiwa"
  },
  "51": {
   "nama": "Bali",
@@ -1834,15 +2298,15 @@
    "51.01": {
     "nama": "Kabupaten Jembrana",
     "angka": [
-     88752,
-     2690,
-     4225,
-     234213,
-     972,
-     17,
-     4
+     88752.0,
+     2690.0,
+     4225.0,
+     234213.0,
+     972.0,
+     17.0,
+     4.0
     ],
-    "total": 330873,
+    "total": 330873.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1852,20 +2316,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.02": {
     "nama": "Kabupaten Tabanan",
     "angka": [
-     27424,
-     2297,
-     5437,
-     442425,
-     2282,
-     23,
-     1
+     27424.0,
+     2297.0,
+     5437.0,
+     442425.0,
+     2282.0,
+     23.0,
+     1.0
     ],
-    "total": 479889,
+    "total": 479889.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1875,20 +2340,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.03": {
     "nama": "Kabupaten Badung",
     "angka": [
-     59274,
-     12548,
-     21212,
-     442425,
-     4188,
-     37,
-     17
+     59274.0,
+     12548.0,
+     21212.0,
+     442425.0,
+     4188.0,
+     37.0,
+     17.0
     ],
-    "total": 539701,
+    "total": 539701.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1898,20 +2364,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.04": {
     "nama": "Kabupaten Gianyar",
     "angka": [
-     12260,
-     1552,
-     3153,
-     488007,
-     1222,
-     57,
-     24
+     12260.0,
+     1552.0,
+     3153.0,
+     488007.0,
+     1222.0,
+     57.0,
+     24.0
     ],
-    "total": 506275,
+    "total": 506275.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1921,20 +2388,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.05": {
     "nama": "Kabupaten Klungkung",
     "angka": [
-     9764,
-     257,
-     645,
-     213165,
-     608,
-     12,
-     3
+     9764.0,
+     257.0,
+     645.0,
+     213165.0,
+     608.0,
+     12.0,
+     3.0
     ],
-    "total": 224454,
+    "total": 224454.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1944,20 +2412,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.06": {
     "nama": "Kabupaten Bangli",
     "angka": [
-     2618,
-     89,
-     325,
-     257679,
-     284,
-     46,
+     2618.0,
+     89.0,
+     325.0,
+     257679.0,
+     284.0,
+     46.0,
      0
     ],
-    "total": 261041,
+    "total": 261041.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1967,20 +2436,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.07": {
     "nama": "Kabupaten Karangasem",
     "angka": [
-     21476,
-     321,
-     728,
-     516612,
-     491,
-     1,
+     21476.0,
+     321.0,
+     728.0,
+     516612.0,
+     491.0,
+     1.0,
      0
     ],
-    "total": 539629,
+    "total": 539629.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -1990,20 +2460,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.08": {
     "nama": "Kabupaten Buleleng",
     "angka": [
-     78191,
-     1750,
-     5576,
-     741029,
-     4219,
-     79,
-     29
+     78191.0,
+     1750.0,
+     5576.0,
+     741029.0,
+     4219.0,
+     79.0,
+     29.0
     ],
-    "total": 830873,
+    "total": 830873.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -2013,20 +2484,21 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    },
    "51.71": {
     "nama": "Kota Denpasar",
     "angka": [
-     152473,
-     16499,
-     36265,
-     455056,
-     15696,
-     353,
-     41
+     152473.0,
+     16499.0,
+     36265.0,
+     455056.0,
+     15696.0,
+     353.0,
+     41.0
     ],
-    "total": 676383,
+    "total": 676383.0,
     "kolom": [
      "Islam",
      "Katolik",
@@ -2036,6 +2508,7 @@
      "Konghucu",
      "Kepercayaan"
     ],
+    "satuan": "jiwa",
     "cara": "kolom-jumlah"
    }
   },
@@ -2052,7 +2525,8 @@
    "Budha",
    "Konghucu",
    "Kepercayaan"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "52": {
   "nama": "Nusa Tenggara Barat",
@@ -2112,9 +2586,460 @@
     "judul": ""
    }
   ],
-  "terbaca": {},
+  "terbaca": {
+   "53.12": {
+    "nama": "Kabupaten Sumba Barat",
+    "angka": [
+     8.88,
+     68.2,
+     22.82,
+     0.1,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.11": {
+    "nama": "Kabupaten Sumba Timur",
+    "angka": [
+     7.9,
+     81.53,
+     10.4,
+     0.17,
+     0.01
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.01": {
+    "nama": "Kabupaten Kupang",
+    "angka": [
+     2.06,
+     84.48,
+     13.37,
+     0.08,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.02": {
+    "nama": "Kabupaten Timor Tengah Selatan",
+    "angka": [
+     2.19,
+     88.44,
+     9.32,
+     0.05,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.03": {
+    "nama": "Kabupaten Timor Tengah Utara",
+    "angka": [
+     1.89,
+     7.59,
+     90.47,
+     0.05,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.04": {
+    "nama": "Kabupaten Belu",
+    "angka": [
+     3.83,
+     5.6,
+     90.43,
+     0.14,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.05": {
+    "nama": "Kabupaten Alor",
+    "angka": [
+     25.05,
+     71.7,
+     3.1,
+     0.15,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.13": {
+    "nama": "Kabupaten Lembata",
+    "angka": [
+     28.79,
+     1.71,
+     69.4,
+     0.09,
+     0.01
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.06": {
+    "nama": "Kabupaten Flores Timur",
+    "angka": [
+     20.05,
+     0.63,
+     79.28,
+     0.03,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.07": {
+    "nama": "Kabupaten Sikka",
+    "angka": [
+     14.13,
+     1.6,
+     84.12,
+     0.13,
+     0.02
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.08": {
+    "nama": "Kabupaten Ende",
+    "angka": [
+     22.62,
+     1.8,
+     75.51,
+     0.07,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.09": {
+    "nama": "Kabupaten Ngada",
+    "angka": [
+     6.85,
+     2.43,
+     90.63,
+     0.09,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.10": {
+    "nama": "Kabupaten Manggarai",
+    "angka": [
+     4.79,
+     1.01,
+     94.14,
+     0.06,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.14": {
+    "nama": "Kabupaten Rote Ndao",
+    "angka": [
+     5.32,
+     92.92,
+     1.73,
+     0.02,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.15": {
+    "nama": "Kabupaten Manggarai Barat",
+    "angka": [
+     21.71,
+     0.77,
+     77.45,
+     0.08,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.17": {
+    "nama": "Kabupaten Sumba Tengah",
+    "angka": [
+     6.27,
+     75.9,
+     17.74,
+     0.08,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.18": {
+    "nama": "Kabupaten Sumba Barat Daya",
+    "angka": [
+     2.2,
+     57.53,
+     40.23,
+     0.04,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.16": {
+    "nama": "Kabupaten Nagekeo",
+    "angka": [
+     9.6,
+     0.42,
+     89.95,
+     0.03,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.19": {
+    "nama": "Kabupaten Manggarai Timur",
+    "angka": [
+     6.84,
+     0.32,
+     92.81,
+     0.03,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.20": {
+    "nama": "Kabupaten Sabu Raijua",
+    "angka": [
+     1.04,
+     95.92,
+     2.99,
+     0.05,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.21": {
+    "nama": "Kabupaten Malaka",
+    "angka": [
+     1.23,
+     6.97,
+     91.77,
+     0.02,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "53.71": {
+    "nama": "Kota Kupang",
+    "angka": [
+     10.06,
+     58.75,
+     30.17,
+     0.99,
+     0.03
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   }
+  },
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [
+   385
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "satuan": "persen"
  },
  "61": {
   "nama": "Kalimantan Barat",
@@ -2158,14 +3083,14 @@
    "61.01": {
     "nama": "Kabupaten Sambas",
     "angka": [
-     579114,
-     12325,
-     18920,
-     176,
-     37701,
-     3008
+     579114.0,
+     12325.0,
+     18920.0,
+     176.0,
+     37701.0,
+     3008.0
     ],
-    "total": 651244,
+    "total": 651244.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2174,19 +3099,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.07": {
     "nama": "Kabupaten Bengkayang",
     "angka": [
-     237313,
-     20123,
-     24298,
-     60,
-     31121,
-     936
+     237313.0,
+     20123.0,
+     24298.0,
+     60.0,
+     31121.0,
+     936.0
     ],
-    "total": 313851,
+    "total": 313851.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2195,19 +3121,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.08": {
     "nama": "Kabupaten Landak",
     "angka": [
-     169508,
-     85300,
-     240508,
-     122,
-     3359,
-     172
+     169508.0,
+     85300.0,
+     240508.0,
+     122.0,
+     3359.0,
+     172.0
     ],
-    "total": 498969,
+    "total": 498969.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2216,19 +3143,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.02": {
     "nama": "Kabupaten Mempawah",
     "angka": [
-     381747,
-     46108,
-     147640,
-     457,
-     6620,
-     648
+     381747.0,
+     46108.0,
+     147640.0,
+     457.0,
+     6620.0,
+     648.0
     ],
-    "total": 583220,
+    "total": 583220.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2237,19 +3165,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.03": {
     "nama": "Kabupaten Sanggau",
     "angka": [
-     177583,
-     111437,
-     165208,
-     117,
-     2313,
-     545
+     177583.0,
+     111437.0,
+     165208.0,
+     117.0,
+     2313.0,
+     545.0
     ],
-    "total": 457203,
+    "total": 457203.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2258,19 +3187,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.04": {
     "nama": "Kabupaten Ketapang",
     "angka": [
-     167691,
-     23905,
-     84686,
-     31,
-     318,
-     356
+     167691.0,
+     23905.0,
+     84686.0,
+     31.0,
+     318.0,
+     356.0
     ],
-    "total": 276987,
+    "total": 276987.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2279,19 +3209,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.05": {
     "nama": "Kabupaten Sintang",
     "angka": [
-     104731,
-     80449,
-     92674,
-     262,
-     15295,
-     2489
+     104731.0,
+     80449.0,
+     92674.0,
+     262.0,
+     15295.0,
+     2489.0
     ],
-    "total": 295900,
+    "total": 295900.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2300,19 +3231,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.06": {
     "nama": "Kabupaten Kapuas Hulu",
     "angka": [
-     67049,
-     125006,
-     220345,
-     41,
-     2328,
-     263
+     67049.0,
+     125006.0,
+     220345.0,
+     41.0,
+     2328.0,
+     263.0
     ],
-    "total": 415032,
+    "total": 415032.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2321,19 +3253,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.09": {
     "nama": "Kabupaten Sekadau",
     "angka": [
-     88539,
-     31503,
-     103661,
-     8,
-     1460,
-     302
+     88539.0,
+     31503.0,
+     103661.0,
+     8.0,
+     1460.0,
+     302.0
     ],
-    "total": 225473,
+    "total": 225473.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2342,19 +3275,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.10": {
     "nama": "Kabupaten Melawi",
     "angka": [
-     115487,
-     50996,
-     49802,
-     34,
-     995,
-     284
+     115487.0,
+     50996.0,
+     49802.0,
+     34.0,
+     995.0,
+     284.0
     ],
-    "total": 217598,
+    "total": 217598.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2363,19 +3297,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.11": {
     "nama": "Kabupaten Kayong Utara",
     "angka": [
-     121547,
-     1685,
-     958,
-     522,
-     1779,
-     404
+     121547.0,
+     1685.0,
+     958.0,
+     522.0,
+     1779.0,
+     404.0
     ],
-    "total": 126895,
+    "total": 126895.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2384,19 +3319,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.12": {
     "nama": "Kabupaten Kubu Raya",
     "angka": [
-     536019,
-     26520,
-     37636,
-     495,
-     43646,
-     1755
+     536019.0,
+     26520.0,
+     37636.0,
+     495.0,
+     43646.0,
+     1755.0
     ],
-    "total": 646071,
+    "total": 646071.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2405,19 +3341,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.71": {
     "nama": "Kota Pontianak",
     "angka": [
-     532650,
-     33384,
-     40949,
-     303,
-     76157,
-     3582
+     532650.0,
+     33384.0,
+     40949.0,
+     303.0,
+     76157.0,
+     3582.0
     ],
-    "total": 687025,
+    "total": 687025.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2426,19 +3363,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "61.72": {
     "nama": "Kota Singkawang",
     "angka": [
-     136339,
-     14335,
-     18533,
-     72,
-     78195,
-     2476
+     136339.0,
+     14335.0,
+     18533.0,
+     72.0,
+     78195.0,
+     2476.0
     ],
-    "total": 249950,
+    "total": 249950.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2447,6 +3385,7 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -2461,7 +3400,8 @@
    "Hindu",
    "Budha",
    "Konghucu"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "62": {
   "nama": "Kalimantan Tengah",
@@ -2521,239 +3461,253 @@
    "62.01": {
     "nama": "Kabupaten Kotawaringin Barat",
     "angka": [
-     272874,
-     13702,
-     6548,
-     3253
+     272874.0,
+     13702.0,
+     6548.0,
+     3253.0
     ],
-    "total": 296377,
+    "total": 296377.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.02": {
     "nama": "Kabupaten Kotawaringin Timur",
     "angka": [
-     397760,
-     27849,
-     10698,
-     22374
+     397760.0,
+     27849.0,
+     10698.0,
+     22374.0
     ],
-    "total": 458681,
+    "total": 458681.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.03": {
     "nama": "Kabupaten Kapuas",
     "angka": [
-     344506,
-     48926,
-     2019,
-     23234
+     344506.0,
+     48926.0,
+     2019.0,
+     23234.0
     ],
-    "total": 418685,
+    "total": 418685.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.04": {
     "nama": "Kabupaten Barito Selatan",
     "angka": [
-     98901,
-     25529,
-     9547,
-     4302
+     98901.0,
+     25529.0,
+     9547.0,
+     4302.0
     ],
-    "total": 138279,
+    "total": 138279.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.05": {
     "nama": "Kabupaten Barito Utara",
     "angka": [
-     118071,
-     16822,
-     8729,
-     16450
+     118071.0,
+     16822.0,
+     8729.0,
+     16450.0
     ],
-    "total": 160072,
+    "total": 160072.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.08": {
     "nama": "Kabupaten Sukamara",
     "angka": [
-     55130,
-     6018,
-     2979,
-     3188
+     55130.0,
+     6018.0,
+     2979.0,
+     3188.0
     ],
-    "total": 67315,
+    "total": 67315.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.09": {
     "nama": "Kabupaten Lamandau",
     "angka": [
-     68281,
-     26186,
-     17963,
-     3223
+     68281.0,
+     26186.0,
+     17963.0,
+     3223.0
     ],
-    "total": 115653,
+    "total": 115653.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.07": {
     "nama": "Kabupaten Seruyan",
     "angka": [
-     138228,
-     9485,
-     6113,
-     7061
+     138228.0,
+     9485.0,
+     6113.0,
+     7061.0
     ],
-    "total": 160887,
+    "total": 160887.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.06": {
     "nama": "Kabupaten Katingan",
     "angka": [
-     114798,
-     34978,
-     3722,
-     30035
+     114798.0,
+     34978.0,
+     3722.0,
+     30035.0
     ],
-    "total": 183533,
+    "total": 183533.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.11": {
     "nama": "Kabupaten Pulang Pisau",
     "angka": [
-     112895,
-     28232,
-     1766,
-     2575
+     112895.0,
+     28232.0,
+     1766.0,
+     2575.0
     ],
-    "total": 145468,
+    "total": 145468.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.10": {
     "nama": "Kabupaten Gunung Mas",
     "angka": [
-     27557,
-     89201,
-     3250,
-     15643
+     27557.0,
+     89201.0,
+     3250.0,
+     15643.0
     ],
-    "total": 135651,
+    "total": 135651.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.13": {
     "nama": "Kabupaten Barito Timur",
     "angka": [
-     61510,
-     42853,
-     10274,
-     4229
+     61510.0,
+     42853.0,
+     10274.0,
+     4229.0
     ],
-    "total": 118866,
+    "total": 118866.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.12": {
     "nama": "Kabupaten Murung Raya",
     "angka": [
-     83101,
-     22166,
-     7095,
-     13497
+     83101.0,
+     22166.0,
+     7095.0,
+     13497.0
     ],
-    "total": 125859,
+    "total": 125859.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "62.71": {
     "nama": "Kota Palangkaraya",
     "angka": [
-     226406,
-     81182,
-     6389,
-     3701
+     226406.0,
+     81182.0,
+     6389.0,
+     3701.0
     ],
-    "total": 317678,
+    "total": 317678.0,
     "kolom": [
      "Islam",
      "Protestan",
      "Katolik",
      "Hindu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -2766,7 +3720,8 @@
    "Protestan",
    "Katolik",
    "Hindu"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "63": {
   "nama": "Kalimantan Selatan",
@@ -2817,13 +3772,13 @@
    "63.01": {
     "nama": "Kabupaten Tanah Laut",
     "angka": [
-     368104,
-     4095,
-     1560,
-     1614,
-     206
+     368104.0,
+     4095.0,
+     1560.0,
+     1614.0,
+     206.0
     ],
-    "total": 375579,
+    "total": 375579.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2831,18 +3786,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.02": {
     "nama": "Kabupaten Kotabaru",
     "angka": [
-     310600,
-     11417,
-     4225,
-     1822,
-     2472
+     310600.0,
+     11417.0,
+     4225.0,
+     1822.0,
+     2472.0
     ],
-    "total": 330536,
+    "total": 330536.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2850,18 +3806,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.03": {
     "nama": "Kabupaten Banjar",
     "angka": [
-     595563,
-     1502,
-     780,
-     1626,
-     385
+     595563.0,
+     1502.0,
+     780.0,
+     1626.0,
+     385.0
     ],
-    "total": 599856,
+    "total": 599856.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2869,18 +3826,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.04": {
     "nama": "Kabupaten Barito Kuala",
     "angka": [
-     331399,
-     1347,
-     686,
-     1472,
-     54
+     331399.0,
+     1347.0,
+     686.0,
+     1472.0,
+     54.0
     ],
-    "total": 334958,
+    "total": 334958.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2888,18 +3846,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.05": {
     "nama": "Kabupaten Tapin",
     "angka": [
-     202892,
-     1306,
-     198,
-     330,
-     1
+     202892.0,
+     1306.0,
+     198.0,
+     330.0,
+     1.0
     ],
-    "total": 204727,
+    "total": 204727.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2907,18 +3866,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.06": {
     "nama": "Kabupaten Hulu Sungai Selatan",
     "angka": [
-     236640,
-     1381,
-     61,
-     375,
-     17
+     236640.0,
+     1381.0,
+     61.0,
+     375.0,
+     17.0
     ],
-    "total": 238474,
+    "total": 238474.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2926,18 +3886,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.07": {
     "nama": "Kabupaten Hulu Sungai Tengah",
     "angka": [
-     266297,
-     893,
-     43,
-     5219,
-     99
+     266297.0,
+     893.0,
+     43.0,
+     5219.0,
+     99.0
     ],
-    "total": 272551,
+    "total": 272551.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2945,18 +3906,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.08": {
     "nama": "Kabupaten Hulu Sungai Utara",
     "angka": [
-     238588,
-     76,
-     15,
-     25,
-     7
+     238588.0,
+     76.0,
+     15.0,
+     25.0,
+     7.0
     ],
-    "total": 238711,
+    "total": 238711.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2964,18 +3926,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.09": {
     "nama": "Kabupaten Tabalong",
     "angka": [
-     259756,
-     7718,
-     2435,
-     1270,
-     30
+     259756.0,
+     7718.0,
+     2435.0,
+     1270.0,
+     30.0
     ],
-    "total": 271209,
+    "total": 271209.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -2983,18 +3946,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.10": {
     "nama": "Kabupaten Tanah Bumbu",
     "angka": [
-     343736,
-     5299,
-     4212,
-     8640,
-     101
+     343736.0,
+     5299.0,
+     4212.0,
+     8640.0,
+     101.0
     ],
-    "total": 361988,
+    "total": 361988.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3002,18 +3966,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.11": {
     "nama": "Kabupaten Balangan",
     "angka": [
-     133096,
-     1053,
-     266,
-     1818,
-     4344
+     133096.0,
+     1053.0,
+     266.0,
+     1818.0,
+     4344.0
     ],
-    "total": 140577,
+    "total": 140577.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3021,18 +3986,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.71": {
     "nama": "Kota Banjarmasin",
     "angka": [
-     657908,
-     13427,
-     7237,
-     269,
-     4225
+     657908.0,
+     13427.0,
+     7237.0,
+     269.0,
+     4225.0
     ],
-    "total": 683066,
+    "total": 683066.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3040,18 +4006,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "63.72": {
     "nama": "Kota Banjarbaru",
     "angka": [
-     281079,
-     8853,
-     2719,
-     404,
-     264
+     281079.0,
+     8853.0,
+     2719.0,
+     404.0,
+     264.0
     ],
-    "total": 293319,
+    "total": 293319.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3059,6 +4026,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -3072,15 +4040,16 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "64": {
   "nama": "Kalimantan Timur",
   "subdomain": "kaltim",
-  "tahun": 2026,
-  "judul": "Provinsi Kalimantan Timur Dalam Angka 2026",
+  "tahun": 2024,
+  "judul": "Provinsi Kalimantan Timur Dalam Angka 2024",
   "halaman_publikasi": "/id/publication/2026/02/27/04aee2d8df20c43097e76658/provinsi-kalimantan-timur-dalam-angka-2026.html",
-  "pdf": "catat\\pdf-agama\\kaltim-2026.pdf",
+  "pdf": "catat/pdf-agama/kaltim-2024.pdf",
   "ukuran_pdf": 25566229,
   "temuan": [
    {
@@ -3132,10 +4101,241 @@
     "judul": "Jumlah Penyuluh Agama Non PNS Menurut Kabupaten/"
    }
   ],
-  "terbaca": {},
+  "terbaca": {
+   "64.01": {
+    "nama": "Kabupaten Paser",
+    "angka": [
+     282521.0,
+     9759.0,
+     10082.0,
+     518.0,
+     539.0
+    ],
+    "total": 303419.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.07": {
+    "nama": "Kabupaten Kutai Barat",
+    "angka": [
+     727081.0,
+     15273.0,
+     42822.0,
+     2625.0,
+     239.0
+    ],
+    "total": 788040.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.02": {
+    "nama": "Kabupaten Kutai Kartanegara",
+    "angka": [
+     237159.0,
+     17272.0,
+     25653.0,
+     234.0,
+     648.0
+    ],
+    "total": 280966.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.08": {
+    "nama": "Kabupaten Kutai Timur",
+    "angka": [
+     86173.0,
+     37253.0,
+     56411.0,
+     147.0,
+     36.0
+    ],
+    "total": 180020.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.03": {
+    "nama": "Kabupaten Berau",
+    "angka": [
+     350567.0,
+     34378.0,
+     42026.0,
+     2504.0,
+     137.0
+    ],
+    "total": 429612.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.09": {
+    "nama": "Kabupaten Penajam Paser Utara",
+    "angka": [
+     186278.0,
+     2795.0,
+     7323.0,
+     124.0,
+     45.0
+    ],
+    "total": 196565.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.11": {
+    "nama": "Kabupaten Mahakam Ulu",
+    "angka": [
+     9247.0,
+     23500.0,
+     5696.0,
+     51.0,
+     2.0
+    ],
+    "total": 38496.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.71": {
+    "nama": "Kota Balikpapan",
+    "angka": [
+     666015.0,
+     13925.0,
+     51303.0,
+     1388.0,
+     5856.0
+    ],
+    "total": 738487.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.72": {
+    "nama": "Kota Samarinda",
+    "angka": [
+     786964.0,
+     22173.0,
+     43701.0,
+     832.0,
+     7862.0
+    ],
+    "total": 861532.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "64.74": {
+    "nama": "Kota Bontang",
+    "angka": [
+     170641.0,
+     3344.0,
+     15571.0,
+     279.0,
+     133.0
+    ],
+    "total": 189968.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   }
+  },
   "gagal": [],
-  "halaman_terbaca": [],
-  "kolom": []
+  "halaman_terbaca": [
+   359
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\kaltim-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\kaltim-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\kaltim-2024.pdf",
+    "halaman": [
+     [
+      359
+     ]
+    ]
+   }
+  ],
+  "satuan": "jiwa"
  },
  "72": {
   "nama": "Sulawesi Tengah",
@@ -3156,7 +4356,54 @@
   "tabel_agama": [],
   "terbaca": {},
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\sulteng-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\sulteng-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\sulteng-2024.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2023,
+    "pdf": "catat\\pdf-agama\\sulteng-2023.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2022,
+    "pdf": "catat\\pdf-agama\\sulteng-2022.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2021,
+    "pdf": "catat\\pdf-agama\\sulteng-2021.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2020,
+    "pdf": "catat\\pdf-agama\\sulteng-2020.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2019,
+    "pdf": "catat\\pdf-agama\\sulteng-2019.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2018,
+    "pdf": "catat\\pdf-agama\\sulteng-2018.pdf",
+    "halaman": []
+   }
+  ]
  },
  "73": {
   "nama": "Sulawesi Selatan",
@@ -3193,13 +4440,13 @@
    "73.01": {
     "nama": "Kabupaten Kepulauan Selayar",
     "angka": [
-     142668,
-     752,
-     49,
-     84,
-     27
+     142668.0,
+     752.0,
+     49.0,
+     84.0,
+     27.0
     ],
-    "total": 143580,
+    "total": 143580.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3207,18 +4454,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.02": {
     "nama": "Kabupaten Bulukumba",
     "angka": [
-     484299,
-     319,
-     222,
-     9,
-     156
+     484299.0,
+     319.0,
+     222.0,
+     9.0,
+     156.0
     ],
-    "total": 485005,
+    "total": 485005.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3226,18 +4474,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.03": {
     "nama": "Kabupaten Bantaeng",
     "angka": [
-     220446,
-     576,
-     229,
-     1,
-     101
+     220446.0,
+     576.0,
+     229.0,
+     1.0,
+     101.0
     ],
-    "total": 221353,
+    "total": 221353.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3245,18 +4494,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.04": {
     "nama": "Kabupaten Jeneponto",
     "angka": [
-     425991,
-     100,
-     28,
+     425991.0,
+     100.0,
+     28.0,
      0,
      0
     ],
-    "total": 426119,
+    "total": 426119.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3264,18 +4514,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.05": {
     "nama": "Kabupaten Takalar",
     "angka": [
-     338448,
-     229,
-     131,
-     10,
-     63
+     338448.0,
+     229.0,
+     131.0,
+     10.0,
+     63.0
     ],
-    "total": 338881,
+    "total": 338881.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3283,18 +4534,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.06": {
     "nama": "Kabupaten Gowa",
     "angka": [
-     829319,
-     6800,
-     4766,
-     145,
-     641
+     829319.0,
+     6800.0,
+     4766.0,
+     145.0,
+     641.0
     ],
-    "total": 841671,
+    "total": 841671.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3302,18 +4554,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.07": {
     "nama": "Kabupaten Sinjai",
     "angka": [
-     278397,
-     82,
-     34,
-     3,
-     11
+     278397.0,
+     82.0,
+     34.0,
+     3.0,
+     11.0
     ],
-    "total": 278527,
+    "total": 278527.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3321,18 +4574,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.09": {
     "nama": "Kabupaten Maros",
     "angka": [
-     834342,
-     1571,
-     287,
-     14,
-     493
+     834342.0,
+     1571.0,
+     287.0,
+     14.0,
+     493.0
     ],
-    "total": 836707,
+    "total": 836707.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3340,18 +4594,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.10": {
     "nama": "Kabupaten Pangkajene dan Kepulauan",
     "angka": [
-     417552,
-     6121,
-     1808,
-     207,
-     96
+     417552.0,
+     6121.0,
+     1808.0,
+     207.0,
+     96.0
     ],
-    "total": 425784,
+    "total": 425784.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3359,18 +4614,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.11": {
     "nama": "Kabupaten Barru",
     "angka": [
-     363993,
-     989,
-     119,
-     19,
-     41
+     363993.0,
+     989.0,
+     119.0,
+     19.0,
+     41.0
     ],
-    "total": 365161,
+    "total": 365161.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3378,18 +4634,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.08": {
     "nama": "Kabupaten Bone",
     "angka": [
-     195987,
-     354,
-     52,
-     24,
-     1
+     195987.0,
+     354.0,
+     52.0,
+     24.0,
+     1.0
     ],
-    "total": 196418,
+    "total": 196418.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3397,18 +4654,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.12": {
     "nama": "Kabupaten Soppeng",
     "angka": [
-     240924,
-     746,
-     97,
-     3,
-     7
+     240924.0,
+     746.0,
+     97.0,
+     3.0,
+     7.0
     ],
-    "total": 241777,
+    "total": 241777.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3416,18 +4674,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.13": {
     "nama": "Kabupaten Wajo",
     "angka": [
-     400441,
-     1032,
-     149,
-     1548,
-     68
+     400441.0,
+     1032.0,
+     149.0,
+     1548.0,
+     68.0
     ],
-    "total": 403238,
+    "total": 403238.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3435,18 +4694,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.14": {
     "nama": "Kabupaten Sidenreng Rappang",
     "angka": [
-     308634,
-     858,
-     211,
-     28505,
-     11
+     308634.0,
+     858.0,
+     211.0,
+     28505.0,
+     11.0
     ],
-    "total": 338219,
+    "total": 338219.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3454,18 +4714,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.15": {
     "nama": "Kabupaten Pinrang",
     "angka": [
-     416733,
-     5865,
-     4153,
-     783,
-     170
+     416733.0,
+     5865.0,
+     4153.0,
+     783.0,
+     170.0
     ],
-    "total": 427704,
+    "total": 427704.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3473,18 +4734,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.16": {
     "nama": "Kabupaten Enrekang",
     "angka": [
-     234913,
-     1156,
-     77,
-     10,
-     4
+     234913.0,
+     1156.0,
+     77.0,
+     10.0,
+     4.0
     ],
-    "total": 236160,
+    "total": 236160.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3492,18 +4754,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.17": {
     "nama": "Kabupaten Luwu",
     "angka": [
-     343325,
-     43397,
-     4312,
-     61,
-     11
+     343325.0,
+     43397.0,
+     4312.0,
+     61.0,
+     11.0
     ],
-    "total": 391106,
+    "total": 391106.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3511,18 +4774,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.18": {
     "nama": "Kabupaten Tana Toraja",
     "angka": [
-     31160,
-     181779,
-     39719,
-     3958,
-     150
+     31160.0,
+     181779.0,
+     39719.0,
+     3958.0,
+     150.0
     ],
-    "total": 256766,
+    "total": 256766.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3530,18 +4794,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.22": {
     "nama": "Kabupaten Luwu Utara",
     "angka": [
-     276411,
-     46133,
-     5166,
-     9359,
-     11
+     276411.0,
+     46133.0,
+     5166.0,
+     9359.0,
+     11.0
     ],
-    "total": 337080,
+    "total": 337080.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3549,18 +4814,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.24": {
     "nama": "Kabupaten Luwu Timur",
     "angka": [
-     257681,
-     49107,
-     7452,
-     17459,
-     3
+     257681.0,
+     49107.0,
+     7452.0,
+     17459.0,
+     3.0
     ],
-    "total": 331702,
+    "total": 331702.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3568,18 +4834,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.26": {
     "nama": "Kabupaten Toraja Utara",
     "angka": [
-     12207,
-     221197,
-     35201,
-     63,
-     29
+     12207.0,
+     221197.0,
+     35201.0,
+     63.0,
+     29.0
     ],
-    "total": 268697,
+    "total": 268697.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3587,18 +4854,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.71": {
     "nama": "Kota Makassar",
     "angka": [
-     1326982,
-     102878,
-     42757,
-     1461,
-     16338
+     1326982.0,
+     102878.0,
+     42757.0,
+     1461.0,
+     16338.0
     ],
-    "total": 1490416,
+    "total": 1490416.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3606,18 +4874,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.72": {
     "nama": "Kota Parepare",
     "angka": [
-     156167,
-     5297,
-     2138,
-     813,
-     711
+     156167.0,
+     5297.0,
+     2138.0,
+     813.0,
+     711.0
     ],
-    "total": 165126,
+    "total": 165126.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3625,18 +4894,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "73.73": {
     "nama": "Kota Palopo",
     "angka": [
-     158783,
-     22253,
-     3322,
-     270,
-     275
+     158783.0,
+     22253.0,
+     3322.0,
+     270.0,
+     275.0
     ],
-    "total": 184903,
+    "total": 184903.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3644,6 +4914,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -3657,7 +4928,8 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "75": {
   "nama": "Gorontalo",
@@ -3700,13 +4972,13 @@
    "75.02": {
     "nama": "Kabupaten Boalemo",
     "angka": [
-     148402,
-     1836,
-     166,
-     2446,
-     1
+     148402.0,
+     1836.0,
+     166.0,
+     2446.0,
+     1.0
     ],
-    "total": 152851,
+    "total": 152851.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3714,18 +4986,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "75.01": {
     "nama": "Kabupaten Gorontalo",
     "angka": [
-     397908,
-     1361,
-     183,
-     53,
-     78
+     397908.0,
+     1361.0,
+     183.0,
+     53.0,
+     78.0
     ],
-    "total": 399583,
+    "total": 399583.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3733,18 +5006,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "75.04": {
     "nama": "Kabupaten Pohuwato",
     "angka": [
-     155638,
-     5760,
-     117,
-     1435,
-     8
+     155638.0,
+     5760.0,
+     117.0,
+     1435.0,
+     8.0
     ],
-    "total": 162958,
+    "total": 162958.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3752,18 +5026,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "75.03": {
     "nama": "Kabupaten Bone Bolango",
     "angka": [
-     168890,
-     163,
-     35,
-     19,
-     3
+     168890.0,
+     163.0,
+     35.0,
+     19.0,
+     3.0
     ],
-    "total": 169110,
+    "total": 169110.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3771,18 +5046,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "75.05": {
     "nama": "Kabupaten Gorontalo Utara",
     "angka": [
-     127601,
-     4264,
-     101,
-     21,
-     3
+     127601.0,
+     4264.0,
+     101.0,
+     21.0,
+     3.0
     ],
-    "total": 131990,
+    "total": 131990.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3790,18 +5066,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "75.71": {
     "nama": "Kota Gorontalo",
     "angka": [
-     199590,
-     3669,
-     591,
-     141,
-     811
+     199590.0,
+     3669.0,
+     591.0,
+     141.0,
+     811.0
     ],
-    "total": 204802,
+    "total": 204802.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3809,6 +5086,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -3822,15 +5100,16 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "76": {
   "nama": "Sulawesi Barat",
   "subdomain": "sulbar",
-  "tahun": 2026,
-  "judul": "Provinsi Sulawesi Barat Dalam Angka 2026",
+  "tahun": 2024,
+  "judul": "Provinsi Sulawesi Barat Dalam Angka 2024",
   "halaman_publikasi": "/id/publication/2026/02/27/f6d56e04ed9ba89c9fb1afdf/provinsi-sulawesi-barat-dalam-angka-2026.html",
-  "pdf": "catat\\pdf-agama\\sulbar-2026.pdf",
+  "pdf": "catat/pdf-agama/sulbar-2024.pdf",
   "ukuran_pdf": 5646256,
   "temuan": [
    {
@@ -3841,9 +5120,159 @@
    }
   ],
   "tabel_agama": [],
-  "terbaca": {},
+  "terbaca": {
+   "76.05": {
+    "nama": "Kabupaten Majene",
+    "angka": [
+     99.85,
+     0.09,
+     0.04,
+     0,
+     0.01
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "76.04": {
+    "nama": "Kabupaten Polewali Mandar",
+    "angka": [
+     98.48,
+     1.16,
+     0.32,
+     0.02,
+     0.02
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "76.03": {
+    "nama": "Kabupaten Mamasa",
+    "angka": [
+     17.17,
+     75.09,
+     3.07,
+     1.46,
+     0
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "76.02": {
+    "nama": "Kabupaten Mamuju",
+    "angka": [
+     85.19,
+     13.1,
+     0.68,
+     0.98,
+     0.04
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "76.01": {
+    "nama": "Kabupaten Pasangkayu",
+    "angka": [
+     86.44,
+     7.14,
+     2.02,
+     4.37,
+     0.01
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   },
+   "76.06": {
+    "nama": "Kabupaten Mamuju Tengah",
+    "angka": [
+     84.07,
+     9.26,
+     2.39,
+     4.15,
+     0.12
+    ],
+    "total": 100.0,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "satuan": "persen",
+    "cara": "kolom-jumlah"
+   }
+  },
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [
+   337
+  ],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\sulbar-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\sulbar-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\sulbar-2024.pdf",
+    "halaman": [
+     337
+    ]
+   }
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ],
+  "satuan": "persen"
  },
  "81": {
   "nama": "Maluku",
@@ -3886,13 +5315,13 @@
    "81.03": {
     "nama": "Kabupaten Kepulauan Tanimbar",
     "angka": [
-     7459,
-     81278,
-     43541,
-     43,
-     14
+     7459.0,
+     81278.0,
+     43541.0,
+     43.0,
+     14.0
     ],
-    "total": 132335,
+    "total": 132335.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3900,18 +5329,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.02": {
     "nama": "Kabupaten Maluku Tenggara",
     "angka": [
-     39449,
-     35604,
-     53745,
-     364,
-     4
+     39449.0,
+     35604.0,
+     53745.0,
+     364.0,
+     4.0
     ],
-    "total": 129166,
+    "total": 129166.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3919,18 +5349,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.01": {
     "nama": "Kabupaten Maluku Tengah",
     "angka": [
-     275086,
-     150134,
-     3466,
-     2341,
-     16
+     275086.0,
+     150134.0,
+     3466.0,
+     2341.0,
+     16.0
     ],
-    "total": 431043,
+    "total": 431043.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3938,18 +5369,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.04": {
     "nama": "Kabupaten Buru",
     "angka": [
-     121432,
-     12224,
-     1369,
-     2014,
-     46
+     121432.0,
+     12224.0,
+     1369.0,
+     2014.0,
+     46.0
     ],
-    "total": 137085,
+    "total": 137085.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3957,18 +5389,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.07": {
     "nama": "Kabupaten Kepulauan Aru",
     "angka": [
-     35362,
-     66261,
-     10840,
-     37,
-     20
+     35362.0,
+     66261.0,
+     10840.0,
+     37.0,
+     20.0
     ],
-    "total": 112520,
+    "total": 112520.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3976,18 +5409,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.06": {
     "nama": "Kabupaten Seram Bagian Barat",
     "angka": [
-     134702,
-     81459,
-     1203,
-     17,
-     6
+     134702.0,
+     81459.0,
+     1203.0,
+     17.0,
+     6.0
     ],
-    "total": 217387,
+    "total": 217387.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -3995,18 +5429,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.05": {
     "nama": "Kabupaten Seram Bagian Timur",
     "angka": [
-     129459,
-     4232,
-     1799,
-     515,
-     137
+     129459.0,
+     4232.0,
+     1799.0,
+     515.0,
+     137.0
     ],
-    "total": 136142,
+    "total": 136142.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4014,18 +5449,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.08": {
     "nama": "Kabupaten Maluku Barat Daya",
     "angka": [
-     2291,
-     93548,
-     1174,
-     6,
-     1
+     2291.0,
+     93548.0,
+     1174.0,
+     6.0,
+     1.0
     ],
-    "total": 97020,
+    "total": 97020.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4033,18 +5469,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.09": {
     "nama": "Kabupaten Buru Selatan",
     "angka": [
-     54035,
-     22522,
-     583,
-     2355,
-     1
+     54035.0,
+     22522.0,
+     583.0,
+     2355.0,
+     1.0
     ],
-    "total": 79496,
+    "total": 79496.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4052,18 +5489,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.71": {
     "nama": "Kota Ambon",
     "angka": [
-     145953,
-     204116,
-     9203,
-     250,
-     127
+     145953.0,
+     204116.0,
+     9203.0,
+     250.0,
+     127.0
     ],
-    "total": 359649,
+    "total": 359649.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4071,18 +5509,19 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "81.72": {
     "nama": "Kota Tual",
     "angka": [
-     69338,
-     15932,
-     5163,
-     37,
+     69338.0,
+     15932.0,
+     5163.0,
+     37.0,
      0
     ],
-    "total": 90470,
+    "total": 90470.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4090,6 +5529,7 @@
      "Hindu",
      "Budha"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -4103,7 +5543,8 @@
    "Katolik",
    "Hindu",
    "Budha"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "82": {
   "nama": "Maluku Utara",
@@ -4147,14 +5588,14 @@
    "82.01": {
     "nama": "Kabupaten Halmahera Barat",
     "angka": [
-     70976,
-     67501,
-     1378,
-     10,
-     10,
+     70976.0,
+     67501.0,
+     1378.0,
+     10.0,
+     10.0,
      0
     ],
-    "total": 139875,
+    "total": 139875.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4163,19 +5604,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.02": {
     "nama": "Kabupaten Halmahera Tengah",
     "angka": [
-     81352,
-     11610,
-     1173,
-     3,
-     5,
+     81352.0,
+     11610.0,
+     1173.0,
+     3.0,
+     5.0,
      0
     ],
-    "total": 94143,
+    "total": 94143.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4184,19 +5626,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.05": {
     "nama": "Kabupaten Kepulauan Sula",
     "angka": [
-     130391,
-     1388,
-     537,
-     1,
+     130391.0,
+     1388.0,
+     537.0,
+     1.0,
      0,
      0
     ],
-    "total": 132317,
+    "total": 132317.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4205,19 +5648,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.04": {
     "nama": "Kabupaten Halmahera Selatan",
     "angka": [
-     258933,
-     30779,
-     891,
-     1,
-     25,
-     4
+     258933.0,
+     30779.0,
+     891.0,
+     1.0,
+     25.0,
+     4.0
     ],
-    "total": 290633,
+    "total": 290633.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4226,19 +5670,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.03": {
     "nama": "Kabupaten Halmahera Utara",
     "angka": [
-     100343,
-     114885,
-     2004,
-     10,
-     23,
+     100343.0,
+     114885.0,
+     2004.0,
+     10.0,
+     23.0,
      0
     ],
-    "total": 217265,
+    "total": 217265.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4247,19 +5692,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.06": {
     "nama": "Kabupaten Halmahera Timur",
     "angka": [
-     70281,
-     40121,
-     585,
-     2,
-     8,
+     70281.0,
+     40121.0,
+     585.0,
+     2.0,
+     8.0,
      0
     ],
-    "total": 110997,
+    "total": 110997.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4268,19 +5714,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.07": {
     "nama": "Kabupaten Pulau Morotai",
     "angka": [
-     54007,
-     23604,
-     964,
-     5,
+     54007.0,
+     23604.0,
+     964.0,
+     5.0,
      0,
      0
     ],
-    "total": 78580,
+    "total": 78580.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4289,19 +5736,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.08": {
     "nama": "Kabupaten Pulau Taliabu",
     "angka": [
-     52764,
-     12119,
-     1865,
-     9,
+     52764.0,
+     12119.0,
+     1865.0,
+     9.0,
      0,
      0
     ],
-    "total": 66757,
+    "total": 66757.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4310,19 +5758,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.71": {
     "nama": "Kota Ternate",
     "angka": [
-     208163,
-     5455,
-     701,
-     63,
-     115,
-     132
+     208163.0,
+     5455.0,
+     701.0,
+     63.0,
+     115.0,
+     132.0
     ],
-    "total": 214629,
+    "total": 214629.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4331,19 +5780,20 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "82.72": {
     "nama": "Kota Tidore Kepulauan",
     "angka": [
-     110032,
-     4847,
-     527,
-     10,
+     110032.0,
+     4847.0,
+     527.0,
+     10.0,
      0,
-     3
+     3.0
     ],
-    "total": 115419,
+    "total": 115419.0,
     "kolom": [
      "Islam",
      "Protestan",
@@ -4352,6 +5802,7 @@
      "Budha",
      "Konghucu"
     ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
@@ -4366,7 +5817,8 @@
    "Hindu",
    "Budha",
    "Konghucu"
-  ]
+  ],
+  "satuan": "jiwa"
  },
  "91": {
   "nama": "Papua",
@@ -4387,7 +5839,24 @@
   "tabel_agama": [],
   "terbaca": {},
   "gagal": [],
-  "halaman_terbaca": []
+  "halaman_terbaca": [],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\papua-2026.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2025,
+    "pdf": "catat\\pdf-agama\\papua-2025.pdf",
+    "halaman": []
+   },
+   {
+    "tahun": 2024,
+    "pdf": "catat\\pdf-agama\\papua-2024.pdf",
+    "halaman": []
+   }
+  ]
  },
  "92": {
   "nama": "Papua Barat",
@@ -4445,69 +5914,181 @@
    "92.03": {
     "nama": "Kabupaten Fak Fak",
     "angka": [
-     61996,
-     17112,
-     55,
-     14
+     61996.0,
+     16522.0,
+     17112.0,
+     55.0,
+     14.0,
+     0
     ],
-    "total": 79177,
+    "total": 95699.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "92.08": {
     "nama": "Kabupaten Kaimana",
     "angka": [
-     27907,
-     7147,
-     45
+     27907.0,
+     30965.0,
+     7147.0,
+     45.0,
+     0,
+     0
     ],
-    "total": 35099,
+    "total": 66064.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "92.07": {
     "nama": "Kabupaten Teluk Wondama",
     "angka": [
-     10041,
-     937
+     10041.0,
+     41140.0,
+     937.0,
+     0,
+     0,
+     0
     ],
-    "total": 10978,
+    "total": 52118.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "92.06": {
     "nama": "Kabupaten Teluk Bintuni",
     "angka": [
-     41573,
-     19270,
-     65,
-     48
+     41573.0,
+     28243.0,
+     19270.0,
+     65.0,
+     48.0,
+     0
     ],
-    "total": 60956,
+    "total": 89199.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "92.02": {
     "nama": "Kabupaten Manokwari",
     "angka": [
-     65041,
-     15599,
-     409,
-     240
+     65041.0,
+     87385.0,
+     15599.0,
+     409.0,
+     240.0,
+     0
     ],
-    "total": 81289,
+    "total": 168674.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    },
    "92.11": {
     "nama": "Kabupaten Manokwari Selatan",
     "angka": [
-     8837,
-     443,
-     5
+     8837.0,
+     40006.0,
+     443.0,
+     5.0,
+     0,
+     0
     ],
-    "total": 9285,
+    "total": 49291.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
+    "cara": "dijumlahkan"
+   },
+   "92.12": {
+    "nama": "Kabupaten Pegunungan Arfak",
+    "angka": [
+     0,
+     23328.0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 23328.0,
+    "kolom": [
+     "Islam",
+     "Kristen",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "satuan": "jiwa",
     "cara": "dijumlahkan"
    }
   },
   "gagal": [],
   "halaman_terbaca": [
    282
-  ]
+  ],
+  "edisi_lama": [
+   {
+    "tahun": 2026,
+    "pdf": "catat\\pdf-agama\\papuabarat-2026.pdf",
+    "halaman": [
+     [
+      282
+     ]
+    ]
+   }
+  ],
+  "kolom": [
+   "Islam",
+   "Kristen",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu"
+  ],
+  "satuan": "jiwa"
  }
 }
