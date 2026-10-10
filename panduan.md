@@ -140,7 +140,7 @@ supaya tetap jelas di atas foto bumi yang gelap:
 
 | Tanda | Artinya |
 |-------|---------|
-| 🟫 **Segitiga jingga** | Gunung / puncak (nama & tinggi muncul saat di-zoom) |
+| 🟫 **Segitiga jingga** | Gunung / puncak (nama & tinggi muncul saat di-zoom). **Bisa diklik** — muncul keterangan lengkap: nama, tinggi, **pulau** dan **provinsi** tempat gunung itu berada |
 | 〰️ **Garis biru muda** | Sungai |
 | 💧 **Bidang biru muda bening** | Danau |
 | ⬜ **Garis putih** | Batas provinsi (bisa diklik) |
@@ -278,6 +278,10 @@ Wamena, Sorong.
 
 💡 **Tip:** nama ibu kota **tidak akan menutupi** nama kota lain, nama gunung,
 penanda lokasi Bapak, maupun nama pulau — tempatnya diatur otomatis.
+
+📌 **Nama selalu rapat ke bintangnya** (± 11 piksel) pada **semua** tingkat zoom.
+Jadi nama tidak pernah "nyasar" ke pulau sebelah. Kalau tempat itu sudah penuh,
+aplikasi memindahkan nama ke **sisi lain bintang yang sama** — bukan menjauh.
 
 📚 **Sumber nama & koordinat:** Wikipedia bahasa Indonesia — lihat bagian
 **1b. 📚 Dari mana datanya?**

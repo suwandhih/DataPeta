@@ -118,11 +118,17 @@ body {
 /* Gunung */
 .gunung { pointer-events: none; }
 
+/* Segitiga gunung bisa diklik supaya Bapak bisa lihat keterangannya
+   (mis. Gunung Rinjani — Pulau Lombok, bukan Kota Mataram). */
 .gunung-tanda {
   fill: #ffd08a;
   stroke: rgba(0, 0, 0, 0.55);
   stroke-width: 0.8;
+  pointer-events: auto;
+  cursor: help;
 }
+
+.gunung-tanda:hover { fill: #ffe4b0; }
 
 .gunung-nama {
   font-family: var(--font);

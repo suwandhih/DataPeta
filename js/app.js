@@ -237,6 +237,19 @@
   const HURUF = { pulauBesar: 12, pulau: 10, kotaBesar: 12, kota: 9, gunung: 8, ibuKota: 11 };
   const SPASI = { pulauBesar: 1.8, pulau: 1.2 };
 
+  // Jarak tulisan dari penandanya — TETAP, tidak ikut zoom.
+  // Bintang ibu kota dan titik kota ukurannya tetap di layar (10 px / 4–6 px
+  // pada semua zoom). Kalau jaraknya ikut membesar, di zoom besar nama akan
+  // menyeberang ke pulau lain (mis. "Denpasar" sampai ke Pulau Lombok).
+  // Sama seperti penanda lokasi milik Bapak (K14).
+  function jarakTulisan(ukuran) {
+    return 4 + 7 * (ukuran / 9);
+  }
+
+  // Radius yang harus dihindari tulisan lain — ukuran penanda di layar
+  // (radius 5 + garis) dan tidak ikut zoom.
+  const RINTANGAN_PENANDA = 7;
+
   // Bintang penanda ibu kota provinsi (K04a) — jari-jari luar 4 px,
   // digambar dengan skala 1,5 sehingga tampak 6 px di layar.
   const BINTANG_JALUR =
@@ -339,8 +352,8 @@
     }
 
     // Penanda lokasi milik Bapak — juga jangan ditutupi.
-    // Penanda membesar saat zoom (radius 5 × zoom), jadi ikut dihitung.
-    const rPenanda = 5 * zk + 3;
+    // Penanda digambar dengan ukuran tetap di layar (K14) — tidak ikut zoom.
+    const rPenanda = RINTANGAN_PENANDA;
     daftarLokasi.filter(cocok).forEach((lokasi) => {
       const s = keLayar(proyek(lokasi.lon, lokasi.lat));
       if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
@@ -509,8 +522,8 @@
         // Ibu kota provinsi lebih penting — nama kota biasa menghindarinya.
         daftarIbuKotaTampil().forEach((k) => rintangan.push(k.rect));
 
-    // Penanda membesar saat zoom (radius 5 × zoom), jadi ikut dihitung.
-    const rPenanda = 5 * zk + 3;
+    // Penanda digambar dengan ukuran tetap di layar (K14) — tidak ikut zoom.
+    const rPenanda = RINTANGAN_PENANDA;
     daftarLokasi.filter(cocok).forEach((lokasi) => {
       const s = keLayar(proyek(lokasi.lon, lokasi.lat));
       if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
@@ -538,8 +551,8 @@
 
       // Cari sisi yang paling sedikit bertabrakan dengan yang sudah ada.
       // Coba dulu sisi dekat; kalau semuanya bertabrakan, pakai sisi jauh.
-      // Jarak label menyesuaikan besar penanda (penanda membesar saat zoom).
-      const jarak = 10 * zk + 6;
+      // Jarak label tetap (tidak ikut zoom) — penandanya pun tetap besarnya.
+      const jarak = jarakTulisan(ukuran);
       const semua = [...rintangan, ...terpakai];
       let sisi = pilihSisi(s.x, s.y, teksnya.w, teksnya.h, SISI_DEKAT, semua, jarak);
       let rect = kotakSisi(sisi, teksnya.w, teksnya.h, s.x, s.y, jarak);
@@ -589,7 +602,7 @@
       if (typeof IBU_KOTA_PROVINSI === "undefined" || !proyeksi) return hasil;
 
       const rintangan = [];
-      const rPenanda = 5 * zk + 3;
+      const rPenanda = RINTANGAN_PENANDA;
       daftarLokasi.filter(cocok).forEach((lokasi) => {
         const s = keLayar(proyek(lokasi.lon, lokasi.lat));
         if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
@@ -611,7 +624,7 @@
         if (s.x < -60 || s.x > VB_W + 60 || s.y < -60 || s.y > VB_H + 60) return;
 
         const u = ukuranTeks(nama, HURUF.ibuKota, 0);
-        const jarak = 9 * zk + 5;
+        const jarak = jarakTulisan(HURUF.ibuKota);
         const semua = [...rintangan, ...terpakai];
 
         let sisi = pilihSisi(s.x, s.y, u.w, u.h, SISI_DEKAT, semua, jarak, true);
@@ -844,12 +857,21 @@
       teks.setAttribute("y", "3");
       teks.textContent = (g.n || "Puncak") + " " + (g.e ? g.e + " m" : "");
 
+      // Keterangan lengkap: nama — tinggi — pulau + wilayah pemiliknya.
+      // Pulau & wilayah dihitung dari data asli (batas provinsi + titik pulau),
+      // jadi tidak ada gunung yang salah tempat (mis. Rinjani sempat tampak
+      // seperti ada di Kota Mataram, padahal di Pulau Lombok).
+      const wilayah = provinsiDiTitik(g.lon, g.lat);
+      const pulau = pulauDiTitik(g.lon, g.lat);
+      const tempat = [pulau, wilayah].filter(Boolean).join(", ");
+      const judulLengkap =
+        (g.n || "Puncak") + (g.e ? " — " + g.e + " m" : "") + (tempat ? " — " + tempat : "");
       const judul = document.createElementNS(NS, "title");
-      judul.textContent = (g.n || "Puncak") + (g.e ? " — " + g.e + " m" : "");
+      judul.textContent = judulLengkap;
+      segitiga.appendChild(judul);
 
       el.appendChild(segitiga);
       el.appendChild(teks);
-      el.appendChild(judul);
       lapisGunung.appendChild(el);
     });
   }
@@ -867,12 +889,90 @@
   }
 
   // ---------- Gambar peta provinsi ----------
+
+  // Wilayah (provinsi) pemilik tiap titik, dihitung SEKALI dari batas provinsi
+  // asli (data/peta-indonesia.js) — bukan dikarang (aturan F8).
+  // Dipakai untuk memberi keterangan gunung (mis. Gunung Rinjani ada di
+  // Provinsi Nusa Tenggara Barat, bukan di Kota Mataram).
+  let wilayahProvinsiTitik = [];
+
+  function siapkanWilayahTitik(geojson) {
+    const daftar = [];
+    geojson.features.forEach((f) => {
+      const nama = f.properties.PROVINSI || f.properties.state || f.properties.name || "Wilayah";
+      const kumpulan = [];
+      const tipe = f.geometry.type;
+      const koord = f.geometry.coordinates;
+      if (tipe === "Polygon") kumpulan.push(koord);
+      else if (tipe === "MultiPolygon") koord.forEach((p) => kumpulan.push(p));
+      else kumpulan.push([koord]);
+      daftar.push({ nama, kumpulan });
+    });
+    wilayahProvinsiTitik = daftar;
+  }
+
+  // Titik di dalam cincin? (aturan ganjil-genap)
+  function dalamCincin(x, y, cincin) {
+    let dalam = false;
+    for (let i = 0, j = cincin.length - 1; i < cincin.length; j = i++) {
+      const xi = cincin[i][0], yi = cincin[i][1];
+      const xj = cincin[j][0], yj = cincin[j][1];
+      if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) dalam = !dalam;
+    }
+    return dalam;
+  }
+
+  // Titik di dalam poligon (cincin pertama = batas luar, sisanya = lubang)?
+  function dalamPoligon(x, y, poligon) {
+    if (!poligon.length || !dalamCincin(x, y, poligon[0])) return false;
+    for (let i = 1; i < poligon.length; i++) {
+      if (dalamCincin(x, y, poligon[i])) return false;
+    }
+    return true;
+  }
+
+  // Nama provinsi yang memuat sebuah titik — kosong kalau titiknya di laut
+  // atau di luar wilayah Indonesia.
+  function provinsiDiTitik(lon, lat) {
+    for (const w of wilayahProvinsiTitik) {
+      for (const poligon of w.kumpulan) {
+        if (dalamPoligon(lon, lat, poligon)) return w.nama;
+      }
+    }
+    return "";
+  }
+
+  // Nama pulau terdekat dari sebuah titik — dipakai untuk keterangan gunung
+  // (mis. Gunung Rinjani ada di Pulau Lombok).
+  // Sumbernya daftar titik penempatan nama pulau di data/pulau.js yang sudah
+  // dipastikan berada di dalam wilayah Indonesia. Titik yang jauh dari semua
+  // pulau (mis. Murray Hill — Pulau Christmas, Australia) tidak diberi nama.
+  const JAUH_PULAU = 2;   // derajat — lebih jauh dari ini dianggap bukan pulau kita
+
+  function pulauDiTitik(lon, lat) {
+    if (typeof PULAU === "undefined") return "";
+    let terdekat = "";
+    let jarakTerdekat = Infinity;
+    PULAU.forEach((p) => {
+      p.k.forEach((t) => {
+        const d = Math.hypot(t[0] - lon, t[1] - lat);
+        if (d < jarakTerdekat) {
+          jarakTerdekat = d;
+          terdekat = p.n;
+        }
+      });
+    });
+    if (!terdekat || jarakTerdekat > JAUH_PULAU) return "";
+    return /^pulau|^kepulauan/i.test(terdekat) ? terdekat : "Pulau " + terdekat;
+  }
+
   function gambarPeta() {
     if (typeof PETA_INDONESIA === "undefined") {
       labelPeta.textContent = "Data peta tidak ditemukan.";
       return;
     }
     siapkanProyeksi(PETA_INDONESIA);
+    siapkanWilayahTitik(PETA_INDONESIA);
     gambarNegara();
     gambarDanau();
     gambarSungai();

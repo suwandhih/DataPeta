@@ -4,7 +4,96 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 9 Oktober 2026 — 🔍 **K23 k: PEMINDAIAN SUMBER AGAMA (hasil: jalur pusat habis)**
+## 10 Oktober 2026 — 🔧 **K27: TIGA TEMUAN BAPAK DI PETA (Denpasar · NTB · Rinjani)**
+
+**Order Bapak:**
+1. *"bali - denpasar tapi nyasar ke P. Lombok"*
+2. *"Nusa tenggara barat jumlah penduduk 5.815.328 jiwa ? bisa dicek kembali ?"*
+3. *"gunung rinjani seharusnya di p. lombok.. tapi ada di mataram dan jumlah penduduk angka sama dengan nusa tenggara barat persis 5.815.328 jiwa"*
+
+### 1. Denpasar "nyasar" ke Pulau Lombok — ✅ DIPERBAIKI
+
+**Yang diperiksa lebih dulu: apakah koordinat Denpasar salah?**
+Tidak. Titik Denpasar (115,2339 / −8,6717) saya uji dengan **metode titik-dalam-poligon**
+terhadap batas provinsi asli: hasilnya **di dalam Provinsi Bali**, bukan NTB. Jadi datanya benar.
+
+**Sebab sebenarnya — jarak nama dari bintangnya ikut membesar saat zoom:**
+Aplikasi memakai rumus jarak = 9 × zoom + 5. Padahal **bintangnya digambar dengan ukuran
+tetap** (10 px di layar pada semua zoom). Jadi makin dekat zoom, nama makin terdorong jauh:
+
+| Zoom | Jarak rumus lama | Akibat yang saya ukur |
+|------|------------------|------------------------|
+| 1× | 14 px | masih rapat |
+| 7,3× (tampilan yang Bapak lihat) | **71 px** | nama "Denpasar" terdorong 95 px → **masuk ke Pulau Lombok** |
+| 12× | 113 px | nama "Mamuju" **130 px** dari bintangnya (nyaris keluar layar) |
+
+**Perbaikan:** jarak nama dibuat **tetap** (± 11 px di semua zoom) — sama seperti penanda
+lokasi milik Bapak (yang sudah diperbaiki di K14). Tulisan kota juga ikut diperbaiki
+(sebelumnya 10 × zoom + 6 → sekarang tetap).
+
+**Hasil ukur sesudah perbaikan** (jarak nama dari bintangnya):
+
+| Zoom | Jarak terbesar | Nama |
+|------|----------------|------|
+| 1× | 29,5 px | Jakarta (sengaja menjauh karena bertabrakan dengan "Jakarta Pusat", bukan karena rumus) |
+| 2,25× | 55,7 px | Yogyakarta (bertabrakan dengan Semarang — memilih sisi jauh) |
+| 5× | 21,9 px | Samarinda |
+| 7,3× | **± 11 px** | ✅ Denpasar & Mataram kembali rapat ke bintangnya |
+| 11–12× | 6,2 px | Mamuju |
+
+### 2. Jumlah penduduk NTB 5.815.328 jiwa — ✅ ANGKA BENAR (tidak diubah)
+
+Saya periksa **tiga cara**, semuanya cocok:
+
+| Cara pemeriksaan | Hasil |
+|------------------|-------|
+| File mentah BPS lat/bps-penduduk-2026.json | baris 301: ["NUSA TENGGARA BARAT","5.815.328"] |
+| Jumlah 10 kab/kota NTB | 787.339 + 1.149.627 + 1.460.017 + 550.684 + 258.349 + 559.349 + 160.732 + 268.761 + 452.410 + 168.060 = **5.815.328** (persis, selisih 0) |
+| Bandingkan provinsi tetangga | NTB **5.815.328** < NTT **5.828.569**; Bali **4.488.243** — urutannya wajar |
+
+**Kesimpulan: tidak ada yang salah.** Angka 5.815.328 memang jumlah penduduk NTB menurut BPS 2026.
+
+### 3. Gunung Rinjani "ada di Mataram" + penduduk sama dengan NTB — ✅ DIPERBAIKI
+
+**Ini ternyata SATU masalah, bukan dua.**
+
+**Gunung Rinjani memang di Pulau Lombok.** Koordinatnya (116,46 / −8,41) ada di
+**Kabupaten Lombok Timur**, ± 20 km dari Kota Mataram. Karena layar sempit dan
+penamaan otomatis, namanya tampak seolah berada di dekat "Mataram".
+
+**Angka 5.815.328 yang muncul = panel Provinsi NTB, bukan data gunung.**
+Gunung tidak punya data penduduk sama sekali. Sebabnya: bintang ibu kota "Mataram"
+**bertabrakan dengan segitiga Rinjani**, dan segitiga gunung **tidak bisa diklik**
+(pointer-events: none) → klik tembus ke **batas Provinsi NTB** di bawahnya →
+yang terbuka = panel Provinsi NTB beserta penduduknya. **Bukan angka salah tempat.**
+
+**Perbaikan:**
+- Segitiga gunung sekarang **bisa diklik** (kursor berubah jadi tanda tanya).
+- Keterangan tiap gunung diperjelas: **nama — tinggi — pulau + provinsi**, dihitung
+  dari batas provinsi asli dan daftar pulau (tidak dikarang, aturan F8).
+
+Contoh keterangan yang sekarang tampil:
+
+| Gunung | Keterangan |
+|--------|------------|
+| Gunung Rinjani | Gunung Rinjani — 3726 m — **Pulau Lombok, Nusa Tenggara Barat** |
+| Gunung Tambora | Gunung Tambora — 2722 m — Pulau Sumbawa, Nusa Tenggara Barat |
+| Gunung Semeru | Gunung Semeru — 3676 m — Pulau Jawa, Jawa Timur |
+| Puncak 3142 m (tanpa nama) | Puncak — 3142 m — Pulau Bali, Bali |
+| Murray Hill | Murray Hill — 356 m (tidak ada keterangan — memang **bukan** gunung Indonesia, letaknya di Pulau Christmas, Australia) |
+
+### Berkas yang diubah
+js/app.js (jarak tulisan tetap + nama gunung bisa diklik + keterangan wilayah gunung) ·
+css/style.css (segitiga gunung bisa diklik) ·
+index.html (penanda versi naik jadi ?v=20261010-01).
+
+### Uji
+K01-01…K01-12: **12 uji, 0 gagal** — PC (1440×900) + HP (390×844), zoom 1× sampai 12×.
+
+### Masih menunggu Bapak
+Uji di HP: **K27 h**.
+
+---## 9 Oktober 2026 — 🔍 **K23 k: PEMINDAIAN SUMBER AGAMA (hasil: jalur pusat habis)**
 
 **Order Bapak:** *"lanjut"* (melanjutkan K23 k — cari data agama provinsi berikutnya)
 
