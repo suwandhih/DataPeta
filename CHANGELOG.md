@@ -5,6 +5,66 @@
 
 ---
 
+## 10 Oktober 2026 — 🕌 **K29: DATA AGAMA BERTAMBAH DARI 9 → 22 PROVINSI**
+
+**Order Bapak:** *"agama belum semua kota / desa / kab terdata .. di lengkapi"* — dan pertanyaan *"apakah ada data pilihan tidak ada agama atau kepercayaan?"*
+
+### Jawaban pertanyaan Bapak
+
+| Pilihan | Ada di BPS? |
+|---|---|
+| **"Tidak ada agama"** | ❌ **TIDAK ADA.** BPS tidak menerbitkan jumlah penduduk tanpa agama. |
+| **"Kepercayaan"** | ✅ **ADA.** Kini bertambah 2 provinsi baru: **Bali 119 jiwa** dan **Sumatera Barat 269 jiwa**. Sebelumnya sudah ada di DKI Jakarta, Jawa Barat, Jambi, Sulawesi Tenggara, Kalimantan Utara. |
+
+### Cara mendapatkannya
+
+BPS Pusat tidak menerbitkan agama sampai kabupaten/kota. Jalur yang berhasil: **buku "Provinsi Dalam Angka"** — PDF resmi tiap BPS provinsi. 36 PDF diunduh otomatis (567 MB), lalu tabelnya dibaca otomatis.
+
+### Tiga kendala berat yang harus diatasi
+
+| Kendala | Contoh nyata | Cara mengatasi |
+|---|---|---|
+| **Tanda air (watermark) BPS** menyelipkan huruf ke dalam sel | Sel yang seharusnya `21.212` terbaca `"d\n21.212 . i"`; nama `Lampung` terbaca `"t\nLampung t"` | Angka dibaca dengan menyisakan angka saja; nama dicocokkan dengan menyisakan huruf saja |
+| Tabel **terbagi 2 halaman** | Halaman 1 = Islam/Protestan/Katolik; halaman 2 hanya bertulis *"Lanjutan Tabel 4.5.4"* | Halaman lanjutan digabung lewat **nomor tabel** yang sama |
+| **Kabupaten dan Kota dipisah** | Kabupaten Solok vs Kota Solok; Kabupaten Gorontalo vs Kota Gorontalo | Baris judul *"Kabupaten/Regency"* dan *"Kota/Municipality"* dipakai sebagai penanda |
+
+### Cara memastikan angkanya benar (tidak dikarang)
+
+Setiap tabel BPS punya **baris total provinsi** di paling bawah. Jumlah angka semua kabupaten/kota **harus sama** dengan baris total itu. Kalau tidak sama, tabelnya dibuang. Jadi angka yang lolos sudah terbukti dari dokumen BPS itu sendiri.
+
+Contoh **Bali** (cocok persis dengan PDF halaman 262–263):
+
+| Kabupaten/Kota | Islam | Katolik | Protestan | Hindu | Budha | Konghucu | Kepercayaan | Jumlah |
+|---|---|---|---|---|---|---|---|---|
+| Jembrana | 88.752 | 2.690 | 4.225 | 234.213 | 972 | 17 | 4 | **330.873** |
+| Denpasar | 152.473 | 16.499 | 36.265 | 455.056 | 15.696 | 353 | 41 | **676.383** |
+| **Bali** | 452.232 | 38.003 | 77.566 | 3.790.611 | 29.962 | 625 | **119** | **4.389.118** |
+
+### Hasil
+
+| | Sebelum | Sesudah |
+|---|---|---|
+| Provinsi punya data agama | 9 | **22** |
+| Kabupaten/kota terdata | 166 | **338** |
+
+**13 provinsi baru:** Aceh · Sumatera Barat · Lampung · Kepulauan Bangka Belitung · Kepulauan Riau · Bali · Kalimantan Barat · Kalimantan Tengah · Kalimantan Selatan · Sulawesi Selatan · Gorontalo · Maluku · Maluku Utara.
+
+**16 provinsi belum ada** (tidak dikarang): Riau · Bengkulu · DIY · Jawa Timur · Banten · NTB · NTT · Sulawesi Tengah · Sulawesi Barat · Papua · Papua Barat · Kalimantan Timur · Papua Selatan · Papua Tengah · Papua Pegunungan · Papua Barat Daya.
+
+### Alat baru
+
+| Berkas | Gunanya |
+|---|---|
+| `alat/cari-agama-dalam-angka.py` | Mencari & mengunduh PDF "Provinsi Dalam Angka" |
+| `alat/baca-agama-dalam-angka.py` | Membaca tabel agama dari PDF |
+| `alat/buat-agama-dalam-angka.js` | Menggabungkan hasil ke `data/agama.js` |
+
+### Uji
+
+22 provinsi/338 kab/kota termuat · Bali 7 kolom tampil lengkap · HP tidak meluber · provinsi tanpa data tidak menampilkan blok agama · **0 galat** · versi `?v=20261010-08` · uji online lulus.
+
+---
+
 ## 10 Oktober 2026 — 🔧 **K28: ANGKA PENDUDUK PROVINSI KINI BISA DIBUKTIKAN**
 
 **Order Bapak:** *"kalau di uji sama.. saya perhatikan karena area bukan satu pulau.. atau satu lokasi angka itu terdiri dari beberapa lokasi. kalau begitu dibuat daftar provinsi terdiri dari lokasi a,b,c,d dengan jumlahnya jadi angka yg di sajikan bisa dibuktikan"* — dan Bapak minta **berlaku seluruh wilayah**.
