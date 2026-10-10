@@ -284,6 +284,21 @@
 | K30 | z6e. ✅ **KALAU DITEGUR TAPI TETAP LANJUT — JADWAL DIHITUNG ULANG (kata Bapak).** Bapak: *"jika tidak memenuhi setelah ditegur, user tetap lanjut kerja tentu sistem harus menghitung kembali waktu yg di set admin menjadwalkan ulang berapa lama untuk user memenuhi pekerjaannya"*. Jadi: admin **menetapkan target baru** → sistem **menghitung ulang** sisa waktunya → pengingat & notifikasi berjalan lagi dari awal. | ⬜ | ⬜ | — |
 | K30 | z6f. **Catatan riwayat target** — setiap perpanjangan dicatat: *"target 1: 20 Okt (terlewat) → ditegur → target 2: 27 Okt"*. Supaya admin tahu siapa yang sering terlambat. | ⬜ | ⬜ | — |
 | K30 | z6g. ⚪ **Perlu keputusan Bapak:** ① pengingat 2 hari — cukup sekali, atau juga **1 hari** dan **hari H**? ② notifikasi lewat apa — **di dalam aplikasi saja**, atau perlu **email/WhatsApp**? ③ kalau petugas tidak pernah menyentuh pekerjaannya sama sekali — tetap menunggu teguran admin, atau ada tanda khusus? | ⚪ | ⬜ | — |
+
+| **K31** | **PILIH TITIK DI PETA DETAIL + ALAMAT LENGKAP** — ORDER BAPAK 10 Okt 2026. Bapak: *"member mau menempatkan lokasi yayasan sekarang kira2 letak.. kalau pakai peta detail .. bisa lebih akurasi posisi yayasan atau sekolah atau pusat kesehatan dalam jaringannya"* → lalu memilih: *"boleh dimasukkan kalau 3 hari"* + *"alamat yg tepat menjadi masuk akal dimasukkan dalam pengisian data"*. | | | |
+| K31 | a. **Masalahnya.** Peta sekarang memakai **satu berkas citra** `data/citra-satelit.jpg` (8192×3277) = **625 meter per piksel**. Diperbesar 12× pun tetap buram — **tidak menambah detail**. Jadi Bapak **tidak bisa melihat** tempat yang diklik. | ✅ | ✅ | 10 Okt 2026 |
+| K31 | b. ✅ **Temuan penting (hasil pemeriksaan 10 Okt 2026):** ① **koordinat lokasi member SUDAH presisi penuh** (`lon, lat`, contoh `115.2339, -8.6721`) — angkanya **sudah tepat**; ② **data batas provinsi SUDAH GeoJSON presisi penuh** (`data/peta-indonesia.js`, sumber BIG) — siap dipindah ke mesin peta lain. **Yang buram hanya latarnya**, bukan datanya. | ✅ | ✅ | 10 Okt 2026 |
+| K31 | c. **Hitungan (kenapa offline tidak mungkin):** untuk lihat rumah perlu **±10 m/piksel** = **62× lebih tajam** dari sekarang. Kalau tetap satu berkas gambar → lebar **512.072 px** = **±787 GB**. ❌ Tidak mungkin. Harus pakai **ubin (tiles)** seperti Peta Dunia. | ✅ | ✅ | 10 Okt 2026 |
+| K31 | d. ✅ **PILIHAN YANG DIPILIH BAPAK: "Pilih di peta detail" (±3 hari).** Di form member ditambah tombol **"📍 Pilih di peta detail"** → muncul jendela peta tajam (online, MapLibre + Esri World Imagery) → Bapak klik **tepat di atas sekolah / puskesmas / yayasan** → koordinatnya masuk ke form. **Peta utama TIDAK berubah** (tetap offline & ringan). Internet hanya dipakai **saat memilih titik**. | ⬜ | ⬜ | — |
+| K31 | e. **Alasan dipilih (bukan ganti total ±2 minggu):** hasil akurasinya **sama**, tetapi waktunya **5× lebih singkat** dan risikonya jauh lebih kecil. Aturan **F3c** (*"latar peta tetap OFFLINE"*) **tidak perlu diubah**. | ✅ | ✅ | 10 Okt 2026 |
+| K31 | f. ✅ **TAMBAHAN BAPAK: ALAMAT LENGKAP.** Bapak: *"alamat yg tepat menjadi masuk akal dimasukkan dalam pengisian data"*. Jadi form member ditambah kolom **alamat** (jalan · nomor · desa/kelurahan · kecamatan · kabupaten/kota · provinsi · kode pos). | ⬜ | ⬜ | — |
+| K31 | f1. **Alamat bisa terisi otomatis** dari titik yang dipilih (layanan pencarian balik / *reverse geocoding*) → Bapak tinggal membetulkan kalau kurang tepat. | ⬜ | ⬜ | — |
+| K31 | f2. **Alamat tampil di panel lokasi** bersama koordinat, dan **ikut tersimpan** ke IndexedDB + awan. | ⬜ | ⬜ | — |
+| K31 | f3. **Alamat ikut masuk berkas Excel/CSV** (menyambung K30 butir w) — supaya bisa dikerjakan di Excel. | ⬜ | ⬜ | — |
+| K31 | g. **Rincian pekerjaan (±3 hari):** ① pasang MapLibre + gaya satelit di jendela pemilih titik — ½ hari · ② tombol + jendela pemilih di form member — ½ hari · ③ kolom alamat + isi otomatis — ½ hari · ④ simpan koordinat & alamat ke IndexedDB + awan — ½ hari · ⑤ tampilkan di panel + ikut ke Excel — ½ hari · ⑥ uji PC + HP + online — ½ hari. | ⬜ | ⬜ | — |
+| K31 | h. ⚠️ **Catatan:** Esri World Imagery **gratis** untuk pemakaian biasa, **wajib menuliskan sumber** (sudah dilakukan di aplikasi). Kalau dipakai sangat ramai, bisa kena batas. | ✅ | ✅ | 10 Okt 2026 |
+| K31 | i. ⚪ **Perlu keputusan Bapak:** ① alamat diisi **otomatis** dari titik (lalu dibetulkan), atau **diketik sendiri** saja? ② perlu kolom **kode pos**? ③ perlu kolom **telepon / penanggung jawab**? | ⚪ | ⬜ | — |
+| K31 | j. ⚪ **Pilihan lain yang BELUM dipilih (dicatat untuk nanti):** **Ganti total ke peta detail (±2 minggu)** — peta utama sendiri jadi tajam, bisa lihat rumah kapan saja, tetapi **butuh internet terus** dan aturan F3c harus diubah. Bisa dikerjakan menyusul; tombol pemilih titik (butir d) **tidak terbuang**. | ⚪ | ⬜ | — |
 | K30 | z2. **Pendaftaran sendiri + admin mengaktifkan (jawaban ②).** Alur: orang **daftar sendiri** (nama + kata sandi) → akun berstatus **⏸️ menunggu** → **admin (Bapak) mengaktifkan** → baru bisa login & ambil kerjaan. Jadi tidak ada orang asing yang langsung bisa mengubah data. | ⬜ | ⬜ | — |
 | K30 | z3. **Tabel kontrol hasil entri (jawaban ③).** Data yang diinput petugas **langsung tampil** di peta/panel (tidak menunggu persetujuan). **Tetapi** admin punya **tabel kontrol** berisi semua hasil entri: **kode user · wilayah · apa yang diinput · kapan** — dengan tombol **Ubah** dan **Hapus**. Jadi kalau ada yang salah, admin bisa langsung membetulkan. | ⬜ | ⬜ | — |
 | K30 | z4. **Kode user 3 digit (jawaban ④).** Setiap akun punya **kode 3 digit** (contoh: `001`, `002`, `003`). Kode ini **selalu tertera** pada setiap data yang diinput — di tabel, di panel, dan di catatan perubahan. Gunanya: admin **langsung tahu siapa** yang menginput tanpa perlu membuka catatan. ⚠️ Kode dibuat otomatis saat akun diaktifkan admin, dan **tidak boleh dipakai ulang**. | ⬜ | ⬜ | — |
@@ -298,11 +313,13 @@
 | **K30** | **Tahap 2** — tabel mirip Excel + unduh/unggah Excel (butir **h–l**, **w**). | ⏳ | — |
 | **K30** | **Tahap 3** — ambil kerjaan (klaim wilayah) & kerja tim (butir **m–p**, **u**). | ⏳ | — |
 | **K30** | **Tahap 4** — uji & dokumen (butir **q–r**). | ⏳ | — |
+| **K31** | **Pilih titik di peta detail + alamat lengkap** (±3 hari). Disetujui Bapak 10 Okt 2026. Butir **a–j**. | ⏳ | — |
 
 > 📌 **BESOK MULAI DARI SINI (catatan 10 Okt 2026, malam):**
 > 1. **K30 Tahap 1** — catatan sumber & tanggal per baris (butir d–g). Ini fondasi, dikerjakan lebih dulu.
 > 2. **K30 Tahap 5** — pengamanan & login SHA-256 (butir t). Konsep sudah dibuat; Bapak bilang *"besok baru mulai"*.
-> 3. **K30** — tanyakan 3 hal di butir **y** sebelum Tahap 3 dimulai.
+> 3. **K30** — tanyakan 3 hal di butir **z6g** sebelum Tahap 3 dimulai.
+> 3b. **K31** — pilih titik di peta detail + alamat lengkap (±3 hari). Tanyakan 3 hal di butir **i**.
 > 4. **Uji di HP oleh Bapak** yang masih menunggu: K03 f · K16 e · K18 f · K19 e · K20 f · K21 e · K23 l · K24 e · **K25 e**.
 > 5. ⚠️ **Jangan ulangi pemindaian BPS Pusat / Dukcapil pusat** — sudah habis (aturan B14).
 > 6. ⚠️ **8 provinsi data agama tidak bisa dilengkapi** (Riau · Bengkulu · Jatim · NTB · Sulteng · Papua · Papua Selatan · Papua Barat Daya) — 11 jalur sudah habis. Satu-satunya sisa: Dukcapil per kab/kota (±500 situs) — **tanya Bapak dulu**.
