@@ -279,9 +279,20 @@ Wamena, Sorong.
 💡 **Tip:** nama ibu kota **tidak akan menutupi** nama kota lain, nama gunung,
 penanda lokasi Bapak, maupun nama pulau — tempatnya diatur otomatis.
 
-📌 **Nama selalu rapat ke bintangnya** (± 11 piksel) pada **semua** tingkat zoom.
+📌 **Nama selalu rapat ke bintangnya** (± 12 piksel) pada **semua** tingkat zoom.
 Jadi nama tidak pernah "nyasar" ke pulau sebelah. Kalau tempat itu sudah penuh,
-aplikasi memindahkan nama ke **sisi lain bintang yang sama** — bukan menjauh.
+aplikasi memindahkannya dengan urutan ini:
+
+1. **sisi lain bintang yang sama** (atas / bawah / kiri / kanan), lalu
+2. **sisi sudut** (kanan-atas, kanan-bawah, kiri-atas, kiri-bawah), baru
+3. **jaraknya ditambah sedikit** — **3 piksel saja**.
+
+Aplikasi **selalu** memilih yang paling dekat lebih dulu. Jadi meskipun penuh,
+pergeseran nama tidak pernah lebih dari **± 20 piksel** dari bintangnya.
+
+⚠️ Kalau bintangnya sendiri **keluar dari layar** (kota itu sedang tidak terlihat),
+namanya **ikut disembunyikan** — supaya tidak ada nama yang tampil sendirian
+jauh dari kotanya.
 
 📚 **Sumber nama & koordinat:** Wikipedia bahasa Indonesia — lihat bagian
 **1b. 📚 Dari mana datanya?**

@@ -4,7 +4,59 @@
 > Ini untuk **Bapak** — supaya tahu riwayat aplikasi tanpa perlu technical.
 
 ---
-## 10 Oktober 2026 — 🔧 **K27: TIGA TEMUAN BAPAK DI PETA (Denpasar · NTB · Rinjani)**
+## 10 Oktober 2026 — 🔧 **K27 lanjutan: NAMA YANG MENJAUH DIRAPIKAN**
+
+**Order Bapak:** *"2 perlu dirapikan"* (nama peta yang masih menjauh dari bintangnya).
+
+### Yang diperiksa — ada 3 sebab
+
+| # | Sebab | Akibat terukur (sebelum) |
+|---|-------|--------------------------|
+| 1 | Masih ada pilihan sisi **"jauh"** (jarak + 18 px) | Palembang **53,9 px** · Denpasar **45,8 px** · Banjarbaru **37 px** dari bintangnya |
+| 2 | `masukBatas()` **menggeser nama masuk layar** padahal bintangnya sudah di luar peta | **Kupang 58 px** · Pekanbaru **42 px** dari bintangnya — nama tampil sendirian tanpa bintangnya |
+| 3 | **Bintang & titik kota tidak dihitung sebagai penghalang** | nama boleh menimpa bintang kota lain (Palu, Tanjungpinang, Mataram) |
+
+### Perbaikan
+
+1. Pilihan sisi `"-jauh"` **dibuang menyeluruh** (`SEMUA_SISI`, `kotakSisi`, `letakTeks`).
+   Sebagai gantinya ditambah sisi sudut **kiri-atas** dan **kiri-bawah**.
+2. `masukBatas()` **dihapus**. Sekarang: bintang/titik yang berada **di luar peta tidak
+   digambar namanya** — supaya tidak ada nama yang tampil sendiri jauh dari kotanya.
+   (Baris ± 60 px di luar batas juga tidak dibuang lagi, jadi penanda di tepi tetap dapat nama.)
+3. Fungsi baru `tempatTulisan()`: dicoba **sisi dekat → sisi sudut → baru jaraknya ditambah
+   sedikit (3 px saja)**. Tujuannya: lebih baik nama bersenggolan sedikit daripada melompat jauh.
+4. Bintang ibu kota dan titik kota **didaftarkan sebagai penghalang** nama
+   (`RINTANGAN_BINTANG` = 7 px, `RINTANGAN_TITIK` = 4 px).
+
+### Hasil ukur — jarak nama dari bintangnya (PC 1440×900, aplikasi lokal)
+
+| Zoom | Sebelum (terburuk) | Sesudah (terburuk) |
+|------|--------------------|--------------------|
+| 1× | 29,5 px (Jakarta) | **16,3 px** (Serang) |
+| 1,5× | 46,0 px (Kupang) | **14,7 px** (Tanjung Selor) |
+| 2,25× | 54,3 px (Yogyakarta) | **13,7 px** (Sofifi) |
+| 3,38× | 22,9 px (Gorontalo) | **13,3 px** (Palangka Raya) |
+| 5,06× | 21,5 px (Samarinda) | **13,3 px** (Palangka Raya) |
+| 7,59× | 31,1 px (Banjarbaru) | **6,2 px** (Mamuju) |
+| 12× | 6,2 px | **6,2 px** |
+
+Uji HP (390×844): terburuk **15,3 px**. **Nama yang menutupi bintang: 0.** 38 ibu kota tetap
+tampil, 0 galat konsol. Penanda versi dinaikkan (aturan B13) → `?v=20261010-05`.
+
+### ❓ Pertanyaan Bapak: apakah NTB dan NTT penduduknya sama-sama 5.828.569 jiwa?
+
+**Tidak sama.**
+
+| Provinsi | Jumlah penduduk | Sumber |
+|----------|-----------------|--------|
+| Nusa Tenggara Barat (52) | **5.815.328** jiwa | BPS — file mentah baris 301 |
+| Nusa Tenggara Timur (53) | **5.828.569** jiwa | BPS — file mentah baris 312 |
+
+Selisihnya **13.241 jiwa**. Keduanya sudah diuji dua cara dan **cocok persis (selisih 0)**:
+(1) angka provinsi dari file mentah BPS, dan (2) jumlah seluruh kab/kotanya
+(10 kab/kota NTB dan 22 kab/kota NTT). Kebetulan angkanya mirip karena sama-sama 5,8 juta.
+
+---
 
 **Order Bapak:**
 1. *"bali - denpasar tapi nyasar ke P. Lombok"*

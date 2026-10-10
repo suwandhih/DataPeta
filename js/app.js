@@ -246,9 +246,81 @@
     return 4 + 7 * (ukuran / 9);
   }
 
+  // Tambahan jarak kalau tempat paling dekat sudah dipakai tulisan lain.
+  // Ditambah SANGAT sedikit (3 px) — lebih baik nama bersenggolan sedikit
+  // daripada melompat jauh dari kotanya. Sisi lain sudah dicoba lebih dulu.
+  const JARAK_TAMBAHAN = [0, 3, 6];
+
+  // Cari tempat tulisan yang paling lapang.
+  // Urutan usaha: sisi dekat dulu → sisi sudut → baru jaraknya ditambah sedikit.
+  // Jadi yang paling penting adalah "jangan menjauh"; kalau masih berdesakan,
+  // sisi lain dipakai dulu sebelum jarak ditambah.
+  // Hasil: { sisi, jarak, rect }
+  function tempatTulisan(sx, sy, w, h, ukuran, rintangan, dalamBatas) {
+    const dasar = jarakTulisan(ukuran);
+    let terbaik = null;
+    let luasTerbaik = Infinity;
+    let sisiTerbaik = "kanan";
+    let jarakTerbaik = dasar;
+
+    for (const tambah of JARAK_TAMBAHAN) {
+      const jarak = dasar + tambah;
+      for (const daftarSisi of [SISI_DEKAT, SEMUA_SISI]) {
+        const sisi = pilihSisi(sx, sy, w, h, daftarSisi, rintangan, jarak, dalamBatas);
+        const kotak = kotakSisi(sisi, w, h, sx, sy, jarak);
+        const luas = hitungLuas(kotak, rintangan, dalamBatas);
+
+        // "<" (bukan "≤") → kalau sama lapang, yang TERDEKAT tetap dipilih.
+        if (luas < luasTerbaik) {
+          luasTerbaik = luas;
+          terbaik = kotak;
+          sisiTerbaik = sisi;
+          jarakTerbaik = jarak;
+          if (luas === 0) break;
+        }
+      }
+      if (luasTerbaik === 0) break;
+    }
+
+    return { sisi: sisiTerbaik, jarak: jarakTerbaik, rect: terbaik };
+  }
+
+  // Hitung luas tabrakan sebuah kotak dengan semua penghalang.
+  // dalamBatas = true → kotak yang jatuh ke luar peta dihukum sangat berat
+  // (dipakai ibu kota provinsi, yang wajib tampil utuh).
+  function hitungLuas(kotak, rintangan, dalamBatas) {
+    let luas = 0;
+
+    if (dalamBatas) {
+      const tepi = 4;
+      const luar =
+        Math.max(0, tepi - kotak.kiri) + Math.max(0, kotak.kanan - (VB_W - tepi)) +
+        Math.max(0, tepi - kotak.atas) + Math.max(0, kotak.bawah - (VB_H - tepi));
+      if (luar) luas += 1e6 + luar;
+    }
+
+    for (const k of rintangan) {
+      const dx = Math.min(kotak.kanan, k.kanan) - Math.max(kotak.kiri, k.kiri);
+      const dy = Math.min(kotak.bawah, k.bawah) - Math.max(kotak.atas, k.atas);
+      if (dx > 0 && dy > 0) luas += dx * dy;
+    }
+
+    return luas;
+  }
+
   // Radius yang harus dihindari tulisan lain — ukuran penanda di layar
   // (radius 5 + garis) dan tidak ikut zoom.
   const RINTANGAN_PENANDA = 7;
+
+  // Radius bintang ibu kota (jari-jari luar 4 px × skala 1,5 = 6 px).
+  const RINTANGAN_BINTANG = 7;
+  // Radius titik kota kecil/besar (r = 3 / 2 px).
+  const RINTANGAN_TITIK = 4;
+
+  // Kotak penghalang di sekeliling sebuah titik (bintang / titik kota).
+  function kotakTitik(s, r) {
+    return { kiri: s.x - r, kanan: s.x + r, atas: s.y - r, bawah: s.y + r };
+  }
 
   // Bintang penanda ibu kota provinsi (K04a) — jari-jari luar 4 px,
   // digambar dengan skala 1,5 sehingga tampak 6 px di layar.
@@ -272,23 +344,16 @@
   // jarak = jarak tepi tulisan dari titik (menyesuaikan besar penanda).
   function kotakSisi(sisi, w, h, sx, sy, jarak) {
     const j = jarak || 14;
-    const jj = j + 18;   // untuk pilihan "jauh"
     if (sisi === "atas") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy - j - h / 2, bawah: sy - j + h / 2 };
     if (sisi === "bawah") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy + j - h / 2, bawah: sy + j + h / 2 };
     if (sisi === "kiri") return { kiri: sx - j - w, kanan: sx - j, atas: sy - h / 2, bawah: sy + h / 2 };
     if (sisi === "kanan") return { kiri: sx + j, kanan: sx + j + w, atas: sy - h / 2, bawah: sy + h / 2 };
     if (sisi === "kanan-atas") return { kiri: sx + j, kanan: sx + j + w, atas: sy - j - h / 2, bawah: sy - j + h / 2 };
     if (sisi === "kanan-bawah") return { kiri: sx + j, kanan: sx + j + w, atas: sy + j - h / 2, bawah: sy + j + h / 2 };
-    // Pilihan jauh — dipakai kalau penanda lokasi tepat berada di kota
-    if (sisi === "atas-jauh") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy - jj - h / 2, bawah: sy - jj + h / 2 };
-    if (sisi === "bawah-jauh") return { kiri: sx - w / 2, kanan: sx + w / 2, atas: sy + jj - h / 2, bawah: sy + jj + h / 2 };
-    if (sisi === "kiri-jauh") return { kiri: sx - jj - w, kanan: sx - jj, atas: sy - h / 2, bawah: sy + h / 2 };
-    return { kiri: sx + jj, kanan: sx + jj + w, atas: sy - h / 2, bawah: sy + h / 2 };
+    if (sisi === "kiri-atas") return { kiri: sx - j - w, kanan: sx - j, atas: sy - j - h / 2, bawah: sy - j + h / 2 };
+    if (sisi === "kiri-bawah") return { kiri: sx - j - w, kanan: sx - j, atas: sy + j - h / 2, bawah: sy + j + h / 2 };
+    return { kiri: sx + j, kanan: sx + j + w, atas: sy - h / 2, bawah: sy + h / 2 };
   }
-
-  function bentrok(a, b) {
-      return !(a.kanan < b.kiri || a.kiri > b.kanan || a.bawah < b.atas || a.atas > b.bawah);
-    }
 
   // Pilih sisi penempatan yang paling sedikit bertabrakan.
   // Kalau ada sisi yang bebas (0 tabrakan), itu yang dipilih.
@@ -300,21 +365,7 @@
 
       for (const sisi of daftarSisi) {
         const kotak = kotakSisi(sisi, w, h, sx, sy, jarak);
-        let luas = 0;
-
-        if (dalamBatas) {
-          const tepi = 4;
-          const luar =
-            Math.max(0, tepi - kotak.kiri) + Math.max(0, kotak.kanan - (VB_W - tepi)) +
-            Math.max(0, tepi - kotak.atas) + Math.max(0, kotak.bawah - (VB_H - tepi));
-          if (luar) luas += 1e6 + luar;
-        }
-
-        for (const k of rintangan) {
-          const dx = Math.min(kotak.kanan, k.kanan) - Math.max(kotak.kiri, k.kiri);
-          const dy = Math.min(kotak.bawah, k.bawah) - Math.max(kotak.atas, k.atas);
-          if (dx > 0 && dy > 0) luas += dx * dy;
-        }
+        const luas = hitungLuas(kotak, rintangan, dalamBatas);
         if (luas < luasTerbaik) {
           luasTerbaik = luas;
           terbaik = sisi;
@@ -324,12 +375,16 @@
       return terbaik;
     }
 
+  // Sisi tulisan yang dipakai. Semuanya DEKAT penandanya — tidak ada lagi
+  // pilihan "jauh" (jarak + 18), karena itu membuat nama terlempar jauh dari
+  // kotanya (mis. "Palembang" 54 px dari bintangnya). Kalau berdesakan, yang
+  // ditambah adalah jaraknya sedikit-sedikit lewat tempatTulisan().
   const SEMUA_SISI = [
-    "kanan", "kiri", "atas", "bawah", "kanan-atas", "kanan-bawah",
-    "kanan-jauh", "kiri-jauh", "atas-jauh", "bawah-jauh"
+    "kanan", "kiri", "atas", "bawah",
+    "kanan-atas", "kanan-bawah", "kiri-atas", "kiri-bawah"
   ];
 
-  // Sisi yang dipakai lebih dulu (yang dekat) — supaya nama tetap rapat ke kotanya
+  // Sisi yang dipakai lebih dulu (yang paling rapat) — supaya nama tetap dekat
   const SISI_DEKAT = ["kanan", "kiri", "atas", "bawah", "kanan-atas", "kanan-bawah"];
 
     // Kumpulkan kotak semua tulisan yang sudah pasti tampil (ibu kota + kota + gunung + penanda).
@@ -520,7 +575,13 @@
     const rintangan = [];
 
         // Ibu kota provinsi lebih penting — nama kota biasa menghindarinya.
+        // Bintangnya juga dihindari, bukan hanya namanya.
         daftarIbuKotaTampil().forEach((k) => rintangan.push(k.rect));
+        IBU_KOTA_PROVINSI.forEach(([, , lat, lon]) => {
+          const s = keLayar(proyek(lon, lat));
+          if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
+          rintangan.push(kotakTitik(s, RINTANGAN_BINTANG));
+        });
 
     // Penanda digambar dengan ukuran tetap di layar (K14) — tidak ikut zoom.
     const rPenanda = RINTANGAN_PENANDA;
@@ -540,50 +601,50 @@
       });
     }
 
+    // Titik kota lain juga jangan ditutupi nama kota.
     KOTA_INDONESIA.forEach((kota) => {
       if (kota.r > ambang) return;
       const s = keLayar(proyek(kota.lon, kota.lat));
-      if (s.x < -60 || s.x > VB_W + 60 || s.y < -60 || s.y > VB_H + 60) return;
+      if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
+      rintangan.push(kotakTitik(s, RINTANGAN_TITIK));
+    });
+
+    KOTA_INDONESIA.forEach((kota) => {
+      if (kota.r > ambang) return;
+      const s = keLayar(proyek(kota.lon, kota.lat));
+      // Titiknya harus terlihat — kalau di luar peta, namanya juga tidak digambar.
+      if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
 
       const besar = kota.r <= 3;
       const ukuran = besar ? HURUF.kotaBesar : HURUF.kota;
       const teksnya = ukuranTeks(kota.n, ukuran, 0);
 
-      // Cari sisi yang paling sedikit bertabrakan dengan yang sudah ada.
-      // Coba dulu sisi dekat; kalau semuanya bertabrakan, pakai sisi jauh.
-      // Jarak label tetap (tidak ikut zoom) — penandanya pun tetap besarnya.
-      const jarak = jarakTulisan(ukuran);
+      // Cari tempat paling lapang: sisi dekat dulu, sisi sudut, baru jaraknya
+      // ditambah sedikit-sedikit. Jarak tidak ikut zoom — penandanya pun tetap.
       const semua = [...rintangan, ...terpakai];
-      let sisi = pilihSisi(s.x, s.y, teksnya.w, teksnya.h, SISI_DEKAT, semua, jarak);
-      let rect = kotakSisi(sisi, teksnya.w, teksnya.h, s.x, s.y, jarak);
-
-      let adaBentrok = semua.some((k) => bentrok(rect, k));
-      if (adaBentrok) {
-        sisi = pilihSisi(s.x, s.y, teksnya.w, teksnya.h, SEMUA_SISI, semua, jarak);
-        rect = kotakSisi(sisi, teksnya.w, teksnya.h, s.x, s.y, jarak);
-      }
+      const tempat = tempatTulisan(s.x, s.y, teksnya.w, teksnya.h, ukuran, semua, false);
+      const rect = tempat.rect;
 
       terpakai.push({ kiri: rect.kiri - 3, kanan: rect.kanan + 3, atas: rect.atas - 2, bawah: rect.bawah + 2 });
-      hasil.push({ kota, p: proyek(kota.lon, kota.lat), besar, sisi, rect, jarak });
+      hasil.push({ kota, p: proyek(kota.lon, kota.lat), besar, sisi: tempat.sisi, rect, jarak: tempat.jarak });
     });
 
     return hasil;
   }
 
-  // Arah nama menurut sisi yang dipilih (untuk digambar)
+  // Arah nama menurut sisi yang dipilih (untuk digambar).
+  // Sisi "-jauh" sudah dibuang — semua sisi menempel dekat penandanya.
   function letakTeks(sisi, jarak) {
     const j = jarak || 14;
-    const jj = j + 18;
     if (sisi === "atas") return { x: "0", y: String(-j), anchor: "middle" };
     if (sisi === "bawah") return { x: "0", y: String(j), anchor: "middle" };
     if (sisi === "kiri") return { x: String(-j), y: "0", anchor: "end" };
     if (sisi === "kanan") return { x: String(j), y: "0", anchor: "start" };
     if (sisi === "kanan-atas") return { x: String(j), y: String(-j), anchor: "start" };
     if (sisi === "kanan-bawah") return { x: String(j), y: String(j), anchor: "start" };
-    if (sisi === "atas-jauh") return { x: "0", y: String(-jj), anchor: "middle" };
-    if (sisi === "bawah-jauh") return { x: "0", y: String(jj), anchor: "middle" };
-    if (sisi === "kiri-jauh") return { x: String(-jj), y: "0", anchor: "end" };
-    return { x: String(jj), y: "0", anchor: "start" };
+    if (sisi === "kiri-atas") return { x: String(-j), y: String(-j), anchor: "end" };
+    if (sisi === "kiri-bawah") return { x: String(-j), y: String(j), anchor: "end" };
+    return { x: String(j), y: "0", anchor: "start" };
   }
 
   // Kotak tulisan nama pulau yang sudah ditaruh — dipakai ibu kota provinsi
@@ -595,66 +656,68 @@
   // Tempatnya dipilih otomatis supaya tidak menutupi nama kota, nama gunung,
   // penanda lokasi, maupun ibu kota lain. Kalau tidak ada tempat yang benar-benar
   // bebas, dipakai tempat yang paling sedikit bertabrakan — yang penting tampil.
-    // Nama yang jatuh di tepi peta (Jayapura, Merauke, Wamena) digeser masuk
-    // supaya tidak terpotong.
-    function daftarIbuKotaTampil() {
-      const hasil = [];
-      if (typeof IBU_KOTA_PROVINSI === "undefined" || !proyeksi) return hasil;
+  function daftarIbuKotaTampil() {
+    const hasil = [];
+    if (typeof IBU_KOTA_PROVINSI === "undefined" || !proyeksi) return hasil;
 
-      const rintangan = [];
-      const rPenanda = RINTANGAN_PENANDA;
-      daftarLokasi.filter(cocok).forEach((lokasi) => {
-        const s = keLayar(proyek(lokasi.lon, lokasi.lat));
-        if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
-        rintangan.push({ kiri: s.x - rPenanda, kanan: s.x + rPenanda, atas: s.y - rPenanda, bawah: s.y + rPenanda });
+    const rintangan = [];
+    const rPenanda = RINTANGAN_PENANDA;
+    daftarLokasi.filter(cocok).forEach((lokasi) => {
+      const s = keLayar(proyek(lokasi.lon, lokasi.lat));
+      if (s.x < -80 || s.x > VB_W + 80 || s.y < -80 || s.y > VB_H + 80) return;
+      rintangan.push({ kiri: s.x - rPenanda, kanan: s.x + rPenanda, atas: s.y - rPenanda, bawah: s.y + rPenanda });
+    });
+
+    // Bintang ibu kota lain juga tidak boleh ditutupi nama.
+    IBU_KOTA_PROVINSI.forEach(([, , lat, lon]) => {
+      const s = keLayar(proyek(lon, lat));
+      if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
+      rintangan.push(kotakTitik(s, RINTANGAN_BINTANG));
+    });
+
+    // Dan titik kota juga — supaya nama tidak menutupi titik kota lain.
+    if (typeof KOTA_INDONESIA !== "undefined") {
+      const ambang = ambangUntukZoom(zk);
+      KOTA_INDONESIA.forEach((kota) => {
+        if (kota.r > ambang) return;
+        const s = keLayar(proyek(kota.lon, kota.lat));
+        if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
+        rintangan.push(kotakTitik(s, RINTANGAN_TITIK));
       });
-
-      // Nama pulau (kecuali nama pendek) juga dihindari.
-      kotakPulau.forEach((k) => {
-        if (k.kanan - k.kiri < 60) return;
-        rintangan.push(k);
-      });
-
-      const tepi = 4;
-      const terpakai = [];
-
-      IBU_KOTA_PROVINSI.forEach(([kode, nama, lat, lon]) => {
-        const p = proyek(lon, lat);
-        const s = keLayar(p);
-        if (s.x < -60 || s.x > VB_W + 60 || s.y < -60 || s.y > VB_H + 60) return;
-
-        const u = ukuranTeks(nama, HURUF.ibuKota, 0);
-        const jarak = jarakTulisan(HURUF.ibuKota);
-        const semua = [...rintangan, ...terpakai];
-
-        let sisi = pilihSisi(s.x, s.y, u.w, u.h, SISI_DEKAT, semua, jarak, true);
-        let rect = kotakSisi(sisi, u.w, u.h, s.x, s.y, jarak);
-        if (semua.some((k) => bentrok(rect, k))) {
-          sisi = pilihSisi(s.x, s.y, u.w, u.h, SEMUA_SISI, semua, jarak, true);
-          rect = kotakSisi(sisi, u.w, u.h, s.x, s.y, jarak);
-        }
-
-        rect = masukBatas(rect, u.w, u.h, tepi);
-        terpakai.push({ kiri: rect.kiri - 3, kanan: rect.kanan + 3, atas: rect.atas - 2, bawah: rect.bawah + 2 });
-        hasil.push({ kode, nama, p, s, rect });
-      });
-
-      return hasil;
     }
 
-    // Geser kotak tulisan (seperlunya saja) supaya seluruhnya berada di dalam peta.
-    function masukBatas(kotak, w, h, tepi) {
-      let dx = 0;
-      let dy = 0;
-      if (kotak.kiri < tepi) dx = tepi - kotak.kiri;
-      else if (kotak.kanan > VB_W - tepi) dx = VB_W - tepi - kotak.kanan;
-      if (kotak.atas < tepi) dy = tepi - kotak.atas;
-      else if (kotak.bawah > VB_H - tepi) dy = VB_H - tepi - kotak.bawah;
-      if (!dx && !dy) return kotak;
-      return { kiri: kotak.kiri + dx, kanan: kotak.kanan + dx, atas: kotak.atas + dy, bawah: kotak.bawah + dy };
-    }
+    // Nama pulau (kecuali nama pendek) juga dihindari.
+    kotakPulau.forEach((k) => {
+      if (k.kanan - k.kiri < 60) return;
+      rintangan.push(k);
+    });
 
-    function gambarIbuKota() {
+    const terpakai = [];
+
+    IBU_KOTA_PROVINSI.forEach(([kode, nama, lat, lon]) => {
+      const p = proyek(lon, lat);
+      const s = keLayar(p);
+      // Bintangnya harus benar-benar terlihat. Kalau bintangnya di luar peta,
+      // namanya juga tidak digambar — supaya tidak ada nama yang tampil
+      // sendirian jauh dari kotanya (itu yang dulu bikin "Denpasar" nyasar).
+      if (s.x < 0 || s.x > VB_W || s.y < 0 || s.y > VB_H) return;
+
+      const u = ukuranTeks(nama, HURUF.ibuKota, 0);
+      const semua = [...rintangan, ...terpakai];
+
+      // Sisi dekat dulu, sisi sudut, baru jarak ditambah sedikit-sedikit.
+      // Nama ibu kota TIDAK PERNAH dilempar jauh dari bintangnya.
+      const tempat = tempatTulisan(s.x, s.y, u.w, u.h, HURUF.ibuKota, semua, true);
+      const rect = tempat.rect;
+
+      terpakai.push({ kiri: rect.kiri - 3, kanan: rect.kanan + 3, atas: rect.atas - 2, bawah: rect.bawah + 2 });
+      hasil.push({ kode, nama, p, s, rect });
+    });
+
+    return hasil;
+  }
+
+  function gambarIbuKota() {
       lapisIbuKota.innerHTML = "";
       if (typeof IBU_KOTA_PROVINSI === "undefined" || !proyeksi) return;
 
