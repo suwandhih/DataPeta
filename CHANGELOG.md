@@ -44,6 +44,10 @@ Uji HP (390×844): terburuk **18,9 px**. **Nama bertumpuk: 0.** **Nama yang menu
 bintangnya: 0.** 38 ibu kota tetap tampil, 0 galat konsol.
 Penanda versi dinaikkan (aturan B13) → `?v=20261010-06`.
 
+**Uji versi ONLINE** (`suwandhih.github.io/DataPeta`) — penanda versi sudah
+`?v=20261010-06`, hasil sama: celah terburuk **19,6 px**, bertumpuk **0**,
+menutupi bintang **0**, galat konsol **0**.
+
 ### ❓ Pertanyaan Bapak: apakah NTB dan NTT penduduknya sama-sama 5.828.569 jiwa?
 
 **Tidak sama.**

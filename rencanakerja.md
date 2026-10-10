@@ -194,6 +194,7 @@
 | K27 | k. Penanda versi `index.html` dinaikkan (aturan B13) → `?v=20261010-06` (19 penanda) | ✅ | ✅ | 10 Okt 2026 |
 | K27 | l. Uji PC (1440×900) + HP (390×844), zoom 1×–12× — **nama bertumpuk 0 · nama menutupi bintang 0 · galat konsol 0**, 38 ibu kota tetap tampil. Jarak nama dari bintangnya (PC): z1 **19,6 px** · z1,5 14,7 px · z2,25 13,7 px · z3,38 13,3 px · z5,06 13,3 px · z7,59 6,2 px · z12 6,2 px — **turun dari 54,3 px sebelum perbaikan**. Uji HP: terburuk 18,9 px | ✅ | ✅ | 10 Okt 2026 |
 | K27 | m. **Jawaban pertanyaan Bapak (NTB vs NTT):** ❌ **TIDAK sama.** NTB = **5.815.328** jiwa · NTT = **5.828.569** jiwa — **beda 13.241 jiwa**. Kebetulan mirip karena sama-sama 5,8 juta. Bukti: (1) file mentah BPS baris 301 & 312; (2) jumlah seluruh kab/kota tiap provinsi (10 kab/kota NTB & 22 kab/kota NTT) — **selisih 0** untuk dua-duanya. | ✅ | ✅ | 10 Okt 2026 |
+| K27 | n. **Uji versi ONLINE** (`suwandhih.github.io/DataPeta`) — **4 uji, 0 gagal** (aturan C9). Penanda versi online sudah `?v=20261010-06`. Hasil: z1 38 nama · z2,25 12 nama · z5,06 4 nama · z12 1 nama — **celahMaks 19,6 px**, **nama bertumpuk 0**, **nama menutupi bintang 0**, **galat konsol 0** | ✅ | ✅ | 10 Okt 2026 |
 
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
