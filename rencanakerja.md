@@ -222,14 +222,46 @@
 | K29 | e. Naikkan penanda versi `index.html` (aturan B13) → `?v=20261010-09` | ✅ | ✅ | 10 Okt 2026 |
 | K29 | f. Uji PC (1440×900) + HP (390×844) — **30 provinsi/412 kab/kota termuat · 0 jumlah tidak cocok**. Panel diuji: Papua Tengah (5 baris) · Papua Pegunungan (5) · Papua Barat (6) · Bali (7) — **0 meluber** di PC maupun HP, 0 galat konsol | ✅ | ✅ | 10 Okt 2026 |
 
-### B. ANTREAN KERJA
-_(kosong — belum ada order yang disetujui)_
+| **K30** | **DATA TERBUKA — user bisa lihat & ubah sendiri (tanggal + sumber per baris)** — ORDER BAPAK 10 Okt 2026. Bapak: *"perubahan data juga tidak tau per satu atau dua atau lima tahun artinya nanti user harus bisa update sendiri"* · *"bentuk mirip2 excel saya user bisa update sendiri bila ada data baru"* · *"disiapkan juga bila user ada data lengkap minta dimasukkan .. nanti km proses saja tanpa harus cari2 lagi .. bisa kerja team atau beberapa user"* | | | |
+| K30 | a. **Latar belakang (temuan Bapak).** Data penduduk & agama dikumpulkan lewat berbagai cara, **tahunnya berbeda-beda** (2018–2026). Sekarang: ① user **tidak bisa update sendiri**; ② **tidak ada catatan tanggal & sumber per baris** (hanya di komentar berkas); ③ kalau user punya data lengkap, **tidak ada tempat memasukkannya**. | ⬜ | ⬜ | — |
+| K30 | b. **Keadaan sekarang (hasil pemeriksaan 10 Okt 2026).** `data/penduduk.js` = angka saja, tanpa tahun/sumber per baris · `data/agama.js` = **sudah ada** tahun + judul tabel + tautan **per provinsi** (`AGAMA_SUMBER`), tetapi belum ada tanggal ambil & belum per kab/kota · `js/penyimpanan.js` = IndexedDB lokal (store `lokasi` + `pengaturan`) · `js/awan.js` = Cloudflare Worker → Layerbase, gabung **"yang terakhir menyimpan menang"** berdasarkan waktu `diubah` · wilayah sudah lengkap: 38 provinsi · 514 kab/kota · 7.285 kecamatan · 83.762 desa. | ✅ | ✅ | 10 Okt 2026 |
+| K30 | c. ⚠️ **Catatan Bapak:** *"nth apa km pada saat cari catat atau tidak kalau tidak tidak usah.. hanya jumlah penduduk saja"* → tanggal & sumber **diinginkan**, tetapi **kalau tidak tercatat, tidak usah dipaksakan**; untuk penduduk cukup **jumlah penduduknya saja**. | ✅ | ✅ | 10 Okt 2026 |
+| K30 | **TAHAP 1 — Catatan sumber & tanggal per baris (fondasi).** | | | |
+| K30 | d. Rancang bentuk catatan: setiap angka punya **nilai · tahun data · sumber (nama tabel + tautan) · tanggal ambil**. Disimpan di berkas data, bukan di komentar. | ⬜ | ⬜ | — |
+| K30 | e. Terapkan ke **penduduk** (38 provinsi + 514 kab/kota) — sekarang belum ada catatannya. | ⬜ | ⬜ | — |
+| K30 | f. Terapkan ke **agama** (30 provinsi + 412 kab/kota) — lengkapi yang sudah ada (tambah tanggal ambil + per kab/kota). | ⬜ | ⬜ | — |
+| K30 | g. Tampilkan di panel: *"Data 2026 · Sumber: BPS Provinsi Bali · diambil 10 Okt 2026"* + tanda kalau angkanya diubah user. | ⬜ | ⬜ | — |
+| K30 | **TAHAP 2 — Tabel mirip Excel (lihat & ubah sendiri).** | | | |
+| K30 | h. Halaman/tab baru **"Data"** — daftar **provinsi → kab/kota → kecamatan → desa**, bisa dibuka-tutup. | ⬜ | ⬜ | — |
+| K30 | i. Tabel bisa **diubah langsung** (klik sel → ubah angka → simpan). | ⬜ | ⬜ | — |
+| K30 | j. **Tambah / hapus baris** (kalau ada wilayah atau data baru). | ⬜ | ⬜ | — |
+| K30 | k. Simpan ke **IndexedDB** + kirim ke **awan** (pakai jalur yang sudah ada). | ⬜ | ⬜ | — |
+| K30 | l. Tandai jelas mana **angka asli BPS** dan mana **angka isian user** — supaya tidak tertukar. | ⬜ | ⬜ | — |
+| K30 | **TAHAP 3 — Masuk data dari user (kerja tim).** | | | |
+| K30 | m. **Tempel dari Excel** (salin → tempel) → langsung jadi tabel. | ⬜ | ⬜ | — |
+| K30 | n. **Unggah berkas CSV** (kalau datanya banyak). | ⬜ | ⬜ | — |
+| K30 | o. **Riwayat perubahan** — catat siapa mengubah apa, kapan. | ⬜ | ⬜ | — |
+| K30 | p. **Beberapa user kerja bersama** — sinkron lewat awan, tanpa saling menimpa. | ⬜ | ⬜ | — |
+| K30 | **TAHAP 4 — Uji & dokumen.** | | | |
+| K30 | q. Uji PC + HP (aturan C8) + versi online (C9). | ⬜ | ⬜ | — |
+| K30 | r. Update `panduan.md` + `CHANGELOG.md` (aturan D2). | ⬜ | ⬜ | — |
+| K30 | ⚪ **PERLU KEPUTUSAN BAPAK sebelum Tahap 2 dimulai:** ① bentuk tabel — di dalam aplikasi, berkas CSV, atau dua-duanya? ② kerja tim — perlu login atau cukup catat nama pengubah? ③ data apa saja yang bisa diubah user — hanya penduduk & agama, atau semua? ④ kalau dua user mengubah baris yang sama — yang terakhir menang, atau ditanya dulu? | ⚪ | ⬜ | — |
 
-> 📌 **BESOK MULAI DARI SINI (catatan 9 Okt 2026, malam):**
-> 1. **K23 k4** — coba publikasi **"Kalimantan Timur Dalam Angka"** (PDF) di `kaltim.bps.go.id/id/publication` → cari tabel agama per kab/kota. Kalau berhasil, lanjut provinsi lain dengan cara sama.
-> 2. **K23 k5** — jalur cadangan: publikasi SP2010 BPS Pusat (provinsi saja).
+### B. ANTREAN KERJA
+
+| Kode | Butir | Status | Tgl |
+|------|-------|--------|-----|
+| **K30** | **Tahap 1** — catatan sumber & tanggal per baris (butir **d–g**). Disetujui Bapak 10 Okt 2026. | ⏳ | — |
+| **K30** | **Tahap 2** — tabel mirip Excel (butir **h–l**). ⚪ menunggu jawaban 4 pertanyaan di butir terakhir K30. | ⏳ | — |
+| **K30** | **Tahap 3** — masuk data dari user / kerja tim (butir **m–p**). | ⏳ | — |
+| **K30** | **Tahap 4** — uji & dokumen (butir **q–r**). | ⏳ | — |
+
+> 📌 **BESOK MULAI DARI SINI (catatan 10 Okt 2026, malam):**
+> 1. **K30 Tahap 1** — catatan sumber & tanggal per baris (butir d–g). Ini fondasi, dikerjakan lebih dulu.
+> 2. **K30** — tanyakan 4 hal di butir terakhir K30 sebelum Tahap 2 dimulai.
 > 3. **Uji di HP oleh Bapak** yang masih menunggu: K03 f · K16 e · K18 f · K19 e · K20 f · K21 e · K23 l · K24 e · **K25 e**.
 > 4. ⚠️ **Jangan ulangi pemindaian BPS Pusat / Dukcapil pusat** — sudah habis (aturan B14).
+> 5. ⚠️ **8 provinsi data agama tidak bisa dilengkapi** (Riau · Bengkulu · Jatim · NTB · Sulteng · Papua · Papua Selatan · Papua Barat Daya) — 11 jalur sudah habis. Satu-satunya sisa: Dukcapil per kab/kota (±500 situs) — **tanya Bapak dulu**.
 
 ### C. IDE
 
