@@ -1530,6 +1530,7 @@
       <h2 class="panel-nama">${nama}</h2>
       <p class="panel-wilayah">Wilayah Indonesia</p>
       ${jiwa === null ? "" : `<div class="panel-baris"><span class="label">Jumlah penduduk</span><span class="nilai">${jiwa.toLocaleString("id-ID")} jiwa</span></div>`}
+      ${blokKabKotaPanel(kode)}
       ${agama === null ? "" : blokAgamaPanel(agama)}
       <div class="panel-baris"><span class="label">Data lokasi</span><span class="nilai">Belum ada</span></div>
     `;
@@ -1665,6 +1666,66 @@
       : `Jumlah penduduk menurut agama <span style="opacity:.75">(BPS ${a.info.provinsi}, ${a.info.tahun} — jumlah ${a.banyak} kab/kota)</span>`;
     return `<div class="panel-agama"><p class="panel-agama-judul">${judul}</p>` +
       `<ul class="panel-agama-daftar">${baris}</ul></div>`;
+  }
+
+  // ---------- Daftar kabupaten/kota sebuah provinsi (K28) ----------
+  // Dipakai panel provinsi supaya angka penduduk provinsi bisa DIBUKTIKAN:
+  // angka provinsi = jumlah seluruh kabupaten/kotanya.
+  // Semua angka diambil dari data yang sudah ada (BPS) — tidak dikarang (F8).
+  function daftarKabKotaProvinsi(kode) {
+    if (!kode) return null;
+    const wilayah = wilayahKabKota().filter((w) => w[0].split(".")[0] === kode);
+    if (!wilayah.length) return null;
+
+    const anak = wilayah
+      .map(([k, nama]) => ({ kode: k, nama, jiwa: pendudukKabKota(k) }))
+      .sort((a, b) => a.nama.localeCompare(b.nama, "id"));
+
+    const adaAngka = anak.filter((a) => a.jiwa !== null);
+    const jumlah = adaAngka.reduce((t, a) => t + a.jiwa, 0);
+    const resmi = pendudukProvinsi(kode);
+
+    return { anak, jumlah, resmi, lengkap: adaAngka.length === anak.length };
+  }
+
+  // Blok daftar kab/kota untuk panel provinsi.
+  // Dibuat bisa dibuka-tutup supaya panel tidak kepanjangan (ada provinsi
+  // dengan 35 kab/kota).
+  function blokKabKotaPanel(kode) {
+    const d = daftarKabKotaProvinsi(kode);
+    if (!d) return "";
+
+    const baris = d.anak
+      .map((a) => {
+        const angka = a.jiwa === null ? "belum ada data" : a.jiwa.toLocaleString("id-ID");
+        return `<li><span>${a.nama}</span><strong>${angka}</strong></li>`;
+      })
+      .join("");
+
+    // Tanda bukti: jumlah kab/kota dibandingkan dengan angka provinsi BPS.
+    let bukti;
+    if (!d.lengkap) {
+      bukti = `Baru ${d.anak.filter((a) => a.jiwa !== null).length} dari ${d.anak.length} kabupaten/kota yang ada angkanya.`;
+    } else if (d.resmi === null) {
+      bukti = `Jumlah ${d.anak.length} kabupaten/kota = <strong>${d.jumlah.toLocaleString("id-ID")} jiwa</strong>.`;
+    } else if (d.jumlah === d.resmi) {
+      bukti =
+        `Jumlah ${d.anak.length} kabupaten/kota = <strong>${d.jumlah.toLocaleString("id-ID")} jiwa</strong>` +
+        ` — <span class="panel-bukti-cocok">sama dengan angka BPS ✓</span>`;
+    } else {
+      const beda = d.resmi - d.jumlah;
+      bukti =
+        `Jumlah ${d.anak.length} kabupaten/kota = <strong>${d.jumlah.toLocaleString("id-ID")} jiwa</strong>` +
+        ` — <span class="panel-bukti-beda">beda ${Math.abs(beda).toLocaleString("id-ID")} jiwa dari angka BPS</span>`;
+    }
+
+    return (
+      `<details class="panel-rincian">` +
+      `<summary>Lihat rincian ${d.anak.length} kabupaten/kota</summary>` +
+      `<ul class="panel-rincian-daftar">${baris}</ul>` +
+      `<p class="panel-rincian-bukti">${bukti}</p>` +
+      `</details>`
+    );
   }
 
   // Nama di peta yang beda dengan nama resmi (Kepmendagri).

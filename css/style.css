@@ -603,6 +603,61 @@ body {
 .panel-agama-daftar li > span { opacity: .85; }
 .panel-agama-daftar li > strong { font-weight: 600; text-align: right; }
 
+/* Daftar kabupaten/kota di panel provinsi (K28) — bukti jumlah angka BPS */
+.panel-rincian {
+  margin: 12px 0 0;
+  border: 1px solid var(--abu-garis);
+  border-radius: 6px;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.panel-rincian > summary {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  background: var(--abu-latar);
+  list-style: none;
+}
+
+.panel-rincian > summary::-webkit-details-marker { display: none; }
+
+.panel-rincian > summary::after {
+  content: "▾";
+  float: right;
+  opacity: .6;
+  transition: transform .15s;
+}
+
+.panel-rincian[open] > summary::after { transform: rotate(180deg); }
+
+.panel-rincian-daftar {
+  margin: 0;
+  padding: 8px 12px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 12px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.panel-rincian-daftar li { display: contents; }
+.panel-rincian-daftar li > span { opacity: .85; }
+.panel-rincian-daftar li > strong { font-weight: 600; text-align: right; white-space: nowrap; }
+
+.panel-rincian-bukti {
+  margin: 0;
+  padding: 9px 12px;
+  border-top: 1px solid var(--abu-garis);
+  background: #eef8f2;
+  color: #1c5a3a;
+  line-height: 1.5;
+}
+
+.panel-bukti-cocok { font-weight: 600; }
+.panel-bukti-beda { color: #9a3b1b; font-weight: 600; }
+
 .panel-kosong {
   padding: 60px 24px;
   text-align: center;
