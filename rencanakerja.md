@@ -205,6 +205,14 @@
 | K28 | f. Uji PC (1440×900) + HP (390×844) — **berlaku seluruh wilayah**: diuji perhitungan semua **38 provinsi / 514 kab/kota** → **38 lengkap · 38 cocok · 0 gagal**. Uji tampilan: NTB 10 baris · NTT 22 · Bali 9 · DKI Jakarta 6 · Jawa Barat 27 · Papua 9 · Papua Tengah 8 · Kaltim 10 · Papua Selatan 4 · **Jawa Timur 38 (paling banyak)** — daftar muat di dalam panel, bisa digulir, panel tidak kepanjangan, 0 galat konsol | ✅ | ✅ | 10 Okt 2026 |
 | K28 | g. **Uji versi ONLINE** (`suwandhih.github.io/DataPeta`) — **4 uji, 0 gagal** (aturan C9). Penanda versi online `?v=20261010-07`. Hasil: NTB 10 kab/kota ✓ · NTT 22 ✓ · Bali 9 ✓ · Jawa Timur 38 ✓ — semua bertanda "sama dengan angka BPS ✓", 0 galat konsol | ✅ | ✅ | 10 Okt 2026 |
 
+| **K29** | **Lengkapi data agama seluruh kab/kota — ORDER BAPAK 10 Okt 2026 (lanjutan K26 i).** Bapak memilih: **"langsung kerjakan semua 29 provinsi sekaligus"**. Bapak juga bertanya apakah ada pilihan **"tidak ada agama" / "kepercayaan"**. | | | |
+| K29 | a. **Jawaban pertanyaan Bapak (10 Okt 2026):** *"tidak ada agama"* → ❌ **TIDAK ADA** di tabel BPS mana pun (BPS tidak menerbitkan penduduk tanpa agama). *"Kepercayaan"* → ✅ **ADA di 4 dari 9 provinsi** yang sudah punya data: **DKI Jakarta** (kolom *"Aliran Kepercayaan"* 385 jiwa, 2024) · **Jawa Barat** (*"Kepercayaan Lain"* 3.275 jiwa, 2023) · **Jambi** (*"Lainnya"* 2.221 jiwa, 2022) · **Sulawesi Tenggara** (*"Lainnya"* 28 jiwa, 2022) · **Kalimantan Utara** (*"Lainnya"* 0,08 %, 2021). Lima provinsi lain tidak punya kolomnya: Sumatera Utara · Sumatera Selatan · Jawa Tengah · Sulawesi Utara · (1 lagi). ⚠️ Nama kolom berbeda-beda; *"Lainnya"* tidak dijelaskan BPS apakah murni kepercayaan. Keempatnya **sudah tampil** di aplikasi. | ✅ | ✅ | 10 Okt 2026 |
+| K29 | b. **Tahap 1** — unduh **"Provinsi Dalam Angka"** (PDF resmi BPS) tiap provinsi → cari tabel agama per kab/kota. ⚠️ Kendala: PDF besar, BPS membatasi permintaan beruntun (jeda 9 detik), dan **belum tentu tiap buku memuat tabel agama** | 🔨 | ⬜ | 10 Okt 2026 |
+| K29 | c. **Tahap 2** — kalau PDF tidak memuat agama → ganti pendekatan (Dukcapil daerah / BPS kabupaten), lapor dulu (aturan C5) | ⏳ | ⬜ | — |
+| K29 | d. Simpan hasil ke `data/agama.js` + `alat/bps-agama-mentah.txt` — angka apa adanya, tidak dikarang (aturan F8) | ⏳ | ⬜ | — |
+| K29 | e. Naikkan penanda versi `index.html` (aturan B13) | ⏳ | ⬜ | — |
+| K29 | f. Uji PC + HP + versi online (aturan C8, C9) | ⏳ | ⬜ | — |
+
 ### B. ANTREAN KERJA
 _(kosong — belum ada order yang disetujui)_
 

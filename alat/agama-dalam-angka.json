@@ -1,0 +1,4513 @@
+{
+ "11": {
+  "nama": "Aceh",
+  "subdomain": "aceh",
+  "tahun": 2026,
+  "judul": "Provinsi Aceh Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/b8cef43d1a11052d7722eaa0/provinsi-aceh-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\aceh-2026.pdf",
+  "ukuran_pdf": 19064227,
+  "temuan": [
+   {
+    "halaman": 63,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "3 GEOGRAFI DAN IKLIM GEOGRAPHY AND CLIMATE EOGRAPHY AND CLIMATE PENJELASAN TEKNIS 1. Daerah Aceh yang terletak di bagian paling Barat gugusan kepulauan Nusantara, menduduki posisi strategis sebagai pintu gerbang lalu lintas perniagaan dan kebudayaan yang menghubungkan Timur dan Barat sejak berabad-abad lampau. Aceh sering disebut-sebut sebagai tempat persinggahan para pedagang Cina, Eropa, India d"
+   },
+   {
+    "halaman": 320,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "254 Aceh Province in Figures 2026 Provinsi Aceh Dalam Angka 2026 Catatan/Note: ... Sumber/Source: Kementerian Agama Provinsi Aceh/ Ministry of Religious Affairs of Aceh Province Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Lainnya Others (1) (2) (3) (4) (5) (6) (7) Simeulue 96,279 208 14 – 9 – Aceh Singkil 121,320 15,786 1,427 10 1 248 Aceh Sel"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 320,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 23,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "11.09": {
+    "nama": "Kabupaten Simeulue",
+    "angka": [
+     96279,
+     208,
+     14,
+     0,
+     9
+    ],
+    "total": 96510,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.10": {
+    "nama": "Kabupaten Aceh Singkil",
+    "angka": [
+     121320,
+     15786,
+     1427,
+     10,
+     1
+    ],
+    "total": 138544,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.01": {
+    "nama": "Kabupaten Aceh Selatan",
+    "angka": [
+     237743,
+     160,
+     28,
+     0,
+     90
+    ],
+    "total": 238021,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.02": {
+    "nama": "Kabupaten Aceh Tenggara",
+    "angka": [
+     192311,
+     39010,
+     2305,
+     0,
+     0
+    ],
+    "total": 233626,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.03": {
+    "nama": "Kabupaten Aceh Timur",
+    "angka": [
+     454602,
+     68,
+     10,
+     0,
+     43
+    ],
+    "total": 454723,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.04": {
+    "nama": "Kabupaten Aceh Tengah",
+    "angka": [
+     229947,
+     452,
+     119,
+     4,
+     249
+    ],
+    "total": 230771,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.05": {
+    "nama": "Kabupaten Aceh Barat",
+    "angka": [
+     206537,
+     412,
+     69,
+     0,
+     672
+    ],
+    "total": 207690,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.06": {
+    "nama": "Kabupaten Aceh Besar",
+    "angka": [
+     437863,
+     847,
+     194,
+     12,
+     132
+    ],
+    "total": 439048,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.07": {
+    "nama": "Kabupaten Pidie",
+    "angka": [
+     447942,
+     88,
+     9,
+     1,
+     91
+    ],
+    "total": 448131,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.11": {
+    "nama": "Kabupaten Bireuen",
+    "angka": [
+     462355,
+     159,
+     16,
+     11,
+     295
+    ],
+    "total": 462836,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.08": {
+    "nama": "Kabupaten Aceh Utara",
+    "angka": [
+     633333,
+     168,
+     41,
+     1,
+     90
+    ],
+    "total": 633633,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.12": {
+    "nama": "Kabupaten Aceh Barat Daya",
+    "angka": [
+     154740,
+     42,
+     4,
+     12,
+     199
+    ],
+    "total": 154997,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.13": {
+    "nama": "Kabupaten Gayo Lues",
+    "angka": [
+     105746,
+     350,
+     39,
+     0,
+     0
+    ],
+    "total": 106135,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.16": {
+    "nama": "Kabupaten Aceh Tamiang",
+    "angka": [
+     308820,
+     583,
+     91,
+     9,
+     980
+    ],
+    "total": 310483,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.15": {
+    "nama": "Kabupaten Nagan Raya",
+    "angka": [
+     178523,
+     507,
+     53,
+     0,
+     25
+    ],
+    "total": 179108,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.14": {
+    "nama": "Kabupaten Aceh Jaya",
+    "angka": [
+     100605,
+     50,
+     13,
+     0,
+     6
+    ],
+    "total": 100674,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.17": {
+    "nama": "Kabupaten Bener Meriah",
+    "angka": [
+     178855,
+     93,
+     20,
+     1,
+     37
+    ],
+    "total": 179006,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.18": {
+    "nama": "Kabupaten Pidie Jaya",
+    "angka": [
+     165059,
+     15,
+     6,
+     0,
+     0
+    ],
+    "total": 165080,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.71": {
+    "nama": "Kota Banda Aceh",
+    "angka": [
+     258259,
+     1654,
+     487,
+     22,
+     2540
+    ],
+    "total": 262962,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.72": {
+    "nama": "Kota Sabang",
+    "angka": [
+     42169,
+     279,
+     54,
+     0,
+     215
+    ],
+    "total": 42717,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.74": {
+    "nama": "Kota Langsa",
+    "angka": [
+     181446,
+     641,
+     36,
+     7,
+     484
+    ],
+    "total": 182614,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.73": {
+    "nama": "Kota Lhokseumawe",
+    "angka": [
+     196234,
+     472,
+     137,
+     0,
+     496
+    ],
+    "total": 197339,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "11.75": {
+    "nama": "Kota Subulussalam",
+    "angka": [
+     101799,
+     2940,
+     810,
+     0,
+     4
+    ],
+    "total": 105553,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   320
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "13": {
+  "nama": "Sumatera Barat",
+  "subdomain": "sumbar",
+  "tahun": 2026,
+  "judul": "Provinsi Sumatera Barat Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/2c7cc5c693ff125fc6751f7a/provinsi-sumatera-barat-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\sumbar-2026.pdf",
+  "ukuran_pdf": 13151725,
+  "temuan": [
+   {
+    "halaman": 453,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "385 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Tabel Table 4.5.5 Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Sumatera Barat, 20251 Number of Population by Regency/Municipality and Religion in Sumatera Barat Province, 20251 Kabupaten/Kota Regency/Municipality Islam Moslem Protestan Protestan Katolik Chatolic Hindu Hindu (1) (2) (3) (4) (5) Kabupaten/Regency 1. K"
+   },
+   {
+    "halaman": 455,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "387 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Tabel Table 4.5.6 Jumlah Tempat Peribadatan Menurut Kabupaten/Kota dan Agama di Provinsi Sumatera Barat, 2025 Number of Places of Worship by Regency/Municipality and Religion in Sumatera Barat Province, 2025 Kabupaten/Kota Regency/Municipality Islam Moslem Katholik Chatolic Budha Budhism Hindu Hindu Konghucu Konghucu Mesjid Mosque Mushola/ Lan"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 453,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "kabkota_cocok": 19,
+    "ada_kepercayaan": false,
+    "judul": ""
+   },
+   {
+    "halaman": 455,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 19,
+    "ada_kepercayaan": false,
+    "judul": ""
+   }
+  ],
+  "terbaca": {
+   "13.09": {
+    "nama": "Kabupaten Kepulauan Mentawai",
+    "angka": [
+     23378,
+     47537,
+     28720,
+     1,
+     3,
+     0,
+     171
+    ],
+    "total": 99810,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.01": {
+    "nama": "Kabupaten Pesisir Selatan",
+    "angka": [
+     542090,
+     1036,
+     209,
+     4,
+     1,
+     0,
+     0
+    ],
+    "total": 543340,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.02": {
+    "nama": "Kabupaten Solok",
+    "angka": [
+     418713,
+     297,
+     18,
+     2,
+     1,
+     0,
+     0
+    ],
+    "total": 419031,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.03": {
+    "nama": "Kabupaten Sijunjung",
+    "angka": [
+     248457,
+     977,
+     304,
+     3,
+     1,
+     0,
+     0
+    ],
+    "total": 249742,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.04": {
+    "nama": "Kabupaten Tanah Datar",
+    "angka": [
+     384237,
+     318,
+     126,
+     1,
+     7,
+     0,
+     0
+    ],
+    "total": 384689,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.05": {
+    "nama": "Kabupaten Padang Pariaman",
+    "angka": [
+     458306,
+     1614,
+     523,
+     4,
+     4,
+     0,
+     1
+    ],
+    "total": 460452,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.06": {
+    "nama": "Kabupaten Agam",
+    "angka": [
+     530025,
+     3639,
+     504,
+     0,
+     5,
+     0,
+     0
+    ],
+    "total": 534173,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.07": {
+    "nama": "Kabupaten Lima Puluh Kota",
+    "angka": [
+     405218,
+     655,
+     346,
+     0,
+     5,
+     0,
+     4
+    ],
+    "total": 406228,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.08": {
+    "nama": "Kabupaten Pasaman",
+    "angka": [
+     316006,
+     1234,
+     175,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 317415,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.11": {
+    "nama": "Kabupaten Solok Selatan",
+    "angka": [
+     181629,
+     1302,
+     182,
+     1,
+     2,
+     0,
+     0
+    ],
+    "total": 183116,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.10": {
+    "nama": "Kabupaten Dharmasraya",
+    "angka": [
+     240490,
+     4820,
+     753,
+     5,
+     2,
+     0,
+     53
+    ],
+    "total": 246123,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.12": {
+    "nama": "Kabupaten Pasaman Barat",
+    "angka": [
+     450718,
+     8252,
+     2863,
+     0,
+     13,
+     0,
+     21
+    ],
+    "total": 461867,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.71": {
+    "nama": "Kota Padang",
+    "angka": [
+     932170,
+     14694,
+     12137,
+     41,
+     2845,
+     4,
+     19
+    ],
+    "total": 961910,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.72": {
+    "nama": "Kota Solok",
+    "angka": [
+     86010,
+     583,
+     314,
+     0,
+     4,
+     0,
+     0
+    ],
+    "total": 86911,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.73": {
+    "nama": "Kota Sawahlunto",
+    "angka": [
+     68414,
+     273,
+     106,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 68793,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.74": {
+    "nama": "Kota Padang Panjang",
+    "angka": [
+     63596,
+     405,
+     333,
+     0,
+     46,
+     1,
+     0
+    ],
+    "total": 64381,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.75": {
+    "nama": "Kota Bukittinggi",
+    "angka": [
+     139933,
+     2399,
+     1126,
+     5,
+     132,
+     0,
+     0
+    ],
+    "total": 143595,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.76": {
+    "nama": "Kota Payakumbuh",
+    "angka": [
+     149277,
+     829,
+     663,
+     9,
+     91,
+     0,
+     0
+    ],
+    "total": 150869,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "13.77": {
+    "nama": "Kota Pariaman",
+    "angka": [
+     104672,
+     193,
+     108,
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 104973,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   453,
+   454
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu",
+   "Kepercayaan"
+  ]
+ },
+ "14": {
+  "nama": "Riau",
+  "subdomain": "riau",
+  "tahun": 2026,
+  "judul": "Provinsi Riau Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/b759cb7340902bbc1cfd0881/provinsi-riau-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\riau-2026.pdf",
+  "ukuran_pdf": 14334325,
+  "temuan": [
+   {
+    "halaman": 169,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "129 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT dianggap sah menurut undang-undang jika tercatat di Kantor Urusan Agama (KUA). Pencatatan perkawinan tersebut dilakukan oleh pegawai pencatat nikah. Dengan demikian, setiap perkawinan harus dilangsungkan di hadapan dan di bawah pengawasan pegawai pencatat nikah. Pernikahan boleh dilakukan di KUA atau di luar KUA (nikah bedolan). 41. Perceraian"
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "17": {
+  "nama": "Bengkulu",
+  "subdomain": "bengkulu",
+  "tahun": 2026,
+  "judul": "Provinsi Bengkulu Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/e88365b132a61801d481aedb/provinsi-bengkulu-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\bengkulu-2026.pdf",
+  "ukuran_pdf": 14576288,
+  "temuan": [],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "18": {
+  "nama": "Lampung",
+  "subdomain": "lampung",
+  "tahun": 2026,
+  "judul": "Provinsi Lampung Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/71de40a96c9fb7130aae19e3/provinsi-lampung-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\lampung-2026.pdf",
+  "ukuran_pdf": 19915570,
+  "temuan": [
+   {
+    "halaman": 217,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "169 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT yang beragama Islam dianggap sah menurut undang-undang jika tercatat di Kantor Urusan Agama (KUA). Pencatatan perkawinan tersebut dilakukan oleh pegawai pencatat nikah. Dengan demikian, setiap perkawinan harus dilangsungkan di hadapan dan di bawah pengawasan pegawai pencatat nikah. Pernikahan boleh dilakukan di KUA atau di luar KUA (nikah bedo"
+   },
+   {
+    "halaman": 234,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "186 PROVINSI LAMPUNG DALAM ANGKA 2026 LAMPUNG PROVINCE IN FIGURES 2026 Sumber/Source : Kantor Wilayah Kementerian Agama Provinsi Lampung/ Regional Office of the Ministry of Religion of Lampung Province 4.2 Persentase Penduduk Menurut Agama yang Dianut di Provinsi Lampung, 2025 Percentace of Population Religion in Lampung Province, 2025 Gambar Figures 96,17% 1,33% 0,84%1,41% 0,26% 0,00% Islam Prote"
+   },
+   {
+    "halaman": 375,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "327 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Sumber/Source: Kantor Wilayah Kementrian Agama Provinsi Lampung/Regional Office of the Ministry of Regional Lampung Province Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Lainnya Others (1) (2) (3) (4) (5) (6) (7) Lampung Barat 311.585 2.520 568 429 91 – Tanggamus 638.439 1.456 2.541 729 313"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 375,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 15,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "18.04": {
+    "nama": "Kabupaten Lampung Barat",
+    "angka": [
+     311585,
+     2520,
+     568,
+     429,
+     91
+    ],
+    "total": 315193,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.06": {
+    "nama": "Kabupaten Tanggamus",
+    "angka": [
+     638439,
+     1456,
+     2541,
+     729,
+     313
+    ],
+    "total": 643478,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.01": {
+    "nama": "Kabupaten Lampung Selatan",
+    "angka": [
+     1100124,
+     13171,
+     6623,
+     16222,
+     1023
+    ],
+    "total": 1137163,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.07": {
+    "nama": "Kabupaten Lampung Timur",
+    "angka": [
+     1091463,
+     13675,
+     6235,
+     18913,
+     2023
+    ],
+    "total": 1132309,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.02": {
+    "nama": "Kabupaten Lampung Tengah",
+    "angka": [
+     1328041,
+     15769,
+     15900,
+     47192,
+     1798
+    ],
+    "total": 1408700,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.03": {
+    "nama": "Kabupaten Lampung Utara",
+    "angka": [
+     667914,
+     6191,
+     4127,
+     2626,
+     530
+    ],
+    "total": 681388,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.08": {
+    "nama": "Kabupaten Way Kanan",
+    "angka": [
+     475991,
+     4425,
+     3412,
+     13470,
+     146
+    ],
+    "total": 497444,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.05": {
+    "nama": "Kabupaten Tulang Bawang",
+    "angka": [
+     419837,
+     7272,
+     2557,
+     12312,
+     261
+    ],
+    "total": 442239,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.09": {
+    "nama": "Kabupaten Pesawaran",
+    "angka": [
+     499260,
+     4002,
+     2514,
+     363,
+     1489
+    ],
+    "total": 507628,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.10": {
+    "nama": "Kabupaten Pringsewu",
+    "angka": [
+     433323,
+     3547,
+     8275,
+     2362,
+     543
+    ],
+    "total": 448050,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.11": {
+    "nama": "Kabupaten Mesuji",
+    "angka": [
+     234260,
+     2958,
+     801,
+     5735,
+     184
+    ],
+    "total": 243938,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.12": {
+    "nama": "Kabupaten Tulang Bawang Barat",
+    "angka": [
+     299128,
+     7096,
+     2272,
+     4350,
+     330
+    ],
+    "total": 313176,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.13": {
+    "nama": "Kabupaten Pesisir Barat",
+    "angka": [
+     176448,
+     329,
+     126,
+     1641,
+     4
+    ],
+    "total": 178548,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.71": {
+    "nama": "Kota Bandar Lampung",
+    "angka": [
+     1013215,
+     35335,
+     17139,
+     3016,
+     13180
+    ],
+    "total": 1081885,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "18.72": {
+    "nama": "Kota Metro",
+    "angka": [
+     173075,
+     4412,
+     4122,
+     451,
+     1675
+    ],
+    "total": 183735,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   375
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "19": {
+  "nama": "Kepulauan Bangka Belitung",
+  "subdomain": "babel",
+  "tahun": 2026,
+  "judul": "Provinsi Kepulauan Bangka Belitung Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/cc67bfc7b99d87250a0a6d60/provinsi-kepulauan-bangka-belitung-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\babel-2026.pdf",
+  "ukuran_pdf": 24936518,
+  "temuan": [
+   {
+    "halaman": 264,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "220 PROVINSI KEPULAUAN BANGKA BELITUNG DALAM ANGKA 2026 KEPULAUAN BANGKA BELITUNG PROVINCE IN FIGURES 2026 Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Konghucu Lainnya Others (1) (2) (3) (4) (5) (6) (7) (8) Bangka 295.983 8.042 3.631 39 22.948 8.433 710 Belitung 178.321 3.545 1.275 805 9.196 192 11 Bangka Barat 203.191 3.120 1.112 30 7.871 3.7"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 264,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 7,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "19.01": {
+    "nama": "Kabupaten Bangka",
+    "angka": [
+     295983,
+     8042,
+     3631,
+     39,
+     22948,
+     8433
+    ],
+    "total": 339076,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.02": {
+    "nama": "Kabupaten Belitung",
+    "angka": [
+     178321,
+     3545,
+     1275,
+     805,
+     9196,
+     192
+    ],
+    "total": 193334,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.05": {
+    "nama": "Kabupaten Bangka Barat",
+    "angka": [
+     203191,
+     3120,
+     1112,
+     30,
+     7871,
+     3700
+    ],
+    "total": 219024,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.04": {
+    "nama": "Kabupaten Bangka Tengah",
+    "angka": [
+     188215,
+     5318,
+     5300,
+     49,
+     5735,
+     7371
+    ],
+    "total": 211988,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.03": {
+    "nama": "Kabupaten Bangka Selatan",
+    "angka": [
+     211468,
+     1371,
+     867,
+     274,
+     1461,
+     2472
+    ],
+    "total": 217913,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.06": {
+    "nama": "Kabupaten Belitung Timur",
+    "angka": [
+     127755,
+     1743,
+     437,
+     2,
+     2954,
+     162
+    ],
+    "total": 133053,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "19.71": {
+    "nama": "Kota Pangkal Pinang",
+    "angka": [
+     208406,
+     9859,
+     7126,
+     73,
+     11401,
+     7864
+    ],
+    "total": 244729,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   264
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu"
+  ]
+ },
+ "21": {
+  "nama": "Kepulauan Riau",
+  "subdomain": "kepri",
+  "tahun": 2026,
+  "judul": "Provinsi Kepulauan Riau Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/c1db1f3c794e5e10b2643cac/provinsi-kepulauan-riau-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\kepri-2026.pdf",
+  "ukuran_pdf": 17729212,
+  "temuan": [
+   {
+    "halaman": 376,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "308 KEPULAUAN RIAU PROVINCE IN FIGURES 2026 PROVINSI KEPULAUAN RIAU DALAM ANGKA 2026 Tabel Table 4.5.4 Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Kepulauan Riau, 2025 Population by Regency/Municipality and Religion in Kepulauan Riau Province, 2025 Kabupaten/Kota Regency/Municipality Islam Moslem Protestan Protestant Katolik Catholic Laki-Laki Male Perempuan Female Lak"
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {
+   "21.02": {
+    "nama": "Kabupaten Karimun",
+    "angka": [
+     159742,
+     9763,
+     4618,
+     102,
+     7621
+    ],
+    "total": 181846,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.01": {
+    "nama": "Kabupaten Bintan",
+    "angka": [
+     237538,
+     10158,
+     2861,
+     11,
+     23949
+    ],
+    "total": 274517,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.03": {
+    "nama": "Kabupaten Natuna",
+    "angka": [
+     82188,
+     1166,
+     324,
+     1,
+     757
+    ],
+    "total": 84436,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.04": {
+    "nama": "Kabupaten Lingga",
+    "angka": [
+     93426,
+     1870,
+     1130,
+     4,
+     4853
+    ],
+    "total": 101283,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.05": {
+    "nama": "Kabupaten Kepulauan Anambas",
+    "angka": [
+     47650,
+     1160,
+     1174,
+     1,
+     1060
+    ],
+    "total": 51045,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.71": {
+    "nama": "Kota Batam",
+    "angka": [
+     988227,
+     241040,
+     47271,
+     751,
+     86414
+    ],
+    "total": 1363703,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "21.72": {
+    "nama": "Kota Tanjung Pinang",
+    "angka": [
+     194820,
+     14993,
+     3495,
+     43,
+     26227
+    ],
+    "total": 239578,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   376,
+   377
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "34": {
+  "nama": "Daerah Istimewa Yogyakarta",
+  "subdomain": "yogyakarta",
+  "tahun": 2026,
+  "judul": "Provinsi Daerah Istimewa Yogyakarta Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/77355be26097c9f6197b0ef9/provinsi-di-yogyakarta-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\yogyakarta-2026.pdf",
+  "ukuran_pdf": 14758400,
+  "temuan": [],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "35": {
+  "nama": "Jawa Timur",
+  "subdomain": "jatim",
+  "tahun": 2026,
+  "judul": "Provinsi Jawa Timur Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/19b010f5faca007f15a32d23/provinsi-jawa-timur-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\jatim-2026.pdf",
+  "ukuran_pdf": 21290323,
+  "temuan": [],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "36": {
+  "nama": "Banten",
+  "subdomain": "banten",
+  "tahun": 2026,
+  "judul": "Provinsi Banten Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/3346730ea6b65ef5c02faa10/provinsi-banten-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\banten-2026.pdf",
+  "ukuran_pdf": 17656489,
+  "temuan": [
+   {
+    "halaman": 253,
+    "judul": "",
+    "ada_kepercayaan": true,
+    "cuplikan": "189 SOSIAL DAN KESEJAHTERAAN RAKYAT SOCIAL AND WELFARE hukum masing-masing agamanya dan kepercayaannya itu. Tiap-tiap pernikahan/perkawinan dicatat menurut peraturan perundang- undangan yang berlaku (Undang- undang Nomor 1 Tahun 1974 tentang Perkawinan Pasal 2). Dalam hal ini, pernikahan untuk yang beragama Islam dianggap sah menurut undang- undang jika tercatat di Kantor Urusan Agama (KUA). Penca"
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "51": {
+  "nama": "Bali",
+  "subdomain": "bali",
+  "tahun": 2026,
+  "judul": "Provinsi Bali Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/b7ef0fae187792c2500000ad/provinsi-bali-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\bali-2026.pdf",
+  "ukuran_pdf": 8899299,
+  "temuan": [
+   {
+    "halaman": 262,
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota",
+    "ada_kepercayaan": false,
+    "cuplikan": "212 BALI PROVINCE IN FIGURES 2026 PROVINSI BALI DALAM ANGKA 2026 Kabupaten/Kota Regency/ Municipality Islam Moslem Katolik Catholic Protestan Protestan Hindu Hindu (1) (2) (3) (4) (5) Jembrana 88.752 2.690 4.225 234.213 Tabanan 27.424 2.297 5.437 442.425 Badung 59.274 12.548 21.212 442.425 Gianyar 12.260 1.552 3.153 488.007 Klungkung 9.764 257 645 213.165 Bangli 2.618 89 325 257.679 Karangasem 21."
+   },
+   {
+    "halaman": 265,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "215 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Kabupaten/Kota Regency/ Municipality Hindu Hinduism Budha Buddhist Konghucu Konghucu Sad Kahya- ngan Temple Dang Kahya- ngan Temple Kahya- ngan Tiga Temple Vihara Citya Cetya Tempat Ibadah Tri Dharma Klenteng Confucius Temple (1) (8) (9) (10) (11) (12) (13) (14) Jembrana – 6 16 6 – 1 – Tabanan 1 18 1.106 4 – – – Badung 2 8 414 6 2 1 1 Gianyar "
+   },
+   {
+    "halaman": 267,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "217 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Kabupaten/Kota Regency/ Municipality Protestan Protestan Hindu Hinduism Budha Buddhist Konghucu Konghucu Pendeta Priest Sulinggih Priest Pemangku Pemangku Bhiksu Bhiksu Pandita Priest Samaneri/ Samanera Confucius (1) (9) (10) (11) (12) (13) (14) (15) Jembrana 46 101 606 – 13 – – Tabanan 50 120 1.089 1 26 – – Badung 228 151 1.488 – 9 – 1 Gianya"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 262,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "kabkota_cocok": 9,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Agama dan Kabupaten/Kota"
+   },
+   {
+    "halaman": 267,
+    "agama": [
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 9,
+    "ada_kepercayaan": false,
+    "judul": ""
+   }
+  ],
+  "terbaca": {
+   "51.01": {
+    "nama": "Kabupaten Jembrana",
+    "angka": [
+     88752,
+     2690,
+     4225,
+     234213,
+     972,
+     17,
+     4
+    ],
+    "total": 330873,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.02": {
+    "nama": "Kabupaten Tabanan",
+    "angka": [
+     27424,
+     2297,
+     5437,
+     442425,
+     2282,
+     23,
+     1
+    ],
+    "total": 479889,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.03": {
+    "nama": "Kabupaten Badung",
+    "angka": [
+     59274,
+     12548,
+     21212,
+     442425,
+     4188,
+     37,
+     17
+    ],
+    "total": 539701,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.04": {
+    "nama": "Kabupaten Gianyar",
+    "angka": [
+     12260,
+     1552,
+     3153,
+     488007,
+     1222,
+     57,
+     24
+    ],
+    "total": 506275,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.05": {
+    "nama": "Kabupaten Klungkung",
+    "angka": [
+     9764,
+     257,
+     645,
+     213165,
+     608,
+     12,
+     3
+    ],
+    "total": 224454,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.06": {
+    "nama": "Kabupaten Bangli",
+    "angka": [
+     2618,
+     89,
+     325,
+     257679,
+     284,
+     46,
+     0
+    ],
+    "total": 261041,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.07": {
+    "nama": "Kabupaten Karangasem",
+    "angka": [
+     21476,
+     321,
+     728,
+     516612,
+     491,
+     1,
+     0
+    ],
+    "total": 539629,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.08": {
+    "nama": "Kabupaten Buleleng",
+    "angka": [
+     78191,
+     1750,
+     5576,
+     741029,
+     4219,
+     79,
+     29
+    ],
+    "total": 830873,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   },
+   "51.71": {
+    "nama": "Kota Denpasar",
+    "angka": [
+     152473,
+     16499,
+     36265,
+     455056,
+     15696,
+     353,
+     41
+    ],
+    "total": 676383,
+    "kolom": [
+     "Islam",
+     "Katolik",
+     "Protestan",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "cara": "kolom-jumlah"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   262,
+   263
+  ],
+  "kolom": [
+   "Islam",
+   "Katolik",
+   "Protestan",
+   "Hindu",
+   "Budha",
+   "Konghucu",
+   "Kepercayaan"
+  ]
+ },
+ "52": {
+  "nama": "Nusa Tenggara Barat",
+  "subdomain": "ntb",
+  "tahun": 2026,
+  "judul": "Provinsi Nusa Tenggara Barat Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/80026e558cf3e04646a79963/provinsi-nusa-tenggara-barat-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\ntb-2026.pdf",
+  "ukuran_pdf": 22272251,
+  "temuan": [],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "53": {
+  "nama": "Nusa Tenggara Timur",
+  "subdomain": "ntt",
+  "tahun": 2026,
+  "judul": "Provinsi Nusa Tenggara Timur Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/d993a1b107b4d07b54afb390/provinsi-nusa-tenggara-timur-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\ntt-2026.pdf",
+  "ukuran_pdf": 10661238,
+  "temuan": [
+   {
+    "halaman": 236,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "168 PROVINSI NUSA TENGGARA TIMUR DALAM ANGKA 2026 NUSA TENGGARA TIMUR PROVINCE IN FIGURES 2026 undangan yang berlaku (Undang-undang Republik Indonesia Nomor 1 Tahun 1974 tentang Perkawinan Pasal 2). Dalam hal ini, pernikahan untuk yang beragama Islam dianggap sah menurut undang-undang jika tercatat di Kantor Urusan Agama (KUA). Pencatatan perkawinan tersebut dilakukan oleh pegawai pencatat nikah. "
+   },
+   {
+    "halaman": 385,
+    "judul": "",
+    "ada_kepercayaan": true,
+    "cuplikan": "317 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Catatan/Note: 1Belum termasuk yang memeluk kepercayaan tradisional/ Not including people who embrace traditional beliefs Sumber/Source: Kantor Wilayah Kementerian Agama Provinsi Nusa Tenggara Timur/ The Ministry of Religious Affairs of Nusa Tenggara Timur Province Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic "
+   },
+   {
+    "halaman": 416,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "348 PROVINSI NUSA TENGGARA TIMUR DALAM ANGKA 2026 NUSA TENGGARA TIMUR PROVINCE IN FIGURES 2026 Kabupaten/Kota Regency/Municipality Pandita Hindu Priest Pinandhita Hindu Archpriest (1) (2) (3) Kabupaten / Regency 1. Sumba Barat – 2 2. Sumba Timur – 2 3. Kupang – 4 4. Timor Tengah Selatan – 4 5. Timor Tengah Utara – 4 6. Belu – 4 7. Alor – 3 8. Lembata – 2 9. Flores Timur – 1 10. Sikka – 3 11. Ende "
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 385,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Kepercayaan"
+    ],
+    "kabkota_cocok": 22,
+    "ada_kepercayaan": true,
+    "judul": ""
+   }
+  ],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "61": {
+  "nama": "Kalimantan Barat",
+  "subdomain": "kalbar",
+  "tahun": 2026,
+  "judul": "Provinsi Kalimantan Barat Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/781865cc79397994168774e9/provinsi-kalimantan-barat-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\kalbar-2026.pdf",
+  "ukuran_pdf": 19797208,
+  "temuan": [
+   {
+    "halaman": 247,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "197 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT 62. Data pernikahan dan perceraian yang tersedia dalam publikasi ini hanya mencakup pernikahan dan perceraian untuk yang beragama Islam. Data pernikahan diperoleh dari Dirjen Bimas Islam, Kementerian Agama RI. Sementara data perceraian diperoleh dari Dirjen Badan Peradilan Agama, Mahkamah Agung. 63. Perkara cerai talak adalah permohonan seoran"
+   },
+   {
+    "halaman": 403,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "353 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Catatan/Note: Berdasarkan data konsolidasi bersih semester 2 tahun 2024 Sumber/Source: Dinas Kependudukan dan Catatan Sipil Provinsi Kalimantan Barat/Regional Office of Citizenship and Civil Registration of Kalimantan Barat Province Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Konghucu Conf"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 403,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 14,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "61.01": {
+    "nama": "Kabupaten Sambas",
+    "angka": [
+     579114,
+     12325,
+     18920,
+     176,
+     37701,
+     3008
+    ],
+    "total": 651244,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.07": {
+    "nama": "Kabupaten Bengkayang",
+    "angka": [
+     237313,
+     20123,
+     24298,
+     60,
+     31121,
+     936
+    ],
+    "total": 313851,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.08": {
+    "nama": "Kabupaten Landak",
+    "angka": [
+     169508,
+     85300,
+     240508,
+     122,
+     3359,
+     172
+    ],
+    "total": 498969,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.02": {
+    "nama": "Kabupaten Mempawah",
+    "angka": [
+     381747,
+     46108,
+     147640,
+     457,
+     6620,
+     648
+    ],
+    "total": 583220,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.03": {
+    "nama": "Kabupaten Sanggau",
+    "angka": [
+     177583,
+     111437,
+     165208,
+     117,
+     2313,
+     545
+    ],
+    "total": 457203,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.04": {
+    "nama": "Kabupaten Ketapang",
+    "angka": [
+     167691,
+     23905,
+     84686,
+     31,
+     318,
+     356
+    ],
+    "total": 276987,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.05": {
+    "nama": "Kabupaten Sintang",
+    "angka": [
+     104731,
+     80449,
+     92674,
+     262,
+     15295,
+     2489
+    ],
+    "total": 295900,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.06": {
+    "nama": "Kabupaten Kapuas Hulu",
+    "angka": [
+     67049,
+     125006,
+     220345,
+     41,
+     2328,
+     263
+    ],
+    "total": 415032,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.09": {
+    "nama": "Kabupaten Sekadau",
+    "angka": [
+     88539,
+     31503,
+     103661,
+     8,
+     1460,
+     302
+    ],
+    "total": 225473,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.10": {
+    "nama": "Kabupaten Melawi",
+    "angka": [
+     115487,
+     50996,
+     49802,
+     34,
+     995,
+     284
+    ],
+    "total": 217598,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.11": {
+    "nama": "Kabupaten Kayong Utara",
+    "angka": [
+     121547,
+     1685,
+     958,
+     522,
+     1779,
+     404
+    ],
+    "total": 126895,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.12": {
+    "nama": "Kabupaten Kubu Raya",
+    "angka": [
+     536019,
+     26520,
+     37636,
+     495,
+     43646,
+     1755
+    ],
+    "total": 646071,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.71": {
+    "nama": "Kota Pontianak",
+    "angka": [
+     532650,
+     33384,
+     40949,
+     303,
+     76157,
+     3582
+    ],
+    "total": 687025,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "61.72": {
+    "nama": "Kota Singkawang",
+    "angka": [
+     136339,
+     14335,
+     18533,
+     72,
+     78195,
+     2476
+    ],
+    "total": 249950,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   403
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu"
+  ]
+ },
+ "62": {
+  "nama": "Kalimantan Tengah",
+  "subdomain": "kalteng",
+  "tahun": 2026,
+  "judul": "Provinsi Kalimantan Tengah Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/bfa5f180218f9a391faa1db7/provinsi-kalimantan-tengah-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\kalteng-2026.pdf",
+  "ukuran_pdf": 11893592,
+  "temuan": [
+   {
+    "halaman": 278,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "216 PROVINSI KALIMANTAN TENGAH DALAM ANGKA 2026 KALIMANTAN TENGAH PROVINCE IN FIGURES 2026 yang beragama Islam dianggap sah menurut undang-undang jika tercatat di Kantor Urusan Agama (KUA). Pencatatan perkawinan tersebut dilakukan oleh pegawai pencatat nikah. Dengan demikian, setiap perkawinan harus dilangsungkan di hadapan dan di bawah pengawasan pegawai pencatat nikah. Pernikahan boleh dilakukan"
+   },
+   {
+    "halaman": 494,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "432 PROVINSI KALIMANTAN TENGAH DALAM ANGKA 2026 KALIMANTAN TENGAH PROVINCE IN FIGURES 2026 Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu (1) (2) (3) (4) (5) Kabupaten/Regency 1. Kotawaringin Barat 272.874 13.702 6.548 3.253 2. Kotawaringin Timur 397.760 27.849 10.698 22.374 3. K a p u a s 344.506 48.926 2.019 23.234 4. Barito Selatan 98.901 25.529 9.547 4.30"
+   },
+   {
+    "halaman": 524,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "462 PROVINSI KALIMANTAN TENGAH DALAM ANGKA 2026 KALIMANTAN TENGAH PROVINCE IN FIGURES 2026 Kabupaten/Kota Regency/Municipality Islam Protes- tan Protes- tant Katolik Catholic Hindu Budha Buddha Kong- hucu Kong- hucu Jumlah Total (1) (2) (3) (4) (5) (6) (7) (8) Kabupaten/Regency 1. Kotawaringin Barat 39 7 – 1 – – 47 2. Kotawaringin Timur 88 5 4 7 8 2 114 3. K a p u a s 114 14 – 7 1 – 136 4. Barito "
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 494,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "kabkota_cocok": 12,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   },
+   {
+    "halaman": 524,
+    "agama": [
+     "Islam",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 12,
+    "ada_kepercayaan": false,
+    "judul": ""
+   }
+  ],
+  "terbaca": {
+   "62.01": {
+    "nama": "Kabupaten Kotawaringin Barat",
+    "angka": [
+     272874,
+     13702,
+     6548,
+     3253
+    ],
+    "total": 296377,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.02": {
+    "nama": "Kabupaten Kotawaringin Timur",
+    "angka": [
+     397760,
+     27849,
+     10698,
+     22374
+    ],
+    "total": 458681,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.03": {
+    "nama": "Kabupaten Kapuas",
+    "angka": [
+     344506,
+     48926,
+     2019,
+     23234
+    ],
+    "total": 418685,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.04": {
+    "nama": "Kabupaten Barito Selatan",
+    "angka": [
+     98901,
+     25529,
+     9547,
+     4302
+    ],
+    "total": 138279,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.05": {
+    "nama": "Kabupaten Barito Utara",
+    "angka": [
+     118071,
+     16822,
+     8729,
+     16450
+    ],
+    "total": 160072,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.08": {
+    "nama": "Kabupaten Sukamara",
+    "angka": [
+     55130,
+     6018,
+     2979,
+     3188
+    ],
+    "total": 67315,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.09": {
+    "nama": "Kabupaten Lamandau",
+    "angka": [
+     68281,
+     26186,
+     17963,
+     3223
+    ],
+    "total": 115653,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.07": {
+    "nama": "Kabupaten Seruyan",
+    "angka": [
+     138228,
+     9485,
+     6113,
+     7061
+    ],
+    "total": 160887,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.06": {
+    "nama": "Kabupaten Katingan",
+    "angka": [
+     114798,
+     34978,
+     3722,
+     30035
+    ],
+    "total": 183533,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.11": {
+    "nama": "Kabupaten Pulang Pisau",
+    "angka": [
+     112895,
+     28232,
+     1766,
+     2575
+    ],
+    "total": 145468,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.10": {
+    "nama": "Kabupaten Gunung Mas",
+    "angka": [
+     27557,
+     89201,
+     3250,
+     15643
+    ],
+    "total": 135651,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.13": {
+    "nama": "Kabupaten Barito Timur",
+    "angka": [
+     61510,
+     42853,
+     10274,
+     4229
+    ],
+    "total": 118866,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.12": {
+    "nama": "Kabupaten Murung Raya",
+    "angka": [
+     83101,
+     22166,
+     7095,
+     13497
+    ],
+    "total": 125859,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "62.71": {
+    "nama": "Kota Palangkaraya",
+    "angka": [
+     226406,
+     81182,
+     6389,
+     3701
+    ],
+    "total": 317678,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   494
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu"
+  ]
+ },
+ "63": {
+  "nama": "Kalimantan Selatan",
+  "subdomain": "kalsel",
+  "tahun": 2026,
+  "judul": "Provinsi Kalimantan Selatan Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/959d9fd419f6605686913df8/provinsi-kalimantan-selatan-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\kalsel-2026.pdf",
+  "ukuran_pdf": 20481958,
+  "temuan": [
+   {
+    "halaman": 212,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "156 PROVINSI KALIMANTAN SELATAN DALAM ANGKA 2026 KALIMANTAN SELATAN PROVINCE IN FIGURES 2026 rukun sebagai suami istri; (3) Tata cara perceraian di depan sidang Pengadilan diatur dalam peraturan perundangan tersebut. 73. Data pernikahan dan perceraian yang tersedia dalam publikasi ini hanya mencakup pernikahan dan perceraian untuk yang beragama Islam. Data pernikahan diperoleh dari Dirjen Bimas Is"
+   },
+   {
+    "halaman": 292,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "236 PROVINSI KALIMANTAN SELATAN DALAM ANGKA 2026 KALIMANTAN SELATAN PROVINCE IN FIGURES 2026 Tabel Table 4.1.26 Jumlah Mahasiswa dan Dosen pada Perguruan Tinggi Agama Islam di Provinsi Kalimantan Selatan, 2025 Number of Students and Lectures at Islamic Institute in Kalimantan Selatan Province, 2025 Perguruan Tinggi/Akademi University/Academy Mahasiswa/Students Dosen/Lecturer Laki–laki Male Perem- "
+   },
+   {
+    "halaman": 375,
+    "judul": "",
+    "ada_kepercayaan": true,
+    "cuplikan": "319 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Sumber/Source: Dinas Kependudukan dan Catatan Sipil Provinsi Kalimantan Selatan/Population and Civil Registry Office of Kalimantan Selatan Province Kabupaten/Kota Regency/ Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Lainnya Others Khonghucu Confucianism Kepercayaan The Branches/ Flows of Beliefs (1) (2) (3) (4) "
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 375,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu",
+     "Kepercayaan"
+    ],
+    "kabkota_cocok": 13,
+    "ada_kepercayaan": true,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "63.01": {
+    "nama": "Kabupaten Tanah Laut",
+    "angka": [
+     368104,
+     4095,
+     1560,
+     1614,
+     206
+    ],
+    "total": 375579,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.02": {
+    "nama": "Kabupaten Kotabaru",
+    "angka": [
+     310600,
+     11417,
+     4225,
+     1822,
+     2472
+    ],
+    "total": 330536,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.03": {
+    "nama": "Kabupaten Banjar",
+    "angka": [
+     595563,
+     1502,
+     780,
+     1626,
+     385
+    ],
+    "total": 599856,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.04": {
+    "nama": "Kabupaten Barito Kuala",
+    "angka": [
+     331399,
+     1347,
+     686,
+     1472,
+     54
+    ],
+    "total": 334958,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.05": {
+    "nama": "Kabupaten Tapin",
+    "angka": [
+     202892,
+     1306,
+     198,
+     330,
+     1
+    ],
+    "total": 204727,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.06": {
+    "nama": "Kabupaten Hulu Sungai Selatan",
+    "angka": [
+     236640,
+     1381,
+     61,
+     375,
+     17
+    ],
+    "total": 238474,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.07": {
+    "nama": "Kabupaten Hulu Sungai Tengah",
+    "angka": [
+     266297,
+     893,
+     43,
+     5219,
+     99
+    ],
+    "total": 272551,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.08": {
+    "nama": "Kabupaten Hulu Sungai Utara",
+    "angka": [
+     238588,
+     76,
+     15,
+     25,
+     7
+    ],
+    "total": 238711,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.09": {
+    "nama": "Kabupaten Tabalong",
+    "angka": [
+     259756,
+     7718,
+     2435,
+     1270,
+     30
+    ],
+    "total": 271209,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.10": {
+    "nama": "Kabupaten Tanah Bumbu",
+    "angka": [
+     343736,
+     5299,
+     4212,
+     8640,
+     101
+    ],
+    "total": 361988,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.11": {
+    "nama": "Kabupaten Balangan",
+    "angka": [
+     133096,
+     1053,
+     266,
+     1818,
+     4344
+    ],
+    "total": 140577,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.71": {
+    "nama": "Kota Banjarmasin",
+    "angka": [
+     657908,
+     13427,
+     7237,
+     269,
+     4225
+    ],
+    "total": 683066,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "63.72": {
+    "nama": "Kota Banjarbaru",
+    "angka": [
+     281079,
+     8853,
+     2719,
+     404,
+     264
+    ],
+    "total": 293319,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   375
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "64": {
+  "nama": "Kalimantan Timur",
+  "subdomain": "kaltim",
+  "tahun": 2026,
+  "judul": "Provinsi Kalimantan Timur Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/04aee2d8df20c43097e76658/provinsi-kalimantan-timur-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\kaltim-2026.pdf",
+  "ukuran_pdf": 25566229,
+  "temuan": [
+   {
+    "halaman": 370,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "318 PROVINSI KALIMANTAN TIMUR DALAM ANGKA 2025 KALIMANTAN TIMUR PROVINCE IN FIGURES 2025 Kabupaten/Kota Regency/Municipality Islam Protestan Katolik Hindu Buddha Konghucu Jumlah (1) (2) (3) (4) (5) (6) (7) (8) Kabupaten/Regency 1. Paser 7 4 – – – – 11 2. Kutai Barat 4 26 – 1 – – 31 3. Kutai Kartanegara 8 9 – 1 – – 18 4. Kutai Timur 2 5 – – – – 7 5. Berau 12 6 – – – – 18 6. Penajam Paser Utara 5 6 "
+   },
+   {
+    "halaman": 371,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "319 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Kabupaten/Kota Regency/Municipality Islam Protestan Katolik Hindu Buddha Konghucu Jumlah (1) (2) (3) (4) (5) (6) (7) (8) Kabupaten/Regency 1. Paser 24 8 2 1 – – 35 2. Kutai Barat 29 6 1 – – – 36 3. Kutai Kartanegara 39 7 – 5 – – 51 4. Kutai Timur 8 16 1 3 – – 28 5. Berau 22 5 1 – 1 2 31 6. Penajam Paser Utara 7 11 – – – – 18 7. Mahakam Ulu – 3"
+   },
+   {
+    "halaman": 372,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "320 PROVINSI KALIMANTAN TIMUR DALAM ANGKA 2025 KALIMANTAN TIMUR PROVINCE IN FIGURES 2025 Kabupaten/Kota Regency/Municipality Pondok Pesantren/ Islamic Boarding Schools Kyai/ Clerics Santri/ Islamic Boarding School Student (1) (2) (3) (4) Kabupaten/Regency 1. Paser 28 182 2.573 2. Kutai Barat 5 41 242 3. Kutai Kartanegara 55 523 5.791 4. Kutai Timur 35 277 2.753 5. Berau 5 37 230 6. Penajam Paser U"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 370,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 10,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penyuluh Agama PNS Menurut Kabupaten/Kota di"
+   },
+   {
+    "halaman": 371,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 10,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penyuluh Agama Non PNS Menurut Kabupaten/"
+   }
+  ],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": [],
+  "kolom": []
+ },
+ "72": {
+  "nama": "Sulawesi Tengah",
+  "subdomain": "sulteng",
+  "tahun": 2026,
+  "judul": "Provinsi Sulawesi Tengah Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/5b520056cb0f26ef3736bc74/provinsi-sulawesi-tengah-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\sulteng-2026.pdf",
+  "ukuran_pdf": 16469725,
+  "temuan": [
+   {
+    "halaman": 247,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "181 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT dilakukan di KUA atau di luar KUA (nikah bedolan). 69. Perceraian adalah salah satu sebab putusnya perkawinan/pernikahan yang dapat terjadi karena talak (cerai talak) atau berdasarkan gugatan perceraian (cerai gugat). Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan Pasal 39 menyatakan: (1) Perceraian hanya dapat dilakukan di depan sidang P"
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "73": {
+  "nama": "Sulawesi Selatan",
+  "subdomain": "sulsel",
+  "tahun": 2026,
+  "judul": "Provinsi Sulawesi Selatan Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/fa1adde42bea0a82c4e86dcb/provinsi-sulawesi-selatan-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\sulsel-2026.pdf",
+  "ukuran_pdf": 22139614,
+  "temuan": [
+   {
+    "halaman": 292,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "244 PROVINSI SULAWESI SELATAN DALAM ANGKA 2026 SULAWESI SELATAN PROVINCE IN FIGURES 2026 4.5.4 Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Sulawesi Selatan, 2025 Population by Regency/Municipality and Religion in Sulawesi Selatan Province, 2025 Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Khonghucu (1) (2) (3) (4) ("
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 292,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 24,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "73.01": {
+    "nama": "Kabupaten Kepulauan Selayar",
+    "angka": [
+     142668,
+     752,
+     49,
+     84,
+     27
+    ],
+    "total": 143580,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.02": {
+    "nama": "Kabupaten Bulukumba",
+    "angka": [
+     484299,
+     319,
+     222,
+     9,
+     156
+    ],
+    "total": 485005,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.03": {
+    "nama": "Kabupaten Bantaeng",
+    "angka": [
+     220446,
+     576,
+     229,
+     1,
+     101
+    ],
+    "total": 221353,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.04": {
+    "nama": "Kabupaten Jeneponto",
+    "angka": [
+     425991,
+     100,
+     28,
+     0,
+     0
+    ],
+    "total": 426119,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.05": {
+    "nama": "Kabupaten Takalar",
+    "angka": [
+     338448,
+     229,
+     131,
+     10,
+     63
+    ],
+    "total": 338881,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.06": {
+    "nama": "Kabupaten Gowa",
+    "angka": [
+     829319,
+     6800,
+     4766,
+     145,
+     641
+    ],
+    "total": 841671,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.07": {
+    "nama": "Kabupaten Sinjai",
+    "angka": [
+     278397,
+     82,
+     34,
+     3,
+     11
+    ],
+    "total": 278527,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.09": {
+    "nama": "Kabupaten Maros",
+    "angka": [
+     834342,
+     1571,
+     287,
+     14,
+     493
+    ],
+    "total": 836707,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.10": {
+    "nama": "Kabupaten Pangkajene dan Kepulauan",
+    "angka": [
+     417552,
+     6121,
+     1808,
+     207,
+     96
+    ],
+    "total": 425784,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.11": {
+    "nama": "Kabupaten Barru",
+    "angka": [
+     363993,
+     989,
+     119,
+     19,
+     41
+    ],
+    "total": 365161,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.08": {
+    "nama": "Kabupaten Bone",
+    "angka": [
+     195987,
+     354,
+     52,
+     24,
+     1
+    ],
+    "total": 196418,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.12": {
+    "nama": "Kabupaten Soppeng",
+    "angka": [
+     240924,
+     746,
+     97,
+     3,
+     7
+    ],
+    "total": 241777,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.13": {
+    "nama": "Kabupaten Wajo",
+    "angka": [
+     400441,
+     1032,
+     149,
+     1548,
+     68
+    ],
+    "total": 403238,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.14": {
+    "nama": "Kabupaten Sidenreng Rappang",
+    "angka": [
+     308634,
+     858,
+     211,
+     28505,
+     11
+    ],
+    "total": 338219,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.15": {
+    "nama": "Kabupaten Pinrang",
+    "angka": [
+     416733,
+     5865,
+     4153,
+     783,
+     170
+    ],
+    "total": 427704,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.16": {
+    "nama": "Kabupaten Enrekang",
+    "angka": [
+     234913,
+     1156,
+     77,
+     10,
+     4
+    ],
+    "total": 236160,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.17": {
+    "nama": "Kabupaten Luwu",
+    "angka": [
+     343325,
+     43397,
+     4312,
+     61,
+     11
+    ],
+    "total": 391106,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.18": {
+    "nama": "Kabupaten Tana Toraja",
+    "angka": [
+     31160,
+     181779,
+     39719,
+     3958,
+     150
+    ],
+    "total": 256766,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.22": {
+    "nama": "Kabupaten Luwu Utara",
+    "angka": [
+     276411,
+     46133,
+     5166,
+     9359,
+     11
+    ],
+    "total": 337080,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.24": {
+    "nama": "Kabupaten Luwu Timur",
+    "angka": [
+     257681,
+     49107,
+     7452,
+     17459,
+     3
+    ],
+    "total": 331702,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.26": {
+    "nama": "Kabupaten Toraja Utara",
+    "angka": [
+     12207,
+     221197,
+     35201,
+     63,
+     29
+    ],
+    "total": 268697,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.71": {
+    "nama": "Kota Makassar",
+    "angka": [
+     1326982,
+     102878,
+     42757,
+     1461,
+     16338
+    ],
+    "total": 1490416,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.72": {
+    "nama": "Kota Parepare",
+    "angka": [
+     156167,
+     5297,
+     2138,
+     813,
+     711
+    ],
+    "total": 165126,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "73.73": {
+    "nama": "Kota Palopo",
+    "angka": [
+     158783,
+     22253,
+     3322,
+     270,
+     275
+    ],
+    "total": 184903,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   292
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "75": {
+  "nama": "Gorontalo",
+  "subdomain": "gorontalo",
+  "tahun": 2026,
+  "judul": "Provinsi Gorontalo Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/0b8a2819cead8492b6407d97/provinsi-gorontalo-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\gorontalo-2026.pdf",
+  "ukuran_pdf": 26308190,
+  "temuan": [
+   {
+    "halaman": 185,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "141 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT harus dilangsungkan di hadapan dan di bawah pengawasan pegawai pencatat nikah. Pernikahan boleh dilakukan di KUA atau di luar KUA (nikah bedolan). 77. Perceraian adalah salah satu sebab putusnya perkawinan/pernikahan yang dapat terjadi karena talak (cerai talak) atau berdasarkan gugatan perceraian (cerai gugat). Undang- Undang Republik Indones"
+   },
+   {
+    "halaman": 305,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "261 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Tabel Table 4.5.4 Jumlah Penduduk Menurut Kabupaten/Kota dan Agama yang Dianut di Provinsi Gorontalo, 2025 Population by Regency/Municipality and Religion in Gorontalo Province, 2025 Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Lainnya Others (1) (2) (3) (4) (5) (6) (7) Kabupaten Boalemo Bo"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 305,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 6,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "75.02": {
+    "nama": "Kabupaten Boalemo",
+    "angka": [
+     148402,
+     1836,
+     166,
+     2446,
+     1
+    ],
+    "total": 152851,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "75.01": {
+    "nama": "Kabupaten Gorontalo",
+    "angka": [
+     397908,
+     1361,
+     183,
+     53,
+     78
+    ],
+    "total": 399583,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "75.04": {
+    "nama": "Kabupaten Pohuwato",
+    "angka": [
+     155638,
+     5760,
+     117,
+     1435,
+     8
+    ],
+    "total": 162958,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "75.03": {
+    "nama": "Kabupaten Bone Bolango",
+    "angka": [
+     168890,
+     163,
+     35,
+     19,
+     3
+    ],
+    "total": 169110,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "75.05": {
+    "nama": "Kabupaten Gorontalo Utara",
+    "angka": [
+     127601,
+     4264,
+     101,
+     21,
+     3
+    ],
+    "total": 131990,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "75.71": {
+    "nama": "Kota Gorontalo",
+    "angka": [
+     199590,
+     3669,
+     591,
+     141,
+     811
+    ],
+    "total": 204802,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   305
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "76": {
+  "nama": "Sulawesi Barat",
+  "subdomain": "sulbar",
+  "tahun": 2026,
+  "judul": "Provinsi Sulawesi Barat Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/f6d56e04ed9ba89c9fb1afdf/provinsi-sulawesi-barat-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\sulbar-2026.pdf",
+  "ukuran_pdf": 5646256,
+  "temuan": [
+   {
+    "halaman": 223,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "163 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT karena talak (cerai talak) atau berdasarkan gugatan perceraian (cerai gugat). Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan Pasal 39 menyatakan: (1) Perceraian hanya dapat dilakukan di depan sidang Pengadilan setelah Pengadilan yang bersangkutan berusaha dan tidak berhasil mendamaikan kedua belah pihak; (2) Untuk melakukan perceraian har"
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "81": {
+  "nama": "Maluku",
+  "subdomain": "maluku",
+  "tahun": 2026,
+  "judul": "Provinsi Maluku Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/f496371bd37d73619b6efc04/provinsi-maluku-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\maluku-2026.pdf",
+  "ukuran_pdf": 20464556,
+  "temuan": [
+   {
+    "halaman": 204,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "142 MALUKU PROVINCE IN FIGURES 2026 PROVINSI MALUKU DALAM ANGKA 2026 42. Perceraian adalah salah satu sebab putusnya perkawinan/ pernikahan yang dapat terjadi karena talak (cerai talak) atau berdasarkan gugatan perceraian (cerai gugat). Undang-Undang Nomor 1 Tahun 1974 tentang Perkawinan Pasal 39 menyatakan: (1) Perceraian hanya dapat dilakukan di depan sidang Pengadilan setelah Pengadilan yang be"
+   },
+   {
+    "halaman": 330,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "268 MALUKU PROVINCE IN FIGURES 2026 PROVINSI MALUKU DALAM ANGKA 2026 Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha (1) (2) (3) (4) (5) (6) Kepulauan Tanimbar 7.459 81.278 43.541 43 14 Maluku Tenggara 39.449 35.604 53.745 364 4 Maluku Tengah 275.086 150.134 3.466 2.341 16 Buru 121.432 12.224 1.369 2.014 46 Kepulauan Aru 35.362 66.261 10.840 37 20"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 330,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "kabkota_cocok": 11,
+    "ada_kepercayaan": false,
+    "judul": ""
+   }
+  ],
+  "terbaca": {
+   "81.03": {
+    "nama": "Kabupaten Kepulauan Tanimbar",
+    "angka": [
+     7459,
+     81278,
+     43541,
+     43,
+     14
+    ],
+    "total": 132335,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.02": {
+    "nama": "Kabupaten Maluku Tenggara",
+    "angka": [
+     39449,
+     35604,
+     53745,
+     364,
+     4
+    ],
+    "total": 129166,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.01": {
+    "nama": "Kabupaten Maluku Tengah",
+    "angka": [
+     275086,
+     150134,
+     3466,
+     2341,
+     16
+    ],
+    "total": 431043,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.04": {
+    "nama": "Kabupaten Buru",
+    "angka": [
+     121432,
+     12224,
+     1369,
+     2014,
+     46
+    ],
+    "total": 137085,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.07": {
+    "nama": "Kabupaten Kepulauan Aru",
+    "angka": [
+     35362,
+     66261,
+     10840,
+     37,
+     20
+    ],
+    "total": 112520,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.06": {
+    "nama": "Kabupaten Seram Bagian Barat",
+    "angka": [
+     134702,
+     81459,
+     1203,
+     17,
+     6
+    ],
+    "total": 217387,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.05": {
+    "nama": "Kabupaten Seram Bagian Timur",
+    "angka": [
+     129459,
+     4232,
+     1799,
+     515,
+     137
+    ],
+    "total": 136142,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.08": {
+    "nama": "Kabupaten Maluku Barat Daya",
+    "angka": [
+     2291,
+     93548,
+     1174,
+     6,
+     1
+    ],
+    "total": 97020,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.09": {
+    "nama": "Kabupaten Buru Selatan",
+    "angka": [
+     54035,
+     22522,
+     583,
+     2355,
+     1
+    ],
+    "total": 79496,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.71": {
+    "nama": "Kota Ambon",
+    "angka": [
+     145953,
+     204116,
+     9203,
+     250,
+     127
+    ],
+    "total": 359649,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "81.72": {
+    "nama": "Kota Tual",
+    "angka": [
+     69338,
+     15932,
+     5163,
+     37,
+     0
+    ],
+    "total": 90470,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   330
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha"
+  ]
+ },
+ "82": {
+  "nama": "Maluku Utara",
+  "subdomain": "malut",
+  "tahun": 2026,
+  "judul": "Provinsi Maluku Utara Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/4c5adf3f6da563956df26452/provinsi-maluku-utara-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\malut-2026.pdf",
+  "ukuran_pdf": 6117545,
+  "temuan": [
+   {
+    "halaman": 186,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "142 PROVINSI MALUKU UTARA DALAM ANGKA 2026 MALUKU UTARA PROVINCE IN FIGURES 2026 Undang Republik Indonesia Nomor 1 Tahun 1974 tentang Perkawinan Pasal 39 menyatakan: (1) Perceraian hanya dapat dilakukan di depan sidang Pengadilan setelah Pengadilan yang bersangkutan berusaha dan tidak berhasil mendamaikan kedua belah pihak; (2) Untuk melakukan perceraian harus ada cukup alasan bahwa antara suami i"
+   },
+   {
+    "halaman": 309,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "265 SOCIAL AND WELFARE SOSIAL DAN KESEJAHTERAAN RAKYAT Sumber/Source: Kanwil Kementerian Agama Provinsi Maluku Utara/Regional Office of the Ministry of Religion of Maluku Utara Kabupaten/Kota Regency/Municipality Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Konghucu Confucius (1) (2) (3) (4) (5) (6) (7) Halmahera Barat 70.976 67.501 1.378 10 10 – Halmahera Tengah 81.352 11.610 1."
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 309,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 10,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   }
+  ],
+  "terbaca": {
+   "82.01": {
+    "nama": "Kabupaten Halmahera Barat",
+    "angka": [
+     70976,
+     67501,
+     1378,
+     10,
+     10,
+     0
+    ],
+    "total": 139875,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.02": {
+    "nama": "Kabupaten Halmahera Tengah",
+    "angka": [
+     81352,
+     11610,
+     1173,
+     3,
+     5,
+     0
+    ],
+    "total": 94143,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.05": {
+    "nama": "Kabupaten Kepulauan Sula",
+    "angka": [
+     130391,
+     1388,
+     537,
+     1,
+     0,
+     0
+    ],
+    "total": 132317,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.04": {
+    "nama": "Kabupaten Halmahera Selatan",
+    "angka": [
+     258933,
+     30779,
+     891,
+     1,
+     25,
+     4
+    ],
+    "total": 290633,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.03": {
+    "nama": "Kabupaten Halmahera Utara",
+    "angka": [
+     100343,
+     114885,
+     2004,
+     10,
+     23,
+     0
+    ],
+    "total": 217265,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.06": {
+    "nama": "Kabupaten Halmahera Timur",
+    "angka": [
+     70281,
+     40121,
+     585,
+     2,
+     8,
+     0
+    ],
+    "total": 110997,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.07": {
+    "nama": "Kabupaten Pulau Morotai",
+    "angka": [
+     54007,
+     23604,
+     964,
+     5,
+     0,
+     0
+    ],
+    "total": 78580,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.08": {
+    "nama": "Kabupaten Pulau Taliabu",
+    "angka": [
+     52764,
+     12119,
+     1865,
+     9,
+     0,
+     0
+    ],
+    "total": 66757,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.71": {
+    "nama": "Kota Ternate",
+    "angka": [
+     208163,
+     5455,
+     701,
+     63,
+     115,
+     132
+    ],
+    "total": 214629,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   },
+   "82.72": {
+    "nama": "Kota Tidore Kepulauan",
+    "angka": [
+     110032,
+     4847,
+     527,
+     10,
+     0,
+     3
+    ],
+    "total": 115419,
+    "kolom": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   309
+  ],
+  "kolom": [
+   "Islam",
+   "Protestan",
+   "Katolik",
+   "Hindu",
+   "Budha",
+   "Konghucu"
+  ]
+ },
+ "91": {
+  "nama": "Papua",
+  "subdomain": "papua",
+  "tahun": 2026,
+  "judul": "Provinsi Papua Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/41b1197ab9e20ad710b67e44/provinsi-papua-selatan-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\papua-2026.pdf",
+  "ukuran_pdf": 8289181,
+  "temuan": [
+   {
+    "halaman": 280,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "236 PROVINSI PAPUA SELATAN DALAM ANGKA 2026 PAPUA SELATAN PROVINCE IN FIGURES 2026 Catatan/Note: ... Sumber/Source: ... Kabupaten Regencies Islam Protestan Protestant Katolik Catholic Hindu Budha Buddha Lainnya Others (1) (2) (3) (4) (5) (6) (7) Merauke ... ... ... ... ... ... Boven Digoel ... ... ... ... ... ... Mappi ... ... ... ... ... ... Asmat ... ... ... ... ... ... Papua Selatan ... ... ..."
+   }
+  ],
+  "tabel_agama": [],
+  "terbaca": {},
+  "gagal": [],
+  "halaman_terbaca": []
+ },
+ "92": {
+  "nama": "Papua Barat",
+  "subdomain": "papuabarat",
+  "tahun": 2026,
+  "judul": "Provinsi Papua Barat Dalam Angka 2026",
+  "halaman_publikasi": "/id/publication/2026/02/27/31082846838fef1528e26158/provinsi-papua-barat-dalam-angka-2026.html",
+  "pdf": "catat\\pdf-agama\\papuabarat-2026.pdf",
+  "ukuran_pdf": 10923149,
+  "temuan": [
+   {
+    "halaman": 282,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "232 PROVINSI PAPUA BARAT DALAM ANGKA 2026 PAPUA BARAT PROVINCE IN FIGURES 2026 Sumber/Source: Kantor Wilayah Kementerian Agama Provinsi Papua Barat/Ministry of Religious Affairs Regional Office of Papua Barat Province Kabupaten Regency Islam Kristen Katolik Hindu Buddha Konghucu (1) (2) (3) (4) (5) (6) (7) Fakfak 61.996 16.522 17.112 55 14 - Kaimana 27.907 30.965 7.147 45 – - Teluk Wondama 10.041 "
+   },
+   {
+    "halaman": 310,
+    "judul": "",
+    "ada_kepercayaan": false,
+    "cuplikan": "260 PROVINSI PAPUA BARAT DALAM ANGKA 2026 PAPUA BARAT PROVINCE IN FIGURES 2026 Sumber/Source: Kantor Wilayah Kementerian Agama Provinsi Papua Barat/Ministry of Religious Affairs Regional Office of Papua Barat Province Kabupaten/Kota Regency/Municipality Islam Kristen Katolik Hindu Buddha Konghucu (1) (2) (3) (4) (5) (6) (7) Fakfak 588 1.922 68 6 2 – Kaimana 260 1.367 25 - – – Teluk Wondama 146 1.6"
+   }
+  ],
+  "tabel_agama": [
+   {
+    "halaman": 282,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 6,
+    "ada_kepercayaan": false,
+    "judul": "Jumlah Penduduk Menurut Kabupaten/Kota dan Agama"
+   },
+   {
+    "halaman": 310,
+    "agama": [
+     "Islam",
+     "Protestan",
+     "Katolik",
+     "Hindu",
+     "Budha",
+     "Konghucu"
+    ],
+    "kabkota_cocok": 6,
+    "ada_kepercayaan": false,
+    "judul": "Table 4.5.11 Jumlah Penyiar Agama Menurut Kabupaten/Kota dan"
+   }
+  ],
+  "terbaca": {
+   "92.03": {
+    "nama": "Kabupaten Fak Fak",
+    "angka": [
+     61996,
+     17112,
+     55,
+     14
+    ],
+    "total": 79177,
+    "cara": "dijumlahkan"
+   },
+   "92.08": {
+    "nama": "Kabupaten Kaimana",
+    "angka": [
+     27907,
+     7147,
+     45
+    ],
+    "total": 35099,
+    "cara": "dijumlahkan"
+   },
+   "92.07": {
+    "nama": "Kabupaten Teluk Wondama",
+    "angka": [
+     10041,
+     937
+    ],
+    "total": 10978,
+    "cara": "dijumlahkan"
+   },
+   "92.06": {
+    "nama": "Kabupaten Teluk Bintuni",
+    "angka": [
+     41573,
+     19270,
+     65,
+     48
+    ],
+    "total": 60956,
+    "cara": "dijumlahkan"
+   },
+   "92.02": {
+    "nama": "Kabupaten Manokwari",
+    "angka": [
+     65041,
+     15599,
+     409,
+     240
+    ],
+    "total": 81289,
+    "cara": "dijumlahkan"
+   },
+   "92.11": {
+    "nama": "Kabupaten Manokwari Selatan",
+    "angka": [
+     8837,
+     443,
+     5
+    ],
+    "total": 9285,
+    "cara": "dijumlahkan"
+   }
+  },
+  "gagal": [],
+  "halaman_terbaca": [
+   282
+  ]
+ }
+}

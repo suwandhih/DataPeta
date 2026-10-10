@@ -12,3 +12,7 @@ desktop.ini
 
 # Catatan pribadi — JANGAN diunggah (berisi kata sandi)
 catat/
+
+# Sampah Python
+__pycache__/
+*.pyc
