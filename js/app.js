@@ -247,9 +247,9 @@
   }
 
   // Tambahan jarak kalau tempat paling dekat sudah dipakai tulisan lain.
-  // Ditambah SANGAT sedikit (3 px) — lebih baik nama bersenggolan sedikit
-  // daripada melompat jauh dari kotanya. Sisi lain sudah dicoba lebih dulu.
-  const JARAK_TAMBAHAN = [0, 3, 6];
+  // Ditambah sedikit-sedikit — lebih baik nama tetangga bersenggolan sedikit
+  // daripada nama melompat jauh dari kotanya. Sisi lain dicoba lebih dulu.
+  const JARAK_TAMBAHAN = [0, 3, 6, 10];
 
   // Cari tempat tulisan yang paling lapang.
   // Urutan usaha: sisi dekat dulu → sisi sudut → baru jaraknya ditambah sedikit.

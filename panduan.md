@@ -285,7 +285,7 @@ aplikasi memindahkannya dengan urutan ini:
 
 1. **sisi lain bintang yang sama** (atas / bawah / kiri / kanan), lalu
 2. **sisi sudut** (kanan-atas, kanan-bawah, kiri-atas, kiri-bawah), baru
-3. **jaraknya ditambah sedikit** — **3 piksel saja**.
+3. **jaraknya ditambah sedikit** — **3 piksel**, lalu 6 dan 10 piksel kalau masih penuh.
 
 Aplikasi **selalu** memilih yang paling dekat lebih dulu. Jadi meskipun penuh,
 pergeseran nama tidak pernah lebih dari **± 20 piksel** dari bintangnya.

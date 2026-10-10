@@ -32,7 +32,7 @@
 
 | Zoom | Sebelum (terburuk) | Sesudah (terburuk) |
 |------|--------------------|--------------------|
-| 1× | 29,5 px (Jakarta) | **16,3 px** (Serang) |
+| 1× | 29,5 px (Jakarta) | **19,6 px** (Serang) |
 | 1,5× | 46,0 px (Kupang) | **14,7 px** (Tanjung Selor) |
 | 2,25× | 54,3 px (Yogyakarta) | **13,7 px** (Sofifi) |
 | 3,38× | 22,9 px (Gorontalo) | **13,3 px** (Palangka Raya) |
@@ -40,8 +40,9 @@
 | 7,59× | 31,1 px (Banjarbaru) | **6,2 px** (Mamuju) |
 | 12× | 6,2 px | **6,2 px** |
 
-Uji HP (390×844): terburuk **15,3 px**. **Nama yang menutupi bintang: 0.** 38 ibu kota tetap
-tampil, 0 galat konsol. Penanda versi dinaikkan (aturan B13) → `?v=20261010-05`.
+Uji HP (390×844): terburuk **18,9 px**. **Nama bertumpuk: 0.** **Nama yang menutupi
+bintangnya: 0.** 38 ibu kota tetap tampil, 0 galat konsol.
+Penanda versi dinaikkan (aturan B13) → `?v=20261010-06`.
 
 ### ❓ Pertanyaan Bapak: apakah NTB dan NTT penduduknya sama-sama 5.828.569 jiwa?
 
